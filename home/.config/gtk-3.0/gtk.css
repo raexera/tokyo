@@ -1,0 +1,30 @@
+@define-color Background rgba(46, 52, 64, 0.5);
+@define-color BackgroundHover #3b4252;
+@define-color AccentColor #8fbcbb;
+
+VteTerminal, vte-terminal { padding: 15px; }
+
+* {
+	-ThunarAbstractIconView-row-spacing: 10;
+	-ThunarAbstractIconView-column-spacing: 20;
+}
+
+.thunar .standard-view .view
+{
+	padding: 5px 14px;
+}
+.thunar .standard-view .view:selected {  }
+.thunar .sidebar
+{
+	background-image: none;
+}
+.thunar .sidebar .view
+{
+	padding: 3px 4px 3px 0;
+}
+.thunar .sidebar { }
+.thunar .sidebar .view:hover { background-color: #4c566a; }
+.thunar .sidebar .view:selected {
+	background-color: @BackgroundHover;
+	border-left: 5px solid #5e81ac;
+}

@@ -1,0 +1,40 @@
+#!/usr/bin/env bash
+
+######################################################
+##	 ▄▄▄▄     ██████  ██▓███   █     █░ ███▄ ▄███▓  
+##	▓█████▄ ▒██    ▒ ▓██░  ██▒▓█░ █ ░█░▓██▒▀█▀ ██▒  
+##	▒██▒ ▄██░ ▓██▄   ▓██░ ██▓▒▒█░ █ ░█ ▓██    ▓██░  
+##	▒██░█▀    ▒   ██▒▒██▄█▓▒ ▒░█░ █ ░█ ▒██    ▒██   
+##	░▓█  ▀█▓▒██████▒▒▒██▒ ░  ░░░██▒██▓ ▒██▒   ░██▒  
+##	░▒▓███▀▒▒ ▒▓▒ ▒ ░▒▓▒░ ░  ░░ ▓░▒ ▒  ░ ▒░   ░  ░  
+##	▒░▒   ░ ░ ░▒  ░ ░░▒ ░       ▒ ░ ░  ░  ░      ░  
+##	 ░    ░ ░  ░  ░  ░░         ░   ░  ░      ░     
+##	 ░            ░               ░           ░     
+##	      ░                                        
+######################################################
+
+## Get colors -----------------
+FG="$(xrdb -query | grep 'foreground:'| awk '{print $NF}')"
+BG="$(xrdb -query | grep 'background:'| awk '{print $NF}')"
+
+BLACK="$(xrdb -query | grep 'color0:'| awk '{print $NF}')"
+RED="$(xrdb -query | grep 'color1:'| awk '{print $NF}')"
+GREEN="$(xrdb -query | grep 'color2:'| awk '{print $NF}')"
+YELLOW="$(xrdb -query | grep 'color3:'| awk '{print $NF}')"
+BLUE="$(xrdb -query | grep 'color4:'| awk '{print $NF}')"
+MAGENTA="$(xrdb -query | grep 'color5:'| awk '{print $NF}')"
+CYAN="$(xrdb -query | grep 'color6:'| awk '{print $NF}')"
+WHITE="$(xrdb -query | grep 'color7:'| awk '{print $NF}')"
+
+TOTD=`fortune -n 90 -s | head -n 1`
+
+## Exec	-----------------
+i3lock -n -c 00000000 -t -e --date-str="@$(uname -n)" -i ~/Pictures/LockScreen/lock.png --date-pos="w/2:h/2+90" \
+        --indicator --force-clock --pass-media-keys --pass-power-keys --pass-volume-keys --date-size=16 \
+        --insidever-color=2e3440A8 --insidewrong-color=2e3440A8 --inside-color=2e344000 --ringwrong-color=bf616a \
+        --ring-color=81a1c1 --ringver-color=88c0d0 --line-uses-inside --keyhl-color=eceff4 --bshl-color=bf616a \
+        --separator-color=81a1c1 --verif-color=88c0d0 --wrong-color=bf616a --ind-pos="w/2:h/2-42" --time-color=eceff4 \
+        --time-pos="w/2:h/2+35" --time-str="%I:%M %p" --date-color=eceff4 --time-font="FiraCode Nerd Font" \
+        --date-font="FiraCode Nerd Font" --verif-font="FiraCode Nerd Font" --wrong-font="FiraCode Nerd Font" \
+        --greeter-font="FiraCode Nerd Font:style=Bold" --greeter-text="$USER" --greeter-color=8fbcbb --greeter-pos="w/2:h/2+70" \
+        --radius 50 --ring-width 3 --greeter-size=18 --time-size=14 --verif-size=10 --wrong-size=10  --modif-size=9 --modif-pos="w/2:h/2-15" #--no-verify

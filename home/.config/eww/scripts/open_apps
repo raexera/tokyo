@@ -1,0 +1,34 @@
+#!/bin/bash
+
+## Open Applications
+FILE="$HOME/.cache/eww_launch.xyz"
+EWW="/usr/bin/eww"
+
+if [[ "$1" == "--vd" ]]; then
+	${EWW} close-all && rm -rf "$FILE" && vivaldi-stable &
+
+elif [[ "$1" == "--tg" ]]; then
+	${EWW} close-all && rm -rf "$FILE" && telegram-desktop &
+
+elif [[ "$1" == "--dc" ]]; then
+	${EWW} close-all && rm -rf "$FILE" && discord &
+
+elif [[ "$1" == "--tr" ]]; then
+	${EWW} close-all && rm -rf "$FILE" && kitty &
+
+elif [[ "$1" == "--fm" ]]; then
+	${EWW} close-all && rm -rf "$FILE" && thunar ~ &
+
+elif [[ "$1" == "--ge" ]]; then
+	${EWW} close-all && rm -rf "$FILE" && geany &
+
+elif [[ "$1" == "--cd" ]]; then
+	${EWW} close-all && rm -rf "$FILE" && code &
+
+elif [[ "$1" == "--gp" ]]; then
+	${EWW} close-all && rm -rf "$FILE" && gimp &
+
+elif [[ "$1" == "--vb" ]]; then
+	${EWW} close-all && rm -rf "$FILE" && virtualbox &
+
+fi

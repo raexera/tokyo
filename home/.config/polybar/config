@@ -1,0 +1,299 @@
+; ██████╗  ██████╗ ██╗  ██╗   ██╗██████╗  █████╗ ██████╗ 
+; ██╔══██╗██╔═══██╗██║  ╚██╗ ██╔╝██╔══██╗██╔══██╗██╔══██╗
+; ██████╔╝██║   ██║██║   ╚████╔╝ ██████╔╝███████║██████╔╝
+; ██╔═══╝ ██║   ██║██║    ╚██╔╝  ██╔══██╗██╔══██║██╔══██╗
+; ██║     ╚██████╔╝███████╗██║   ██████╔╝██║  ██║██║  ██║
+; ╚═╝      ╚═════╝ ╚══════╝╚═╝   ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝
+                                                       
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;    ____ ___  _     ___  ____  ____  
+;   / ___/ _ \| |   / _ \|  _ \/ ___| 
+;  | |  | | | | |  | | | | |_) \___ \ 
+;  | |__| |_| | |__| |_| |  _ < ___) |
+;   \____\___/|_____\___/|_| \_\____/ 
+                                    
+[colors]
+background = #2e3440
+alt-background = #3b4252
+alt-foreground = #434c5e
+foreground = #eceff4
+red = #bf616a
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;; ===================== BARS ========================
+[bar/main]
+bottom = false
+offset-y = 20
+height = 30
+radius = 12
+fixed-center = true
+wm-restack = bspwm
+override-redirect = true
+border = 0
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+font-0 = "Iosevka Custom:style=Regular:size=8;2"
+font-1 = "feather:size=11;3"
+font-2 = "Material Design Icons:style=Regular:size=14;4"
+font-3 = "mononoki Nerd Font Mono:style=Bold:size=19;4"
+
+module-margin-left = 0
+module-margin-right = 0
+
+[bar/zero]
+inherit = bar/main
+width = 3%
+offset-x = 12
+modules-center = launcher
+
+[bar/one]
+inherit = bar/main
+width = 13%
+offset-x = 62
+modules-center = bspwm
+
+[bar/two]
+inherit = bar/main
+width = 34%
+offset-x = 890
+background = ${colors.background}
+modules-center = network volume brightness battery date time
+
+[bar/three]
+inherit = bar/main
+width = 11%
+offset-x = 250
+modules-center = title
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+[module/bspwm]
+type = internal/bspwm
+
+pin-workspaces = true
+enable-click = true
+enable-scroll = true
+
+format = <label-state>
+
+format-background = ${colors.background}
+format-foreground = ${colors.foreground}
+
+label-monitor = %name%
+
+label-focused = 
+label-focused-padding = 1
+label-focused-foreground = ${colors.foreground}
+label-focused-background = ${colors.background}
+
+label-occupied = 
+label-occupied-padding = 1
+label-occupied-foreground = ${colors.alt-background}
+label-occupied-background = ${colors.background}
+
+label-urgent = 
+label-urgent-padding = 1
+label-urgent-foreground = ${colors.red}
+label-urgent-background = ${colors.background}
+
+label-empty = 
+label-empty-padding = 1
+label-empty-foreground = ${colors.alt-foreground}
+label-empty-background = ${colors.background}
+
+;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+[module/mpd]
+type = internal/mpd
+interval = 1
+format-online = <label-song> <icon-prev> <toggle> <icon-next>
+format-online-prefix = 
+format-online-background = ${colors.background}
+format-online-prefix-foreground = ${colors.foreground}
+
+format-offline = <label-offline>
+format-offline-prefix = 
+format-offline-background = ${colors.background}
+format-offline-prefix-foreground = ${colors.foreground}
+
+label-song =  " %artist% - %title%"
+label-song-maxlen = 20
+label-song-ellipsis = true
+label-time = %elapsed% / %total%
+label-offline = " Offline"
+
+icon-play = 
+icon-pause = 
+icon-stop = 
+icon-next = 
+icon-prev = 
+icon-seekf = 
+icon-seekb = 
+icon-random = 
+icon-repeat = 
+icon-repeatone = 
+icon-single = 
+icon-consume =
+
+toggle-on-foreground = ${colors.foreground}
+toggle-off-foreground = ${colors.foreground}
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+[module/brightness]
+type = internal/backlight
+card = amdgpu_bl0
+format = <ramp> <label>
+label = %percentage%%
+ramp-0 = 
+ramp-1 = 
+ramp-2 = 
+ramp-3 = 
+ramp-4 = 
+format-padding = 1
+format-background = ${colors.background}
+ramp-foreground = ${colors.foreground}
+
+;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+[module/battery]
+type = internal/battery
+full-at = 99
+battery = BAT0
+adapter = AC0
+format-charging = <label-charging>
+format-charging-prefix = " "
+format-discharging = <label-discharging>
+format-discharging-prefix = " "
+format-full = <label-full>
+format-full-prefix = " "
+label-charging = %percentage%%
+label-discharging = %percentage%%
+label-full = Full
+
+format-charging-background = ${colors.background}
+format-charging-foreground = ${colors.foreground}
+format-charging-prefix-foreground = ${colors.foreground}
+
+format-discharging-background = ${colors.background}
+format-discharging-foreground = ${colors.foreground}
+format-discharging-prefix-foreground = ${colors.foreground}
+
+format-full-background = ${colors.background}
+format-full-foreground = ${colors.foreground}
+format-full-prefix-foreground = ${colors.foreground}
+
+format-full-padding = 1
+format-charging-padding = 1
+format-discharging-padding = 1
+
+;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+[module/network]
+type = internal/network
+interface = wlp2s0
+format-connected = <label-connected>
+format-connected-prefix = " "
+format-disconnected = <label-disconnected>
+format-disconnected-prefix = " "
+label-connected = "%{A1:kitty -e nmtui & disown:}%essid%%{A}"
+label-disconnected = "%{A1:kitty -e nmtui & disown:}Disconnected%{A}"
+format-connected-background = ${colors.background}
+format-connected-prefix-foreground = ${colors.foreground}
+format-disconnected-background = ${colors.background}
+format-disconnected-prefix-foreground = ${colors.foreground}
+format-connected-padding = 1
+format-disconnected-padding = 1
+
+;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+[module/date]
+type = internal/date
+interval = 1
+time= " %a, %d %b %Y"
+format = <label>
+format-background = ${colors.background}
+format-foreground = ${colors.foreground}
+format-padding = 1
+format-prefix = 
+format-prefix-foreground = ${colors.foreground}
+label = %time%
+
+[module/time]
+type = internal/date
+interval = 1
+time= " %H:%M:%S"
+format = <label>
+format-background = ${colors.background}
+format-foreground = ${colors.foreground}
+format-padding = 1
+format-prefix = 
+format-prefix-foreground = ${colors.foreground}
+label = %time%
+
+;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+[module/volume]
+type = internal/pulseaudio
+label-volume = %percentage%%
+format-volume = <ramp-volume> <label-volume>
+format-volume-padding = 1
+format-volume-background = ${colors.background}
+format-volume-foreground = ${colors.foreground}
+format-muted = "  Muted"
+format-muted-padding = 1
+format-muted-background = ${colors.background}
+format-muted-foreground = ${colors.foreground}
+ramp-volume-0 = 
+ramp-volume-1 = 
+ramp-volume-2 = 
+ramp-volume-foreground = ${colors.foreground}
+
+;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+[module/launcher]
+type = custom/text
+content = 󰮯
+content-background = ${colors.background}
+content-foreground = ${colors.foreground}
+click-left = ~/.config/rofi/launcher.sh &
+
+;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+[module/title]
+type = custom/script
+exec = ~/.config/polybar/script/title.sh 2>/dev/null
+tail = true
+format = <label>
+label = %output%
+label-background = ${colors.background}
+label-padding = 1
+label-font = 0
+
+;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+[settings]
+throttle-output = 5
+throttle-output-for = 10
+screenchange-reload = false
+compositing-background = source
+compositing-foreground = over
+compositing-overline = over
+compositing-underline = over
+compositing-border = over
+pseudo-transparency = false
+
+;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+[global/wm]
+;margin-top = 5
+;margin-bottom = 5
+margin-bottom = 0
+margin-top = 0
+; vim:ft=dosini

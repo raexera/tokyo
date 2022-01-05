@@ -1,0 +1,40 @@
+[color]
+
+# Colors can be one of seven predefined: black, blue, cyan, green, magenta, red, white, yellow.                       # Or defined by hex code '#xxxxxx' (hex code must be within ''). User defined colors requires                         # ncurses output method and a terminal that can change color definitions such as Gnome-terminal or rxvt.
+# if supported, ncurses mode will be forced on if user defined colors are used.
+# default is to keep current terminal color
+ background = default
+ foreground = default
+
+# Gradient mode, only hex defined colors (and thereby ncurses mode) are supported,
+# background must also be defined in hex  or remain commented out. 1 = on, 0 = off.
+# You can define as many as 8 different colors. They range from bottom to top of screen
+
+gradient = 10
+
+gradient_count = 6 
+
+gradient_color_1 = '#4C566A'
+
+gradient_color_2 = '#5E81AC'
+
+gradient_color_3 = '#81A1C1'
+
+gradient_color_4 = '#88C0D0'
+
+gradient_color_5 = '#D8DEE9'
+
+gradient_color_6 = '#E5E9F0' 
+ 
+[smoothing]
+
+# Percentage value for integral smoothing. Takes values from 0 - 100.
+# Higher values means smoother, but less precise. 0 to disable.
+; integral = 10 
+# Disables or enables the so-called "Monstercat smoothing" with or without "waves". Set to 0 to disable.
+; monstercat = 0
+; waves = 3
+
+# Set gravity percentage for "drop off". Higher values means bars will drop faster.
+# Accepts only non-negative values. 50 means half gravity, 200 means double. Set to 0 to disable "drop off".
+;gravity = 100

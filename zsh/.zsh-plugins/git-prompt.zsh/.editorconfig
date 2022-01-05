@@ -1,0 +1,23 @@
+# http://editorconfig.org
+
+root = true
+
+[*]
+charset = utf-8
+end_of_line = lf
+insert_final_newline = true
+indent_style = space
+indent_size = 4
+trim_trailing_whitespace = true
+
+[*.md]
+trim_trailing_whitespace = false
+
+[*.zsh]
+max_line_length = 99
+
+[*.svg]
+insert_final_newline = dontcare
+indent_style = dontcare
+indent_size = dontcare
+trim_trailing_whitespace = dontcare

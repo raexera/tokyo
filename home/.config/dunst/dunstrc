@@ -1,0 +1,60 @@
+[global]
+follow = mouse
+width = (111, 444)
+height = 222
+origin = top-right
+offset = 15x65
+
+progress_bar_height = 5
+progress_bar_frame_width = 0
+
+transparency = 5
+horizontal_padding = 11
+frame_width = 6
+frame_color = "#2e3440"
+separator_color = "#2e3440"
+idle_threshold = 120
+
+font = "Iosevka 8"
+
+format = "<span size='x-large' font_desc='Iosevka 8' weight='bold' foreground='#eceff4'>%s</span>\n%b"
+
+show_age_threshold = 60
+icon_position = left
+max_icon_size = 80
+
+# EXPERIMENTAL
+enable_recursive_icon_lookup = true
+icon_theme = "Papirus-Dark"
+icon_size = 48
+# ------------
+
+sticky_history = false
+
+browser = /usr/bin/firefox -new-tab
+
+mouse_left_click = close_current
+mouse_middle_click = context_all
+mouse_right_click = close_all
+
+alignment = center
+markup = full
+always_run_script = true
+
+[urgency_low]
+timeout = 3
+background = "#2e3440"
+foreground = "#eceff4"
+highlight = "#eceff4"
+
+[urgency_normal]
+timeout = 6
+background = "#2e3440"
+foreground = "#eceff4"
+highlight = "#eceff4"
+
+[urgency_critical]
+timeout = 0
+background = "#2e3440"
+foreground = "#eceff4"
+highlight = "#eceff4"

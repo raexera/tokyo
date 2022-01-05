@@ -1,0 +1,71 @@
+desktop-image: "background.jpg"
+
+title-text:" "
+message-color: "#FFFFFF"
+terminal-left: "0"
+terminal-top: "0"
+terminal-width: "100%"
+terminal-height: "100%"
+terminal-border: "0"
+
++label {
+  text = "Hello, welcome to Grub"
+  font = "Poppins Regular 48"
+  color = "#FFFFFF"
+  left = 25%
+  top = 15%
+  height = 20
+  width = 50%
+  align = "center"
+}
+
++label {
+  text = "choose your operating system"
+  font = "Poppins Regular 16"
+  color = "#FFFFFF"
+  top = 30%-30
+  left = 25%
+  align = "center"
+  width = 50%
+  height = 40
+}
+
++boot_menu {
+  left = 25%
+  width = 50%
+  top = 30%
+  height = 40%
+  icon_width = 16
+  icon_height = 16
+  item_height = 48
+  item_padding = 8
+  item_spacing = 8
+  menu_pixmap_style = "boot_menu_*.png"
+  item_font = "Poppins Regular 18"
+  item_color = "#FFFFFF"
+  selected_item_color = "#000000"
+  selected_item_pixmap_style = "select_bkg_*.png"
+  scrollbar = true
+  scrollbar_width = 20
+  scrollbar_thumb = "slider_*.png"
+}
+
++progress_bar {
+  id = "__timeout__"
+  left = 0%
+  width = 100%
+  top = 100%
+  height = 23
+  show_text = true
+  text_color = "255, 255, 255"
+  bar_style = "progress_bar_*.png"
+  highlight_style = "progress_highlight_*.png"
+}
+
++image {
+  top = 80%+47
+  left = 50%-240
+  width = 480
+  height = 42
+  file = "menu.png"
+}

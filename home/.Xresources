@@ -1,0 +1,8 @@
+! ------------------------------------------------------------------------------
+! Copyright (C) 2020-2021 Rayhan Kafi Pratama <rayhankafipratama333@gmail.com>
+! Everyone is permitted to copy and distribute copies of this file under GNU-GPL3
+! ------------------------------------------------------------------------------
+
+#include ".Xresources.d/colors"
+#include ".Xresources.d/fonts"
+#include ".Xresources.d/rxvt-unicode"

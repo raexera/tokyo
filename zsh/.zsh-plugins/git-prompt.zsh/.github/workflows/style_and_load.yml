@@ -1,0 +1,30 @@
+name: Style and load
+
+# Controls when the action will run. Triggers the workflow on push or pull request
+# events but only for the master branch
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Check against .editorconfig
+      run: |
+        curl -L https://github.com/editorconfig-checker/editorconfig-checker/releases/download/2.0.3/ec-linux-amd64.tar.gz | sudo tar -xzf - -C /
+        ec-linux-amd64 -exclude .git
+
+    - name: Check line length
+      run: |
+        sudo apt-get install -y gawk
+        set -o pipefail; find -name '*.zsh' -print0 | xargs -0 -L1 -I{} gawk '{if (length($0) > 100){printf("Line too long: %s:%d\n", FILENAME, NR); exit(1)}}' {}
+
+    - name: Load prompt
+      run: |
+        sudo apt-get install -y zsh
+        zsh -f -c 'source git-prompt.zsh; print -P $(_zsh_git_prompt_git_status)'
