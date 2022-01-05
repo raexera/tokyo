@@ -26,8 +26,8 @@ red = #bf616a
 ;; ===================== BARS ========================
 [bar/main]
 bottom = false
-offset-y = 20
-height = 30
+offset-y = 17
+height = 35
 radius = 12
 fixed-center = true
 wm-restack = bspwm
@@ -37,10 +37,8 @@ border = 0
 background = ${colors.background}
 foreground = ${colors.foreground}
 
-font-0 = "Iosevka Custom:style=Regular:size=8;2"
+font-0 = "Iosevka Nerd Font:style=Regular:size=9;3"
 font-1 = "feather:size=11;3"
-font-2 = "Material Design Icons:style=Regular:size=14;4"
-font-3 = "mononoki Nerd Font Mono:style=Bold:size=19;4"
 
 module-margin-left = 0
 module-margin-right = 0
@@ -49,12 +47,14 @@ module-margin-right = 0
 inherit = bar/main
 width = 3%
 offset-x = 12
+font-0 = "Iosevka Nerd Font:style=Regular:size=17;3"
 modules-center = launcher
 
 [bar/one]
 inherit = bar/main
-width = 13%
+width = 17%
 offset-x = 62
+font-0 = "Mononoki Nerd Font:style=Regular:size=14;3"
 modules-center = bspwm
 
 [bar/two]
@@ -67,7 +67,7 @@ modules-center = network volume brightness battery date time
 [bar/three]
 inherit = bar/main
 width = 11%
-offset-x = 250
+offset-x = 304
 modules-center = title
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -259,7 +259,7 @@ ramp-volume-foreground = ${colors.foreground}
 
 [module/launcher]
 type = custom/text
-content = 󰮯
+content = 
 content-background = ${colors.background}
 content-foreground = ${colors.foreground}
 click-left = ~/.config/rofi/launcher.sh &
