@@ -16,8 +16,6 @@
                                     
 [colors]
 background = #2e3440
-alt-background = #3b4252
-alt-foreground = #434c5e
 foreground = #eceff4
 red = #bf616a
 
@@ -95,7 +93,7 @@ label-focused-background = ${colors.background}
 
 label-occupied = 
 label-occupied-padding = 1
-label-occupied-foreground = ${colors.alt-background}
+label-occupied-foreground = ${colors.foreground}
 label-occupied-background = ${colors.background}
 
 label-urgent = 
@@ -105,7 +103,7 @@ label-urgent-background = ${colors.background}
 
 label-empty = 
 label-empty-padding = 1
-label-empty-foreground = ${colors.alt-foreground}
+label-empty-foreground = ${colors.foreground}
 label-empty-background = ${colors.background}
 
 ;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
