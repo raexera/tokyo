@@ -47,14 +47,14 @@ module-margin-right = 0
 inherit = bar/main
 width = 3%
 offset-x = 12
-font-0 = "Iosevka Nerd Font:style=Regular:size=17;3"
+font-0 = "Iosevka Nerd Font:style=Regular:size=19;4"
 modules-center = launcher
 
 [bar/one]
 inherit = bar/main
-width = 17%
+width = 18%
 offset-x = 62
-font-0 = "Mononoki Nerd Font:style=Regular:size=14;3"
+font-0 = "Iosevka Nerd Font:style=Bold:size=15;4"
 modules-center = bspwm
 
 [bar/two]
@@ -67,7 +67,7 @@ modules-center = network volume brightness battery date time
 [bar/three]
 inherit = bar/main
 width = 11%
-offset-x = 304
+offset-x = 316
 modules-center = title
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -84,9 +84,11 @@ format = <label-state>
 format-background = ${colors.background}
 format-foreground = ${colors.foreground}
 
+format-padding = 1
+
 label-monitor = %name%
 
-label-focused = 
+label-focused = 
 label-focused-padding = 1
 label-focused-foreground = ${colors.foreground}
 label-focused-background = ${colors.background}
@@ -96,12 +98,12 @@ label-occupied-padding = 1
 label-occupied-foreground = ${colors.alt-background}
 label-occupied-background = ${colors.background}
 
-label-urgent = 
+label-urgent = 
 label-urgent-padding = 1
 label-urgent-foreground = ${colors.red}
 label-urgent-background = ${colors.background}
 
-label-empty = 
+label-empty = 
 label-empty-padding = 1
 label-empty-foreground = ${colors.alt-foreground}
 label-empty-background = ${colors.background}
