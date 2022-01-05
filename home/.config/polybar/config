@@ -36,7 +36,7 @@ background = ${colors.background}
 foreground = ${colors.foreground}
 
 font-0 = "Iosevka Nerd Font:style=Regular:size=9;3"
-font-1 = "feather:size=11;3"
+font-1 = "feather:size=11;2"
 
 module-margin-left = 0
 module-margin-right = 0
