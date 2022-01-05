@@ -9,10 +9,10 @@
 
 
 configuration {
-	font:							"Iosevka Custom 11";
+	font:							"Iosevka Nerd Font 11";
     show-icons:                     true;
 	icon-theme: 					"Papirus";
-    display-drun: 					"הּ";
+    display-drun: 					"";
     drun-display-format:            "{name}";
     disable-history:                false;
     fullscreen:                     false;
@@ -37,10 +37,10 @@ window {
 
 prompt {
     enabled: 						true;
-	padding: 						14px 0px 14px 14px;
+	padding: 						9px 0px 14px 14px;
 	background-color: 				@bg;
 	text-color: 					@fg2;
-	font:							"Liga SFMono Nerd Font 14";
+	font:							"Iosevka Nerd Font 17";
 }
 
 entry {
