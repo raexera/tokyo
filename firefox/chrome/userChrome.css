@@ -1,37 +1,37 @@
  :root {
 
    /* Minimal Functional Fox variables*/
-  --mff-bg: #2e3440;
-  --mff-icon-color: #eceff4;
+  --mff-bg: #2E3440;
+  --mff-icon-color: #ECEFF4;
   --mff-nav-toolbar-padding: 8px;
   --mff-sidebar-bg: var(--mff-bg);
-  --mff-sidebar-color: #e0fbfc;
+  --mff-sidebar-color: #ECEFF4;
   --mff-tab-border-radius: 0px;
-  --mff-tab-color: #5e81ac;
-  --mff-tab-font-family: "JetBrainsMono Nerd Font";
+  --mff-tab-color: #ECEFF4;
+  --mff-tab-font-family: "Iosevka Nerd Font";
   --mff-tab-font-size: 10pt;
   --mff-tab-font-weight: 400;
   --mff-tab-height: 32px;
-  --mff-tab-pinned-bg: #70c1b3;
-  --mff-tab-selected-bg: #8fbcbb;
-  --mff-tab-soundplaying-bg: #81a1c1;
-  --mff-urlbar-color: #8fbcbb;
-  --mff-urlbar-focused-color: #e0fbfc;
-  --mff-urlbar-font-family: "JetBrainsMono Nerd Font";
+  --mff-tab-pinned-bg: #ECEFF4;
+  --mff-tab-selected-bg: #88C0D0;
+  --mff-tab-soundplaying-bg: #88C0D0;
+  --mff-urlbar-color: #ECEFF4;
+  --mff-urlbar-focused-color: #ECEFF4;
+  --mff-urlbar-font-family: "Iosevka Nerd Font";
   --mff-urlbar-font-size: 10pt;
   --mff-urlbar-font-weight: 700;
-  --mff-urlbar-results-color: #e0fbfc;
-  --mff-urlbar-results-font-family: "JetBrainsMono Nerd Font";
+  --mff-urlbar-results-color: #ECEFF4;
+  --mff-urlbar-results-font-family: "Iosevka Nerd Font";
   --mff-urlbar-results-font-size: 10pt;
   --mff-urlbar-results-font-weight: 700;
-  --mff-urlbar-results-url-color: #98c1d9;
+  --mff-urlbar-results-url-color: #88C0D0;
   /*   --mff-tab-selected-bg: linear-gradient(90deg, rgba(232,74,95,1) 0%, rgba(255,132,124,1) 50%, rgba(254,206,168,1) 100%); */
   /*   --mff-urlbar-font-weight: 600; */
 
   /* Overriden Firefox variables*/
   --autocomplete-popup-background: var(--mff-bg) !important;
   --default-arrowpanel-background: var(--mff-bg) !important;
-  --default-arrowpanel-color: #fefefa !important;
+  --default-arrowpanel-color: #ECEFF4 !important;
   --lwt-toolbarbutton-icon-fill: var(--mff-icon-color) !important;
   --panel-disabled-color: #f9f9fa80;
   --toolbar-bgcolor: var(--mff-bg) !important;
