@@ -27,7 +27,7 @@
 
 - Rofi Launcher & Powermenu
 
-![Screenshot_2022-01-06-09-35-33_1366x768](https://user-images.githubusercontent.com/93292023/148319493-8951017a-1d49-417c-a47a-94e28b5e4d2b.png)
+![Screenshot_2022-01-06-09-45-14_1366x768](https://user-images.githubusercontent.com/93292023/148320141-e46871e3-2abf-4310-8983-0c99cbd24542.png)
 
 - Firefox, Feh, Dunst
 
