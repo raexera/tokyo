@@ -24,3 +24,6 @@
 ![Screenshot_2022-01-06-07-58-04_1366x768](https://user-images.githubusercontent.com/93292023/148312247-a2ced8ec-f34c-4194-8d1f-2a675dd9739e.png)
 
 - Rofi Launcher & Powermenu
+
+# Credits
+- **© All artists who create icons, illustrations, and wallpapers.**
