@@ -1,4 +1,4 @@
-<h2 align="center"> ━━━━━━  ❖  ━━━━━━ </h2>
+<h1 align="center"> ━━━━━━  ❖  ━━━━━━ </h1>
 
 # Aesthetic Nordic
 
@@ -27,13 +27,13 @@
 
 - Rofi Launcher & Powermenu
 
-### ❖ Acknowledgements
+# ❖ Acknowledgements
 
    - **Inspiration**
+      - [woowak01](https://github.com/ChocolateBread799) for the rices inspirations, that's why i do this rices.
+      - [adi1090x](https://github.com/adi1090x) for the dashboard inspiration.
       - [owl4ce](https://github.com/owl4ce) for the README style.
-      - [Mangeshrex](https://github.com/Mangeshrex) for the colors of the colorscheme.
-      - [ner0z](https://github.com/ner0z) for the dashboard inspiration.
 
    - **© All artists who create icons, illustrations, and wallpapers.**
 
-<h2 align="center"> ━━━━━━  ❖  ━━━━━━ </h2>
+<h1 align="center"> ━━━━━━  ❖  ━━━━━━ </h1>
