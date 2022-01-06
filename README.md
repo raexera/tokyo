@@ -10,7 +10,7 @@ Gallery:
 
 - Visual Studio Code, Kitty
 
-![Screenshot_2022-01-06-07-57-52_1366x768](https://user-images.githubusercontent.com/93292023/148312216-69e89219-3fd1-4530-9a32-526f092cd31e.png)
+![Screenshot_2022-01-06-08-15-33_1366x768](https://user-images.githubusercontent.com/93292023/148312412-cc78942a-6f1b-40ef-b697-202cc931d023.png)
 
 ![Screenshot_2022-01-06-07-58-04_1366x768](https://user-images.githubusercontent.com/93292023/148312247-a2ced8ec-f34c-4194-8d1f-2a675dd9739e.png)
 
