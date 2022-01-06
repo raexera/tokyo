@@ -2,7 +2,7 @@
 
 ## Open folders in thunar
 FILE="$HOME/.cache/eww_launch.xyz"
-EWW="$HOME/.bin/eww"
+EWW="/usr/bin/eww"
 
 if [[ "$1" == "--dl" ]]; then
 	${EWW} close-all && rm -rf "$FILE" && thunar ~/Downloads &
