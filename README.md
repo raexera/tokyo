@@ -13,7 +13,7 @@
 
 # Gallery: 
 
-![Screenshot_2022-01-06-02-34-42_1366x768](https://user-images.githubusercontent.com/93292023/148346255-aa1ab9e6-fcfa-4d84-9190-632b17a79416.png)
+![Screenshot_2022-01-06-02-39-09_1366x768](https://user-images.githubusercontent.com/93292023/148346682-e982cf37-4ec4-42f9-a56f-02f2c851db89.png)
 
 - Elkowars Wacky Widgets
 
