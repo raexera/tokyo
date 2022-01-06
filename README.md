@@ -1,8 +1,9 @@
 Aesthetic Nordic, This Is My first linux rices WDYT? it's that enough for me to call my rices Aesthetic?
 
-OS: Arch Linux
-WM: Bspwm
-Colorscheme: You know what I use.
+- OS: Arch Linux
+- WM: Bspwm
+- Colorscheme: You know what I use.
+- Fonts? I only use Iosevka and Feather for the icons
 
 Gallery: 
 
