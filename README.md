@@ -1,11 +1,15 @@
-Aesthetic Nordic, This Is My first linux rices WDYT? it's that enough for me to call my rices Aesthetic?
+# Aesthetic Nordic
+
+- This Is My first linux rices WDYT? it's that enough for me to call my rices Aesthetic?
+
+# General Info
 
 - OS: [Arch Linux](https://archlinux.org/)
 - WM: [Bspwm](https://github.com/baskerville/bspwm)
 - Colorscheme: You know what I [use.](https://github.com/arcticicestudio/nord)
 - Fonts? I only use [Iosevka](https://typeof.net/Iosevka/) and Feather for the icons
 
-# h1 Gallery: 
+# Gallery: 
 
 ![Screenshot_2022-01-06-07-56-34_1366x768](https://user-images.githubusercontent.com/93292023/148312063-4257adf2-d0d5-4d73-bd7a-b2b412c58cf9.png)
 
