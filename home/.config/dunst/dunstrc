@@ -3,7 +3,7 @@ follow = mouse
 width = (111, 444)
 height = 222
 origin = top-right
-offset = 15x65
+offset = 11x68
 
 progress_bar_height = 5
 progress_bar_frame_width = 0
