@@ -39,7 +39,7 @@ do
             echo "----------------------------"
             ;;
         "Install Depedency [ yay ]")
-            yay -S --noconfirm --needed  ttc-iosevka ttf-fira-code afetch brightnessctl cava eww-git i3lock-color papirus-icon-theme papirus-linux-universe picom-ibhagwan-git polybar visual-studio-code-bin spotify xfce-polkit
+            yay -S --noconfirm --needed ttf-iosevka ttf-fira-code afetch brightnessctl cava eww-git i3lock-color papirus-icon-theme papirus-linux-universe picom-ibhagwan-git polybar visual-studio-code-bin spotify xfce-polkit
             echo "----------------------------"
             echo " install depedency finished "
             echo "----------------------------"
