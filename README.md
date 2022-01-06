@@ -1,3 +1,5 @@
+<h2 align="center"> ━━━━━━  ❖  ━━━━━━ </h2>
+
 # Aesthetic Nordic
 
 - This Is My first linux rices WDYT? it's that enough for me to call my rices Aesthetic?
@@ -25,5 +27,13 @@
 
 - Rofi Launcher & Powermenu
 
-# Credits
-- **© All artists who create icons, illustrations, and wallpapers.**
+### ❖ Acknowledgements
+
+   - **Inspiration**
+      - [owl4ce](https://github.com/owl4ce) for the README style.
+      - [Mangeshrex](https://github.com/Mangeshrex) for the colors of the colorscheme.
+      - [ner0z](https://github.com/ner0z) for the dashboard inspiration.
+
+   - **© All artists who create icons, illustrations, and wallpapers.**
+
+<h2 align="center"> ━━━━━━  ❖  ━━━━━━ </h2>
