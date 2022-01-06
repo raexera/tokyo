@@ -30,13 +30,13 @@
 }
 
 .fullname {
-	color: #D46389;
+	color: #ECEFF4;
 	font-size : 30px;
 	font-weight : bold;
 }
 
 .username {
-	color: #8FBCBB;
+	color: #88c0d0;
 	font-size : 22px;
 	font-weight : bold;
 	margin : -15px 0px 0px 0px;
@@ -48,16 +48,16 @@
 	font-weight : normal;
 }
 .iconcpu {
-	color: #BF616A;
+	color: #8fbcbb;
 }
 .iconmem {
-	color: #A3BE8C;
+	color: #88c0d0;
 }
 .iconbright {
-	color: #EBCB8B;
+	color: #81a1c1;
 }
 .iconbat {
-	color: #88C0D0;
+	color: #5e81ac;
 }
 
 .cpu_bar, .mem_bar, .bright_bar, .bat_bar, scale trough {
@@ -74,21 +74,21 @@
 }
 
 .cpu_bar scale trough highlight {
-	background-color: #BF616A;
+	background-color: #8FBCBB;
 }
 .mem_bar scale trough highlight {
-	background-color: #A3BE8C;
+	background-color: #88c0d0;
 }
 .bright_bar scale trough highlight {
-	background-color: #EBCB8B;
+	background-color: #81a1c1;
 }
 .bat_bar scale trough highlight {
-	background-color: #88C0D0;
+	background-color: #5e81ac;
 }
 
 /** Clock ********************************************/
 .time_hour, .time_min {
-	color: #81A1C1;
+	color: #ECEFF4;
 	font-size : 45px;
 	font-weight : bold;
 }
@@ -100,14 +100,14 @@
 }
 
 .time_mer {
-	color: #A3BE8C;
+	color: #81a1c1;
 	font-size : 30px;
 	font-weight : bold;
 	margin : 10px 0px 0px 0px;
 }
 
 .time_day {
-	color: #EBCB8B;
+	color: #88c0d0;
 	font-size : 17px;
 	font-weight : normal;
 	margin : 0px 0px -30px 10px;
@@ -115,18 +115,21 @@
 
 /** Uptime ********************************************/
 .icontimer {
-	color: #B48EAD;
+	margin: 0px 0px 0px 10px;
+	color: #88c0d0;
 	font-size : 55px;
 	font-weight : normal;
 }
 
 .uphour {
+	margin: 0px 0px 0px -10px;
 	color: #ECEFF4;
 	font-size : 28px;
 	font-weight : bold;
 }
 
 .upmin {
+	margin: 0px 0px 0px -10px;
 	color: #ECEFF4;
 	font-size : 22px;
 	font-weight : bold;
@@ -150,7 +153,7 @@
 }
 
 .artist {
-	color: #EBCB8B;
+	color: #ECEFF4;
 	font-size : 14px;
 	font-weight : normal;
 	margin : 0px 0px 0px 0px;
@@ -160,24 +163,24 @@
 	font-family: Iosevka Nerd Font;
 }
 .btn_prev {
-	color: #EBCB8B;
+	color: #ECEFF4;
 	font-size : 32px;
 	font-weight : normal;
 }
 .btn_play {
-	color: #A3BE8C;
+	color: #88c0d0;
 	font-size : 40px;
 	font-weight : bold;
 }
 .btn_next {
-	color: #EBCB8B;
+	color: #ECEFF4;
 	font-size : 32px;
 	font-weight : normal;
 }
 
 .music_bar scale trough highlight {
 	all: unset;
-	background-color: #B48EAD;
+	background-color: #88c0d0;
 	border-radius: 8px;
 }
 .music_bar scale trough {
@@ -198,21 +201,21 @@
 }
 
 .label_temp {
-	color : #A6D1DD;
+	color : #5e81ac;
 	font-size : 54px;
 	font-weight : bold;
 	margin : 15px 25px 0px 0px;
 }
 
 .label_stat {
-	color : #BF616A;
+	color : #81a1c1;
 	font-size : 30px;
 	font-weight : bold;
 	margin: 0px 0px 10px 0px;
 }
 
 .label_quote {
-	color : #E5E5E5;
+	color : #ECEFF4;
 	font-size : 18px;
 	font-weight : normal;
 }
@@ -292,16 +295,16 @@
 }
 
 .btn_logout {
-	color: #BF616A;
+	color: #8fbcbb;
 }
 .btn_sleep {
-	color: #A3BE8C;
+	color: #88c0d0;
 }
 .btn_reboot {
-	color: #EBCB8B;
+	color: #81a1c1;
 }
 .btn_poweroff {
-	color: #88C0D0;
+	color: #5e81ac;
 }
 
 /** Home folders ***************************************/
@@ -311,14 +314,14 @@
 	margin : 15px;
 }
 .hddicon {
-	color: #81A1C1;
+	color: #8fbcbb;
 	font-family: Iosevka Nerd Font;
 	font-size : 70px;
 	font-weight : normal;
 	margin : 5px 10px 5px 25px;
 }
 .hdd_label {
-	color: #E5E9F0;
+	color: #ECEFF4;
 	font-size : 32px;
 	font-weight : bold;
 	margin : 0px 0px 0px 10px;
@@ -336,22 +339,22 @@
 	margin : 0px 0px 0px 35px;
 }
 .iconfolder1 {
-	color: #BF616A;
+	color: #8fbcbb;
 }
 .iconfolder2 {
-	color: #A3BE8C;
+	color: #88c0d0;
 }
 .iconfolder3 {
-	color: #EBCB8B;
+	color: #88c0d0;
 }
 .iconfolder4 {
-	color: #81A1C1;
+	color: #81a1c1;
 }
 .iconfolder5 {
-	color: #B48EAD;
+	color: #5e81ac;
 }
 .iconfolder6 {
-	color: #88C0D0;
+	color: #5e81ac;
 }
 
 .label_folder1, .label_folder2, .label_folder3, .label_folder4, .label_folder5, .label_folder6  {
@@ -360,22 +363,22 @@
 	margin : 0px 0px 0px 30px;
 }
 .label_folder1 {
-	color: #BF616A;
+	color: #8fbcbb;
 }
 .label_folder2 {
-	color: #A3BE8C;
+	color: #88c0d0;
 }
 .label_folder3 {
-	color: #EBCB8B;
+	color: #88c0d0;
 }
 .label_folder4 {
-	color: #81A1C1;
+	color: #81a1c1;
 }
 .label_folder5 {
-	color: #B48EAD;
+	color: #5e81ac;
 }
 .label_folder6 {
-	color: #88C0D0;
+	color: #5e81ac;
 }
 
 /** EOF *************************************************/
