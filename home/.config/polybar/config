@@ -262,7 +262,7 @@ type = custom/text
 content = 
 content-background = ${colors.background}
 content-foreground = ${colors.foreground}
-click-left = ~/.config/rofi/launcher.sh &
+click-left = ~/.config/rofi/launcher2.sh &
 
 ;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 
