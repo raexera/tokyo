@@ -1,0 +1,184 @@
+/* Popup menus and context menus */
+
+@import "popups-contents.css";
+@namespace xul "http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul";
+
+/* Style menus */
+menupopup {
+	-moz-appearance: none !important;
+	background: var(--nordic-menu-background) !important;
+	border: 1px solid var(--nordic-menu-border-color) !important;
+	border-radius: 5px;
+	padding: 4px 0 !important;
+	color: var(--nordic-toolbar-color) !important;
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1) !important;
+}
+#PlacesToolbar menupopup {
+	background: var(--nordic-popover-background) !important;
+	padding: 4px !important;
+}
+.menupopup-arrowscrollbox {
+	background: none !important;
+	box-shadow: none !important;
+	border: 0 !important;
+	padding: 0 !important;
+	margin: 0 !important;
+}
+
+menuitem, menupopup menu {
+	-moz-appearance: none !important;
+	padding: 4px 8px !important;
+	margin: 0 !important;
+}
+
+menuitem[type="checkbox"] image, menuitem[type="radio"] image {
+	visibility: visible !important;
+}
+
+menuitem[disabled="true"]:hover, menupopup menu[disabled="true"]:hover {
+	background: transparent !important;
+}
+
+/* Adjust popovers position */
+panel[type=arrow] {
+	margin-top: 8px !important;
+}
+
+/* Style popovers */
+.panel-arrowcontent,
+.panel-header, .PanelUI-subView,
+.panel-subview-body, #widget-overflow-mainView, #protections-popup-footer,
+panelview {
+	border: 0 !important;
+	background: transparent !important;
+}
+.panel-arrowcontent {
+	background: var(--arrowpanel-background) !important;
+	border: 1px solid !important;
+	border-color: var(--nordic-popover-border-color) !important;
+	border-radius: 9px !important;
+	color: var(--nordic-toolbar-color) !important;
+}
+.panel-arrow {    
+	fill: var(--arrowpanel-background) !important;
+	stroke: var(--nordic-popover-border-color) !important;
+	display: -moz-inline-box !important;
+}
+panel:not([remote]), #BMB_bookmarksPopup {
+	--arrowpanel-background: var(--nordic-popover-background) !important;
+	--arrowpanel-border-color: var(--nordic-popover-border-color) !important;
+}
+
+panel {
+	--panel-padding: 12px !important;
+}
+.panel-no-padding panelview, .panel-no-padding > .panel-subview-body, .panel-no-padding > .panel-header {
+	padding: var(--panel-padding) !important;
+}
+.panel-no-padding > .panel-header {
+	padding-bottom: 0 !important;
+}
+panel[type="arrow"].panel-no-padding::part(content) {
+	padding: var(--panel-padding) !important;
+}
+
+.PanelUI-subView toolbarseparator:not([orient="vertical"]) {
+	margin: 10px 2px !important;
+}
+
+.panel-header {
+	padding: 0 0 10px 0 !important;
+	position: relative !important;
+}
+.panel-header + toolbarseparator,
+#identity-popup-mainView-panel-header + toolbarseparator,
+#permission-popup-mainView-panel-header + toolbarseparator,
+#protections-popup-mainView-panel-header-section + toolbarseparator {
+	display: none !important;
+}
+.panel-footer {
+	background-color: transparent !important;
+	display: flex;
+	justify-content: flex-end;
+	padding-top: 0px !important;
+}
+.panel-footer.panel-footer-menulike {
+	border-top: 0 !important;
+	margin-top: 8px !important;
+}
+.panel-footer toolbarseparator {
+	display: none !important;
+}
+.proton-zap {
+	border-image: unset !important;
+}
+
+.panel-subview-body {
+	padding: 0 !important;
+}
+.panel-subview-footer {
+	margin-top: 10px !important;
+}
+
+/* Style popovers menu buttons */
+.subviewbutton:not(#appMenu-fxa-label2),
+.toolbarbutton-1, .protections-popup-category,
+.identity-popup-content-blocking-category,
+#PlacesToolbar .bookmark-item {
+	border-radius: 5px !important;	
+	color: var(--nordic-toolbar-color) !important;
+	font: menu !important;
+	width: 100%;
+}
+.subviewbutton,
+.protections-popup-category,
+.identity-popup-content-blocking-category {	
+	padding: 4px !important;
+	margin: 0 !important;
+}
+
+.subviewbutton[disabled], .toolbarbutton-1[disabled],
+.protections-popup-category[disabled],
+.identity-popup-content-blocking-category[disabled] {
+	opacity: 0.5 !important;
+}
+
+.subviewbutton[shortcut]:after {
+	opacity: 0.5 !important;
+}
+
+.bookmark-item .menu-right {
+	fill-opacity: 1 !important;
+}
+
+.subviewbutton:not([disabled]):hover, .toolbarbutton-1:not([disabled]):hover, .protections-popup-category:not([disabled]):hover,
+.identity-popup-content-blocking-category:not([disabled]):hover, #PlacesToolbar .bookmark-item:hover, #PlacesToolbar .bookmark-item[open], #PlacesToolbar .bookmark-item[_moz-menuactive] {
+	background-color: var(--nordic-popover-button-hover-background) !important;
+}
+
+.subviewbutton-back {
+	width: 100%;
+	-moz-box-align: start !important;
+	-moz-box-pack: start !important;
+	padding: 10px !important;
+}
+.subviewbutton-back + h1 {
+	font-weight: normal !important;
+	left: 0 !important;
+	padding: 5px !important;
+	pointer-events: none;
+	position: absolute !important;
+	top: 0 !important;
+	width: 100%;
+}
+
+/* Style popover separators */
+toolbarseparator, menuseparator {
+	border-color: var(--nordic-popover-separator-color) !important;
+}
+toolbarseparator:not([orient="vertical"]) {
+	margin: 8px 0 !important;
+}
+toolbarseparator[orient="vertical"] {
+	margin: 0 3px !important;
+}

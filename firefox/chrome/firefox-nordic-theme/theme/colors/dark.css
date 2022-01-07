@@ -1,0 +1,94 @@
+@namespace xul url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+/* Variables that start with --nordic- are added by me and are assigned
+ * to elements somewhere in this code. The rest of the variables are
+ * built-in in Firefox, so you need to add an !important if you wanna
+ * override them. */
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* Browser area before a page starts loading */
+    --nordic-browser-before-load-background: #3b4252;
+    /* Toolbars */
+    --nordic-toolbar-background: #232831;
+    --nordic-toolbar-color: #d8dee9;
+    --nordic-toolbar-border-color: #1f232b;
+    --nordic-inactive-toolbar-background: #3b4252;
+    --nordic-inactive-toolbar-border-color: #1f232b;
+    /* Sidebar */
+    --nordic-sidebar-background: #2a2f3a;
+    --nordic-inactive-sidebar-background: #363c4b;
+    /* Popups */
+    --nordic-menu-background: #2a2f3a;
+    --nordic-menu-border-color: #1f232b;
+    --nordic-popover-background: #2a2f3a;
+    --nordic-popover-border-color: #1f232b;
+    --nordic-popover-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+    --nordic-popover-button-hover-background: #373d4c;
+    --nordic-popover-separator-color: rgba(0, 0, 0, 0.1);
+    /* Header bar */
+    --nordic-headerbar-background: #2b313c;
+    --nordic-headerbar-border-color: #1f232b;
+    --nordic-headerbar-box-shadow: inset 0 1px #1f232b;
+    --nordic-inactive-headerbar-background: #2b313c;
+    --nordic-inactive-headerbar-border-color: #1f232b;
+    --nordic-inactive-headerbar-box-shadow: inset 0 1px rgba(238, 238, 236, 0.07);
+    /* Buttons */
+    --nordic-button-background: #232831;
+    --nordic-button-border-color: #1f232b;
+    --nordic-button-border-accent-color: #1f232b;
+    --nordic-button-box-shadow: transparent;
+    --nordic-button-hover-background: rgba(129, 161, 193, 0.7);
+    --nordic-button-active-background: rgba(129, 161, 193, 0.7);
+    --nordic-button-active-border-color: #1f232b;
+    --nordic-button-active-border-accent-color: #1f232b;
+    --nordic-button-active-box-shadow: inset 0 1px rgba(224, 0, 0, 0);
+    --nordic-button-disabled-background: #363c4b;
+    --nordic-button-disabled-border-color: rgba(31, 35, 43, 0.3);
+    --nordic-button-disabled-box-shadow: inset 0 1px rgba(255, 255, 255, 0);
+    --nordic-inactive-button-background:#2a2f3a;
+    --nordic-inactive-button-border-color: #1f232b;
+    --nordic-inactive-button-box-shadow: inset 0 1px rgba(255, 255, 255, 0);
+    --nordic-button-suggested-action-background: #5e81ac;
+    --nordic-button-suggested-action-border-color: #5e81ac;
+    --nordic-button-suggested-action-border-accent-color: #1f232b;
+    --nordic-button-suggested-action-box-shadow: inset 0 1px rgba(255, 255, 255, 0.02), 0 1px 2px rgba(0, 0, 0, 0.07);
+    --nordic-button-suggested-action-hover-background: #6f8eb5;
+    --nordic-button-suggested-action-active-background: #6f8eb5;
+    --nordic-button-suggested-action-active-border-color: #1f232b;
+    --nordic-button-suggested-action-active-box-shadow: inset 0 1px rgba(255, 255, 255, 0);
+    --nordic-button-destructive-action-background: #bf616a;
+    --nordic-button-destructive-action-border-color: #bf616a;
+    --nordic-button-destructive-action-border-accent-color: #1f232b;
+    --nordic-button-destructive-action-box-shadow: inset 0 1px rgba(255, 255, 255, 0.02), 0 1px 2px rgba(0, 0, 0, 0.07);
+    --nordic-button-destructive-action-hover-background: #c6737b;
+    --nordic-button-destructive-action-active-background: #c6737b;
+    --nordic-button-destructive-action-active-border-color: #c6737b;
+    --nordic-button-destructive-action-active-box-shadow: inset 0 1px rgba(255, 255, 255, 0);
+    /* URL bar */
+    --nordic-urlbar-background: #232831;
+    --nordic-urlbar-border-color: #1f232b;
+    --nordic-urlbar-box-shadow: inset 0 0 0 1px rgba(21, 83, 158, 0);
+    --nordic-urlbar-color: #d8dee9;
+    --nordic-inactive-urlbar-background: #2a2f3a;
+    --nordic-inactive-urlbar-border-color: #1f232b;
+    --nordic-inactive-urlbar-box-shadow: none;
+    --nordic-inactive-urlbar-color: #d6d6d6;
+    --nordic-focused-urlbar-border-color: #81a1c1;
+    --nordic-private-urlbar-background: #25003e;
+    /* Tabs */
+    --nordic-tabbar-tab-color: #d8dee9;
+    --nordic-tabbar-tab-hover-background: #2e3440;
+    --nordic-tabbar-tab-hover-border-bottom-color: #1f232b;
+    --nordic-tabbar-tab-hover-color: rgb(200, 200, 200);
+    --nordic-tabbar-tab-active-background: #2e3440;
+    --nordic-tabbar-tab-active-border-bottom-color: #81a1c1;
+    --nordic-tabbar-tab-active-color: #d8dee9;
+    --nordic-tabbar-tab-active-hover-background: #2e3440;
+    --nordic-inactive-tabbar-tab-color: #d8dee9;
+    --nordic-inactive-tabbar-tab-active-background: #303643;
+    --nordic-inactive-tabbar-tab-active-border-bottom-color: rgba(129, 161, 193, 0.6);
+    --nordic-inactive-tabbar-tab-active-color: #d8dee9;
+    /* Switch */
+    --nordic-switch-active-background: #81a1c1;
+    --nordic-accent: #81a1c1; } }
+
+/*# sourceMappingURL=dark.css.map */

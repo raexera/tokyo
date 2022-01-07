@@ -1,0 +1,141 @@
+/* Entries */
+
+@namespace xul "http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul";
+
+/* Entries */
+#urlbar,
+#urlbar.megabar #urlbar-input-container,
+#urlbar:not(.megabar),
+#searchbar,
+#search-box,
+.findbar-textbox,
+#loginTextbox,
+#password1Textbox,
+.tabsFilter,
+#editBMPanel_namePicker,
+#editBMPanel_tagsField  {
+	-moz-appearance: none !important;
+	background: var(--nordic-urlbar-background) !important;
+	border: 1.5px solid var(--nordic-urlbar-border-color) !important;
+	border-radius: 5px !important;
+	box-shadow: var(--nordic-urlbar-box-shadow) !important;
+	color: var(--nordic-urlbar-color) !important;
+	height: 32px !important;
+	max-height: 32px !important;
+	margin: 1px 0px !important;
+	padding: 6px !important;
+	box-sizing: border-box;
+}
+
+#urlbar.megabar #urlbar-input-container,
+#urlbar:not(.megabar),
+#searchbar {
+	padding: 0 !important;
+}
+
+/* Entries focused */
+#urlbar[breakout][breakout-extend],
+#urlbar[focused="true"]:not([suppress-focus-border]),
+#urlbar:not(.megabar)[focused],
+#searchbar:focus-within,
+#search-box[focused], 
+.findbar-textbox[focused],
+.findbar-textbox:focus,
+#loginTextbox:focus,
+#password1Textbox:focus,
+.tabsFilter[focused],
+#editBMPanel_namePicker:focus-visible,
+#editBMPanel_tagsField:focus-visible {
+	outline: 1.5px solid var(--nordic-focused-urlbar-border-color) !important;
+	outline-offset: -2px;
+	-moz-outline-radius: 5px;
+}
+
+/* Inactive window entries */
+#urlbar:-moz-window-inactive,
+#searchbar:-moz-window-inactive,
+#urlbar.megabar #urlbar-input-container:-moz-window-inactive,
+#urlbar:not(.megabar):-moz-window-inactive,
+#searchbar:-moz-window-inactive,
+#search-box:-moz-window-inactive,
+.findbar-textbox:-moz-window-inactive,
+#loginTextbox:-moz-window-inactive,
+#password1Textbox:-moz-window-inactive,
+.tabsFilter:-moz-window-inactive{
+	background: var(--nordic-inactive-urlbar-background) !important;
+	border-color: var(--nordic-inactive-urlbar-border-color) !important;
+	box-shadow: var(--nordic-inactive-urlbar-box-shadow) !important;
+	color: var(--nordic-inactive-urlbar-color) !important;
+}
+
+/* Entries combined */
+.findbar-textbox:not(.minimal) {
+	border-top-right-radius: 0 !important;
+	border-bottom-right-radius: 0 !important;
+	border-right-width: 0 !important;
+}
+.findbar-textbox:not(.minimal)[focused], .findbar-textbox:not(.minimal):focus {
+	-moz-outline-radius: 5px 0 0 5px !important;
+}
+
+/* Entry button */
+.identity-box-button,
+#tracking-protection-icon-container,
+#notification-popup-box,
+.urlbar-page-action,
+.urlbar-icon {
+	fill-opacity: 0.8 !important;
+}
+
+.identity-box-button:hover:not([open="true"]),
+#tracking-protection-icon-container:hover:not([open="true"]),
+#notification-popup-box:hover:not([open="true"]),
+.urlbar-page-action:hover:not([open="true"]),
+.urlbar-page-action:hover:not([open="true"]) .urlbar-icon,
+.urlbar-icon:not([disabled]):hover {
+    background: none !important;
+	fill-opacity: 1 !important;	
+}
+
+.identity-box-button:hover:active,
+.identity-box-button[open=true],
+#tracking-protection-icon-container:hover:active,
+#tracking-protection-icon-container[open=true],
+#notification-popup-box:hover:active,
+#notification-popup-box[open=true],
+.urlbar-page-action:hover:active,
+.urlbar-page-action[open=true],
+.urlbar-page-action:hover:active .urlbar-icon,
+.urlbar-page-action[open=true] .urlbar-icon {
+	background: none !important;
+	fill-opacity: 1 !important;	
+}
+
+/* Entries fixes */
+#urlbar-container, #search-container {
+	padding: 0 !important;
+	margin: 0 3px !important;
+}
+
+#urlbar-input-container {
+	background: transparent !important;
+	border: 0 !important;
+}
+
+#urlbar, #searchbar {
+	margin: 0 3px !important;
+	padding: 0 !important;
+}
+.searchbar-textbox {
+	border: 0 !important;
+	padding: 0 !important;
+	margin: 0 !important;
+	min-height: auto !important;
+}
+#searchbar > .searchbar-textbox[focused] .searchbar-search-button:not(#hack) {
+	margin: 0 !important;
+}
+
+#urlbar[focused="true"]:not([suppress-focus-border]) > #urlbar-background {
+	outline: 0 !important;
+}
