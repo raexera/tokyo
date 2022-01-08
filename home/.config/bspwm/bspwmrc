@@ -1,4 +1,4 @@
-#! /bin/sh
+#!/usr/bin/env sh
 
 ######################################################
 ##	 ▄▄▄▄     ██████  ██▓███   █     █░ ███▄ ▄███▓  
@@ -13,34 +13,51 @@
 ##	      ░                                         
 ######################################################
 
+## Environments.
 
-## Environtment
-export PATH="${PATH}:$HOME/.config/bspwm/bin"
+export PATH="${PATH}:${HOME}/.config/bspwm/bin"
 
-## Get colors from .Xresources -------------------------------#
-xrdb ~/.Xresources
-getcolors() {
-	FOREGROUND=$(xrdb -query | grep 'foreground:'| awk '{print $NF}')
-	BACKGROUND=$(xrdb -query | grep 'background:'| awk '{print $NF}')
-	BLACK=$(xrdb -query | grep 'color0:'| awk '{print $NF}')
-	RED=$(xrdb -query | grep 'color1:'| awk '{print $NF}')
-	GREEN=$(xrdb -query | grep 'color2:'| awk '{print $NF}')
-	YELLOW=$(xrdb -query | grep 'color3:'| awk '{print $NF}')
-	BLUE=$(xrdb -query | grep 'color4:'| awk '{print $NF}')
-	MAGENTA=$(xrdb -query | grep 'color5:'| awk '{print $NF}')
-	CYAN=$(xrdb -query | grep 'color6:'| awk '{print $NF}')
-	WHITE=$(xrdb -query | grep 'color7:'| awk '{print $NF}')
+## Parse colors from "~/.Xresources" ---------------------------- #
+
+xrdb -override "${HOME}/.Xresources"
+
+xquery()
+{
+    [ -n "$XQUERY" ] || XQUERY="$(xrdb -query)"
+
+    echo "$XQUERY" | while IFS= read -r STRING; do
+        [ "${1}" = "${STRING%%$'\x09'*}" ] || continue
+        echo "${STRING##*$'\x09'}"
+        break
+    done
 }
+
+getcolors()
+{
+    FOREGROUND="$(xquery '*.foreground:')"
+    BACKGROUND="$(xquery '*.background:')"
+    BLACK="$(xquery '*.color0:')"
+    RED="$(xquery '*.color1:')"
+    GREEN="$(xquery '*.color2:')"
+    YELLOW="$(xquery '*.color3:')"
+    BLUE="$(xquery '*.color4:')"
+    MAGENTA="$(xquery '*.color5:')"
+    CYAN="$(xquery '*.color6:')"
+    WHITE="$(xquery '*.color7:')"
+}
+
 getcolors
 
-## Configurations --------------------------------------------#
-workspaces() {
-	name=1
-	for monitor in `bspc query -M`; do
-		bspc monitor ${monitor} -n "$name" -d '1' '2' '3' '4' '5' '6'
-		let name++
-	done
+## Configurations ----------------------------------------------- #
+
+workspaces()
+{
+    for MONITOR in $(bspc query -M); do
+        name=$((name+1))
+        bspc monitor ${MONITOR} -n "$name" -d '1' '2' '3' '4' '5' '6'
+    done
 }
+
 workspaces
 
 bspc config top_padding 57
@@ -48,58 +65,55 @@ bspc config border_width 0
 bspc config window_gap 12
 bspc config split_ratio 0.50
 
-# bspc config focused_border_color "$BACKGROUND" 
-# bspc config normal_border_color "$BACKGROUND"
+#bspc config focused_border_color "$BACKGROUND"
+#bspc config normal_border_color "$BACKGROUND"
 bspc config presel_feedback_color "$BLACK"
 
-bspc config borderless_monocle   true
-bspc config gapless_monocle      true
+bspc config borderless_monocle true
+bspc config gapless_monocle true
 bspc config focus_follows_pointer true
 
-## Window rules ----------------------------------------------#
+## Window rules ------------------------------------------------- #
 
 bspc rule -a Conky state=floating manage=off
 bspc rule -a stalonetray state=floating manage=off
 
-## Autostart -------------------------------------------------#
+## Startup programs --------------------------------------------- #
 
-# EWW
+# Run EWW.
 eww daemon &
 
-# Kill if already running
-killall -9 xsettingsd sxhkd dunst xfce4-power-manager
+# Kill programs with SIGKILL if already started.
+killall -9 dunst xsettingsd sxhkd xfce4-power-manager
 
-# Lauch notification daemon
-dunst --config $HOME/.config/dunst/dunstrc &
+# Run notification daemon.
+dunst --config "${HOME}/.config/dunst/dunstrc" &
 
-# Lauch xsettingsd daemon
+# Run xsettingsd daemon.
 xsettingsd &
 
-# polkit agent
-if [[ ! `pidof xfce-polkit` ]]; then
-	/usr/lib/xfce-polkit/xfce-polkit &
-fi
+# Run polkit daemon if doesn't started.
+[ -n "$(pidof xfce-polkit)" ] || /usr/lib/xfce-polkit/xfce-polkit &
 
-# Lauch keybindings daemon
+# Run keybindings daemon.
 sxhkd &
 
-# Enable power management
+# Run power manager.
 xfce4-power-manager &
 
-# Fix cursor
+# Fix cursor.
 xsetroot -cursor_name left_ptr
 
-# Restore wallpaper
-bash $HOME/.fehbg
+# Restore X wallpaper.
+"${HOME}/.fehbg"
 
-# start polybar
-~/.config/polybar/launch.sh &
+# Run polybar.
+"${HOME}/.config/polybar/launch.sh" &
 
-# Start mpd
-exec mpd &
+# Run mpd if doesn't started.
+[ -n "$(pidof mpd)" ] || mpd &
 
-# Start bspwm scripts
+# Execute bspwm-specific scripts.
 bspcolors
 bspcomp
 bspfloat &
-

@@ -1,2 +1,2 @@
-#!/bin/sh
-feh --no-fehbg --bg-tile '/home/rxyhn/Pictures/Wallpapers/tile_x.png' 
+#!/usr/bin/env sh
+feh --no-fehbg --bg-tile "${HOME}/Pictures/Wallpapers/tile_x.png"
