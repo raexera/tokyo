@@ -149,14 +149,14 @@
 	color: #8FBCBB;
 	font-size : 18px;
 	font-weight : bold;
-	margin : 15px 0px 0px 0px;
+	margin : 15px 0px 0px -15px;
 }
 
 .artist {
 	color: #ECEFF4;
 	font-size : 14px;
 	font-weight : normal;
-	margin : 0px 0px 0px 0px;
+	margin : 0px 0px 0px -15px;
 }
 
 .btn_prev, .btn_play, .btn_next {
@@ -166,11 +166,13 @@
 	color: #ECEFF4;
 	font-size : 32px;
 	font-weight : normal;
+	margin: 0px 0px 0px -33px;
 }
 .btn_play {
 	color: #88c0d0;
 	font-size : 40px;
 	font-weight : bold;
+	margin: 0px 0px 0px -18px;
 }
 .btn_next {
 	color: #ECEFF4;

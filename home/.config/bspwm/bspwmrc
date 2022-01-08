@@ -56,6 +56,7 @@ bspc rule -a stalonetray state=floating manage=off
 
 # EWW
 eww daemon &
+sh ~/.config/eww/scripts/weather_info --getdata &
 
 # Lauch notification daemon
 dunst --config $HOME/.config/dunst/dunstrc &
