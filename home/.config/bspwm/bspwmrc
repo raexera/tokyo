@@ -21,29 +21,29 @@ export PATH="${PATH}:${HOME}/.config/bspwm/bin"
 
 xrdb -override "${HOME}/.Xresources"
 
-xquery()
+xrdb_query()
 {
-    [ -n "$XQUERY" ] || XQUERY="$(xrdb -query)"
+    [ -n "$XRDB_QUERY" ] || XRDB_QUERY="$(xrdb -query)"
 
-    echo "$XQUERY" | while IFS= read -r STRING; do
-        [ "${1}" = "${STRING%%$'\x09'*}" ] || continue
-        echo "${STRING##*$'\x09'}"
+    echo "$XRDB_QUERY" | while IFS=';' read -r STRING; do
+        [ "${1}" = "${STRING%%\	*}" ] || continue
+        echo "${STRING##*\	}"
         break
     done
 }
 
 getcolors()
 {
-    #FOREGROUND="$(xquery '*.foreground:')"
-    BACKGROUND="$(xquery '*.background:')"
-    #BLACK="$(xquery '*.color0:')"
-    #RED="$(xquery '*.color1:')"
-    #GREEN="$(xquery '*.color2:')"
-    #YELLOW="$(xquery '*.color3:')"
-    #BLUE="$(xquery '*.color4:')"
-    #MAGENTA="$(xquery '*.color5:')"
-    #CYAN="$(xquery '*.color6:')"
-    #WHITE="$(xquery '*.color7:')"
+    #FOREGROUND="$(xrdb_query '*.foreground:')"
+    BACKGROUND="$(xrdb_query '*.background:')"
+    #BLACK="$(xrdb_query '*.color0:')"
+    #RED="$(xrdb_query '*.color1:')"
+    #GREEN="$(xrdb_query '*.color2:')"
+    #YELLOW="$(xrdb_query '*.color3:')"
+    #BLUE="$(xrdb_query '*.color4:')"
+    #MAGENTA="$(xrdb_query '*.color5:')"
+    #CYAN="$(xrdb_query '*.color6:')"
+    #WHITE="$(xrdb_query '*.color7:')"
 }
 
 getcolors
