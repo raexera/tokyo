@@ -27,6 +27,14 @@
 
 - Firefox, Code, Dunst
 
+![Screenshot_2022-01-08-06-19-11_1366x768](https://user-images.githubusercontent.com/93292023/148642212-8ccab373-50e4-4854-8a30-b9c8ed2e1df6.png)
+
+- Thunar, Kitty
+
+![Screenshot_2022-01-08-05-56-22_1366x768](https://user-images.githubusercontent.com/93292023/148642258-24c88475-c186-47ac-a1a9-3be342c8a9d4.png)
+
+- i3lock-color
+
 # ❖ Acknowledgements
 
    - **Inspiration**
