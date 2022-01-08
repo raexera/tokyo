@@ -13,17 +13,19 @@
 
 # Gallery: 
 
-![Screenshot_2022-01-08-02-50-25_1366x768](https://user-images.githubusercontent.com/93292023/148636807-ce28161d-e9cd-476d-8269-e07aecb91a8f.png)
+![Screenshot_2022-01-08-03-47-06_1366x768](https://user-images.githubusercontent.com/93292023/148638253-e85b4811-5e4f-41c7-90c4-a7d02d20f8c2.png)
 
 - Elkowars Wacky Widgets
 
-![Screenshot_2022-01-08-02-50-39_1366x768](https://user-images.githubusercontent.com/93292023/148636892-70c4d02c-c097-4d4f-9e69-7344712e096b.png)
+![Screenshot_2022-01-08-03-49-59_1366x768](https://user-images.githubusercontent.com/93292023/148638291-e98faf3b-296c-4bab-a065-06e0666850c0.png)
 
-- Rofi Launcher 
+![Screenshot_2022-01-08-03-50-13_1366x768](https://user-images.githubusercontent.com/93292023/148638309-08fe0661-7913-47af-aad6-bc96283236ea.png)
 
-![Screenshot_2022-01-08-02-27-09_1366x768](https://user-images.githubusercontent.com/93292023/148636834-abf0b16d-d609-4ae6-aaf2-cf7dec052c6b.png)
+- Rofi Launcher with polybar & networkmanager menu 
 
-- Firefox, Kitty, Dunst (add little shadow here)
+![Screenshot_2022-01-08-03-49-40_1366x768](https://user-images.githubusercontent.com/93292023/148638334-c35145c5-1a59-4d67-8823-497c9771037b.png)
+
+- Firefox, Code, Dunst
 
 # ❖ Acknowledgements
 
