@@ -30,7 +30,7 @@ window {
     border-radius:                  12px;
 	width:							33.3%;
     location:                       northwest;
-    x-offset:                       12px;
+    x-offset:                       10px;
     y-offset:                       70px;
 }
 

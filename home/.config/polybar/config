@@ -15,18 +15,21 @@
 ;   \____\___/|_____\___/|_| \_\____/ 
                                     
 [colors]
-background = #2e3440
-foreground = #eceff4
-red = #bf616a
+background  = #2e3440
+foreground  = #eceff4
+white       = #d8dee9
+polarnight2 = #3b4252
+polarnight4 = #4C566A
+red         = #bf616a
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;; ===================== BARS ========================
 [bar/main]
 bottom = false
-offset-y = 17
-height = 35
-radius = 12
+offset-y = 20
+height = 30
+radius = 14
 fixed-center = true
 wm-restack = bspwm
 override-redirect = true
@@ -35,8 +38,6 @@ border = 0
 background = ${colors.background}
 foreground = ${colors.foreground}
 
-font-0 = "Iosevka Nerd Font:style=Regular:size=9;3"
-font-1 = "feather:size=11;2"
 
 module-margin-left = 0
 module-margin-right = 0
@@ -45,28 +46,45 @@ module-margin-right = 0
 inherit = bar/main
 width = 3%
 offset-x = 12
-font-0 = "Iosevka Nerd Font:style=Regular:size=19;4"
+font-0 = "Iosevka Nerd Font:style=Regular:size=10;3"
 modules-center = launcher
 
 [bar/one]
 inherit = bar/main
-width = 18%
+width = 11%
 offset-x = 62
-font-0 = "Iosevka Nerd Font:style=Bold:size=15;4"
+font-0 = "Iosevka Nerd Font:style=Bold:size=10;3"
 modules-center = bspwm
 
 [bar/two]
 inherit = bar/main
-width = 34%
-offset-x = 890
-background = ${colors.background}
-modules-center = network volume brightness battery date time
+width = 11%
+offset-x = 610
+font-0 = "Iosevka Nerd Font:style=Bold:size=9;3"
+modules-center = title
 
 [bar/three]
 inherit = bar/main
-width = 11%
-offset-x = 316
-modules-center = title
+width = 10%
+offset-x = 1086
+background = ${colors.background}
+font-0 = "Iosevka Nerd Font:style=Regular:size=11;3"
+modules-center = volume
+
+[bar/four]
+inherit = bar/main
+width = 9%
+offset-x = 1233
+background = ${colors.background}
+font-0 = "Iosevka Nerd Font:style=Regular:size=10;3"
+modules-center = date_i date network powermenu
+
+
+[bar]
+fill = 絛
+empty = 絛
+indicator = 雷
+; Nerd font :   ,  ⏽,  樂 籠 錄 , 雷 絛
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
@@ -86,14 +104,14 @@ format-padding = 1
 
 label-monitor = %name%
 
-label-focused = 
+label-focused = 
 label-focused-padding = 1
-label-focused-foreground = ${colors.foreground}
+label-focused-foreground = ${colors.white}
 label-focused-background = ${colors.background}
 
 label-occupied = 
 label-occupied-padding = 1
-label-occupied-foreground = ${colors.foreground}
+label-occupied-foreground = ${colors.polarnight4}
 label-occupied-background = ${colors.background}
 
 label-urgent = 
@@ -101,9 +119,9 @@ label-urgent-padding = 1
 label-urgent-foreground = ${colors.red}
 label-urgent-background = ${colors.background}
 
-label-empty = 
+label-empty = 
 label-empty-padding = 1
-label-empty-foreground = ${colors.foreground}
+label-empty-foreground = ${colors.polarnight2}
 label-empty-background = ${colors.background}
 
 ;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
@@ -198,72 +216,101 @@ format-discharging-padding = 1
 [module/network]
 type = internal/network
 interface = wlp2s0
+
+interval = 1.0
+accumulate-stats = true
+unknown-as-up = true
+
 format-connected = <label-connected>
-format-connected-prefix = " "
-format-disconnected = <label-disconnected>
-format-disconnected-prefix = " "
-label-connected = "%{A1:kitty -e nmtui & disown:}%essid%%{A}"
-label-disconnected = "%{A1:kitty -e nmtui & disown:}Disconnected%{A}"
 format-connected-background = ${colors.background}
-format-connected-prefix-foreground = ${colors.foreground}
-format-disconnected-background = ${colors.background}
-format-disconnected-prefix-foreground = ${colors.foreground}
+format-connected-foreground = ${colors.foreground}
 format-connected-padding = 1
+ 
+format-disconnected = <label-disconnected>
+format-disconnected-background = ${colors.background}
+format-disconnected-foreground = ${colors.red}
 format-disconnected-padding = 1
+
+label-disconnected = 睊 
+label-connected = "%{A1:$HOME/.local/bin/ntwkmgr &:}直%{A}"
 
 ;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 
 [module/date]
 type = internal/date
-interval = 1
-time= " %a, %d %b %Y"
-format = <label>
-format-background = ${colors.background}
-format-foreground = ${colors.foreground}
-format-padding = 1
-format-prefix = 
-format-prefix-foreground = ${colors.foreground}
-label = %time%
 
-[module/time]
+interval = 1.0
+
+format = <label>
+format-background = ${colors.background} 
+format-foreground = ${colors.foreground}
+format-padding = 1
+
+# time = %H:%M // %a %d/%m
+time = %H:%M
+label = %time% 
+
+[module/date_i]
 type = internal/date
-interval = 1
-time= " %H:%M:%S"
+
+interval = 1.0
+
+time = ""
+
 format = <label>
 format-background = ${colors.background}
 format-foreground = ${colors.foreground}
-format-padding = 1
-format-prefix = 
-format-prefix-foreground = ${colors.foreground}
+format-padding = 0
+ 
 label = %time%
 
 ;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 
 [module/volume]
 type = internal/pulseaudio
-label-volume = %percentage%%
-format-volume = <ramp-volume> <label-volume>
-format-volume-padding = 1
+format-volume = <bar-volume>
 format-volume-background = ${colors.background}
-format-volume-foreground = ${colors.foreground}
-format-muted = "  Muted"
-format-muted-padding = 1
-format-muted-background = ${colors.background}
-format-muted-foreground = ${colors.foreground}
-ramp-volume-0 = 
-ramp-volume-1 = 
-ramp-volume-2 = 
-ramp-volume-foreground = ${colors.foreground}
+format-volume-padding = 1
 
+format-muted = <label-muted>
+format-muted-prefix = 婢
+format-muted-background = ${colors.background}
+format-muted-padding = 1
+
+label-volume = %percentage%%
+
+label-muted = " Muted"
+label-muted-foreground = ${colors.foreground}
+
+bar-volume-width = 10
+bar-volume-gradient = false
+
+bar-volume-indicator = ${bar.indicator}
+bar-volume-indicator-foreground = ${color.foreground}
+
+bar-volume-fill = ${bar.fill}
+bar-volume-foreground-0 = ${colors.foreground}
+bar-volume-foreground-1 = ${colors.foreground}
+bar-volume-foreground-2 = ${colors.foreground}
+
+bar-volume-empty = ${bar.empty}
+bar-volume-empty-foreground = ${colors.polarnight4}
 ;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 
 [module/launcher]
 type = custom/text
-content = 
+content = ""
 content-background = ${colors.background}
 content-foreground = ${colors.foreground}
 click-left = ~/.config/rofi/launcher2.sh &
 
+[module/powermenu]
+type = custom/text
+click-left = "$HOME/.config/rofi/powermenu.sh"
+content = ""
+content-padding = 0
+content-background = ${colors.background}
+content-foreground = ${colors.foreground}
 ;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 
 [module/title]
