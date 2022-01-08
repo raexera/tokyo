@@ -13,23 +13,17 @@
 
 # Gallery: 
 
-![Screenshot_2022-01-06-02-39-09_1366x768](https://user-images.githubusercontent.com/93292023/148346682-e982cf37-4ec4-42f9-a56f-02f2c851db89.png)
+![Screenshot_2022-01-08-02-50-25_1366x768](https://user-images.githubusercontent.com/93292023/148636807-ce28161d-e9cd-476d-8269-e07aecb91a8f.png)
 
 - Elkowars Wacky Widgets
 
-![Screenshot_2022-01-06-08-08-47_1366x768](https://user-images.githubusercontent.com/93292023/148312138-89e7e03e-033d-4649-95f9-55b01788bcca.png)
+![Screenshot_2022-01-08-02-50-39_1366x768](https://user-images.githubusercontent.com/93292023/148636892-70c4d02c-c097-4d4f-9e69-7344712e096b.png)
 
-- Visual Studio Code, Kitty
+- Rofi Launcher 
 
-![Screenshot_2022-01-06-08-15-33_1366x768](https://user-images.githubusercontent.com/93292023/148312412-cc78942a-6f1b-40ef-b697-202cc931d023.png)
+![Screenshot_2022-01-08-02-27-09_1366x768](https://user-images.githubusercontent.com/93292023/148636834-abf0b16d-d609-4ae6-aaf2-cf7dec052c6b.png)
 
-![Screenshot_2022-01-06-07-58-04_1366x768](https://user-images.githubusercontent.com/93292023/148312247-a2ced8ec-f34c-4194-8d1f-2a675dd9739e.png)
-
-- Rofi Launcher & Powermenu
-
-![Screenshot_2022-01-06-09-45-14_1366x768](https://user-images.githubusercontent.com/93292023/148320141-e46871e3-2abf-4310-8983-0c99cbd24542.png)
-
-- Firefox, Feh, Dunst
+- Firefox, Kitty, Dunst
 
 # ❖ Acknowledgements
 
