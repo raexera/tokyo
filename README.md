@@ -23,7 +23,7 @@
 
 ![Screenshot_2022-01-08-02-27-09_1366x768](https://user-images.githubusercontent.com/93292023/148636834-abf0b16d-d609-4ae6-aaf2-cf7dec052c6b.png)
 
-- Firefox, Kitty, Dunst
+- Firefox, Kitty, Dunst (add little shadow here)
 
 # ❖ Acknowledgements
 
