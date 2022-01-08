@@ -17,7 +17,7 @@
 
 - Elkowars Wacky Widgets
 
-![Screenshot_2022-01-08-02-50-25_1366x768](https://user-images.githubusercontent.com/93292023/148636870-c273add9-0895-4d9c-a852-f22f6dd2bc30.png)
+![Screenshot_2022-01-08-02-50-39_1366x768](https://user-images.githubusercontent.com/93292023/148636892-70c4d02c-c097-4d4f-9e69-7344712e096b.png)
 
 - Rofi Launcher 
 
