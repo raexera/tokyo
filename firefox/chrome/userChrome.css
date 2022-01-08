@@ -19,7 +19,7 @@ window,
 #PersonalToolbar,
 #navigator-toolbox,
 #sidebar-box {
-  background-color: #3B4252 !important;
+  background-color: #2E3440 !important;
   -moz-appearance: none !important;
   background-image: none !important;
   border: none !important;
@@ -51,7 +51,7 @@ window,
 }
 
 #nav-bar {
-  background-color: #3B4252 !important;
+  background-color: #2E3440 !important;
   -moz-appearance: none !important;
   background-image: none !important;
   border: none !important;
@@ -167,7 +167,7 @@ window,
 }
 
 #urlbar-input {
-    background-color: #2E3440 !important;
+    background-color: #3B4252 !important;
     padding: 4px !important;
 }
 
