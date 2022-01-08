@@ -1,2 +1,2 @@
 #!/bin/sh
-feh --no-fehbg --bg-fill '/home/rxyhn/Pictures/Wallpapers/nordArtic.png' 
+feh --no-fehbg --bg-tile '/home/rxyhn/Pictures/Wallpapers/tile_x.png' 
