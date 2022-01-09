@@ -42,6 +42,8 @@ foreground = ${colors.foreground}
 module-margin-left = 0
 module-margin-right = 0
 
+enable-ipc = true
+
 [bar/zero]
 inherit = bar/main
 width = 3%
@@ -52,7 +54,7 @@ modules-center = launcher
 [bar/one]
 inherit = bar/main
 width = 11%
-offset-x = 62
+offset-x = 65
 font-0 = "Iosevka Nerd Font:style=Bold:size=10;3"
 modules-center = bspwm
 
@@ -66,18 +68,18 @@ modules-center = title
 [bar/three]
 inherit = bar/main
 width = 10%
-offset-x = 1086
+offset-x = 1040
 background = ${colors.background}
 font-0 = "Iosevka Nerd Font:style=Regular:size=11;3"
 modules-center = volume
 
 [bar/four]
 inherit = bar/main
-width = 9%
-offset-x = 1233
+width = 12%
+offset-x = 1190
 background = ${colors.background}
 font-0 = "Iosevka Nerd Font:style=Regular:size=10;3"
-modules-center = date_i date network powermenu
+modules-center = time network dunst powermenu
 
 
 [bar]
@@ -224,38 +226,24 @@ unknown-as-up = true
 format-connected = <label-connected>
 format-connected-background = ${colors.background}
 format-connected-foreground = ${colors.foreground}
-format-connected-padding = 1
+format-connected-padding = 0
  
 format-disconnected = <label-disconnected>
 format-disconnected-background = ${colors.background}
 format-disconnected-foreground = ${colors.red}
-format-disconnected-padding = 1
+format-disconnected-padding = 0
  
 label-connected = "%{A1:$HOME/.config/rofi/networkmanager-polybar/network.sh &:}直%{A}"
 label-disconnected = "%{A1:$HOME/.config/rofi/networkmanager-polybar/network.sh &:}睊%{A}"
 
 ;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 
-[module/date]
+[module/time]
 type = internal/date
 
 interval = 1.0
 
-format = <label>
-format-background = ${colors.background} 
-format-foreground = ${colors.foreground}
-format-padding = 1
-
-# time = %H:%M // %a %d/%m
-time = %H:%M
-label = %time% 
-
-[module/date_i]
-type = internal/date
-
-interval = 1.0
-
-time = ""
+time = "  %H:%M "
 
 format = <label>
 format-background = ${colors.background}
@@ -310,14 +298,28 @@ type = custom/text
 click-left = "$HOME/.config/rofi/powermenu-polybar/powermenu.sh"
 click-right = "$HOME/.config/rofi/powermenu-polybar/powermenu.sh"
 content = ""
-content-padding = 0
+content-padding = 1
 content-background = ${colors.background}
 content-foreground = ${colors.foreground}
+
+[module/dunst]
+type = custom/ipc
+initial = 1
+format-foreground = ${colors.foreground}
+format-background = ${colors.background}
+format-overline = ${colors.background}
+format-underline = ${colors.background}
+;format-padding = 1
+
+hook-0 = echo "%{A1:dunstctl set-paused true && polybar-msg hook dunst 2:}  %{A}" &
+hook-1 = echo "%{A1:dunstctl set-paused false && polybar-msg hook dunst 1:} %{F#ECEFF4}%{F-} %{A}" &
+
+click-middle = ~/.local/bin/rofi_notif_center.sh &
 ;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 
 [module/title]
 type = custom/script
-exec = ~/.config/polybar/script/title.sh 2>/dev/null
+exec = ~/.config/polybar/scripts/title.sh 2>/dev/null
 tail = true
 format = <label>
 label = %output%
