@@ -1,4 +1,5 @@
 #!/bin/bash
+# Run Eww Dashboard
 
 ## Files and cmd
 FILE="$HOME/.cache/eww_launch.xyz"

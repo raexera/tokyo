@@ -31,7 +31,7 @@ function notify {
         fi
     fi
 
-    ~/.local/bin/scripts/notify-send.sh -i "$icon_name" -t 2000 -r 123 "Media Volume" "On level $volume%"
+    notify-send.sh -i "$icon_name" -t 2000 -r 123 "Media Volume" "On level $volume%"
 }
 
 case $1 in
@@ -54,7 +54,7 @@ case $1 in
 	amixer -D pulse set Master 1+ toggle > /dev/null
 	if chkmute ; then
     icon_name="notification-audio-volume-muted"
-    ~/.local/bin/scripts/notify-send.sh -i "$icon_name" -t 2000 -r 123 "Media Volume" "Muted"
+    notify-send.sh -i "$icon_name" -t 2000 -r 123 "Media Volume" "Muted"
 	else
 	    notify
 	fi

@@ -31,7 +31,7 @@ function notify {
         fi
     fi
 
-    ~/.local/bin/scripts/notify-send.sh -i "$icon_name" -t 2000 -r 1234 "Brightness" "On level $brightness%"
+    notify-send.sh -i "$icon_name" -t 2000 -r 1234 "Brightness" "On level $brightness%"
 }
 
 case $1 in
