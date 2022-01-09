@@ -1,60 +1,121 @@
+[colors]
+	background = "#2e3440"
+
 [global]
-follow = mouse
-width = (111, 444)
-height = 222
-origin = top-right
-offset = 11x68
+    ### Display ###
 
-progress_bar_height = 5
-progress_bar_frame_width = 0
+    monitor = 0
+    follow = keyboard
 
-transparency = 5
-horizontal_padding = 11
-frame_width = 6
-frame_color = "#2e3440"
-separator_color = "#2e3440"
-idle_threshold = 120
+    width = (111, 444)
+    height = 222
+    origin = top-right
+    offset = 11x68
+   
+    indicate_hidden = yes
+    shrink = true
+    transparency = 0
+    separator_height = 2
+    horizontal_padding = 11
+    frame_width = 3
+    corner_radius = 12
 
-font = "Iosevka 8"
+    frame_color = "#3B4252"
+    separator_color = auto
+    sort = yes
+    idle_threshold = 120
 
-format = "<span size='x-large' font_desc='Iosevka 8' weight='bold' foreground='#eceff4'>%s</span>\n%b"
+    ### Text ###
+    font = Iosevka Nerd Font, Font Awesome 5 Free Solid 9
+    line_height = 0
 
-show_age_threshold = 60
-icon_position = left
-max_icon_size = 80
+    markup = full
 
-# EXPERIMENTAL
-enable_recursive_icon_lookup = true
-icon_theme = "Papirus-Dark"
-icon_size = 48
-# ------------
+    # The format of the message.  Possible variables are:
+    #   %a  appname
+    #   %s  summary
+    #   %b  body
+    #   %i  iconname (including its path)
+    #   %I  iconname (without its path)
+    #   %p  progress value if set ([  0%] to [100%]) or nothing
+    #   %n  progress value if set without any extra characters
+    #   %%  Literal %
+    # Markup is allowed
+    format = "<b>%s\n%b</b>"
+    alignment = left
+    show_age_threshold = 60
+    word_wrap = true
+    ellipsize = middle
+    ignore_newline = false
+    stack_duplicates = true
+    hide_duplicate_count = true
+    show_indicators = true
 
-sticky_history = false
+    ### Icons ###
+    icon_position = left
+    max_icon_size = 80
+    icon_path = /usr/share/icons/Nord-Icon/48x48/status/:/usr/share/icons/Nord-Icon/48x48/devices/:/usr/share/icons/Nord-Icon/48x48/apps
 
-browser = /usr/bin/firefox -new-tab
+    ### History ###
+    sticky_history = yes
+    history_length = 20
 
-mouse_left_click = close_current
-mouse_middle_click = context_all
-mouse_right_click = close_all
+    ### Misc/Advanced ###
+    dmenu = /usr/bin/kitty -e fzf:
+    browser = /usr/bin/firefox
+    always_run_script = false
+    title = Dunst
+    class = Dunst
+    force_xinerama = false
 
-alignment = center
-markup = full
-always_run_script = true
+[experimental]
+    per_monitor_dpi = false
+
+[log_notifs]
+    script = ~/.local/bin/dunst_logger.sh
+
+[pomodoro]
+    appname = Pomod
+    new_icon = /usr/share/icons/Nord-Icon/48x48/apps/pomodoro-indicator.svg
+
+[slack]
+    desktop_entry = Slack
+    new_icon = /usr/share/icons/Nord-Icon/48x48/apps/slack.svg
+
+[dunst_icon]
+    appname = dunst
+    new_icon = /usr/share/icons/Nord-Icon/48x48/apps/bell.svg
+
+[notify_send_icon]
+    appname = notify-send
+    new_icon = /usr/share/icons/Nord-Icon/48x48/apps/bell.svg
+
+[zsh]
+    appname = zsh
+    new_icon = /usr/share/icons/Nord-Icon/48x48/apps/terminal.svg
+  
+#[shortcuts]
+#    close = ctrl+space
+#    close_all = ctrl+shift+space
+#    #context = ctrl+shift+period
+#    history = ctrl+grave
 
 [urgency_low]
-timeout = 3
-background = "#2e3440"
-foreground = "#eceff4"
-highlight = "#eceff4"
+    background = colors.background
+    foreground = "#81a1c1"
+    frame_color = "#3b4252"
+    timeout = 5
 
 [urgency_normal]
-timeout = 6
-background = "#2e3440"
-foreground = "#eceff4"
-highlight = "#eceff4"
+    background = colors.background
+    foreground = "#e5e9f0"
+    frame_color = "#3b4252"
+    timeout = 5
 
 [urgency_critical]
-timeout = 0
-background = "#2e3440"
-foreground = "#eceff4"
-highlight = "#eceff4"
+    background = colors.background
+    foreground = "#bf616a"
+    frame_color = "#3b4252"
+    timeout = 0
+
+# vim: ft=conf

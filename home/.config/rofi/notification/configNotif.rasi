@@ -1,0 +1,162 @@
+configuration {
+	display-drun:    " Apps";
+	display-window:  "缾 Windows";
+	show-icons:true;
+	font: "Iosevka Nerd Font 10";
+}
+
+* {
+	background-color:            #2e3440;
+    bg:                          #232831;
+	text-color:                  #eceff4;
+	selbg:                       #81a1c1;
+	actbg:                       #4c566a;
+	urgbg:                       #bf616a;
+	winbg:                       #66cccc;
+
+	selected-normal-foreground:  @text-color;
+	normal-foreground:           @text-color;
+	selected-normal-background:  @actbg;
+	normal-background:           @background-color;
+
+	selected-urgent-foreground:  @urgbg;
+	urgent-foreground:           @text-color;
+	selected-urgent-background:  @actbg;
+	urgent-background:           @background-color;
+    urgent-foreground:           @urgbg;
+
+	selected-active-foreground:  @selbg;
+	active-foreground:           @selbg;
+	selected-active-background:  @actbg;
+	active-background:           @background-color;
+
+	line-margin:                 2;
+	line-padding:                2;
+	separator-style:             "none";
+	hide-scrollbar:              "true";
+	margin:                      0;
+	padding:                     10;
+}
+
+window {
+	location:	 northeast;
+	anchor:		 northeast;
+	height:		 85%;
+    y-offset:    68px;
+    x-offset:    12px;
+	width:		 25%;
+	orientation: horizontal;
+	children:	 [mainbox];
+    border-radius: 14px;
+    border: 3px solid;
+    border-color: #3b4252;
+}
+
+mainbox {
+	spacing:  0.8em;
+    orientation: vertical;
+	children: [ inputbar, listview ];
+}
+
+button { padding: 5px 2px; }
+
+button selected {
+	background-color: @active-background;
+	text-color:       @background-color;
+}
+
+inputbar {
+	padding: 5px;
+	spacing: 5px;
+}
+
+listview {
+	spacing: 0.5em;
+	dynamic: true;
+	cycle:   false;
+}
+
+element {
+        padding: 10px;
+}
+
+prompt {
+       padding:     35px 20px 20px 25px;
+       font:        "Iosevka Nerd Font 12";
+}
+
+entry {
+	expand:         true;
+	text-color:     @normal-foreground;
+	vertical-align: 0;
+	padding:        5px 0px 0px 20px;
+    enabled:        false;
+}
+
+element normal.normal {
+	background-color: @bg;
+    border-radius:    8px;
+	text-color:       @normal-foreground;
+}
+
+element normal.urgent {
+	background-color: @bg;
+    border-radius:    8px;
+	text-color:       @urgent-foreground;
+}
+
+element normal.active {
+	background-color: @bg;
+    border-radius:    8px;
+	text-color:       @active-foreground;
+}
+
+element selected.normal {
+	background-color: @selected-normal-background;
+	text-color:       @selected-normal-foreground;
+}
+
+element selected.urgent {
+	background-color: @selected-urgent-background;
+	text-color:       @selected-urgent-foreground;
+}
+
+element selected.active {
+	background-color: @selected-active-background;
+	text-color:       @selected-active-foreground;
+}
+
+element alternate.normal {
+	background-color: @bg;
+    border-radius:    8px;
+	text-color:       @normal-foreground;
+}
+
+element alternate.urgent {
+	background-color: @bg;
+    border-radius:    8px;
+	text-color:       @urgent-foreground;
+}
+
+element alternate.active {
+	background-color: @bg;
+    border-radius:    8px;
+	text-color:       @active-foreground;
+}
+
+element-icon {
+	background-color: inherit;
+	text-color: inherit;
+	size: 7ch;
+}
+
+element-text{
+	background-color: inherit;
+	text-color: inherit;
+}
+
+element.selected {
+    border-radius: 8px;
+	border:           0 0 0 5px solid;
+	border-color:	    @winbg;
+}
