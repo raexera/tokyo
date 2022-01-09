@@ -1,11 +1,4 @@
-! ------------------------------------------------------------------------------
-! Copyright (C) 2020-2021 Aditya Shakya <adi1090x@gmail.com>
-! Everyone is permitted to copy and distribute copies of this file under GNU-GPL3
-!
-! Fonts
-! ------------------------------------------------------------------------------
-
-URxvt.font: xft:Terminus:regular:size=8
-URxvt.boldFont: xft:Terminus:bold:size=8
-URxvt.italicFont: xft:Terminus:italic:size=8
-URxvt.boldItalicfont: xft:Terminus:boldItalic:size=8
+URxvt.font: xft:Victor Mono:regular:size=8
+URxvt.boldFont: xft:Victor Mono:bold:size=8
+URxvt.italicFont: xft:Victor Mono:italic:size=8
+URxvt.boldItalicfont: xft:Victor Mono:boldItalic:size=8
