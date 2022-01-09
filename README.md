@@ -25,9 +25,9 @@
 
 - Rofi Launcher with polybar, power menu, and networkmanager menu 
 
-![Screenshot_2022-01-08-03-49-40_1366x768](https://user-images.githubusercontent.com/93292023/148638334-c35145c5-1a59-4d67-8823-497c9771037b.png)
+![Screenshot_2022-01-09-01-47-47_1366x768](https://user-images.githubusercontent.com/93292023/148672198-a41db313-ec70-4197-9097-11fd7ac93bee.png)
 
-- Firefox, Code, Dunst
+- Firefox, Dunst
 
 ![Screenshot_2022-01-08-06-19-11_1366x768](https://user-images.githubusercontent.com/93292023/148642212-8ccab373-50e4-4854-8a30-b9c8ed2e1df6.png)
 
@@ -40,11 +40,11 @@
 # ❖ Acknowledgements
 
    - **Thanks to**
-      - [owl4ce](https://github.com/owl4ce) for managing some shell script's 
+      - [owl4ce](https://github.com/owl4ce) for managing some shell script's. 
       
    - **Inspiration**
       - [woowak01](https://github.com/ChocolateBread799) for the rices inspirations, that's why i do this rices.
-      - [adi1090x](https://github.com/adi1090x) for the dashboard inspiration & rofi style     
+      - [adi1090x](https://github.com/adi1090x) for the dashboard inspiration & rofi style.     
       - Most people on some GNU/Linux and UN*X forums.
 
    - **Our local linux community [Linuxer Desktop Art](https://facebook.com/groups/linuxart) and [@dotfiles_id](https://t.me/dotfiles_id), also the great              [r/unixporn](https://www.reddit.com/r/unixporn).**
