@@ -19,9 +19,11 @@
 
 ![Screenshot_2022-01-08-03-49-59_1366x768](https://user-images.githubusercontent.com/93292023/148638291-e98faf3b-296c-4bab-a065-06e0666850c0.png)
 
-![Screenshot_2022-01-08-03-50-13_1366x768](https://user-images.githubusercontent.com/93292023/148638309-08fe0661-7913-47af-aad6-bc96283236ea.png)
+![Screenshot_2022-01-09-01-39-50_1366x768](https://user-images.githubusercontent.com/93292023/148672052-0511721e-5dcd-4bad-b224-2880b44f95a8.png)
 
-- Rofi Launcher with polybar & networkmanager menu 
+![Screenshot_2022-01-09-01-39-59_1366x768](https://user-images.githubusercontent.com/93292023/148672082-1f9b2dd2-fb6d-4168-9319-f0e95471682b.png)
+
+- Rofi Launcher with polybar, power menu, and networkmanager menu 
 
 ![Screenshot_2022-01-08-03-49-40_1366x768](https://user-images.githubusercontent.com/93292023/148638334-c35145c5-1a59-4d67-8823-497c9771037b.png)
 
@@ -37,10 +39,12 @@
 
 # ❖ Acknowledgements
 
+   - **Thanks to**
+      - [owl4ce](https://github.com/owl4ce) for managing some shell script's 
+      
    - **Inspiration**
       - [woowak01](https://github.com/ChocolateBread799) for the rices inspirations, that's why i do this rices.
-      - [adi1090x](https://github.com/adi1090x) for the dashboard inspiration.
-      - [owl4ce](https://github.com/owl4ce) for the README style.
+      - [adi1090x](https://github.com/adi1090x) for the dashboard inspiration & rofi style     
       - Most people on some GNU/Linux and UN*X forums.
 
    - **Our local linux community [Linuxer Desktop Art](https://facebook.com/groups/linuxart) and [@dotfiles_id](https://t.me/dotfiles_id), also the great              [r/unixporn](https://www.reddit.com/r/unixporn).**
