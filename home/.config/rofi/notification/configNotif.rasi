@@ -41,7 +41,7 @@ configuration {
 window {
 	location:	 northeast;
 	anchor:		 northeast;
-	height:		 85%;
+	height:		 90%;
     y-offset:    68px;
     x-offset:    12px;
 	width:		 25%;
@@ -81,7 +81,7 @@ element {
 }
 
 prompt {
-       padding:     35px 20px 20px 25px;
+       padding:     35px 20px 20px 10px;
        font:        "Iosevka Nerd Font 12";
 }
 
