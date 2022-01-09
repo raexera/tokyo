@@ -230,9 +230,9 @@ format-disconnected = <label-disconnected>
 format-disconnected-background = ${colors.background}
 format-disconnected-foreground = ${colors.red}
 format-disconnected-padding = 1
-
-label-disconnected = 睊 
-label-connected = "%{A1:$HOME/.local/bin/ntwkmgr &:}直%{A}"
+ 
+label-connected = "%{A1:$HOME/.config/rofi/networkmanager-polybar/network.sh &:}直%{A}"
+label-disconnected = "%{A1:$HOME/.config/rofi/networkmanager-polybar/network.sh &:}睊%{A}"
 
 ;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 
@@ -302,11 +302,13 @@ type = custom/text
 content = ""
 content-background = ${colors.background}
 content-foreground = ${colors.foreground}
-click-left = ~/.config/rofi/launcher2.sh &
+click-left = ~/.config/rofi/launcher-polybar/launcher.sh &
+click-right = ~/.config/rofi/launcher-polybar/launcher.sh &
 
 [module/powermenu]
 type = custom/text
-click-left = "$HOME/.config/rofi/powermenu.sh"
+click-left = "$HOME/.config/rofi/powermenu-polybar/powermenu.sh"
+click-right = "$HOME/.config/rofi/powermenu-polybar/powermenu.sh"
 content = ""
 content-padding = 0
 content-background = ${colors.background}

@@ -1,0 +1,102 @@
+configuration {
+	font:                      		"Iosevka Nerd Font 9";
+    disable-history:                false;
+    fullscreen:                     false;
+	hide-scrollbar: 				true;
+	sidebar-mode: 					false;
+}
+
+* {
+    background-color:               #2E3440;
+    text-color:                     #ECEFF4;
+}
+
+window {
+    transparency:                   "real";
+    border-radius:                  14px;
+    location:                       southeast;
+	width:							300px;
+    x-offset:                       -11px;
+    y-offset:                       -573px;
+}
+
+prompt {
+    enabled: 						true;
+    padding:                        10px 10px 10px 10px;
+	background-color: 				#2E3440;
+	text-color: 					#ECEFF4;
+    border:                  		2px;
+    border-radius:                  14px;
+    border-color:                  	#ECEFF4;
+}
+
+textbox-prompt-colon {
+	expand: 						false;
+	str: 							" Network ";
+	background-color: 				#ECEFF4;
+	text-color: 					#2E3440;
+    padding:                        12px 10px 0px 10px;
+    border-radius:                  14px;
+}
+
+inputbar {
+	children: 						[ textbox-prompt-colon, prompt ];
+    spacing:                        12px;
+    background-color:               #2E3440;
+    text-color:                     #ECEFF4;
+    expand:                         false;
+    border:                  		0px;
+    border-radius:                  14px;
+    border-color:                  	#ECEFF4;
+    margin:                         0px 0px 0px 0px;
+    padding:                        0px;
+    position:                       center;
+}
+
+listview {
+    columns:						4;
+    lines:							1;
+    spacing:                        12px;
+    cycle:                          true;
+    dynamic:                        true;
+    layout:                         vertical;
+}
+
+mainbox {
+    background-color:               #2E3440;
+    children:                       [ inputbar, listview ];
+    spacing:                        12px;
+    margin:                         12px;
+}
+
+element {
+    background-color:               inherit;
+    text-color:                     inherit;
+    orientation:                    vertical;
+    border-radius:                  14px;
+}
+
+element-text {
+    background-color:               inherit;
+    text-color:                     inherit;
+	font:							"feather 15";
+    expand:                         true;
+    horizontal-align:               0.5;
+    vertical-align:                 0;
+    margin:                         12px 10px 10px 10px;
+}
+
+element normal.urgent,
+element alternate.urgent {
+    background-color:               inherit;
+    text-color:                     inherit;
+    border-radius:                  14px;
+}
+
+element selected {
+    background-color:               inherit;
+    text-color:                     inherit;
+    border:                  		2px;
+    border-radius:                  14px;
+    border-color:                  	#ECEFF4;
+}

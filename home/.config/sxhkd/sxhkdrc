@@ -25,11 +25,11 @@ super + shift + Return
 
 # Rofi App Launcher
 super + m
-	sh ~/.config/rofi/launcher.sh
+	sh ~/.config/rofi/launcher/launcher.sh
 
 # Rofi power menu
 super + x
-	sh ~/.config/rofi/powermenu.sh
+	sh ~/.config/rofi/powermenu/powermenu.sh
 
 # Launch EWW Dashboard
 super + d
