@@ -7,6 +7,14 @@ export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 
+# Ditch Nano, join the NeoVim Team
+export EDITOR=/usr/bin/nvim
+export SUDO_EDITOR=/usr/bin/nvim
+export VISUAL=/usr/bin/nvim
+
+# Firefox plz
+export BROWSER=/usr/bin/firefox
+
 # ZSH Theme
 ZSH_THEME=""
 
@@ -16,9 +24,8 @@ path+=(
     $(ruby -e 'puts File.join(Gem.user_dir, "bin")')
 )
 
-# Prompt: git status, hostname for ssh sessions, vi mode indicator
-source $HOME/.zsh-plugins/git-prompt.zsh/git-prompt.zsh
-source $HOME/.zsh-plugins/git-prompt.zsh/examples/wprompt.zsh
+# Starship export
+export STARSHIP_CONFIG=~/.config/starship/starship.toml
 
 # Plugin
 plugins=(git zsh-syntax-highlighting zsh-autosuggestions zsh-completions)
@@ -34,6 +41,17 @@ source /usr/share/fzf/key-bindings.zsh
 # ****** ALIAS SECTION ****** #
 ###############################
 
+# Update thingy
+alias grub-update='sudo grub-mkconfig -o /boot/grub/grub.cfg'
+# Archives
+alias mtar='tar -zcvf' # mtar <archive_compress>
+alias utar='tar -zxvf' # utar <archive_decompress> <file_list>
+alias z='zip -r' # z <archive_compress> <file_list>
+alias uz='unzip' # uz <archive_decompress> -d <dir>
+# cd and ls after
+cd() {
+	builtin cd "$@" && command ls --group-directories-first --color=auto -F
+}
 #alias for play music
 alias music='ncmpcpp-art'
 # alias for sourcing the zshrc
@@ -81,6 +99,5 @@ alias dun='killall dunst && dunst &
 notify-send "cool1" "yeah it is working"
 notify-send "cool2" "yeah it is working"'
 
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
+# Prompt: git status, hostname for ssh sessions, vi mode indicator
+eval "$(starship init zsh)"
