@@ -2,7 +2,7 @@ configuration {
 	display-drun:    " Apps";
 	display-window:  "缾 Windows";
 	show-icons:true;
-	font: "Iosevka Nerd Font 10";
+	font: "Iosevka Nerd Font 11";
 }
 
 * {
@@ -44,10 +44,10 @@ window {
 	height:		 90%;
     y-offset:    68px;
     x-offset:    12px;
-	width:		 25%;
+	width:		 30%;
 	orientation: horizontal;
 	children:	 [mainbox];
-    border-radius: 14px;
+    border-radius: 12px;
     border: 3px solid;
     border-color: #3b4252;
 }
@@ -81,8 +81,8 @@ element {
 }
 
 prompt {
-       padding:     35px 20px 20px 10px;
-       font:        "Iosevka Nerd Font 12";
+       padding:     35px 20px 20px 5px;
+       font:        "Iosevka Nerd Font 18";
 }
 
 entry {
@@ -143,18 +143,15 @@ element alternate.active {
     border-radius:    8px;
 	text-color:       @active-foreground;
 }
-
 element-icon {
-	background-color: inherit;
-	text-color: inherit;
 	size: 7ch;
-}
-
-element-text{
 	background-color: inherit;
 	text-color: inherit;
 }
-
+element-text {
+	background-color: inherit;
+	text-color: inherit;
+}
 element.selected {
     border-radius: 8px;
 	border:           0 0 0 5px solid;
