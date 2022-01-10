@@ -13,21 +13,19 @@
 
 # Gallery: 
 
-![Screenshot_2022-01-08-03-47-06_1366x768](https://user-images.githubusercontent.com/93292023/148638253-e85b4811-5e4f-41c7-90c4-a7d02d20f8c2.png)
+![Screenshot_2022-01-10-02-52-38_1366x768](https://user-images.githubusercontent.com/93292023/148733875-b9758e9f-aaa9-4973-9d47-4f3e33c32703.png)
 
 - Elkowars Wacky Widgets
 
-![Screenshot_2022-01-08-03-49-59_1366x768](https://user-images.githubusercontent.com/93292023/148638291-e98faf3b-296c-4bab-a065-06e0666850c0.png)
+![Screenshot_2022-01-10-02-57-13_1366x768](https://user-images.githubusercontent.com/93292023/148734017-0ebb78c4-8eb8-46d7-b93b-586f124540dc.png)
 
-![Screenshot_2022-01-09-01-39-50_1366x768](https://user-images.githubusercontent.com/93292023/148672052-0511721e-5dcd-4bad-b224-2880b44f95a8.png)
+![Screenshot_2022-01-10-02-56-54_1366x768](https://user-images.githubusercontent.com/93292023/148734082-b1dd5834-b09c-4e95-a027-84c312e671e7.png)
 
-![Screenshot_2022-01-09-01-39-59_1366x768](https://user-images.githubusercontent.com/93292023/148672082-1f9b2dd2-fb6d-4168-9319-f0e95471682b.png)
+- Rofi Launcher, Notification Center.
 
-- Rofi Launcher with polybar, power menu, and networkmanager menu 
+![Screenshot_2022-01-10-02-57-36_1366x768](https://user-images.githubusercontent.com/93292023/148734138-3bd72e7f-d1cc-4b65-9c99-d6b02c86ba02.png)
 
-![Screenshot_2022-01-09-01-47-47_1366x768](https://user-images.githubusercontent.com/93292023/148672198-a41db313-ec70-4197-9097-11fd7ac93bee.png)
-
-- Firefox, Dunst
+- Firefox
 
 ![Screenshot_2022-01-08-06-19-11_1366x768](https://user-images.githubusercontent.com/93292023/148642212-8ccab373-50e4-4854-8a30-b9c8ed2e1df6.png)
 
