@@ -103,7 +103,7 @@ xfce4-power-manager &
 xsetroot -cursor_name left_ptr
 
 # Start X wallpaper.
-feh --no-fehbg --bg-tile "${HOME}/Pictures/Wallpapers/tile_x.png"
+feh --no-fehbg --bg-tile "${HOME}/Pictures/Wallpapers/Nord/tileNord.png"
 
 # Run polybar.
 "${HOME}/.config/polybar/launch.sh"
