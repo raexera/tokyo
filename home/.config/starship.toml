@@ -1,0 +1,32 @@
+add_newline = true
+right_format = """$directory"""
+
+[character]
+success_symbol = "[❯❯❯](bold green)" 
+error_symbol   = "[❯❯❯](bold red)"
+
+[username]
+style_user = "white bold"
+style_root = "black bold"
+format = "[$user]($style)"
+disabled = false
+show_always = true
+
+[hostname]
+ssh_only = false
+format =  "@[$hostname](bold blue) "
+trim_at = ""
+disabled = false
+
+[git_status]
+conflicted = "🏳"
+ahead = "🏎💨"
+behind = "😰"
+diverged = "😵"
+up_to_date = "✓"
+untracked = "🤷‍"
+stashed = "📦"
+modified = "📝"
+staged = '[++\($count\)](green)'
+renamed = "👅"
+deleted = "🗑"
