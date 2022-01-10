@@ -5,28 +5,36 @@
 ; ██║     ╚██████╔╝███████╗██║   ██████╔╝██║  ██║██║  ██║
 ; ╚═╝      ╚═════╝ ╚══════╝╚═╝   ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝
                                                        
+; ========================================================
+; Include Modules
+[section/base]
+include-directory = ~/.config/polybar/modules
+include-file = ~/.config/polybar/colors
+; ========================================================
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; ========================================================
+; Settings
+[global/wm]
+;margin-top = 5
+;margin-bottom = 5
+margin-bottom = 0
+margin-top = 0
+; vim:ft=dosini
 
-;    ____ ___  _     ___  ____  ____  
-;   / ___/ _ \| |   / _ \|  _ \/ ___| 
-;  | |  | | | | |  | | | | |_) \___ \ 
-;  | |__| |_| | |__| |_| |  _ < ___) |
-;   \____\___/|_____\___/|_| \_\____/ 
-                                    
-[colors]
-background  = #2e3440
-foreground  = #eceff4
-white       = #d8dee9
-polarnight2 = #3b4252
-polarnight4 = #4C566A
-red         = #bf616a
-orange      = #d08770
-green       = #a3be8c
+[settings]
+throttle-output = 5
+throttle-output-for = 10
+screenchange-reload = false
+compositing-background = source
+compositing-foreground = over
+compositing-overline = over
+compositing-underline = over
+compositing-border = over
+pseudo-transparency = false
+; ========================================================
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-;; ===================== BARS ========================
+; ====================== BARS ========================
 [bar/main]
 bottom = false
 offset-y = 20
@@ -46,12 +54,16 @@ module-margin-right = 0
 
 enable-ipc = true
 
+; ====================================================
+
 [bar/zero]
 inherit = bar/main
 width = 3%
 offset-x = 10
 font-0 = "Iosevka Nerd Font:style=Regular:size=10;3"
 modules-center = launcher
+
+; ====================================================
 
 [bar/one]
 inherit = bar/main
@@ -60,13 +72,16 @@ offset-x = 65
 font-0 = "Iosevka Nerd Font:style=Bold:size=10;3"
 modules-center = bspwm
 
+; ====================================================
+
 [bar/two]
 inherit = bar/main
 width = 11%
 offset-x = 610
 font-0 = "Iosevka Nerd Font:style=Bold:size=9;3"
 modules-center = polywins
-line-size = 2
+
+; ====================================================
 
 [bar/three]
 inherit = bar/main
@@ -76,6 +91,8 @@ background = ${colors.background}
 font-0 = "Iosevka Nerd Font:style=Regular:size=11;3"
 modules-center = volume
 
+; ====================================================
+
 [bar/four]
 inherit = bar/main
 width = 10%
@@ -84,6 +101,7 @@ background = ${colors.background}
 font-0 = "Iosevka Nerd Font:style=Regular:size=10;3"
 modules-center = battery separator network separator dunst separator sep-line separator powermenu
 
+; ====================================================
 
 [bar]
 fill = 絛
@@ -91,275 +109,4 @@ empty = 絛
 indicator = 雷
 ; Nerd font :   ,  ⏽,  樂 籠 錄 , 雷 絛
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-[module/bspwm]
-type = internal/bspwm
-
-pin-workspaces = true
-enable-click = true
-enable-scroll = true
-
-format = <label-state>
-
-format-background = ${colors.background}
-format-foreground = ${colors.foreground}
-
-format-padding = 1
-
-label-monitor = %name%
-
-label-focused = 
-label-focused-padding = 1
-label-focused-foreground = ${colors.white}
-label-focused-background = ${colors.background}
-
-label-occupied = 
-label-occupied-padding = 1
-label-occupied-foreground = ${colors.polarnight4}
-label-occupied-background = ${colors.background}
-
-label-urgent = 
-label-urgent-padding = 1
-label-urgent-foreground = ${colors.red}
-label-urgent-background = ${colors.background}
-
-label-empty = 
-label-empty-padding = 1
-label-empty-foreground = ${colors.polarnight2}
-label-empty-background = ${colors.background}
-
-;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
-
-[module/mpd]
-type = internal/mpd
-interval = 1
-format-online = <label-song> <icon-prev> <toggle> <icon-next>
-format-online-prefix = 
-format-online-background = ${colors.background}
-format-online-prefix-foreground = ${colors.foreground}
-
-format-offline = <label-offline>
-format-offline-prefix = 
-format-offline-background = ${colors.background}
-format-offline-prefix-foreground = ${colors.foreground}
-
-label-song =  " %artist% - %title%"
-label-song-maxlen = 20
-label-song-ellipsis = true
-label-time = %elapsed% / %total%
-label-offline = " Offline"
-
-icon-play = 
-icon-pause = 
-icon-stop = 
-icon-next = 
-icon-prev = 
-icon-seekf = 
-icon-seekb = 
-icon-random = 
-icon-repeat = 
-icon-repeatone = 
-icon-single = 
-icon-consume =
-
-toggle-on-foreground = ${colors.foreground}
-toggle-off-foreground = ${colors.foreground}
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-
-[module/brightness]
-type = internal/backlight
-card = amdgpu_bl0
-format = <ramp> <label>
-label = %percentage%%
-ramp-0 = 
-ramp-1 = 
-ramp-2 = 
-ramp-3 = 
-ramp-4 = 
-format-padding = 1
-format-background = ${colors.background}
-ramp-foreground = ${colors.foreground}
-
-;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
-
-[module/battery]
-type = internal/battery
-full-at = 99
-
-battery = BAT0
-adapter = AC0
-
-poll-interval = 2
-
-time-format = %H:%M
-
-format-charging = <animation-charging>
-format-charging-padding = 0
-
-format-discharging = <ramp-capacity>
-format-discharging-padding = 0
-
-; Available tags:
-;   <label-full> (default)
-;   <bar-capacity>
-;   <ramp-capacity>
-format-full = <ramp-capacity>
-format-full-foreground = ${colors.green}
-
-
-label-charging = "%percentage%% (%time%)"
-label-discharging = "%percentage%% (%time%)"
-
-ramp-capacity-0 = 
-ramp-capacity-1 = 
-ramp-capacity-2 = 
-ramp-capacity-3 = 
-ramp-capacity-4 = 
-
-ramp-capacity-0-foreground = ${colors.red}
-ramp-capacity-1-foreground = ${colors.red}
-ramp-capacity-2-foreground = ${colors.orange}
-
-animation-charging-0 = 
-animation-charging-1 = 
-animation-charging-2 = 
-animation-charging-3 = 
-animation-charging-4 = 
-
-animation-charging-framerate = 750
-
-;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
-
-[module/network]
-type = internal/network
-interface = wlp2s0
-
-interval = 1.0
-accumulate-stats = true
-unknown-as-up = true
-
-format-connected = <label-connected>
-format-connected-background = ${colors.background}
-format-connected-foreground = ${colors.foreground}
-format-connected-padding = 0
- 
-format-disconnected = <label-disconnected>
-format-disconnected-background = ${colors.background}
-format-disconnected-foreground = ${colors.red}
-format-disconnected-padding = 0
- 
-label-connected = "%{A1:$HOME/.config/rofi/networkmanager-polybar/network.sh &:}直%{A}"
-label-disconnected = "%{A1:$HOME/.config/rofi/networkmanager-polybar/network.sh &:}睊%{A}"
-
-;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
-
-[module/volume]
-type = internal/pulseaudio
-format-volume = <bar-volume>
-format-volume-background = ${colors.background}
-format-volume-padding = 1
-
-format-muted = <label-muted>
-format-muted-prefix = 婢
-format-muted-background = ${colors.background}
-format-muted-padding = 1
-
-label-volume = %percentage%%
-
-label-muted = " Muted"
-label-muted-foreground = ${colors.foreground}
-
-bar-volume-width = 10
-bar-volume-gradient = false
-
-bar-volume-indicator = ${bar.indicator}
-bar-volume-indicator-foreground = ${colors.foreground}
-
-bar-volume-fill = ${bar.fill}
-bar-volume-foreground-0 = ${colors.foreground}
-bar-volume-foreground-1 = ${colors.foreground}
-bar-volume-foreground-2 = ${colors.foreground}
-
-bar-volume-empty = ${bar.empty}
-bar-volume-empty-foreground = ${colors.polarnight4}
-;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
-
-[module/launcher]
-type = custom/text
-content = ""
-content-background = ${colors.background}
-content-foreground = ${colors.foreground}
-click-left = ~/.config/rofi/launcher-polybar/launcher.sh &
-click-right = ~/.config/rofi/launcher-polybar/launcher.sh &
-
-;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-
-
-[module/powermenu]
-type = custom/text
-click-left = "$HOME/.config/rofi/powermenu-polybar/powermenu.sh"
-click-right = "$HOME/.config/rofi/powermenu-polybar/powermenu.sh"
-content = ""
-content-padding = 0
-content-background = ${colors.background}
-content-foreground = ${colors.foreground}
-
-;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-
-
-[module/dunst]
-type = custom/ipc
-initial = 1
-format-foreground = ${colors.foreground}
-format-background = ${colors.background}
-format-overline = ${colors.background}
-format-underline = ${colors.background}
-format-padding = 0
-
-hook-0 = echo "%{A1:dunstctl set-paused true && polybar-msg hook dunst 2:}%{A}" &
-hook-1 = echo "%{A1:dunstctl set-paused false && polybar-msg hook dunst 1:}%{A}" &
-
-click-middle = ~/.config/rofi/notification/rofi_notif_center.sh &
-;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
-
-[module/polywins]
-type = custom/script
-exec = ~/.config/polybar/scripts/polywins.sh 2>/dev/null
-format = <label>
-label = %output%
-label-padding = 1
-tail = true
-
-;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-
-
-[module/separator]
-type = custom/text
-
-content = " "
-
-[module/sep-line]
-type = custom/text
-
-content = " | "
-;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
-
-[settings]
-throttle-output = 5
-throttle-output-for = 10
-screenchange-reload = false
-compositing-background = source
-compositing-foreground = over
-compositing-overline = over
-compositing-underline = over
-compositing-border = over
-pseudo-transparency = false
-
-;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
-
-[global/wm]
-;margin-top = 5
-;margin-bottom = 5
-margin-bottom = 0
-margin-top = 0
-; vim:ft=dosini
+; ====================================================

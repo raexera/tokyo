@@ -1,0 +1,15 @@
+;    ____ ___  _     ___  ____  ____  
+;   / ___/ _ \| |   / _ \|  _ \/ ___| 
+;  | |  | | | | |  | | | | |_) \___ \ 
+;  | |__| |_| | |__| |_| |  _ < ___) |
+;   \____\___/|_____\___/|_| \_\____/ 
+
+[colors]
+background  = #2e3440
+foreground  = #eceff4
+white       = #d8dee9
+polarnight2 = #3b4252
+polarnight4 = #4C566A
+red         = #bf616a
+orange      = #d08770
+green       = #a3be8c
