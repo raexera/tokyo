@@ -317,7 +317,7 @@ format-underline = ${colors.background}
 format-padding = 0
 
 hook-0 = echo "%{A1:dunstctl set-paused true && polybar-msg hook dunst 2:}%{A}" &
-hook-1 = echo "%{A1:dunstctl set-paused false && polybar-msg hook dunst 1:} %{F#ECEFF4}%{F-} %{A}" &
+hook-1 = echo "%{A1:dunstctl set-paused false && polybar-msg hook dunst 1:}%{A}" &
 
 click-middle = ~/.config/rofi/notification/rofi_notif_center.sh &
 ;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
