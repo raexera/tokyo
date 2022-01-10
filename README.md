@@ -15,7 +15,7 @@
 
 ![Screenshot_2022-01-10-02-52-38_1366x768](https://user-images.githubusercontent.com/93292023/148733875-b9758e9f-aaa9-4973-9d47-4f3e33c32703.png)
 
-- Elkowars Wacky Widgets
+- Elkowars Wacky Widgets.
 
 ![Screenshot_2022-01-10-02-57-13_1366x768](https://user-images.githubusercontent.com/93292023/148734017-0ebb78c4-8eb8-46d7-b93b-586f124540dc.png)
 
@@ -25,13 +25,13 @@
 
 ![Screenshot_2022-01-10-02-57-36_1366x768](https://user-images.githubusercontent.com/93292023/148734138-3bd72e7f-d1cc-4b65-9c99-d6b02c86ba02.png)
 
-- Firefox
+- Firefox.
 
-![Screenshot_2022-01-08-06-19-11_1366x768](https://user-images.githubusercontent.com/93292023/148642212-8ccab373-50e4-4854-8a30-b9c8ed2e1df6.png)
+![Screenshot_2022-01-10-03-05-43_1366x768](https://user-images.githubusercontent.com/93292023/148734670-bef2349a-72ee-4f22-8ac7-153658250a9f.png)
 
 - Thunar, Kitty
 
-![Screenshot_2022-01-08-05-56-22_1366x768](https://user-images.githubusercontent.com/93292023/148642258-24c88475-c186-47ac-a1a9-3be342c8a9d4.png)
+![Screenshot_2022-01-10-02-58-03_1366x768](https://user-images.githubusercontent.com/93292023/148734789-ead20d52-aab5-4352-885d-7ad3c9645bc7.png)
 
 - i3lock-color
 
