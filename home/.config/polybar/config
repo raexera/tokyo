@@ -65,7 +65,8 @@ inherit = bar/main
 width = 11%
 offset-x = 610
 font-0 = "Iosevka Nerd Font:style=Bold:size=9;3"
-modules-center = title
+modules-center = polywins
+line-size = 2
 
 [bar/three]
 inherit = bar/main
@@ -322,15 +323,13 @@ hook-1 = echo "%{A1:dunstctl set-paused false && polybar-msg hook dunst 1:}%{
 click-middle = ~/.config/rofi/notification/rofi_notif_center.sh &
 ;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 
-[module/title]
+[module/polywins]
 type = custom/script
-exec = ~/.config/polybar/scripts/title.sh 2>/dev/null
-tail = true
+exec = ~/.config/polybar/scripts/polywins.sh 2>/dev/null
 format = <label>
 label = %output%
-label-background = ${colors.background}
 label-padding = 1
-label-font = 0
+tail = true
 
 ;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-
 

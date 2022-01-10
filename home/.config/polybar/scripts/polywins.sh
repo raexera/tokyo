@@ -3,27 +3,28 @@
 
 # SETTINGS {{{ ---
 
-active_text_color="#ECEFF4"
-active_bg=""
-active_underline=""
+active_text_color="#250F0B"
+active_bg=
+active_underline="#ECB3B2"
 
-inactive_text_color="#434c5e"
-inactive_bg=""
-inactive_underline=""
+inactive_text_color="#250F0B"
+inactive_bg=
+inactive_underline=
 
-separator=""
+separator="·"
 show="window_class" # options: window_title, window_class, window_classname
 forbidden_classes="Polybar Conky Gmrun"
 empty_desktop_message="Desktop"
 
-char_limit=15
-max_windows=4
-char_case="lower" # normal, upper, lower
+char_limit=10
+max_windows=15
+char_case="normal" # normal, upper, lower
 add_spaces="true"
 resize_increment=16
 wm_border_width=1 # setting this might be required for accurate resize position
 
 # --- }}}
+
 
 main() {
 	# If no argument passed...
@@ -46,23 +47,12 @@ main() {
 
 # ON-CLICK FUNCTIONS {{{ ---
 
-# dirty hack, but without retiling there remains an empty spot
-retile_after_hide() {
-       wmctrl -ir "$1" -b toggle,fullscreen
-       wmctrl -ir "$1" -b toggle,fullscreen
-       # bspc node -t fullscreen && bspc node -t tiled
-
-}
- 
 raise_or_minimize() {
-       if [ "$(get_active_wid)" = "$1" ]; then
-               wmctrl -ir "$1" -b toggle,hidden
-       else
-              wmctrl -ia "$1"
-              wmctrl -ir "$1" -b remove,hidden; wmctrl -ia "$1"
-              # wmctrl -ia "$1"
-       fi
-       retile_after_hide "$1"
+	if [ "$(get_active_wid)" = "$1" ]; then
+		wmctrl -ir "$1" -b toggle,hidden
+	else
+		wmctrl -ir "$1" -b remove,hidden; wmctrl -ia "$1"
+	fi
 }
 
 close() {
@@ -112,8 +102,6 @@ active_left="%{F$active_text_color}"
 active_right="%{F-}"
 inactive_left="%{F$inactive_text_color}"
 inactive_right="%{F-}"
-hidden_left="%{F$hidden_text_color}"
-hidden_right="%{F-}"
 separator="%{F$inactive_text_color}$separator%{F-}"
 
 if [ -n "$active_underline" ]; then
@@ -151,15 +139,6 @@ get_active_workspace() {
 		while IFS="[ .]" read -r number active_status _; do
 			test "$active_status" = "*" && echo "$number" && break
 		done
-}
-
-is_hidden_wid() {
-	if xprop -id "$1" | grep -q "window state: Normal"
-	then
-		return 1
-	else
-		return 0
-	fi
 }
 
 generate_window_list() {
@@ -219,8 +198,6 @@ generate_window_list() {
 		# Add left and right formatting to displayed name
 		if [ "$wid" = "$active_wid" ]; then
 			w_name="${active_left}${w_name}${active_right}"
-		elif ( is_hidden_wid "$wid"); then
-			w_name="${hidden_left}${w_name}${hidden_right}"
 		else
 			w_name="${inactive_left}${w_name}${inactive_right}"
 		fi
