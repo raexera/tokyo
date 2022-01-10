@@ -21,6 +21,8 @@ white       = #d8dee9
 polarnight2 = #3b4252
 polarnight4 = #4C566A
 red         = #bf616a
+orange      = #d08770
+green       = #a3be8c
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
@@ -47,7 +49,7 @@ enable-ipc = true
 [bar/zero]
 inherit = bar/main
 width = 3%
-offset-x = 12
+offset-x = 10
 font-0 = "Iosevka Nerd Font:style=Regular:size=10;3"
 modules-center = launcher
 
@@ -68,18 +70,18 @@ modules-center = title
 [bar/three]
 inherit = bar/main
 width = 10%
-offset-x = 1040
+offset-x = 1070
 background = ${colors.background}
 font-0 = "Iosevka Nerd Font:style=Regular:size=11;3"
 modules-center = volume
 
 [bar/four]
 inherit = bar/main
-width = 12%
-offset-x = 1190
+width = 10%
+offset-x = 1220
 background = ${colors.background}
 font-0 = "Iosevka Nerd Font:style=Regular:size=10;3"
-modules-center = time network dunst powermenu
+modules-center = battery separator network separator dunst separator sep-line separator powermenu
 
 
 [bar]
@@ -185,33 +187,49 @@ ramp-foreground = ${colors.foreground}
 [module/battery]
 type = internal/battery
 full-at = 99
+
 battery = BAT0
 adapter = AC0
-format-charging = <label-charging>
-format-charging-prefix = " "
-format-discharging = <label-discharging>
-format-discharging-prefix = " "
+
+poll-interval = 2
+
+time-format = %H:%M
+
+format-charging = <animation-charging>
+format-charging-padding = 0
+
+format-discharging = <ramp-capacity>
+format-discharging-padding = 0
+
+; Available tags:
+;   <label-full> (default)
+;   <bar-capacity>
+;   <ramp-capacity>
 format-full = <label-full>
-format-full-prefix = " "
-label-charging = %percentage%%
-label-discharging = %percentage%%
-label-full = Full
+format-full-prefix = 
+format-full-prefix-foreground = ${colors.green}
 
-format-charging-background = ${colors.background}
-format-charging-foreground = ${colors.foreground}
-format-charging-prefix-foreground = ${colors.foreground}
 
-format-discharging-background = ${colors.background}
-format-discharging-foreground = ${colors.foreground}
-format-discharging-prefix-foreground = ${colors.foreground}
+label-charging = "%percentage%% (%time%)"
+label-discharging = "%percentage%% (%time%)"
 
-format-full-background = ${colors.background}
-format-full-foreground = ${colors.foreground}
-format-full-prefix-foreground = ${colors.foreground}
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
 
-format-full-padding = 1
-format-charging-padding = 1
-format-discharging-padding = 1
+ramp-capacity-0-foreground = ${colors.red}
+ramp-capacity-1-foreground = ${colors.red}
+ramp-capacity-2-foreground = ${colors.orange}
+
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
+animation-charging-3 = 
+animation-charging-4 = 
+
+animation-charging-framerate = 750
 
 ;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 
@@ -238,22 +256,6 @@ label-disconnected = "%{A1:$HOME/.config/rofi/networkmanager-polybar/network.sh 
 
 ;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 
-[module/time]
-type = internal/date
-
-interval = 1.0
-
-time = "  %H:%M "
-
-format = <label>
-format-background = ${colors.background}
-format-foreground = ${colors.foreground}
-format-padding = 0
- 
-label = %time%
-
-;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
-
 [module/volume]
 type = internal/pulseaudio
 format-volume = <bar-volume>
@@ -274,7 +276,7 @@ bar-volume-width = 10
 bar-volume-gradient = false
 
 bar-volume-indicator = ${bar.indicator}
-bar-volume-indicator-foreground = ${color.foreground}
+bar-volume-indicator-foreground = ${colors.foreground}
 
 bar-volume-fill = ${bar.fill}
 bar-volume-foreground-0 = ${colors.foreground}
@@ -293,14 +295,18 @@ content-foreground = ${colors.foreground}
 click-left = ~/.config/rofi/launcher-polybar/launcher.sh &
 click-right = ~/.config/rofi/launcher-polybar/launcher.sh &
 
+;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-
+
 [module/powermenu]
 type = custom/text
 click-left = "$HOME/.config/rofi/powermenu-polybar/powermenu.sh"
 click-right = "$HOME/.config/rofi/powermenu-polybar/powermenu.sh"
 content = ""
-content-padding = 1
+content-padding = 0
 content-background = ${colors.background}
 content-foreground = ${colors.foreground}
+
+;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-
 
 [module/dunst]
 type = custom/ipc
@@ -309,12 +315,12 @@ format-foreground = ${colors.foreground}
 format-background = ${colors.background}
 format-overline = ${colors.background}
 format-underline = ${colors.background}
-;format-padding = 1
+format-padding = 0
 
-hook-0 = echo "%{A1:dunstctl set-paused true && polybar-msg hook dunst 2:}  %{A}" &
+hook-0 = echo "%{A1:dunstctl set-paused true && polybar-msg hook dunst 2:}%{A}" &
 hook-1 = echo "%{A1:dunstctl set-paused false && polybar-msg hook dunst 1:} %{F#ECEFF4}%{F-} %{A}" &
 
-click-middle = ~/.local/bin/rofi_notif_center.sh &
+click-middle = ~/.config/rofi/notification/rofi_notif_center.sh &
 ;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 
 [module/title]
@@ -327,6 +333,17 @@ label-background = ${colors.background}
 label-padding = 1
 label-font = 0
 
+;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-
+
+[module/separator]
+type = custom/text
+
+content = " "
+
+[module/sep-line]
+type = custom/text
+
+content = " | "
 ;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 
 [settings]
