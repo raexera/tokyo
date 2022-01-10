@@ -205,9 +205,8 @@ format-discharging-padding = 0
 ;   <label-full> (default)
 ;   <bar-capacity>
 ;   <ramp-capacity>
-format-full = <label-full>
-format-full-prefix = 
-format-full-prefix-foreground = ${colors.green}
+format-full = <ramp-capacity>
+format-full-foreground = ${colors.green}
 
 
 label-charging = "%percentage%% (%time%)"
