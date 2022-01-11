@@ -1,5 +1,5 @@
 #!/bin/bash
-# Bash Menu Script Installasion Depedency and fish shell
+# Bash Menu Script Installasion Depedency
 
 # update first
 sudo pacman -Syyu || error "Error syncing the repos."
@@ -17,7 +17,7 @@ echo -e "
 ██║░░██║███████╗██████╔╝░░░██║░░░██║░░██║███████╗░░░██║░░░██║╚█████╔╝
 ╚═╝░░╚═╝╚══════╝╚═════╝░░░░╚═╝░░░╚═╝░░╚═╝╚══════╝░░░╚═╝░░░╚═╝░╚════╝░"
 echo -e ""
-echo -e "      Script For Installasion Depedency And Some Stuff © @ghost"
+echo -e "      Script For Installasion Depedency And Some Stuff © @rxyhn"
 echo -e ""
 
 # Main
