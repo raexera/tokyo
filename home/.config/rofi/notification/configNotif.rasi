@@ -2,7 +2,7 @@ configuration {
 	display-drun:    " Apps";
 	display-window:  "缾 Windows";
 	show-icons:true;
-	font: "Iosevka Nerd Font 11";
+	font: "Iosevka Nerd Font 10";
 }
 
 * {
@@ -30,12 +30,12 @@ configuration {
 	selected-active-background:  @actbg;
 	active-background:           @background-color;
 
-	line-margin:                 2;
-	line-padding:                2;
+	line-margin:                 1;
+	line-padding:                1;
 	separator-style:             "none";
 	hide-scrollbar:              "true";
-	margin:                      0;
-	padding:                     10;
+	margin:                      0.5;
+	padding:                     5;
 }
 
 window {
@@ -47,13 +47,13 @@ window {
 	width:		 30%;
 	orientation: horizontal;
 	children:	 [mainbox];
-    border-radius: 12px;
+    border-radius: 14px;
     border: 3px solid;
     border-color: #3b4252;
 }
 
 mainbox {
-	spacing:  0.8em;
+	spacing:  0.5em;
     orientation: vertical;
 	children: [ inputbar, listview ];
 }
@@ -77,11 +77,11 @@ listview {
 }
 
 element {
-        padding: 10px;
+        padding: 5px;
 }
 
 prompt {
-       padding:     35px 20px 20px 5px;
+       padding:     15px 20px 5px 5px;
        font:        "Iosevka Nerd Font 18";
 }
 
@@ -89,7 +89,7 @@ entry {
 	expand:         true;
 	text-color:     @normal-foreground;
 	vertical-align: 0;
-	padding:        5px 0px 0px 20px;
+	padding:        5px 0px 0px 5px;
     enabled:        false;
 }
 

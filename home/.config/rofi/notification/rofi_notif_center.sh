@@ -73,7 +73,7 @@ count=0
 while IFS= read -r a; do
     # app_spaces=$(printf %-42.42s "$a")
     # app_spaces=$(printf %-28.28s "$a")
-    app_spaces=$(printf %-24.24s "$a")
+    app_spaces=$(printf %-33.33s "$a")
     embolden_app="${embolden_app}${embolden_app:+\n}<b>$app_spaces</b>${timestamp_array[$count]}"
     count=$((count+1))
 done <<< "$appname"

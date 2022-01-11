@@ -41,7 +41,7 @@
     #   %n  progress value if set without any extra characters
     #   %%  Literal %
     # Markup is allowed
-    format = "<b>%s\n%b</b>"
+    format = "<b>%s %b</b>"
     alignment = left
     show_age_threshold = 60
     word_wrap = true
@@ -54,7 +54,7 @@
     ### Icons ###
     icon_position = left
     max_icon_size = 80
-    icon_path = /usr/share/icons/Nord-Icon/48x48/status/:/usr/share/icons/Nord-Icon/48x48/devices/:/usr/share/icons/Nord-Icon/48x48/apps
+    icon_path = /usr/share/icons/Papirus-Dark/48x48/status/:/usr/share/icons/Papirus-Dark/48x48/devices/:/usr/share/icons/Papirus-Dark/48x48/apps
 
     ### History ###
     sticky_history = yes
@@ -72,49 +72,45 @@
     per_monitor_dpi = false
 
 [log_notifs]
-    script = ~/.local/bin/dunst_logger.sh
-
-[pomodoro]
-    appname = Pomod
-    new_icon = /usr/share/icons/Nord-Icon/48x48/apps/pomodoro-indicator.svg
-
-[slack]
-    desktop_entry = Slack
-    new_icon = /usr/share/icons/Nord-Icon/48x48/apps/slack.svg
+    script = ~/.config/rofi/notification/dunst_logger.sh
 
 [dunst_icon]
     appname = dunst
-    new_icon = /usr/share/icons/Nord-Icon/48x48/apps/bell.svg
+    new_icon = /usr/share/icons/Papirus-Dark/48x48/apps/bell.svg
 
 [notify_send_icon]
     appname = notify-send
-    new_icon = /usr/share/icons/Nord-Icon/48x48/apps/bell.svg
+    new_icon = /usr/share/icons/Papirus-Dark/48x48/apps/bell.svg
 
 [zsh]
     appname = zsh
-    new_icon = /usr/share/icons/Nord-Icon/48x48/apps/terminal.svg
+    new_icon = /usr/share/icons/Papirus-Dark/48x48/apps/utilities-terminal.svg
   
-#[shortcuts]
-#    close = ctrl+space
-#    close_all = ctrl+shift+space
+[firefox]
+    appname = firefox
+    new_icon = /usr/share/icons/Papirus-Dark/48x48/apps/firefox-defalut.svg
+  
+[shortcuts]
+    close = ctrl+space
+    close_all = ctrl+shift+space
 #    #context = ctrl+shift+period
 #    history = ctrl+grave
 
 [urgency_low]
     background = colors.background
-    foreground = "#81a1c1"
+    foreground = "#ECEFF4"
     frame_color = "#3b4252"
     timeout = 5
 
 [urgency_normal]
     background = colors.background
-    foreground = "#e5e9f0"
+    foreground = "#ECEFF4"
     frame_color = "#3b4252"
     timeout = 5
 
 [urgency_critical]
     background = colors.background
-    foreground = "#bf616a"
+    foreground = "#ECEFF4"
     frame_color = "#3b4252"
     timeout = 0
 
