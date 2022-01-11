@@ -81,6 +81,9 @@ bspc rule -a stalonetray state=floating manage=off
 
 ## Startup programs --------------------------------------------- #
 
+# Run Picom.
+picom --config $HOME/.config/picom/picom.conf &
+
 # Run EWW.
 eww daemon &
 sh ~/.config/eww/scripts/weather_info --getdata &
