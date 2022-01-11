@@ -56,11 +56,6 @@ SAVEHIST=10000
 HISTSIZE=10000
 HISTFILE="$HOME/.cache/.zsh_history"
 
-# The following lines were added by compinstall
-zstyle :compinstall filename '$HOME/.zshrc'
-autoload -Uz compinit
-compinit
-
 # case-insensitive (all) completion
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
 
