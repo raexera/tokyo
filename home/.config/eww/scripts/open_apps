@@ -5,7 +5,7 @@ FILE="$HOME/.cache/eww_launch.xyz"
 EWW="/usr/bin/eww"
 
 if [[ "$1" == "--vd" ]]; then
-	${EWW} close-all && rm -rf "$FILE" && vivaldi-stable &
+	${EWW} close-all && rm -rf "$FILE" && firefox &
 
 elif [[ "$1" == "--tg" ]]; then
 	${EWW} close-all && rm -rf "$FILE" && telegram-desktop &

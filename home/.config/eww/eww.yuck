@@ -1,8 +1,7 @@
 ;;  **
 ;; ** Widgets config for EWW
-;; ** Created by 	: @adi1090x 
-;; ** Converted by 	: Dustyn
-;; ** Modified by 	: Rxyhn
+;; ** Created by : @adi1090x
+;; ** Modified by : Rxyhn
 
 
     
@@ -162,7 +161,7 @@
 		(defwidget apps [] 
 			(box :class "genwin" :orientation "v" :space-evenly "false" :vexpand "false" :hexpand "false" 
 				(box :class "appbox" :orientation "h" :space-evenly "false" :vexpand "false" :hexpand "false" 
-					(button :style "background-image: url('images/icons/vivaldi.svg');" :class "app_vivaldi" :onclick "~/.config/eww/scripts/open_apps --vd")
+					(button :style "background-image: url('images/icons/firefox.svg');" :class "app_firefox" :onclick "~/.config/eww/scripts/open_apps --vd")
 					(button :style "background-image: url('images/icons/telegram.svg');" :class "app_telegram" :onclick "~/.config/eww/scripts/open_apps --tg")
 					(button :style "background-image: url('images/icons/discord.svg');" :class "app_discord" :onclick "~/.config/eww/scripts/open_apps --dc"))
 								(box :class "appbox" :orientation "h" :space-evenly "false" :vexpand "false" :hexpand "false" 
