@@ -13,13 +13,13 @@
 
 # Gallery: 
 
-![Screenshot_2022-01-10-02-52-38_1366x768](https://user-images.githubusercontent.com/93292023/148733875-b9758e9f-aaa9-4973-9d47-4f3e33c32703.png)
+![Screenshot_2022-01-12-02-37-09_1366x768](https://user-images.githubusercontent.com/93292023/149010210-9d5de4af-4300-473c-9344-0d7f23e8a5bc.png)
 
 - Elkowars Wacky Widgets.
 
 ![Screenshot_2022-01-10-02-57-13_1366x768](https://user-images.githubusercontent.com/93292023/148734017-0ebb78c4-8eb8-46d7-b93b-586f124540dc.png)
 
-![Screenshot_2022-01-10-02-56-54_1366x768](https://user-images.githubusercontent.com/93292023/148734082-b1dd5834-b09c-4e95-a027-84c312e671e7.png)
+![Screenshot_2022-01-12-02-39-27_1366x768](https://user-images.githubusercontent.com/93292023/149010301-268888cb-a76f-491d-ad90-65103bda7f98.png)
 
 - Rofi Launcher, Notification Center.
 
