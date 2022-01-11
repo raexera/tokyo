@@ -9,7 +9,7 @@
 - OS: [Arch Linux](https://archlinux.org/)
 - WM: [Bspwm](https://github.com/baskerville/bspwm)
 - Colorscheme: You know what I [use.](https://github.com/arcticicestudio/nord)
-- Fonts? I only use [Iosevka](https://typeof.net/Iosevka/)
+- Fonts? just look in my `fonts folder!`
 
 # Gallery: 
 
@@ -42,7 +42,8 @@
       
    - **Inspiration**
       - [woowak01](https://github.com/ChocolateBread799) for the rices inspirations, that's why i do this rices.
-      - [adi1090x](https://github.com/adi1090x) for the dashboard inspiration & rofi style.    
+      - [adi1090x](https://github.com/adi1090x) for the dashboard inspiration & rofi style. 
+      - [totoro](https://github.com/totoro-ghost) for notification center inspirations.   
       - [janleigh](https://github.com/janleigh) for the Readme style.      
       - Most people on some GNU/Linux and UN*X forums.
 
