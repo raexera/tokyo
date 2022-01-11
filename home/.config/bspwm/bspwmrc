@@ -119,5 +119,4 @@ sh "${HOME}/.local/bin/hello.sh"
 [ -n "$(pidof mpd)" ] || mpd &
 
 # Execute bspwm-specific scripts.
-bspcomp
 bspfloat &
