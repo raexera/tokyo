@@ -1,18 +1,11 @@
-#! /bin/zsh
+# If you come from bash you might have to change your $PATH.
+export PATH="$HOME/.local/bin:$HOME/.cargo/bin:$PATH"
 
+# Uncomment the following line to change how often to auto-update (in days).
+export UPDATE_ZSH_DAYS=7
 
-# ▒███████▒  ██████  ██░ ██     ▄████▄   ▒█████   ███▄    █   █████▒██▓  ▄████ 
-# ▒ ▒ ▒ ▄▀░▒██    ▒ ▓██░ ██▒   ▒██▀ ▀█  ▒██▒  ██▒ ██ ▀█   █ ▓██   ▒▓██▒ ██▒ ▀█▒
-# ░ ▒ ▄▀▒░ ░ ▓██▄   ▒██▀▀██░   ▒▓█    ▄ ▒██░  ██▒▓██  ▀█ ██▒▒████ ░▒██▒▒██░▄▄▄░
-#   ▄▀▒   ░  ▒   ██▒░▓█ ░██    ▒▓▓▄ ▄██▒▒██   ██░▓██▒  ▐▌██▒░▓█▒  ░░██░░▓█  ██▓
-# ▒███████▒▒██████▒▒░▓█▒░██▓   ▒ ▓███▀ ░░ ████▓▒░▒██░   ▓██░░▒█░   ░██░░▒▓███▀▒
-# ░▒▒ ▓░▒░▒▒ ▒▓▒ ▒ ░ ▒ ░░▒░▒   ░ ░▒ ▒  ░░ ▒░▒░▒░ ░ ▒░   ▒ ▒  ▒ ░   ░▓   ░▒   ▒ 
-# ░░▒ ▒ ░ ▒░ ░▒  ░ ░ ▒ ░▒░ ░     ░  ▒     ░ ▒ ▒░ ░ ░░   ░ ▒░ ░      ▒ ░  ░   ░ 
-# ░ ░ ░ ░ ░░  ░  ░   ░  ░░ ░   ░        ░ ░ ░ ▒     ░   ░ ░  ░ ░    ▒ ░░ ░   ░ 
-#   ░ ░          ░   ░  ░  ░   ░ ░          ░ ░           ░         ░        ░ 
-# ░                            ░                                               
-# By: @rxyhn
-
+# Uncomment the following line to enable command auto-correction.
+ENABLE_CORRECTION="true"
 
 if [[ $- != *i* ]]; then
 	return
@@ -28,57 +21,12 @@ else
 	mkdir -p "$comppath"
 fi
 
-# add ~/.local/bin to the PATH
-echo $PATH | grep -q "$HOME/.local/bin:" || export PATH="$HOME/.local/bin:$PATH"
-
-# Ditch Nano, join the NeoVim Team
-export EDITOR=/usr/bin/nvim
-export SUDO_EDITOR=/usr/bin/nvim
-export VISUAL=/usr/bin/nvim
-
-# Firefox plz
-export BROWSER=/usr/bin/firefox
-
-# Lang
-export LANG=en_US.UTF-8
-
-# Some Rust Lang thing idk
-export PATH="$HOME/.cargo/bin:$PATH"
-
-# Starship export
-export STARSHIP_CONFIG=~/.config/starship/starship.toml
-
-
 # ---| zsh Internal Stuff |--- #
 SHELL=$(which zsh || echo '/bin/zsh')
 KEYTIMEOUT=1
 SAVEHIST=10000
 HISTSIZE=10000
 HISTFILE="$HOME/.cache/.zsh_history"
-
-# case-insensitive (all) completion
-zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
-
-# ZSH Syntax Highlightning & ZSH Auto suggestion source
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-
-# Uncomment the following line to use case-sensitive completion.
-CASE_SENSITIVE="false"
-
-# ZSH autocomplete source
-source /usr/share/zsh/plugins/zsh-autocomplete/zsh-autocomplete.plugin.zsh
-
-# Colorls source
-source $(dirname $(gem which colorls))/tab_complete.sh
-path+=(
-    $(ruby -e 'puts File.join(Gem.user_dir, "bin")')
-)
-
-# fzf source
-source /usr/share/fzf/key-bindings.zsh
-
-# ---| Functions N Stuff |--- #
 
 # Show top 21 Commands used (thanks totoro
 toppy() {
@@ -87,6 +35,11 @@ toppy() {
 
 file_amount() {
     ls -l | wc -l
+}
+
+# ls with preferred arguments
+ls() {
+	command ls --group-directories-first --color=auto -F1 "$@"
 }
 
 # cd and ls after
@@ -102,6 +55,17 @@ src() {
 	zrecompile -p "$compfile"
 	exec zsh
 }
+
+# Ditch Nano, join the NeoVim Team
+export EDITOR=/usr/bin/nvim
+export SUDO_EDITOR=/usr/bin/nvim
+export VISUAL=/usr/bin/nvim
+
+# Firefox plz
+export BROWSER=/usr/bin/firefox
+
+# Lang
+export LANG=en_US.UTF-8
 
 # completion
 setopt CORRECT
@@ -139,6 +103,13 @@ autoload -U promptinit   # prompt
 # better history navigation, matching currently typed text
 autoload -U up-line-or-beginning-search; zle -N up-line-or-beginning-search
 autoload -U down-line-or-beginning-search; zle -N down-line-or-beginning-search
+
+# set the terminal mode when entering or exiting zle, otherwise terminfo keys are not loaded
+if (( ${+terminfo[smkx]} && ${+terminfo[rmkx]} )); then
+	zle-line-init() { echoti smkx; }; zle -N zle-line-init
+	zle-line-finish() { echoti rmkx; }; zle -N zle-line-finish
+fi
+
 
 # History
 zshAddHistory() {
@@ -180,6 +151,11 @@ zstyle ':completion:*:descriptions' format ' %F{green}->%F{yellow} %d%f'
 zstyle ':completion:*:warnings' format ' %F{green}->%F{red} no matches%f'
 zstyle ':completion:*:corrections' format ' %F{green}->%F{green} %d: %e%f'
 
+# menu colours
+eval "$(dircolors)"
+zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#) ([0-9a-z-]#)*=36=0=01'
+
 # command parameters
 zstyle ':completion:*:functions' ignored-patterns '(prompt*|_*|*precmd*|*preexec*)'
 zstyle ':completion::*:(-command-|export):*' fake-parameters ${${${_comps[(I)-value-*]#*,}%%,*}:#-*-}
@@ -206,23 +182,31 @@ fi
 # initialize completion
 compinit -u -d "$compfile"
 
+# zsh auto suggestions and syntax highlighting and auto completion
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+# Custom Highlight syntax
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#4C566A,underline"
+
+# Uncomment the following line to use case-sensitive completion.
+CASE_SENSITIVE="false"
+
+# fzf source
+source /usr/share/fzf/key-bindings.zsh
+
 ###############################
 # ****** ALIAS SECTION ****** #
 ###############################
 
 # Update thingy
 alias grub-update='sudo grub-mkconfig -o /boot/grub/grub.cfg'
+alias mirror-update='sudo reflector --verbose -c Indonesia -c Japan -c Singapore --sort rate --save /etc/pacman.d/mirrorlist'
 # Archives
 alias mtar='tar -zcvf' # mtar <archive_compress>
 alias utar='tar -zxvf' # utar <archive_decompress> <file_list>
 alias z='zip -r' # z <archive_compress> <file_list>
 alias uz='unzip' # uz <archive_decompress> -d <dir>
-# cd and ls after
-cd() {
-	builtin cd "$@" && command ls --group-directories-first --color=auto -F
-}
-#alias for play music
-alias music='ncmpcpp-art'
 # alias for sourcing the zshrc
 alias sr='source ~/.zshrc'
 # alias for cd up a directory
@@ -238,8 +222,6 @@ alias psg="ps aux | grep -v grep | grep -i -e VSZ -e"
 alias mkdir="mkdir -p"
 # alias for ranger
 alias fm='ranger'
-# alias for colorls
-alias ls='colorls'
 # alias for searching and installing packages
 alias pacs="pacman -Slq | fzf -m --preview 'cat <(pacman -Si {1}) <(pacman -Fl {1} | awk \"{print \$2}\")' | xargs -ro sudo pacman -S"
 # alias for searching and installing packages from AUR
@@ -268,5 +250,8 @@ alias dun='killall dunst && dunst &
 notify-send "cool1" "yeah it is working"
 notify-send "cool2" "yeah it is working"'
 
-# Prompt: git status, hostname for ssh sessions, vi mode indicator
+# ---------------P R O M P T------------------
+# Init Starship
 eval "$(starship init zsh)"
+# Setup Starship custom prompt
+export STARSHIP_CONFIG=$HOME/.config/starship/starship.toml
