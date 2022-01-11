@@ -42,7 +42,8 @@
       
    - **Inspiration**
       - [woowak01](https://github.com/ChocolateBread799) for the rices inspirations, that's why i do this rices.
-      - [adi1090x](https://github.com/adi1090x) for the dashboard inspiration & rofi style.    
+      - [adi1090x](https://github.com/adi1090x) for the dashboard inspiration & rofi style. 
+      - [totoro](https://github.com/totoro-ghost) for notification center inspirations.   
       - [janleigh](https://github.com/janleigh) for the Readme style.      
       - Most people on some GNU/Linux and UN*X forums.
 
