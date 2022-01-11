@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 
-######################################################
+##====================================================
 ##	 ▄▄▄▄     ██████  ██▓███   █     █░ ███▄ ▄███▓  
 ##	▓█████▄ ▒██    ▒ ▓██░  ██▒▓█░ █ ░█░▓██▒▀█▀ ██▒  
 ##	▒██▒ ▄██░ ▓██▄   ▓██░ ██▓▒▒█░ █ ░█ ▓██    ▓██░  
@@ -11,7 +11,8 @@
 ##	 ░    ░ ░  ░  ░  ░░         ░   ░  ░      ░     
 ##	 ░            ░               ░           ░     
 ##	      ░                                         
-######################################################
+##====================== By: Rxyhn  ==================
+##====================== By: Owl4ce ==================
 
 ## Environments.
 
@@ -106,7 +107,10 @@ xsetroot -cursor_name left_ptr
 feh --no-fehbg --bg-tile "${HOME}/Pictures/Wallpapers/Nord/tileNord.png"
 
 # Run polybar.
-"${HOME}/.config/polybar/launch.sh"
+zsh "${HOME}/.config/polybar/launch.sh"
+
+# Run script that gives you a warm welcome cuz it feels good to not feel alone XD - thanks to Detective Pikachu
+sh "${HOME}/.local/bin/hello.sh"
 
 # Run mpd if doesn't started.
 [ -n "$(pidof mpd)" ] || mpd &
