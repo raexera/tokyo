@@ -1,11 +1,35 @@
-# Fetch
-afetch
+#! /bin/zsh
 
-# If you come from bash you might have to change your $PATH.
-export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
 
-# Path to your oh-my-zsh installation.
-export ZSH=$HOME/.oh-my-zsh
+# ▒███████▒  ██████  ██░ ██     ▄████▄   ▒█████   ███▄    █   █████▒██▓  ▄████ 
+# ▒ ▒ ▒ ▄▀░▒██    ▒ ▓██░ ██▒   ▒██▀ ▀█  ▒██▒  ██▒ ██ ▀█   █ ▓██   ▒▓██▒ ██▒ ▀█▒
+# ░ ▒ ▄▀▒░ ░ ▓██▄   ▒██▀▀██░   ▒▓█    ▄ ▒██░  ██▒▓██  ▀█ ██▒▒████ ░▒██▒▒██░▄▄▄░
+#   ▄▀▒   ░  ▒   ██▒░▓█ ░██    ▒▓▓▄ ▄██▒▒██   ██░▓██▒  ▐▌██▒░▓█▒  ░░██░░▓█  ██▓
+# ▒███████▒▒██████▒▒░▓█▒░██▓   ▒ ▓███▀ ░░ ████▓▒░▒██░   ▓██░░▒█░   ░██░░▒▓███▀▒
+# ░▒▒ ▓░▒░▒▒ ▒▓▒ ▒ ░ ▒ ░░▒░▒   ░ ░▒ ▒  ░░ ▒░▒░▒░ ░ ▒░   ▒ ▒  ▒ ░   ░▓   ░▒   ▒ 
+# ░░▒ ▒ ░ ▒░ ░▒  ░ ░ ▒ ░▒░ ░     ░  ▒     ░ ▒ ▒░ ░ ░░   ░ ▒░ ░      ▒ ░  ░   ░ 
+# ░ ░ ░ ░ ░░  ░  ░   ░  ░░ ░   ░        ░ ░ ░ ▒     ░   ░ ░  ░ ░    ▒ ░░ ░   ░ 
+#   ░ ░          ░   ░  ░  ░   ░ ░          ░ ░           ░         ░        ░ 
+# ░                            ░                                               
+# By: @rxyhn
+
+
+if [[ $- != *i* ]]; then
+	return
+fi
+
+# completion cache path setup
+typeset -g comppath="$HOME/.cache"
+typeset -g compfile="$comppath/.zcompdump"
+
+if [[ -d "$comppath" ]]; then
+	[[ -w "$compfile" ]] || rm -rf "$compfile" >/dev/null 2>&1
+else
+	mkdir -p "$comppath"
+fi
+
+# add ~/.local/bin to the PATH
+echo $PATH | grep -q "$HOME/.local/bin:" || export PATH="$HOME/.local/bin:$PATH"
 
 # Ditch Nano, join the NeoVim Team
 export EDITOR=/usr/bin/nvim
@@ -15,27 +39,177 @@ export VISUAL=/usr/bin/nvim
 # Firefox plz
 export BROWSER=/usr/bin/firefox
 
-# ZSH Theme
-ZSH_THEME=""
+# Lang
+export LANG=en_US.UTF-8
 
-# Colorls
+# Some Rust Lang thing idk
+export PATH="$HOME/.cargo/bin:$PATH"
+
+# Starship export
+export STARSHIP_CONFIG=~/.config/starship/starship.toml
+
+
+# ---| zsh Internal Stuff |--- #
+SHELL=$(which zsh || echo '/bin/zsh')
+KEYTIMEOUT=1
+SAVEHIST=10000
+HISTSIZE=10000
+HISTFILE="$HOME/.cache/.zsh_history"
+
+# The following lines were added by compinstall
+zstyle :compinstall filename '$HOME/.zshrc'
+autoload -Uz compinit
+compinit
+
+# case-insensitive (all) completion
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
+
+# ZSH Syntax Highlightning & ZSH Auto suggestion source
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+# Uncomment the following line to use case-sensitive completion.
+CASE_SENSITIVE="false"
+
+# ZSH autocomplete source
+source /usr/share/zsh/plugins/zsh-autocomplete/zsh-autocomplete.plugin.zsh
+
+# Colorls source
 source $(dirname $(gem which colorls))/tab_complete.sh
 path+=(
     $(ruby -e 'puts File.join(Gem.user_dir, "bin")')
 )
 
-# Starship export
-export STARSHIP_CONFIG=~/.config/starship/starship.toml
-
-# Plugin
-plugins=(git zsh-syntax-highlighting zsh-autosuggestions zsh-completions)
-autoload -U compinit && compinit
-
-# Oh-My-Zsh
-source $ZSH/oh-my-zsh.sh
-
 # fzf source
 source /usr/share/fzf/key-bindings.zsh
+
+# ---| Functions N Stuff |--- #
+
+# Show top 21 Commands used (thanks totoro
+toppy() {
+    history | awk '{CMD[$2]++;count++;}END { for (a in CMD)print CMD[a] " " CMD[a]/count*100 "% " a;}' | grep -v "./" | column -c3 -s " " -t | sort -nr | nl |  head -n 21
+}
+
+file_amount() {
+    ls -l | wc -l
+}
+
+# cd and ls after
+cd() {
+	builtin cd "$@" && command ls --group-directories-first --color=auto -F
+}
+
+# recompile completion and reload zsh
+src() {
+	autoload -U zrecompile
+	rm -rf "$compfile"*
+	compinit -u -d "$compfile"
+	zrecompile -p "$compfile"
+	exec zsh
+}
+
+# completion
+setopt CORRECT
+setopt NO_NOMATCH
+setopt LIST_PACKED
+setopt ALWAYS_TO_END
+setopt GLOB_COMPLETE
+setopt COMPLETE_ALIASES
+setopt COMPLETE_IN_WORD
+
+# builtin command behaviour
+setopt AUTO_CD
+
+# job control
+setopt AUTO_CONTINUE
+setopt LONG_LIST_JOBS
+
+# history control
+setopt HIST_VERIFY
+setopt SHARE_HISTORY
+setopt HIST_IGNORE_SPACE
+setopt HIST_SAVE_NO_DUPS
+setopt HIST_IGNORE_ALL_DUPS
+
+# misc
+setopt EXTENDED_GLOB
+setopt TRANSIENT_RPROMPT
+setopt INTERACTIVE_COMMENTS
+
+autoload -U compinit     # completion
+autoload -U terminfo     # terminfo keys
+zmodload -i zsh/complist # menu completion
+autoload -U promptinit   # prompt
+
+# better history navigation, matching currently typed text
+autoload -U up-line-or-beginning-search; zle -N up-line-or-beginning-search
+autoload -U down-line-or-beginning-search; zle -N down-line-or-beginning-search
+
+# History
+zshAddHistory() {
+	whence ${${(z)1}[1]} >| /dev/null || return 1
+}
+
+# ---| Correction  and Autocompletion |--- #
+zstyle ':completion:*:correct:*' original true
+zstyle ':completion:*:correct:*' insert-unambiguous true
+zstyle ':completion:*:approximate:*' max-errors 'reply=($(( ($#PREFIX + $#SUFFIX) / 3 )) numeric)'
+
+# completion
+zstyle ':completion:*' use-cache on
+zstyle ':completion:*' cache-path "$comppath"
+zstyle ':completion:*' rehash true
+zstyle ':completion:*' verbose true
+zstyle ':completion:*' insert-tab false
+zstyle ':completion:*' accept-exact '*(N)'
+zstyle ':completion:*' squeeze-slashes true
+zstyle ':completion:*:*:*:*:*' menu select
+zstyle ':completion:*:match:*' original only
+zstyle ':completion:*:-command-:*:' verbose false
+zstyle ':completion::complete:*' gain-privileges 1
+zstyle ':completion:*:manuals.*' insert-sections true
+zstyle ':completion:*:manuals' separate-sections true
+zstyle ':completion:*' completer _complete _match _approximate _ignored
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
+zstyle ':completion:*:cd:*' tag-order local-directories directory-stack path-directories
+
+# labels and categories
+zstyle ':completion:*' group-name ''
+zstyle ':completion:*:matches' group 'yes'
+zstyle ':completion:*:options' description 'yes'
+zstyle ':completion:*:options' auto-description '%d'
+zstyle ':completion:*:default' list-prompt '%S%M matches%s'
+zstyle ':completion:*' format ' %F{green}->%F{yellow} %d%f'
+zstyle ':completion:*:messages' format ' %F{green}->%F{purple} %d%f'
+zstyle ':completion:*:descriptions' format ' %F{green}->%F{yellow} %d%f'
+zstyle ':completion:*:warnings' format ' %F{green}->%F{red} no matches%f'
+zstyle ':completion:*:corrections' format ' %F{green}->%F{green} %d: %e%f'
+
+# command parameters
+zstyle ':completion:*:functions' ignored-patterns '(prompt*|_*|*precmd*|*preexec*)'
+zstyle ':completion::*:(-command-|export):*' fake-parameters ${${${_comps[(I)-value-*]#*,}%%,*}:#-*-}
+zstyle ':completion:*:*:*:*:processes' command "ps -u $USER -o pid,user,comm -w -w"
+zstyle ':completion:*:processes-names' command 'ps c -u ${USER} -o command | uniq'
+zstyle ':completion:*:(vim|nvim|vi|nano):*' ignored-patterns '*.(wav|mp3|flac|ogg|mp4|avi|mkv|iso|so|o|7z|zip|tar|gz|bz2|rar|deb|pkg|gzip|pdf|png|jpeg|jpg|gif)'
+
+# hostnames and addresses
+zstyle ':completion:*:ssh:*' tag-order 'hosts:-host:host hosts:-domain:domain hosts:-ipaddr:ip\ address *'
+zstyle ':completion:*:ssh:*' group-order users hosts-domain hosts-host users hosts-ipaddr
+zstyle ':completion:*:(scp|rsync):*' tag-order 'hosts:-host:host hosts:-domain:domain hosts:-ipaddr:ip\ address *'
+zstyle ':completion:*:(scp|rsync):*' group-order users files all-files hosts-domain hosts-host hosts-ipaddr
+zstyle ':completion:*:(ssh|scp|rsync):*:hosts-host' ignored-patterns '*(.|:)*' loopback ip6-loopback localhost ip6-localhost broadcasthost
+zstyle ':completion:*:(ssh|scp|rsync):*:hosts-domain' ignored-patterns '<->.<->.<->.<->' '^[-[:alnum:]]##(.[-[:alnum:]]##)##' '*@*'
+zstyle ':completion:*:(ssh|scp|rsync):*:hosts-ipaddr' ignored-patterns '^(<->.<->.<->.<->|(|::)([[:xdigit:].]##:(#c,2))##(|%*))' '127.0.0.<->' '255.255.255.255' '::1' 'fe80::*'
+zstyle -e ':completion:*:hosts' hosts 'reply=( ${=${=${=${${(f)"$(cat {/etc/ssh_,~/.ssh/known_}hosts(|2)(N) 2>/dev/null)"}%%[#| ]*}//\]:[0-9]*/ }//,/ }//\[/ } ${=${(f)"$(cat /etc/hosts(|)(N) <<(ypcat hosts 2>/dev/null))"}%%\#*} ${=${${${${(@M)${(f)"$(cat ~/.ssh/config 2>/dev/null)"}:#Host *}#Host }:#*\**}:#*\?*}})'
+ttyctl -f
+
+# For tty
+if [ "$TERM" = "linux" ] ; then
+    echo -en "\e]P0232323"
+fi
+
+# initialize completion
+compinit -u -d "$compfile"
 
 ###############################
 # ****** ALIAS SECTION ****** #

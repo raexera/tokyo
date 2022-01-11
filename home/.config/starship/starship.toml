@@ -17,3 +17,12 @@ ssh_only = false
 format =  "@[$hostname](bold blue) "
 trim_at = ""
 disabled = false
+
+[cmd_duration]
+disabled = true
+
+[directory]
+format = "[$path]($style) "
+
+[time]
+disabled = true
