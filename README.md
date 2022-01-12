@@ -3,7 +3,7 @@
 <div align="center">
     <p></p>
     <a href="https://github.com/rxyhn/dotfiles/stargazers">
-        <img src="https://img.shields.io/github/stars/rxyhn/dotfiles?color=%238FBCBB6&labelColor=%233B4252&style=for-the-badge">
+        <img src="https://img.shields.io/github/stars/rxyhn/dotfiles?color=%238FBCBB&labelColor=%233B4252&style=for-the-badge">
     </a>
     <a href="https://github.com/rxyhn/dotfiles/network/members/">
         <img src="https://img.shields.io/github/forks/rxyhn/dotfiles?color=%2388C0D0&labelColor=%233B4252&style=for-the-badge">
