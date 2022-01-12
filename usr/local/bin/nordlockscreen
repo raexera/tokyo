@@ -61,7 +61,7 @@ genbg() {
 }
 
 lock() {
-	i3lock -n --force-clock -c 00000000 -i $cachepath/resize-pic-blur.png \
+    i3lock -n --force-clock -c 00000000 -i $cachepath/resize-pic-blur.png \
     --ind-pos="w/2:h/2-80" --time-pos="w/2:h/2" --date-pos="w/2:h/2+30" --greeter-pos="w/2:h/2+50" \
     --insidever-color=$fg_color --insidewrong-color=$wrong_color --inside-color=fefefe00 \
     --ringver-color=$verif_color --ringwrong-color=$wrong_color --ring-color=$highlight_color \
@@ -73,10 +73,10 @@ lock() {
     --line-uses-inside \
     --radius 50 --ring-width 3 --indicator \
     --verif-text=""  --wrong-text="" --noinput-text="" \
-	--time-font="FiraCode Nerd Font" \
-        --date-font="FiraCode Nerd Font" --verif-font="FiraCode Nerd Font" --wrong-font="FiraCode Nerd Font" \
-        --greeter-font="FiraCode Nerd Font:style=Bold"
-	sleep 1
+    --time-font="FiraCode Nerd Font" \
+    --date-font="FiraCode Nerd Font" --verif-font="FiraCode Nerd Font" --wrong-font="FiraCode Nerd Font" \
+    --greeter-font="FiraCode Nerd Font:style=Bold"
+    sleep 1
 }
 
 show_help(){
