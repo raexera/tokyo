@@ -3,13 +3,13 @@
 <div align="center">
     <p></p>
     <a href="https://github.com/rxyhn/dotfiles/stargazers">
-        <img src="https://img.shields.io/github/stars/rxyhn/dotfiles?color=%238FBCBB&labelColor=%233B4252&style=for-the-badge">
+        <img src="https://img.shields.io/github/stars/rxyhn/dotfiles?color=%238FBCBB&logoColor=eceff4&labelColor=%233B4252&style=for-the-badge">
     </a>
     <a href="https://github.com/rxyhn/dotfiles/network/members/">
-        <img src="https://img.shields.io/github/forks/rxyhn/dotfiles?color=%2388C0D0&labelColor=%233B4252&style=for-the-badge">
+        <img src="https://img.shields.io/github/forks/rxyhn/dotfiles?color=%2388C0D0&logoColor=eceff4&labelColor=%233B4252&style=for-the-badge">
     </a>
-    <img src="https://img.shields.io/github/repo-size/rxyhn/dotfiles?color=%2381A1C1&labelColor=%233B4252&style=for-the-badge">
-   <img src="https://badges.pufler.dev/visits/rxyhn/dotfiles?style=for-the-badge&color=5E81AC&logoColor=white&labelColor=3B4252"/>
+    <img src="https://img.shields.io/github/repo-size/rxyhn/dotfiles?color=%2381A1C1&logoColor=eceff4&labelColor=%233B4252&style=for-the-badge">
+   <img src="https://badges.pufler.dev/visits/rxyhn/dotfiles?style=for-the-badge&color=5E81AC&logoColor=eceff4&labelColor=3B4252"/>
 </div>
 
 <p/>
