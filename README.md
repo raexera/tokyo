@@ -9,9 +9,7 @@
         <img src="https://img.shields.io/github/forks/rxyhn/dotfiles?color=%2384a0c6&labelColor=%23101415&style=for-the-badge">
     </a>
     <img src="https://img.shields.io/github/repo-size/rxyhn/dotfiles?color=%23f65b5b&labelColor=%23101415&style=for-the-badge">
-    <a href="https://discord.gg/2RfJb3CVfb">
-      <img src="https://img.shields.io/discord/853812920919261235?color=bb8fe5&labelColor=101415&style=for-the-badge"/>
-   </a>
+   <img alt="" align="right" src="https://badges.pufler.dev/visits/rxyhn/dotfiles?style=for-the-badge&color=91e6b1&logoColor=white&labelColor=101415"/>
 </div>
 
 <p/>
@@ -19,7 +17,7 @@
 ---
 
 <!-- INFORMATION -->
-### ❖ Information <img alt="" align="right" src="https://badges.pufler.dev/visits/rxyhn/dotfiles?style=for-the-badge&color=91e6b1&logoColor=white&labelColor=101415"/>
+### ❖ Information 
 
 # Aesthetic Nordic
 
