@@ -1,5 +1,29 @@
 <h1 align="center"> ━━━━━━  ❖  ━━━━━━ </h1>
 
+<div align="center">
+    <p></p>
+    <a href="https://github.com/rxyhn/dotfiles/stargazers">
+        <img src="https://img.shields.io/github/stars/rxyhn/dotfiles?color=%238dc776&labelColor=%23101415&style=for-the-badge">
+    </a>
+    <a href="https://github.com/rxyhn/dotfiles/network/members/">
+        <img src="https://img.shields.io/github/forks/rxyhn/dotfiles?color=%2384a0c6&labelColor=%23101415&style=for-the-badge">
+    </a>
+    <img src="https://img.shields.io/github/repo-size/rxyhn/dotfiles?color=%23f65b5b&labelColor=%23101415&style=for-the-badge">
+    <a href="https://discord.gg/2RfJb3CVfb">
+      <img src="https://img.shields.io/discord/853812920919261235?color=bb8fe5&labelColor=101415&style=for-the-badge"/>
+   </a>
+</div>
+
+<p/>
+
+---
+
+<!-- INFORMATION -->
+### ❖ Information <img alt="" align="right" src="https://badges.pufler.dev/visits/rxyhn/dotfiles?style=for-the-badge&color=91e6b1&logoColor=white&labelColor=101415"/>
+
+   <img src="https://cdn.xndr.tech/u/wS6ha4L.png" alt="rice" align="right" width="400px">
+
+
 # Aesthetic Nordic
 
 - This Is My first linux rices WDYT? it's that enough for me to call my rices Aesthetic?
