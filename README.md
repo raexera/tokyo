@@ -9,7 +9,7 @@
         <img src="https://img.shields.io/github/forks/rxyhn/dotfiles?color=%2384a0c6&labelColor=%23101415&style=for-the-badge">
     </a>
     <img src="https://img.shields.io/github/repo-size/rxyhn/dotfiles?color=%23f65b5b&labelColor=%23101415&style=for-the-badge">
-   <img alt="" align="right" src="https://badges.pufler.dev/visits/rxyhn/dotfiles?style=for-the-badge&color=91e6b1&logoColor=white&labelColor=101415"/>
+   <img src="https://badges.pufler.dev/visits/rxyhn/dotfiles?style=for-the-badge&color=91e6b1&logoColor=white&labelColor=101415"/>
 </div>
 
 <p/>
