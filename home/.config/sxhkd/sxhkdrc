@@ -47,7 +47,7 @@ super + p
 
 # Lockscreen
 ctrl + alt + l
-    bsplock
+    nordlockscreen
 
 ##---------- System Keys ----------##
 
