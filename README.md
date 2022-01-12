@@ -21,9 +21,6 @@
 <!-- INFORMATION -->
 ### ❖ Information <img alt="" align="right" src="https://badges.pufler.dev/visits/rxyhn/dotfiles?style=for-the-badge&color=91e6b1&logoColor=white&labelColor=101415"/>
 
-   <img src="https://cdn.xndr.tech/u/wS6ha4L.png" alt="rice" align="right" width="400px">
-
-
 # Aesthetic Nordic
 
 - This Is My first linux rices WDYT? it's that enough for me to call my rices Aesthetic?
