@@ -271,5 +271,3 @@ notify-send "cool2" "yeah it is working"'
 eval "$(starship init zsh)"
 # Setup Starship custom prompt
 export STARSHIP_CONFIG=$HOME/.config/starship/starship.toml
-# Run jfetch
-jfetch
