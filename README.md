@@ -29,11 +29,11 @@
 
 ![Screenshot_2022-01-10-03-05-43_1366x768](https://user-images.githubusercontent.com/93292023/148734670-bef2349a-72ee-4f22-8ac7-153658250a9f.png)
 
-- Thunar, Kitty
+- Thunar, Kitty.
 
-![Screenshot_2022-01-10-02-58-03_1366x768](https://user-images.githubusercontent.com/93292023/148734789-ead20d52-aab5-4352-885d-7ad3c9645bc7.png)
+![Screenshot_2022-01-12-09-39-18_1366x768](https://user-images.githubusercontent.com/93292023/149161576-057a0eca-8a1f-4859-81ee-625f031fd8fd.png)
 
-- i3lock-color
+- i3lock-color.
 
 # ❖ Acknowledgements
 
