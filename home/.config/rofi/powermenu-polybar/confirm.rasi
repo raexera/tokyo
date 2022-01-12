@@ -1,19 +1,18 @@
 /* Confirm Dialog */
 
 * {
-    background-color:       #3B4252;
+    background-color:       #2E3440;
     text-color:             #ECEFF4;
 	font:				 	"Iosevka Nerd Font 9";
 }
 
 window {
-    width:      			140px;
-    padding:    			12px;
-    border:					0px;
+    width:      			160px;
+    padding:    			10px;
+    border:					3px;
     border-radius:          14px;
-    border-color:           #ECEFF4;
+    border-color:           #3B4252;
     location:               center;
-    y-offset:               -20px;
 }
 
 entry {
