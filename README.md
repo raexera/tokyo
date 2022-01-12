@@ -70,4 +70,6 @@
    - **Our local linux community [Linuxer Desktop Art](https://facebook.com/groups/linuxart) and [@dotfiles_id](https://t.me/dotfiles_id), also the great              [r/unixporn](https://www.reddit.com/r/unixporn).**
    - **© All artists who create icons, illustrations, and wallpapers.**
 
-<h1 align="center"> ━━━━━━  ❖  ━━━━━━ </h1>
+<p align="center"><img src="https://raw.githubusercontent.com/arcticicestudio/nord-docs/develop/assets/images/nord/repository-footer-separator.svg?sanitize=true" /></p>
+
+<p align="center"><a href="https://github.com/arcticicestudio/nord/blob/develop/LICENSE.md"><img src="https://img.shields.io/static/v1.svg?style=flat-square&label=License&message=MIT&logoColor=eceff4&logo=github&colorA=4c566a&colorB=88c0d0"/></a></p>
