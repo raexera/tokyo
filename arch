@@ -27,7 +27,7 @@ select opt in "${options[@]}"
 do
     case $opt in
         "Install Depedency [ Pacman ]")
-            sudo pacman -Sy --needed acpi adobe-source-han-sans-otc-fonts alsa-card-profiles alsa-firmware alsa-lib alsa-plugins alsa-tools alsa-topology-conf alsa-utils alsa-ucm-conf sxhkd bmon dialog dmenu dunst firefox feh fsarchiver gtk-engine-murrine gpick ffmpeg ffmpegthumbnailer graphicsmagick gvfs gvfs-afc gvfs-google gvfs-gphoto2 gvfs-mtp gvfs-smb highlight htop inetutils inotify-tools kitty libfm libva-mesa-driver light lxappearance maim mesa mpc mpd mpv mtools ncmpcpp network-manager-applet networkmanager nfs-utils openssh pavucontrol pulseaudio pulseaudio-alsa pulseaudio-bluetooth pulseaudio-equalizer-ladspa pulsemixer ranger reflector rofi rsync rxvt-unicode-terminfo thunar thunar-archive-plugin thunar-media-tags-plugin thunar-volman ttf-dejavu ueberzug unrar unzip vulkan-radeon wpa_supplicant wmctrl xarchiver xclip xdg-user-dirs xdg-user-dirs-gtk xdg-utils xf86-video-amdgpu xf86-video-ati xf86-video-vesa xfce4-power-manager xfce4-settings youtube-dl zathura zsh zsh-autosuggestions zsh-completions zsh-syntax-highlighting xorg xorg-server jq xsettingsd dosfstools polkit zip tmux neovim playerctl wireless_tools fzf
+            sudo pacman -Sy --needed acpi adobe-source-han-sans-otc-fonts alsa-card-profiles alsa-firmware alsa-lib alsa-plugins alsa-tools alsa-topology-conf alsa-utils alsa-ucm-conf sxhkd bmon dialog dmenu dunst firefox feh fsarchiver gtk-engine-murrine gpick ffmpeg ffmpegthumbnailer graphicsmagick gvfs gvfs-afc gvfs-google gvfs-gphoto2 gvfs-mtp gvfs-smb highlight htop inetutils inotify-tools kitty libfm libva-mesa-driver light lxappearance maim mesa mpc mpd mpv mtools ncmpcpp network-manager-applet networkmanager nfs-utils openssh pavucontrol pulseaudio pulseaudio-alsa pulseaudio-equalizer-ladspa pulsemixer ranger reflector rofi rsync rxvt-unicode-terminfo thunar thunar-archive-plugin thunar-media-tags-plugin thunar-volman ttf-dejavu ueberzug unrar unzip vulkan-radeon wpa_supplicant wmctrl xarchiver xclip xdg-user-dirs xdg-user-dirs-gtk xdg-utils xf86-video-amdgpu xf86-video-ati xf86-video-vesa xfce4-power-manager xfce4-settings youtube-dl zathura zsh zsh-autosuggestions zsh-completions zsh-syntax-highlighting xorg xorg-server jq xsettingsd dosfstools polkit zip tmux neovim playerctl wireless_tools fzf
             echo "----------------------------"
             echo " install depedency finished "
             echo "----------------------------"
@@ -39,7 +39,7 @@ do
             echo "----------------------------"
             ;;
         "Install Depedency [ yay ]")
-            yay -S --noconfirm --needed bspwm-git nerd-fonts-fira-code noto-fonts-emoji otf-font-awesome ttf-fira-code ttf-ms-fonts lightdm lightdm-slick-greeter lightdm-settings afetch brightnessctl cava eww-git i3lock-color papirus-icon-theme papirus-linux-universe picom-ibhagwan-git polybar visual-studio-code-bin spotify xfce-polkit plymouth plymouth-theme-spinner-alt-git todo-bin
+            yay -S --noconfirm --needed bspwm-git nerd-fonts-fira-code noto-fonts-emoji otf-font-awesome ttf-fira-code ttf-ms-fonts lightdm lightdm-slick-greeter lightdm-settings brightnessctl cava eww-git i3lock-color papirus-icon-theme papirus-linux-universe picom-ibhagwan-git polybar visual-studio-code-bin spotify xfce-polkit plymouth plymouth-theme-spinner-alt-git todo-bin
             echo "----------------------------"
             echo " install depedency finished "
             echo "----------------------------"
