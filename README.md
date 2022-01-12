@@ -17,20 +17,20 @@
 ---
 
 <!-- INFORMATION -->
-### ❖ Information 
+# ❖ Information 
 
-# Aesthetic Nordic
+## Aesthetic Nordic
 
 - This Is My first linux rices WDYT? it's that enough for me to call my rices Aesthetic?
 
-# General Info
+## General Info
 
 - OS: [Arch Linux](https://archlinux.org/)
 - WM: [Bspwm](https://github.com/baskerville/bspwm)
 - Colorscheme: You know what I [use.](https://github.com/arcticicestudio/nord)
 - Fonts? just look in my `fonts folder!`
 
-# Gallery: 
+## Gallery: 
 
 ![Screenshot_2022-01-12-02-37-09_1366x768](https://user-images.githubusercontent.com/93292023/149010210-9d5de4af-4300-473c-9344-0d7f23e8a5bc.png)
 
@@ -54,7 +54,7 @@
 
 - i3lock-color.
 
-# ❖ Acknowledgements
+## ❖ Acknowledgements
 
    - **Thanks to**
       - [owl4ce](https://github.com/owl4ce) for managing some shell script's. 
