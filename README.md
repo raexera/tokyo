@@ -34,7 +34,7 @@
 
 ![Screenshot_2022-01-12-02-37-09_1366x768](https://user-images.githubusercontent.com/93292023/149010210-9d5de4af-4300-473c-9344-0d7f23e8a5bc.png)
 
-![Screenshot_2022-01-13-11-06-21_1366x768](https://user-images.githubusercontent.com/93292023/149366020-611dafe6-ce34-4c22-89a5-4f4b23991e9a.png)
+![Screenshot_2022-01-14-03-55-23_1366x768](https://user-images.githubusercontent.com/93292023/149407938-ffa1c69f-2083-4185-870d-4b87eb85c062.png)
 
 - Elkowars Wacky Widgets, Dashboard & Sidebar.
 
