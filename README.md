@@ -60,6 +60,7 @@
 
    - **Thanks to**
       - [owl4ce](https://github.com/owl4ce) for managing some shell script's. 
+      - [niraj998](https://github.com/niraj998) was helping me for build sidebar.
       
    - **Inspiration**
       - [woowak01](https://github.com/ChocolateBread799) for the rices inspirations, that's why i do this rices.
