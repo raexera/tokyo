@@ -14,7 +14,8 @@ fi
 
 # Covers will be saved here (for both the players)
 Cover=/tmp/cover.png
-
+# mpd music directory
+mpddir=~/Music
 
 ############# Spotify ##############
 
@@ -72,7 +73,7 @@ album=`mpc -f %album% current`
 }
 
 mpccover() {
-	ffmpeg -i ~/Music/"$(mpc current -f %file%)" "${Cover}" -y &> /dev/null
+	ffmpeg -i "$mpddir"/"$(mpc current -f %file%)" "${Cover}" -y &> /dev/null
 	STATUS=$?
 
 	if [ "$STATUS" -eq 0 ];then
