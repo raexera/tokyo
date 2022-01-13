@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+while true; do
+  /home/steve/.config/eww/scripts/getweather
+  sleep 1200
+done
