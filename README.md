@@ -60,7 +60,7 @@
 
    - **Thanks to**
       - [owl4ce](https://github.com/owl4ce) for managing some shell script's. 
-      - [niraj998](https://github.com/niraj998) was helping me for build sidebar.
+      - [niraj998](https://github.com/niraj998) was helping me for managing eww.
       - [dustyn](https://github.com/CodeHeister) was helping me for migrated eww.xml to eww.yuck.
       
    - **Inspiration**
