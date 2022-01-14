@@ -56,21 +56,21 @@
 	(label	:class "day-side" 	 :text dy)))
 
 (defwidget system_side [] 
-	(box	:orientation "h"	:spacing 30	 :halign "center" :valign "center" 
-	(box	:class "cpubar-side"		:orientation "v" :spacing 15	  :space-evenly "false" :tooltip "${cpu}%"
-	(scale	:orientation "v"	:flipped "true"  :min 0		  :max 100		:value cpu		:active "false")
+	(box	:orientation "v"	:spacing 20	 :halign "center" :valign "center" 
+	(box	:class "cpubar-side"		:orientation "h" :spacing 15	  :space-evenly "false" :tooltip "${cpu}%"
+	(scale	:orientation "h"	:min 0		  :max 100		:value cpu		:active "false")
 	(label	:class "cpu-side"		:text ""))
-	(box	:class "rambar-side"		:orientation "v" :spacing 15	  :space-evenly "false" :tooltip "${ram}%"
-	(scale	:orientation "v"	:flipped "true"  :min 0		  :max 100		:value ram		:active "false")
+	(box	:class "rambar-side"		:orientation "h" :spacing 15	  :space-evenly "false" :tooltip "${ram}%"
+	(scale	:orientation "h"	:min 0		  :max 100		:value ram		:active "false")
 	(label	:class "ram-side"		:text ""))
-	(box	:class "brightnessbar-side" 	:orientation "v" :spacing 15	  :space-evenly "false" :tooltip "${bright}"
-	(scale	:orientation "v" 	:flipped "true"  :min 0  	  :max 101		:value bright	:onchange "brightnessctl s {}%")
+	(box	:class "brightnessbar-side" 	:orientation "h" :spacing 15	  :space-evenly "false" :tooltip "${bright}"
+	(scale	:orientation "h" 	:min 0  	  :max 101		:value bright	:onchange "brightnessctl s {}%")
 	(label	:class "brightness-side" 	:text ""))
-	(box	:class "volumebar-side" 	:orientation "v" :spacing 15	  :space-evenly "false" :tooltip "${volume}%"
-	(scale	:orientation "v" 	:flipped "true"  :min 0 	  :max 101		:value volume		:onchange "amixer -D pulse sset Master {}%")
+	(box	:class "volumebar-side" 	:orientation "h" :spacing 15	  :space-evenly "false" :tooltip "${volume}%"
+	(scale	:orientation "h" 	:min 0 	  :max 101		:value volume		:onchange "amixer -D pulse sset Master {}%")
 	(label	:class "volume-side" 	:text ""))
-	(box	:class "batterybar-side"	:orientation "v" :spacing 15	  :space-evenly "false" :tooltip "${battery}%"
-	(scale	:orientation "v"	:flipped "true"  :min 0 	  :max 100		:value battery :active "false")
+	(box	:class "batterybar-side"	:orientation "h" :spacing 15	  :space-evenly "false" :tooltip "${battery}%"
+	(scale	:orientation "h"	:min 0 	  :max 100		:value battery :active "false")
 	(label	:class "battery-side"	:text ""))))
 
 (defwidget music_side [] 
