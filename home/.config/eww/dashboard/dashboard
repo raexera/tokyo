@@ -12,7 +12,7 @@ fi
 
 ## Open widgets 
 run_eww() {
-	eww open-many \
+	eww -c ~/.config/eww/dashboard open-many \
 		   background \
 		   profile \
 		   system \
@@ -33,11 +33,34 @@ run_eww() {
 		   folders
 }
 
+close_eww() {
+	eww -c ~/.config/eww/dashboard close \
+		   background \
+		   profile \
+		   system \
+		   clock \
+		   uptime \
+		   music \
+		   github \
+		   reddit \
+		   twitter \
+		   youtube \
+		   weather \
+		   apps \
+		   mail \
+		   logout \
+		   sleep \
+		   reboot \
+		   poweroff \
+		   folders
+}
+
+
 ## Launch or close widgets accordingly
 if [[ ! -f "$FILE" ]]; then
 	touch "$FILE"
 	run_eww
 else
-	eww close-all
+	close_eww
 	rm "$FILE"
 fi

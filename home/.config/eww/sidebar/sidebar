@@ -10,9 +10,10 @@ if [[ ! `pidof eww` ]]; then
 	sleep 1
 fi
 
+
 ## Open widgets 
 run_eww() {
-	eww open-many \
+	eww -c ~/.config/eww/sidebar open-many \
 		   bg_side \
 		   time_side \
 		   date_side \
@@ -23,11 +24,24 @@ run_eww() {
 
 }
 
+close_eww() {
+	eww -c ~/.config/eww/sidebar close \
+		   bg_side \
+		   time_side \
+		   date_side \
+		   system_side \
+		   music_side \
+		   weather_side \
+		   power_side 
+}
+
+
 ## Launch or close widgets accordingly
 if [[ ! -f "$FILE" ]]; then
-	touch "$FILE"
+	touch "$FILE" &&
 	run_eww
+
 else
-	eww close-all
+	close_eww
 	rm "$FILE"
 fi
