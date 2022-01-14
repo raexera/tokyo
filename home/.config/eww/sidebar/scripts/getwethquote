@@ -1,2 +1,0 @@
-#!/usr/bin/env bash
-echo -e $(cat /tmp/sidebar/weather/weather-quote) | head -n1
