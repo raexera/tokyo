@@ -1,0 +1,23 @@
+#!/bin/bash
+
+## Open links in firefox
+FILE="$HOME/.cache/eww_launch.xyz"
+EWW="/usr/bin/eww"
+cmd="vivaldi-stable --new-tab"
+
+if [[ "$1" == "--mail" ]]; then
+	${EWW} close-all && rm -rf "$FILE" && xdg-open "https://mail.google.com"
+
+elif [[ "$1" == "--gh" ]]; then
+	${EWW} close-all && rm -rf "$FILE" && xdg-open "https://github.com"
+
+elif [[ "$1" == "--rd" ]]; then
+	${EWW} close-all && rm -rf "$FILE" && xdg-open "https://reddit.com"
+
+elif [[ "$1" == "--tw" ]]; then
+	${EWW} close-all && rm -rf "$FILE" && xdg-open "https://twitter.com"
+
+elif [[ "$1" == "--yt" ]]; then
+	${EWW} close-all && rm -rf "$FILE" && xdg-open "https://youtube.com"
+
+fi

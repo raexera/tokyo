@@ -1,0 +1,9 @@
+#!/bin/bash
+weather=$(cat /tmp/sidebar/weather/weather-stat)
+weather_count=$(cat /tmp/sidebar/weather/weather-stat | wc -c)
+
+if [ "$weather_count" -lt 11 ]; then
+	echo $weather;
+else 
+	echo $(cat /tmp/sidebar/weather/weather-stat | cut -c1-13)...
+fi

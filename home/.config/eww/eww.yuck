@@ -1,0 +1,2 @@
+(include "./dashboard/eww.yuck")
+(include "./sidebar/eww.yuck")
