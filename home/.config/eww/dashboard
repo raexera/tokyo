@@ -1,7 +1,7 @@
 #!/bin/bash
 
 ## Files and cmd
-FILE="$HOME/.cache/eww_launch.xyz"
+FILE="$HOME/.cache/ewwdashboard.xyz"
 
 
 ## Run eww daemon if not running already
@@ -33,11 +33,34 @@ run_eww() {
 		   folders
 }
 
+close_eww() {
+	eww close \
+		   background \
+		   profile \
+		   system \
+		   clock \
+		   uptime \
+		   music \
+		   github \
+		   reddit \
+		   twitter \
+		   youtube \
+		   weather \
+		   apps \
+		   mail \
+		   logout \
+		   sleep \
+		   reboot \
+		   poweroff \
+		   folders
+}
+
+
 ## Launch or close widgets accordingly
 if [[ ! -f "$FILE" ]]; then
 	touch "$FILE"
 	run_eww
 else
-	eww close-all
+	close_eww
 	rm "$FILE"
 fi
