@@ -52,9 +52,9 @@
 
 - Thunar, Kitty.
 
-![Screenshot_2022-01-12-09-39-18_1366x768](https://user-images.githubusercontent.com/93292023/149161576-057a0eca-8a1f-4859-81ee-625f031fd8fd.png)
+![Screenshot_2022-01-16-01-38-25_1366x768](https://user-images.githubusercontent.com/93292023/149633886-5ba141dd-1352-44ea-a61f-7727192f9f32.png)
 
-- i3lock-color.
+- Lockscreen.
 
 ## ❖ Acknowledgements
 
