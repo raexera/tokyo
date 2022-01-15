@@ -61,7 +61,9 @@ workspaces()
 
 workspaces
 
-bspc config top_padding 60
+# if use use the float polybar uncomment this line below
+# bspc config top_padding 60
+bspc config top_padding 30
 bspc config border_width 3
 bspc config window_gap 10
 bspc config split_ratio 0.50
