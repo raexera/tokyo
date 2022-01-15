@@ -1,0 +1,90 @@
+#!/bin/bash
+
+#####################################################################################
+# ██╗      ██████╗  ██████╗██╗  ██╗███████╗ ██████╗██████╗ ███████╗███████╗███╗   ██╗
+# ██║     ██╔═══██╗██╔════╝██║ ██╔╝██╔════╝██╔════╝██╔══██╗██╔════╝██╔════╝████╗  ██║
+# ██║     ██║   ██║██║     █████╔╝ ███████╗██║     ██████╔╝█████╗  █████╗  ██╔██╗ ██║
+# ██║     ██║   ██║██║     ██╔═██╗ ╚════██║██║     ██╔══██╗██╔══╝  ██╔══╝  ██║╚██╗██║
+# ███████╗╚██████╔╝╚██████╗██║  ██╗███████║╚██████╗██║  ██║███████╗███████╗██║ ╚████║
+# ╚══════╝ ╚═════╝  ╚═════╝╚═╝  ╚═╝╚══════╝ ╚═════╝╚═╝  ╚═╝╚══════╝╚══════╝╚═╝  ╚═══╝
+##################################By: Rxyhn##########################################
+
+
+LOCK_FILE="$HOME/.cache/eww-lock.lock"
+
+lock() {
+    # Wait for eww to finish load widget
+    sleep 0.5
+
+    i3lock -n -c 00000000 -t -e --force-clock --pass-media-keys --pass-power-keys --pass-volume-keys --indicator \
+        --radius 45 --modif-size=9 --modif-pos="w/2:h/2-15" \
+        \
+        --time-str="%I:%M %p" \
+        --time-pos="w/2:h/2+10" \
+        --time-color=88C0D0 \
+        --time-size=14 \
+        --time-font="Iosevka Nerd Font" \
+        \
+        --date-str="" \
+        --date-pos="w/2:h/2" \
+        --date-color=88C0D0 \
+        --date-size=14 \
+        --date-font="Iosevka Nerd Font" \
+        \
+        --verif-text="Logging in..." \
+        --verif-color=88C0D0 \
+        --verif-size=10 \
+        --verif-font="Iosevka Nerd Font" \
+        \
+        --wrong-color=BF616A \
+        --wrong-size=10 \
+        --wrong-font="Iosevka Nerd Font" \
+        \
+        --greeter-text=" " \
+        --greeter-color=ECEFF4 \
+        --greeter-size=60 \
+        --greeter-font="Iosevka Nerd Font" \
+        --greeter-pos="w/2+15:h/2+285" \
+        \
+        --ring-color=3B4252 \
+        --ringver-color=3B4252 \
+        --ringwrong-color=BF616A \
+        --ring-width 3 \
+        \
+        --insidever-color=32302fA8 \
+        --insidewrong-color=32302fA8 \
+        --inside-color=32302f00 \
+        --ind-pos="w/2:h/2-55" \
+        \
+        --line-uses-inside --keyhl-color=88C0D0 --bshl-color=88C0D0 --separator-color=88C0D0 \
+        --pointer=default
+}
+
+run() {
+    $HOME/.config/eww/lockscreen/tglbar
+    eww -c ~/.config/eww/lockscreen open-many lock-screen
+    lock
+}
+
+status=$(playerctl -p spotify status || true)
+if [ "$status" == "Playing" ]; then
+	playerctl pause
+fi
+
+if [[ ! -f "$LOCK_FILE" ]]; then
+    if pgrep -x rofi; then
+        killall rofi
+    fi
+
+    touch "$LOCK_FILE"
+    run
+fi
+
+rm "$LOCK_FILE"
+eww -c ~/.config/eww/lockscreen close lock-screen
+$HOME/.config/eww/lockscreen/tglbar
+
+status2=$(playerctl -p spotify status || true)
+if [ "$status2" == "Paused" ]; then
+    playerctl play
+fi

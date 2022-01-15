@@ -35,6 +35,10 @@ super + x
 super + d
 	dashboard
 
+# Launch EWW Sidebar
+super + s
+	sidebar
+
 ##---------- Applications ----------##
 
 # Launch Apps
@@ -47,7 +51,7 @@ super + p
 
 # Lockscreen
 ctrl + alt + l
-    nordlockscreen
+    sh ~/.config/eww/lockscreen/lockscreen
 
 ##---------- System Keys ----------##
 

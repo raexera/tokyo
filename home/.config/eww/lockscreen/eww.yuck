@@ -1,0 +1,26 @@
+;; LOCK SCREEN VARS
+(defpoll username :interval "1s"
+    "whoami")
+(defpoll hostname :interval "1s"
+    "hostname")
+
+    (defwidget lock-screen [] 
+        (box :orientation "h" :space-evenly "true"
+            (box :class "lock-screen"
+                 :orientation "v"
+    
+                (box :class "lock-pfp")
+                (box :class "lock-text" :orientation "v"
+                    (box :class "lock-username" username)
+                    (box :class "lock-hostname" "@${hostname}")
+                )
+            )
+        )
+    )
+
+    (defwindow lock-screen
+        :geometry (geometry :x "608px"
+                            :y "266px" 
+                            :width "150px" 
+                            :height "35px")
+        (lock-screen))

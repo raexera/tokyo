@@ -1,0 +1,45 @@
+$bg: #2E3440;
+$fg: #ECEFF4;
+$accent: #88C0D0;
+
+* {
+    all: unset;
+}
+
+window {
+    color: $fg;
+    font-family: "Iosevka Nerd Font";
+}
+
+button:hover {
+    color: $accent;
+}
+
+.lock-screen {
+    background: $bg;
+    border-radius: 10px;
+
+    .lock-pfp {
+        background-image: url("profile.png");
+        background-size: 100%;
+        border-radius: 40px;
+        margin-top: 20px;
+        margin-bottom: -16px;
+        margin-left: 32px;
+        margin-right: 30px;
+    }
+
+    .lock-text {
+        margin: 40px 0px 10px 0px;
+        
+        .lock-username {
+            font-family: "FiraCode Nerd Font"; 
+            margin-bottom: -5px;           font-size: 20px;
+            color: $accent;
+        }
+
+        .lock-hostname {
+            font-size: 15px;
+        }
+    }
+}
