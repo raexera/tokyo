@@ -67,14 +67,15 @@ padding = 0
 module-margin-left = 0
 module-margin-right = 0
 
-font-0 = "Fira Code:size=9;3"
-font-1 = "Iosevka Nerd Font:size=12;3"
+font-0 = "Fira Code:size=9;4"
+font-1 = "Iosevka Nerd Font:size=10;3"
 font-2 = "Iosevka Nerd Font:size=16;4"
-font-3 = "Iosevka Nerd Font:size=18;4"
+font-3 = "Iosevka Nerd Font:size=20;4"
+font-4 = "Noto Sans CJK JP:style=Bold:size=10;3"
 
-modules-left = spacing LD launcher RD dot LD bspwm RD spacing CLD mpd CRD
+modules-left = spacing launcher spacing LD bspwm RD spacing LD mpd RD
 modules-center = LD polywins RD
-modules-right = LD date RD spacing LD volume CPL brightness CRD spacing CLD battery cSpacing network cSpacing dunst CRD dot LD powermenu RD spacing
+modules-right = LD date RD spacing LD volume brightness RD spacing LD battery cSpacing network cSpacing dunst RD dot LD powermenu RD spacing
 
 spacing = 0
 dim-value = 1.0
