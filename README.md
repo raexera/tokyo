@@ -37,7 +37,7 @@
 ![Screenshot_2022-01-14-03-55-23_1366x768](https://user-images.githubusercontent.com/93292023/149407938-ffa1c69f-2083-4185-870d-4b87eb85c062.png)
 
 ![Screenshot_2022-01-17-07-59-38_1366x768](https://user-images.githubusercontent.com/93292023/149776670-cc914768-74b0-4c6a-8531-20b7f9498f17.png)
-- [classic](https://github.com/rxyhn/dotfiles/tree/main/home/.config/eww/classic) sidebar
+> [**classic**](https://github.com/rxyhn/dotfiles/tree/main/home/.config/eww/classic) sidebar
 
 - Elkowars Wacky Widgets, Dashboard & Sidebar.
 
