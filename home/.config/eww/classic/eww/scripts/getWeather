@@ -1,0 +1,29 @@
+#!/bin/sh
+
+KEY="98953dd4e25ed8d084cc0fc92ec7d20b"
+CITY="Bandung"
+
+weather=$(curl -sf "api.openweathermap.org/data/2.5/weather?q=$CITY&appid=$KEY&units=metric")
+weather_desc=$(echo $weather | jq -r ".weather[0].main")
+weather_temp=$(echo $weather | jq ".main.temp" | cut -d "." -f 1)
+feels_like=$(echo $weather | jq ".main.feels_like" | cut -d "." -f 1)
+humidity=$(echo $weather | jq ".main.humidity")
+wind=$(echo $weather | jq ".wind.speed")
+
+case $1 in
+    current_temp)
+        echo $weather_temp
+        ;;
+    feels_like)
+        echo $feels_like
+        ;;
+    weather_desc)
+        echo $weather_desc
+        ;;
+    humidity)
+		echo $humidity
+		;;
+	wind)
+		echo $wind
+		;;
+esac

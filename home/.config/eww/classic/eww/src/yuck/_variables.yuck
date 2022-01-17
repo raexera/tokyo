@@ -1,0 +1,72 @@
+;;  DATE VARS 
+(defpoll minute :interval "10s"
+    "date '+%M'")
+(defpoll hour :interval "5m"
+    "date '+%H'")
+(defpoll weekday :interval "5s"
+    "date '+%A'")
+(defpoll monthday :interval "5s"
+    "date '+%d %B'")
+
+;; TIME VARS
+(defpoll time
+    :interval "30s"
+    :initial "date '+%H %M'"
+    :run-while true
+ "date '+%H %M'")
+(defpoll date
+    :interval "30s"
+    :initial "date '+%e %B %Y'"
+    :run-while true
+ "date '+%e %B %Y'")
+
+
+;;  SYSTEM INFO VARS
+(defpoll used_ram :interval "2s"
+    "./scripts/getUsedRam")
+(defpoll used_cpu :interval "2s"
+    "sh echo `top -b -n1 | grep 'Cpu(s)' | awk '{print $2 + $4}'`")
+(defpoll volume :interval "1ms"
+    "amixer -D pulse sget Master | grep 'Left:' | awk -F'[][]' '{ print $2 }' | tr -d '%'")
+(defpoll brightness :interval "1ms"
+    "brightnessctl -m -d amdgpu_bl0 | awk -F, '{print substr($4, 0, length($4)-1)}' | tr -d '%'")
+
+;; MUSIC PLAYER VARS
+(defpoll art :interval "5s"
+    "./scripts/echoSongArt")
+(defpoll song_art :interval "5s"
+    "./scripts/getSongArt")
+(defpoll song_artist :interval "5s"
+    "./scripts/getSongArtist")
+(defpoll song_title :interval "1s"
+    "./scripts/getSongTitle")
+(defpoll song_title_full :interval "5s"
+    "./scripts/getSongTitle full")
+(defpoll player_status :interval "2s"
+    "./scripts/getPlayerStatus")
+
+;; WEATHER VARS
+(defpoll weather-icon :interval "20m"  "cat /tmp/sidebar/weather/weather-icon")
+(defpoll temperature :interval "20m"  "cat /tmp/sidebar/weather/weather-degree")
+(defpoll weather-hex :interval "20m"  "cat /tmp/sidebar/weather/weather-hex")
+(defpoll weather-stat :interval "20m"  "~/.config/eww/scripts/weather-trimmer")
+        
+;; QUOTE
+(defpoll quote :interval "10h"
+    "./scripts/getQuote quote")
+(defpoll quote_author :interval "10h"
+    "./scripts/getQuote author")
+
+;; UPDATE
+(defpoll update		:interval "10m"  "~/.config/eww/scripts/update")
+
+;; FETCH
+;fetch 
+(defpoll os :interval '10000s'
+  './scripts/fetch/os')
+(defpoll shell :interval '100000s'
+  './scripts/fetch/shell')
+(defpoll wm :interval '100000s'
+  './scripts/fetch/wm')
+  (defpoll uptime :interval '30s'
+  './scripts/fetch/up')

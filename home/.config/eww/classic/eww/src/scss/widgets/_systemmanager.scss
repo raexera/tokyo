@@ -1,0 +1,51 @@
+.system-manager {
+    background-color: #2E3440;
+    padding: 1rem;
+    padding-bottom: 0rem;
+
+    .a {
+        .title {
+            color: #ECEFF4;
+        }
+    }
+
+    scale trough {
+        background-color: #3B4252;
+        border-radius: 50px;
+    
+        min-height: 13rem;
+        min-width: 5px;
+    }
+
+    scale trough highlight {
+        border-radius: 50px;
+    }
+
+    .ram-bar, .disk-bar, .vol-bar, .bri-bar {
+        margin: 12px;
+    }
+
+    .ram-bar {
+        scale trough highlight {
+            background-color: #5E81AC;
+        }
+    }
+
+    .disk-bar {
+        scale trough highlight {
+            background-color: #81A1C1;
+        }
+    }
+
+    .vol-bar {
+        scale trough highlight {
+            background-color: #88C0D0;
+        }
+    }
+
+    .bri-bar {
+        scale trough highlight {
+            background-color: #8FBCBB;
+        }
+    }
+}

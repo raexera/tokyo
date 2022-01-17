@@ -1,0 +1,16 @@
+.date {
+    background-color: #2E3440;
+    border-radius: 5px;
+
+    .weekday {
+        color: #88C0D0;
+        margin-top: 0.5rem;
+        margin-left: 0.5em;
+    }
+
+    .monthday {
+        margin-top: 0.3em;
+        margin-left: -2em;
+        font-size: 15px;
+    }
+}

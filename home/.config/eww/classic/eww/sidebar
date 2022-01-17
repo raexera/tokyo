@@ -1,0 +1,34 @@
+#!/bin/bash
+# Opens eww sidebar
+
+LOCK_FILE="$HOME/.cache/eww.lock"
+EWW_BIN="$HOME/.local/bin/eww"
+
+run() {
+    ${EWW_BIN} open-many \
+        outer-window \
+        profile \
+	update \
+        system-manager \
+        music-player \
+        weather \
+        date \
+	xfetch \
+        quote \
+        music-info
+}
+
+# Run eww daemon if not running
+if [[ ! `pidof eww` ]]; then
+    ${EWW_BIN} daemon
+    sleep 1
+fi
+
+# Open widgets
+if [[ ! -f "$LOCK_FILE" ]]; then
+    touch "$LOCK_FILE"
+    run
+else
+    ${EWW_BIN} close-all
+    rm "$LOCK_FILE"
+fi

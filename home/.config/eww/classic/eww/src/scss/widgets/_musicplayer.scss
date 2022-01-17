@@ -1,0 +1,50 @@
+.music-player {
+    padding: 0 0 10px 0;
+
+    .song-art {
+        background-color: #2E3440;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        border-radius: 5px;
+    
+        margin: 2px -80px 0 0;
+    }
+    
+    .song-info {
+        background-color: #2E3440;
+        border-radius: 5px;
+
+        margin: 2px 0px -1px 90px;
+
+        .song-controls {
+            button {
+                font-family: "Material Icons";
+                font-size: 20px;
+
+                &:hover {
+                    color: #88C0D0;
+                }
+            }
+        }
+    }
+}
+
+.music-info {
+    all: unset;
+    background-color: transparent;
+    border-radius: 5px;
+
+    .b {
+        margin-left: 2rem;
+        font-size: 16px;
+        font-weight: bolder;
+    }
+
+    .c {
+        margin-left: 2.1em;
+    }
+
+    .song-artist {
+        color: #88C0D0;
+    }
+}

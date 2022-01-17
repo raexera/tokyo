@@ -1,0 +1,250 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;  ██╗    ██╗██╗███╗   ██╗██████╗  ██████╗ ██╗    ██╗ ;;
+;;  ██║    ██║██║████╗  ██║██╔══██╗██╔═══██╗██║    ██║ ;;
+;;  ██║ █╗ ██║██║██╔██╗ ██║██║  ██║██║   ██║██║ █╗ ██║ ;;
+;;  ██║███╗██║██║██║╚██╗██║██║  ██║██║   ██║██║███╗██║ ;;
+;;  ╚███╔███╔╝██║██║ ╚████║██████╔╝╚██████╔╝╚███╔███╔╝ ;;
+;;  ╚══╝╚══╝ ╚═╝╚═╝  ╚═══╝╚═════╝  ╚═════╝  ╚══╝╚══╝   ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;                                       
+
+(defwidget outer-window [] 
+    (box
+        (time :timetext "${time}"
+)))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;  ██████╗ ██████╗  ██████╗ ███████╗██╗██╗     ███████╗  ;;
+;;  ██╔══██╗██╔══██╗██╔═══██╗██╔════╝██║██║     ██╔════╝  ;;
+;;  ██████╔╝██████╔╝██║   ██║█████╗  ██║██║     █████╗    ;;
+;;  ██╔═══╝ ██╔══██╗██║   ██║██╔══╝  ██║██║     ██╔══╝    ;;
+;;  ██║     ██║  ██║╚██████╔╝██║     ██║███████╗███████╗  ;;
+;;  ╚═╝     ╚═╝  ╚═╝ ╚═════╝ ╚═╝     ╚═╝╚══════╝╚══════╝  ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(defwidget profile [] 
+    (box :orientation "v"
+        (box :class "pfp")
+    )
+)
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;  ████████╗██╗███╗   ███╗███████╗  ;;
+;;  ╚══██╔══╝██║████╗ ████║██╔════╝  ;;
+;;     ██║   ██║██╔████╔██║█████╗    ;;
+;;     ██║   ██║██║╚██╔╝██║██╔══╝    ;;
+;;     ██║   ██║██║ ╚═╝ ██║███████╗  ;;
+;;     ╚═╝   ╚═╝╚═╝     ╚═╝╚══════╝  ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;                              
+
+(defwidget time [timetext]
+    (button :onclick "dunstify -u critical '${timetext}'"
+            :onmiddleclick ""
+            :onmiddleclick ""
+            :onrightclick ""
+            :class "time"
+            (box :spacing 0
+                 :orientation "vertical"
+                 :space-evenly false
+                 (label :text timetext
+                        :limit-width 5
+                        :show_truncated false
+                        :wrap false
+                        :class "time-label"
+                        :angle 0.0)
+                )))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;  ██████╗  █████╗ ████████╗███████╗  ;;
+;;  ██╔══██╗██╔══██╗╚══██╔══╝██╔════╝  ;;
+;;  ██║  ██║███████║   ██║   █████╗    ;;
+;;  ██║  ██║██╔══██║   ██║   ██╔══╝    ;;
+;;  ██████╔╝██║  ██║   ██║   ███████╗  ;;
+;;  ╚═════╝ ╚═╝  ╚═╝   ╚═╝   ╚══════╝  ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;                                                 
+
+(defwidget date []
+    (box :class "date" :orientation "v" :space-evenly "false"
+    (box :orientation "h" :space-evenly "false"
+            (label :class "weekday" :text "${weekday}")
+            )
+            (label :class "monthday" :text "${monthday}")
+    )
+)
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;  ███████╗██╗   ██╗███████╗████████╗███████╗███╗   ███╗  ;;
+;;  ██╔════╝╚██╗ ██╔╝██╔════╝╚══██╔══╝██╔════╝████╗ ████║  ;;
+;;  ███████╗ ╚████╔╝ ███████╗   ██║   █████╗  ██╔████╔██║  ;;
+;;  ╚════██║  ╚██╔╝  ╚════██║   ██║   ██╔══╝  ██║╚██╔╝██║  ;;
+;;  ███████║   ██║   ███████║   ██║   ███████╗██║ ╚═╝ ██║  ;;
+;;  ╚══════╝   ╚═╝   ╚══════╝   ╚═╝   ╚══════╝╚═╝     ╚═╝  ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;                                           
+
+(defwidget system-manager [] 
+    (box :orientation "v" 
+         :space-evenly "false" 
+
+        (box :class "a" :orientation "h" :space-evenly "false"
+            (label :class "title" :text "Stats")
+        )
+
+        (box :class "bars" :orientation "h" :space-evenly "false"
+            (box :class "ram-bar" :tooltip "Used RAM"
+                (scale :min 0 :max 101 :active "false" :value used_ram :orientation "v" :flipped "true"
+            ))
+            (box :class "disk-bar" :tooltip "Used Disk Space"
+                (scale :min 0 :max 101 :active "false" :value {round((1 - (EWW_DISK["/"].free / EWW_DISK["/"].total)) * 100, 0)} :orientation "v" :flipped "true"
+            ))
+            (box :class "vol-bar" :tooltip "Volume"
+                (scale :min 0 :max 101 :value volume :orientation "v" :flipped "true" :onchange "amixer -q set Master {}%"
+            ))
+            (box :class "bri-bar" :tooltip "Brightness"
+                (scale :min 0 :max 101 :value brightness :orientation "v" :flipped "true" :onchange "brightnessctl set {}%"
+            ))
+        )
+    )
+)
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;  ███╗   ███╗██╗   ██╗███████╗██╗ ██████╗  ;;
+;;  ████╗ ████║██║   ██║██╔════╝██║██╔════╝  ;;
+;;  ██╔████╔██║██║   ██║███████╗██║██║       ;;
+;;  ██║╚██╔╝██║██║   ██║╚════██║██║██║       ;;
+;;  ██║ ╚═╝ ██║╚██████╔╝███████║██║╚██████╗  ;;
+;;  ╚═╝     ╚═╝ ╚═════╝ ╚══════╝╚═╝ ╚═════╝  ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;                                
+
+(defwidget music-player [] 
+    (box :class "music-player"
+         :orientation "h"
+        (box :class "song-art" :style "background-image: url('${art}')" :tooltip "${song_artist} - ${song_title_full}" song_art)
+        (box :class "song-info" :orientation "v"
+            (box :class "song-controls" :orientation "v"
+                (button :onclick "playerctl previous" "")
+                (button :class "play-pause" :onclick "playerctl play-pause" player_status)
+                (button :onclick "playerctl next" "")
+            )
+        )
+    )
+)
+(defwidget music-info []
+    (box :class "music-info" :orientation "v"
+        (box :class "b" :orientation "h" :space-evenly "false"
+            (label :class "song-title" :text song_title)
+        )
+        (box :class "c" :orientation "h" :space-evenly "false"
+            (label :class "song-artist" :text "by ${song_artist}")
+        )
+    )
+)
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;  ██╗    ██╗███████╗ █████╗ ████████╗██╗  ██╗███████╗██████╗   ;; 
+;;  ██║    ██║██╔════╝██╔══██╗╚══██╔══╝██║  ██║██╔════╝██╔══██╗  ;;
+;;  ██║ █╗ ██║█████╗  ███████║   ██║   ███████║█████╗  ██████╔╝  ;;
+;;  ██║███╗██║██╔══╝  ██╔══██║   ██║   ██╔══██║██╔══╝  ██╔══██╗  ;;
+;;  ╚███╔███╔╝███████╗██║  ██║   ██║   ██║  ██║███████╗██║  ██║  ;;
+;;   ╚══╝╚══╝ ╚══════╝╚═╝  ╚═╝   ╚═╝   ╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝  ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(defwidget weather [] 
+    (box :orientation "v" :class "weather" :space-evenly "false" 
+    (box :class "weather-stat" weather-stat)
+    (box :class "temperature" "${temperature}")
+    (box :class "weather-info" :orientation "v" :space-evenly "false" 
+    (box :class "weather-icon" :style "color: ${weather-hex}" weather-icon)
+        )
+    )
+)
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;   ██████╗ ██╗   ██╗ ██████╗ ████████╗███████╗  ;;
+;;  ██╔═══██╗██║   ██║██╔═══██╗╚══██╔══╝██╔════╝  ;;
+;;  ██║   ██║██║   ██║██║   ██║   ██║   █████╗    ;;
+;;  ██║▄▄ ██║██║   ██║██║   ██║   ██║   ██╔══╝    ;;
+;;  ╚██████╔╝╚██████╔╝╚██████╔╝   ██║   ███████╗  ;;
+;;   ╚══▀▀═╝  ╚═════╝  ╚═════╝    ╚═╝   ╚══════╝  ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(defwidget quote []
+    (box :class "quote" :orientation "v"
+        (label :class "text" :text '"${quote}"')
+        (label :class "author" :text "━ ${quote_author}")
+    )
+)
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;  ██╗   ██╗██████╗ ██████╗  █████╗ ████████╗███████╗    ███╗   ███╗ █████╗ ███╗   ██╗ █████╗  ██████╗ ███████╗██████╗   ;;
+;;  ██║   ██║██╔══██╗██╔══██╗██╔══██╗╚══██╔══╝██╔════╝    ████╗ ████║██╔══██╗████╗  ██║██╔══██╗██╔════╝ ██╔════╝██╔══██╗  ;;
+;;  ██║   ██║██████╔╝██║  ██║███████║   ██║   █████╗      ██╔████╔██║███████║██╔██╗ ██║███████║██║  ███╗█████╗  ██████╔╝  ;;
+;;  ██║   ██║██╔═══╝ ██║  ██║██╔══██║   ██║   ██╔══╝      ██║╚██╔╝██║██╔══██║██║╚██╗██║██╔══██║██║   ██║██╔══╝  ██╔══██╗  ;;
+;;  ╚██████╔╝██║     ██████╔╝██║  ██║   ██║   ███████╗    ██║ ╚═╝ ██║██║  ██║██║ ╚████║██║  ██║╚██████╔╝███████╗██║  ██║  ;;
+;;   ╚═════╝ ╚═╝     ╚═════╝ ╚═╝  ╚═╝   ╚═╝   ╚══════╝    ╚═╝     ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝╚═╝  ╚═╝ ╚═════╝ ╚══════╝╚═╝  ╚═╝  ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;                                                  
+
+(defwidget update [] 
+    (box	:orientation "h"  
+    (button	:class "package"	:onclick "~/.config/eww/scripts/popup"	 "")
+    (label	:class "updt"		:text "${update} pkgs")
+    )
+)
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;  ██╗  ██╗███████╗███████╗████████╗ ██████╗██╗  ██╗  ;;
+;;  ╚██╗██╔╝██╔════╝██╔════╝╚══██╔══╝██╔════╝██║  ██║  ;;
+;;   ╚███╔╝ █████╗  █████╗     ██║   ██║     ███████║  ;;
+;;   ██╔██╗ ██╔══╝  ██╔══╝     ██║   ██║     ██╔══██║  ;;
+;;  ██╔╝ ██╗██║     ███████╗   ██║   ╚██████╗██║  ██║  ;;
+;;  ╚═╝  ╚═╝╚═╝     ╚══════╝   ╚═╝    ╚═════╝╚═╝  ╚═╝  ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;                                               
+
+(defwidget txt [label]
+    (box :halign 'start' label ))
+  
+  (defwidget title[]
+   (box :class 'fetchTitles' :orientation 'v'
+      (txt :label 'os ')
+      (txt :label 'wm ')
+      (txt :label 'sh ')
+      (txt :label 'up ')
+  ))
+; dummy details for now!
+(defwidget details[]
+    (box :class 'fetchDetails' :orientation 'v'
+    (txt :label  os)
+    (txt :label  wm)
+    (txt :label  shell)
+    (txt :label  uptime)
+  ))
+
+  (defwidget fetch[]
+    (box :class 'fetch' 
+     (box :orientation 'h' 
+     :class 'fetchContent' 
+     :halign "center"
+     :space-evenly false
+     (title) 
+     (details)
+    )
+   ))
+   (defwidget xfetch[]
+    (box :orientation 'v' 
+         :space-evenly false
+     (fetch)
+        (box    :orientation "h"
+        :halign "center"
+        :class "dots"
+        :spacing 5;
+        (label  :text ""
+                :class "pink")
+        (label  :text ""
+                :class "green")
+        (label  :text ""
+                :class "yellow")
+        (label  :text ""
+                :class "blue")
+        (label  :text ""
+                :class "purple")
+        (label  :text ""
+                :class "cyan")
+)
+  ))

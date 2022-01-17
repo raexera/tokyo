@@ -1,0 +1,3 @@
+#!/bin/bash
+
+awk '/^ID=/' /etc/*-release | awk -F'=' '{ print tolower($2) }'

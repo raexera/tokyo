@@ -1,0 +1,69 @@
+(defwindow outer-window 
+    :geometry (geometry :x "0%"
+                        :y "0%"
+                        :width "297px"
+                        :height "100%")
+    (outer-window))
+
+(defwindow profile 
+    :geometry (geometry :x "-50px" 
+                        :y "11%"
+                        :width "270px" 
+                        :height "240px")
+    (profile))
+
+(defwindow system-manager 
+    :geometry (geometry :x "1%"
+                        :y "285px"
+                        :width "120px"
+                        :height "235px")
+    (system-manager))
+
+(defwindow music-player
+    :geometry (geometry :x "1%"
+                        :y "69%"
+                        :width "270px" 
+                        :height "150px")
+    (music-player))
+
+(defwindow music-info
+    :geometry (geometry :x "0%"
+                        :y "81%"
+                        :width "133px" 
+                        :height "40px")
+    (music-info))
+
+(defwindow weather 
+    :geometry (geometry :x "12%" 
+                        :y "204px" 
+                        :width "120px" 
+                        :height "82px")
+    (weather))
+
+(defwindow date
+    :geometry (geometry :x "12%"
+                        :y "135px" 
+                        :width "120px" 
+                        :height "59px")
+    (date))
+
+(defwindow quote
+    :geometry (geometry :x "1%"
+                        :y "680px" 
+                        :width "270px" 
+                        :height "60px")
+    (quote))
+
+(defwindow update 
+    :geometry (geometry :x "12%" 
+                        :y "460px" 
+                        :width 120 
+                        :height 60)
+    (update))
+        
+(defwindow xfetch 
+    :geometry (geometry :x "12%" 
+                        :y "316px" 
+                        :width "120px" 
+                        :height "200px")
+    (xfetch))

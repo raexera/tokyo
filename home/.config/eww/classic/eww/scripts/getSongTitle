@@ -1,0 +1,19 @@
+#!/bin/bash
+title=$(playerctl -p spotify metadata --format '{{ title }}')
+count=$(echo -n "$title" | wc -c)
+
+if [ -z "$title" ]; then
+	echo "Not Playing";
+else
+	if [ "$count" -le 18 ]; then
+        echo $title
+	else	
+		if [[ "$title" =~ ^[一-龠]+|[ぁ-ゔ]+|[ァ-ヴー]+ ]]; then
+			echo $(playerctl metadata --format '{{ title }}' | awk '{ print substr($1, 1, 15) }')...
+        elif [[ "$title" -le 15 ]]; then
+            echo $(playerctl metadata --format '{{ title }}' | awk '{print $1, $2}')
+        else
+	    	echo $(playerctl metadata --format '{{ title }}' | awk '{print $1, $2, substr($3, 1, 4)}')...
+		fi
+	fi
+fi
