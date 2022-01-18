@@ -1,6 +1,6 @@
 #!/bin/sh
 
-KEY="98953dd4e25ed8d084cc0fc92ec7d20b"
+KEY=""
 CITY="Bandung"
 
 weather=$(curl -sf "api.openweathermap.org/data/2.5/weather?q=$CITY&appid=$KEY&units=metric")
