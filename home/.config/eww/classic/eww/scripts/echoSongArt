@@ -1,2 +1,0 @@
-#!/bin/bash
-echo "$HOME/.cache/eww/spotify/cover.png"

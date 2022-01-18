@@ -3,10 +3,10 @@
 }
 
 window {
-    color: #ECEFF4;
-    font-family: "Iosevka Nerd Font";
+    color: $fg;
+    font-family: "Sarasa Mono CL Nerd Font";
 }
 
 button:hover {
-    color: #88C0D0;
+    color: $accent;
 }

@@ -1,17 +1,17 @@
 .weather{
-    background-color: #2E3440;
+    background-color: $bgSecondary;
     border-radius: 5px;
 }
 .weather-icon{
     font-size: 40px;
     font-family: Iosevka Nerd Font;
-    margin-right: -2em;
+    margin-right: -2.5em;
 }
 .weather-stat{
     font-size: 13px;
     padding: 3px;
     margin: 5px 0px 0px 0px;
-    color: #88C0D0;
+    color: $nord9;
 }
 .temperature{
     font-size: 17px;

@@ -1,10 +1,10 @@
 .time {
-    margin-top: 25px;
-    margin-bottom: 20px;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
   }
   
   .time box .time-label {
-    color: #ECEFF4;
-    font-size: 70px;
-    font-weight: 700;
+    color: $fg;
+    font-size: 5em;
+    font-weight: bolder;
   }

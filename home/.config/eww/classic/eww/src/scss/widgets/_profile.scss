@@ -1,8 +1,8 @@
 .profile {
-
     .pfp {
         background-image: url("./assets/avatar.png");
-        background-size: 100%;
+        background-size: cover;
+        background-position: center;
         border-radius: 5px;
 
         margin: 50px 65px;

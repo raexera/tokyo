@@ -1,33 +1,33 @@
 .fetchContent {
     font-family: 'Medium';
     font-size: 14px;
-    color: #ECEFF4;
-    padding-top: 20px;
-    padding-bottom: 45px;
+    color: $fg;
+    padding-top: 1.4em;
+    padding-bottom: 3.3em;
   }
   
   .fetch {
-    background-color: #2E3440;
+    background-color: $bgSecondary;
     border-radius: 5px;
   }
   
   .fetchTitles {
-    color: #5E81AC;
+    color: $blue;
   }
   .dots{
-    margin-top: -40px;
+    margin-top: -4em;
     font-size: 12px;
-    .pink{
-      color: #ECEFF4;
+    .red{
+      color: $nord6;
     }.green{
-      color: #8FBCBB;
+      color: $nord7;
     }.yellow{
-      color: #88C0D0;
+      color: $nord8;
     }.blue{
-      color: #81A1C1;
-    }.purple{
-      color: #5E81AC;
+      color: $nord9;
+    }.magenta{
+      color: $nord10;
     }.cyan{
-      color:#3B4252;
+      color: $bg;
     }
   }

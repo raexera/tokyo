@@ -1,19 +1,18 @@
 .system-manager {
-    background-color: #2E3440;
+    background-color: $bgSecondary;
     padding: 1rem;
     padding-bottom: 0rem;
-
     .a {
         .title {
-            color: #ECEFF4;
+            color: $fg;
         }
     }
 
     scale trough {
-        background-color: #3B4252;
+        background-color: $bg;
         border-radius: 50px;
     
-        min-height: 13rem;
+        min-height: 178px;
         min-width: 5px;
     }
 
@@ -27,25 +26,25 @@
 
     .ram-bar {
         scale trough highlight {
-            background-color: #5E81AC;
+            background-color: $nord7;
         }
     }
 
     .disk-bar {
         scale trough highlight {
-            background-color: #81A1C1;
+            background-color: $nord8
         }
     }
 
     .vol-bar {
         scale trough highlight {
-            background-color: #88C0D0;
+            background-color: $nord9
         }
     }
 
     .bri-bar {
         scale trough highlight {
-            background-color: #8FBCBB;
+            background-color: $nord10;
         }
     }
 }

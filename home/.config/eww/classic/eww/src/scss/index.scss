@@ -1,8 +1,7 @@
 .outer-window {
-    background-color: #3B4252;
-    border-radius: 0px 10px 10px 0px;
-}
+    background-color: $bg;
+    border-radius: 0px 5px 5px 0px;}
 
-.system-manager, .music-player {
+.profile, .system-manager, .music-player {
     border-radius: 5px;
 }
