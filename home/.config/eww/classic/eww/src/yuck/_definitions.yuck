@@ -59,7 +59,7 @@
                         :height "60px")
     (update))
 (defwindow calendar
-    :geometry (geometry :x "79%"
+    :geometry (geometry :x "78%"
                         :y "55px" 
                         :width "270px" 
                         :height "60px")
