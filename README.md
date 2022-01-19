@@ -19,10 +19,6 @@
 <!-- INFORMATION -->
 # ❖ Information 
 
-## Aesthetic Nordic
-
-- This Is My first linux rices WDYT? it's that enough for me to call my rices Aesthetic?
-
 ## General Info
 
 - OS: [Arch Linux](https://archlinux.org/)
@@ -32,8 +28,9 @@
 
 ## Gallery: 
 
-![Screenshot_2022-01-12-02-37-09_1366x768](https://user-images.githubusercontent.com/93292023/149010210-9d5de4af-4300-473c-9344-0d7f23e8a5bc.png)
+![Screenshot_2022-01-19-07-35-31_1366x768](https://user-images.githubusercontent.com/93292023/150132040-31f87dc1-f7ff-417a-9392-489a014d8a24.png)
 
+![Screenshot_2022-01-19-05-36-04_1366x768](https://user-images.githubusercontent.com/93292023/150132152-ff86ce2a-c38f-4700-bda7-d87530058213.png)
 
 - Elkowars Wacky Widgets, Dashboard & Sidebar.
 
@@ -48,10 +45,8 @@
 ## ❖ Acknowledgements
 
    - **Thanks to**
-      - [owl4ce](https://github.com/owl4ce) for managing some shell script's. 
-    
-   - **Our local linux community [Linuxer Desktop Art](https://facebook.com/groups/linuxart) and [@dotfiles_id](https://t.me/dotfiles_id), also the great              [r/unixporn](https://www.reddit.com/r/unixporn).**
-   - **© All artists who create icons, illustrations, and wallpapers.**
+        - **Our local linux community [Linuxer Desktop Art](https://facebook.com/groups/linuxart) and [@dotfiles_id](https://t.me/dotfiles_id), also the great              [r/unixporn](https://www.reddit.com/r/unixporn).**
+        - **© All artists who create icons, illustrations, and wallpapers.**
 
 <p align="center"><img src="https://raw.githubusercontent.com/arcticicestudio/nord-docs/develop/assets/images/nord/repository-footer-separator.svg?sanitize=true" /></p>
 
