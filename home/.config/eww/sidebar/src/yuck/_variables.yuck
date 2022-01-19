@@ -33,11 +33,11 @@
     "./scripts/battery")
 
 ;; MUSIC PLAYER VARS
-(defpoll art		:interval "5s"  "~/.config/eww/scripts/music coverloc")
-(defpoll title		:interval "5s"  "~/.config/eww/scripts/music title")
-(defpoll artist		:interval "5s"  "~/.config/eww/scripts/music artist")
-(defpoll album		:interval "5s"  "~/.config/eww/scripts/music album")
-(defpoll playpause	:interval "5s"  "~/.config/eww/scripts/music statusicon")
+(defpoll art		:interval "5s"  "~/.config/eww/sidebar/scripts/music coverloc")
+(defpoll title		:interval "5s"  "~/.config/eww/sidebar/scripts/music title")
+(defpoll artist		:interval "5s"  "~/.config/eww/sidebar/scripts/music artist")
+(defpoll album		:interval "5s"  "~/.config/eww/sidebar/scripts/music album")
+(defpoll playpause	:interval "5s"  "~/.config/eww/sidebar/scripts/music statusicon")
 
 ;; LOCK SCREEN VARS
 (defpoll username :interval "1s"
@@ -49,7 +49,7 @@
 (defpoll weather-icon :interval "20m"  "cat /tmp/sidebar/weather/weather-icon")
 (defpoll temperature :interval "20m"  "cat /tmp/sidebar/weather/weather-degree")
 (defpoll weather-hex :interval "20m"  "cat /tmp/sidebar/weather/weather-hex")
-(defpoll weather-stat :interval "20m"  "~/.config/eww/scripts/weather-trimmer")
+(defpoll weather-stat :interval "20m"  "~/.config/eww/sidebar/scripts/weather-trimmer")
 
 ;; QUOTE VARS
 (defpoll quote :interval "10h"
@@ -66,7 +66,7 @@
     "date '+%Y'")
 
 ;; UPDATE
-(defpoll update		:interval "10m"  "~/.config/eww/scripts/update")
+(defpoll update		:interval "10m"  "~/.config/eww/sidebar/scripts/update")
 
 ;; FETCH
 ;fetch 

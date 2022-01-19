@@ -8,13 +8,13 @@
 /** Background ***************************************/
 .bg {
 	// background-image: url("images/bg.png");
-	background-color: #474D59;
+	background-color: #242933;
 	opacity: 0;
 }
 
 /** Generic window ***********************************/
 .genwin {
-	background-color: #2E3440;
+	background-color: #242933;
 	border-radius: 16px;
 }
 
@@ -62,7 +62,7 @@
 
 .cpu_bar, .mem_bar, .bright_bar, .bat_bar, scale trough {
 	all: unset;
-	background-color: #3A404C;
+	background-color: #2E3440;
 	border-radius: 16px;
 	min-height: 12px;
 	min-width: 170px;
@@ -187,7 +187,7 @@
 }
 .music_bar scale trough {
 	all: unset;
-	background-color: #3A404C;
+	background-color: #2E3440;
 	border-radius: 8px;
 	min-height: 10px;
 	min-width: 180px;
@@ -311,7 +311,7 @@
 
 /** Home folders ***************************************/
 .hddbox {
-	background-color: #3A404C;
+	background-color: #2E3440;
 	border-radius: 10px;
 	margin : 15px;
 }

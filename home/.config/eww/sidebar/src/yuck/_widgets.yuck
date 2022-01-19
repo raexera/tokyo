@@ -89,9 +89,9 @@
         (box :class "song-art" :style "background-image: url('${art}')" :tooltip "${artist} - ${title}")
         (box :class "song-info" :orientation "v"
             (box :class "song-controls" :orientation "v"
-                (button :onclick "~/.config/eww/scripts/music previous" "")
-                (button :class "play-pause" :onclick "~/.config/eww/scripts/music toggle" playpause)
-                (button :onclick "~/.config/eww/scripts/music next" "")
+                (button :onclick "~/.config/eww/sidebar/scripts/music previous" "")
+                (button :class "play-pause" :onclick "~/.config/eww/sidebar/scripts/music toggle" playpause)
+                (button :onclick "~/.config/eww/sidebar/scripts/music next" "")
             )
         )
     )
@@ -165,7 +165,7 @@
 )
 (defwidget update [] 
     (box	:orientation "h"  
-    (button	:class "package"	:onclick "~/.config/eww/scripts/popup"	 " ")
+    (button	:class "package"	:onclick "~/.config/eww/sidebar/scripts/popup"	 " ")
     (label	:class "updt"		:text "${update} pkgs")
     )
 )
