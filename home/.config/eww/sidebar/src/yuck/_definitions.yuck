@@ -1,0 +1,84 @@
+(defwindow outer-window 
+    :geometry (geometry :x "0%"
+                        :y "0%"
+                        :width "305px"
+                        :height "100%")
+    (outer-window))
+(defwindow profile 
+    :geometry (geometry :x "-50px" 
+                        :y "11%"
+                        :width "253px" 
+                        :height "223px")
+    (profile))
+(defwindow system-manager 
+    :geometry (geometry :x "1%"
+                        :y "276px"
+                        :width "100px"
+                        :height "210px")
+    (system-manager))
+(defwindow music-player
+    :geometry (geometry :x "1%"
+                        :y "509px"
+                        :width "270px" 
+                        :height "135px")
+    (music-player))
+(defwindow music-info
+    :geometry (geometry :x "0%"
+                        :y "68%"
+                        :width "133px" 
+                        :height "40px")
+    (music-info))
+(defwindow lock-screen
+    :geometry (geometry :x "38%"
+                        :y "41%" 
+                        :width "325px" 
+                        :height "130px")
+    (lock-screen))
+(defwindow weather
+    :geometry (geometry :x "12%"
+                        :y "204px" 
+                        :width "120px" 
+                        :height "120px")
+    (weather))
+(defwindow battery
+    :geometry (geometry :x "12%"
+                        :y "333px" 
+                        :width "120px" 
+                        :height "148px")
+    (battery))
+(defwindow date
+    :geometry (geometry :x "12%"
+                        :y "135px" 
+                        :width "120px" 
+                        :height "50px")
+    (date))
+(defwindow quote
+    :geometry (geometry :x "1%"
+                        :y "655px" 
+                        :width "270px" 
+                        :height "60px")
+    (quote))
+(defwindow update 
+    :geometry (geometry :x "12%" 
+                        :y "460px" 
+                        :width "120px" 
+                        :height "60px")
+    (update))
+(defwindow calendar
+    :geometry (geometry :x "78%"
+                        :y "55px" 
+                        :width "270px" 
+                        :height "60px")
+    (cal))
+(defwindow powermenu
+    :geometry (geometry :x "93%"
+                        :y "173px" ; 25%
+                        :width "98px"
+                        :height "100px")
+    (powermenu))
+(defwindow xfetch 
+    :geometry (geometry :x "12%" 
+                        :y "316px" 
+                        :width "120px" 
+                        :height "130px")
+    (xfetch))

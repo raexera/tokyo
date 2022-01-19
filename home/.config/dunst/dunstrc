@@ -1,5 +1,5 @@
 [colors]
-	background = "#2e3440"
+	background = "#242933"
 
 [global]
     ### Display ###
@@ -18,15 +18,14 @@
     separator_height = 2
     horizontal_padding = 11
     frame_width = 3
-    corner_radius = 12
 
-    frame_color = "#3B4252"
+    frame_color = "#2E3440"
     separator_color = auto
     sort = yes
     idle_threshold = 120
 
     ### Text ###
-    font = Iosevka Nerd Font, Font Awesome 5 Free Solid 9
+    font = Iosevka Nerd Font 9
     line_height = 0
 
     markup = full
@@ -72,7 +71,7 @@
     per_monitor_dpi = false
 
 [log_notifs]
-    script = ~/.config/rofi/notification/dunst_logger.sh
+    script = ~/.config/dunst/scripts/dunst_logger.sh
 
 [dunst_icon]
     appname = dunst
@@ -90,28 +89,27 @@
     appname = firefox
     new_icon = /usr/share/icons/Papirus-Dark/48x48/apps/firefox-defalut.svg
   
-[shortcuts]
-    close = ctrl+space
-    close_all = ctrl+shift+space
-#    #context = ctrl+shift+period
-#    history = ctrl+grave
+[telegram]
+    appname = telegram
+    new_icon = /usr/share/icons/Papirus-Dark/48x48/apps/telegram.svg
+  
+[discord]
+    appname = discord
+    new_icon = /usr/share/icons/Papirus-Dark/48x48/apps/com.discordapp.Discord.svg
 
 [urgency_low]
     background = colors.background
     foreground = "#ECEFF4"
-    frame_color = "#3b4252"
     timeout = 5
 
 [urgency_normal]
     background = colors.background
     foreground = "#ECEFF4"
-    frame_color = "#3b4252"
     timeout = 5
 
 [urgency_critical]
     background = colors.background
     foreground = "#ECEFF4"
-    frame_color = "#3b4252"
     timeout = 0
 
 # vim: ft=conf

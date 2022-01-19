@@ -1,0 +1,28 @@
+.lock-screen {
+    background: $bg;
+    border-radius: 10px;
+
+    .lock-pfp {
+        background-image: url("./assets/avatar.png");
+        background-size: cover;
+        background-position: center;
+        border-radius: 40px;
+
+        margin: 25px 35px 25px 45px;
+    }
+
+    .lock-text {
+        margin: 40px -20px 30px -70px;
+        
+        .lock-username {
+            font-family: "VictorMono Nerd Font", monospace;
+            font-size: 24px;
+            font-style: italic;
+            color: $nord8;
+        }
+
+        .lock-hostname {
+            font-size: 16px;
+        }
+    }
+}

@@ -1,0 +1,98 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;   ███╗   ██╗ ██████╗ ██████╗ ██████╗      
+;   ████╗  ██║██╔═══██╗██╔══██╗██╔══██╗     
+;   ██╔██╗ ██║██║   ██║██████╔╝██║  ██║     Its a fucking nord!
+;   ██║╚██╗██║██║   ██║██╔══██╗██║  ██║         By: rxyhn
+;   ██║ ╚████║╚██████╔╝██║  ██║██████╔╝
+;   ╚═╝  ╚═══╝ ╚═════╝ ╚═╝  ╚═╝╚═════╝ 
+;                                   
+;   ██████╗  ██████╗ ██╗  ██╗   ██╗██████╗  █████╗ ██████╗ 
+;   ██╔══██╗██╔═══██╗██║  ╚██╗ ██╔╝██╔══██╗██╔══██╗██╔══██╗
+;   ██████╔╝██║   ██║██║   ╚████╔╝ ██████╔╝███████║██████╔╝
+;   ██╔═══╝ ██║   ██║██║    ╚██╔╝  ██╔══██╗██╔══██║██╔══██╗
+;   ██║     ╚██████╔╝███████╗██║   ██████╔╝██║  ██║██║  ██║
+;   ╚═╝      ╚═════╝ ╚══════╝╚═╝   ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+; Settings
+[global/wm]
+margin-bottom = 0
+margin-top = 0
+include-directory = ~/.config/polybar/modules
+include-file = ~/.config/polybar/colors
+
+[settings]
+throttle-output = 5
+throttle-output-for = 10
+screenchange-reload = false
+compositing-background = source
+compositing-foreground = over
+compositing-overline = over
+compositing-underline = over
+compositing-border = over
+pseudo-transparency = false
+
+; ========================================================
+
+[bar/main]
+monitor = 
+monitor-fallback =
+monitor-strict = false
+
+override-redirect = false
+
+bottom = false
+fixed-center = true
+
+width = 100%
+height = 25
+
+offset-x = 0%
+offset-y = 0%
+
+background = ${nord.nord00}
+foreground = ${nord.nord6}
+
+radius-top = 0.0
+radius-bottom = 0.0
+
+line-size = 0
+line-color = ${nord.nord1}
+
+border-size = 5
+border-color = ${nord.nord00}
+
+padding = 0
+
+module-margin-left = 0
+module-margin-right = 0
+
+font-0 = "Fira Code:size=9;4"
+font-1 = "Iosevka Nerd Font:size=10;3"
+font-2 = "Iosevka Nerd Font:size=16;4"
+font-3 = "CaskaydiaCove Nerd Font:size=9;3"
+font-4 = "Iosevka Nerd Font:size=20;4"
+font-5 = "Iosevka Nerd Font:style=Regular:size=11;3"
+
+modules-left = sep launcher LD bspwm RD sep
+modules-center = LD polywins RD
+modules-right = sep volume volumeSlider brightness brightnessSlider separatorText sep network sep dunst sep separatorText date_i date separatorText sep LD powermenu RD sep
+
+spacing = 0
+dim-value = 1.0
+
+tray-position = right
+tray-detached = false
+tray-maxsize = 14
+tray-background = ${nord.nord0}
+tray-offset-x = 0
+tray-offset-y = 0
+tray-padding = 0
+tray-scale = 1.0
+
+enable-ipc = true
+
+cursor-click = 
+cursor-scroll = 
+
+; ====================================================

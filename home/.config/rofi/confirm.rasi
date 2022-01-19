@@ -1,0 +1,22 @@
+@import "colors.rasi"
+
+* {
+    background-color:       @background;
+    text-color:             @foreground;
+	font:				 	"Iosevka Nerd Font 8.2";
+}
+
+window {
+    width:      			225px;
+    padding:    			25px;
+    border:					4px;
+    border-radius:          0px;
+    border-color:           @background-alt;
+    location:               center;
+    y-offset:               -2em;
+}
+
+entry {
+    expand: 				true;
+    text-color:				@foreground;
+}

@@ -1,0 +1,45 @@
+#!/bin/bash
+# Tiny colored fetch script
+# Requires Typicons Font to display the icons
+# elenapan @ github
+
+f=3 b=4
+for j in f b; do
+  for i in {0..7}; do
+    printf -v $j$i %b "\e[${!j}${i}m"
+  done
+done
+d=$'\e[1m'
+t=$'\e[0m'
+v=$'\e[7m'
+
+# Items
+h=wm
+wmname="$(xprop -id $(xprop -root -notype | awk '$1=="_NET_SUPPORTING_WM_CHECK:"{print $5}') -notype -f _NET_WM_NAME 8t | grep "WM_NAME" | cut -f2 -d \")"
+
+k=kr
+kernel="$(uname -r | cut -d '-' -f1)"
+
+sh=sh
+shell=$(basename $SHELL)
+
+o=os
+os="$(uname -s)"
+
+# (\ /)
+# ( · ·)
+# c(")(")
+
+# (\ /)
+# ( . .)
+# c(")(")
+
+tput clear
+cat << EOF
+ 
+  (\ /)     $f6$k $t~ $kernel
+  ( $d· ·$t)    $f6$h $t~ $wmname
+  c($f1"$t)($f1"$t)   $f6$sh $t~ $shell
+
+ 
+EOF

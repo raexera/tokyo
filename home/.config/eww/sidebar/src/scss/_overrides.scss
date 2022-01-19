@@ -1,0 +1,12 @@
+* {
+    all: unset;
+}
+
+window {
+    color: $fg;
+    font-family: "Sarasa Mono CL Nerd Font";
+}
+
+button:hover {
+    color: $accent;
+}

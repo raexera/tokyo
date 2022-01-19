@@ -1,5 +1,5 @@
 * {
-    font-family: "Iosevka Nerd Font" !important;
+    font-family: "Iosevka" !important;
     font-size: 12px !important;
 
     --arrowpanel-background: #2E3440 !important;
@@ -9,7 +9,7 @@
 }
 
 .toolbar {
-    background-color: #2E3440 !important;
+    background-color: #3B4252 !important;
 }
 
 window,
@@ -19,7 +19,7 @@ window,
 #PersonalToolbar,
 #navigator-toolbox,
 #sidebar-box {
-  background-color: #2E3440 !important;
+  background-color: #3B4252 !important;
   -moz-appearance: none !important;
   background-image: none !important;
   border: none !important;
@@ -39,7 +39,7 @@ window,
 }
 
 .tabbrowser-tab:hover .tab-background {
-  background-color: #4c566a !important;
+  background-color: #4C566A !important;
 }
 
 .tabbrowser-tab[fadein] {
@@ -51,7 +51,7 @@ window,
 }
 
 #nav-bar {
-  background-color: #2E3440 !important;
+  background-color: #3B4252 !important;
   -moz-appearance: none !important;
   background-image: none !important;
   border: none !important;
@@ -167,7 +167,7 @@ window,
 }
 
 #urlbar-input {
-    background-color: #3B4252 !important;
+    background-color: #2E3440 !important;
     padding: 4px !important;
 }
 
@@ -196,5 +196,5 @@ window,
 }
 
 urlbar > #urlbar-background {
-    background-color: "#2E3440" !important;
+    background-color: "#131a21" !important;
 }

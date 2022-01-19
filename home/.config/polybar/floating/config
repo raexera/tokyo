@@ -1,0 +1,112 @@
+; ██████╗  ██████╗ ██╗  ██╗   ██╗██████╗  █████╗ ██████╗ 
+; ██╔══██╗██╔═══██╗██║  ╚██╗ ██╔╝██╔══██╗██╔══██╗██╔══██╗
+; ██████╔╝██║   ██║██║   ╚████╔╝ ██████╔╝███████║██████╔╝
+; ██╔═══╝ ██║   ██║██║    ╚██╔╝  ██╔══██╗██╔══██║██╔══██╗
+; ██║     ╚██████╔╝███████╗██║   ██████╔╝██║  ██║██║  ██║
+; ╚═╝      ╚═════╝ ╚══════╝╚═╝   ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝
+                                                       
+; ========================================================
+; Include Modules
+[section/base]
+include-directory = ~/.config/polybar/modules
+include-file = ~/.config/polybar/colors
+; ========================================================
+
+; ========================================================
+; Settings
+[global/wm]
+;margin-top = 5
+;margin-bottom = 5
+margin-bottom = 0
+margin-top = 0
+; vim:ft=dosini
+
+[settings]
+throttle-output = 5
+throttle-output-for = 10
+screenchange-reload = false
+compositing-background = source
+compositing-foreground = over
+compositing-overline = over
+compositing-underline = over
+compositing-border = over
+pseudo-transparency = false
+; ========================================================
+
+
+; ====================== BARS ========================
+[bar/main]
+bottom = false
+offset-y = 20
+height = 30
+radius = 14
+fixed-center = true
+wm-restack = bspwm
+override-redirect = true
+border = 0
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+
+module-margin-left = 0
+module-margin-right = 0
+
+enable-ipc = true
+
+; ====================================================
+
+[bar/zero]
+inherit = bar/main
+width = 3%
+offset-x = 10
+font-0 = "Iosevka Nerd Font:style=Regular:size=10;3"
+modules-center = launcher
+
+; ====================================================
+
+[bar/one]
+inherit = bar/main
+width = 11%
+offset-x = 65
+font-0 = "Iosevka Nerd Font:style=Bold:size=10;3"
+modules-center = bspwm
+
+; ====================================================
+
+[bar/two]
+inherit = bar/main
+width = 11%
+offset-x = 610
+font-0 = "Iosevka Nerd Font:style=Bold:size=9;3"
+modules-center = polywins
+
+; ====================================================
+
+[bar/three]
+inherit = bar/main
+width = 10%
+offset-x = 1070
+background = ${colors.background}
+font-0 = "Iosevka Nerd Font:style=Regular:size=11;3"
+modules-center = volume
+
+; ====================================================
+
+[bar/four]
+inherit = bar/main
+width = 10%
+offset-x = 1220
+background = ${colors.background}
+font-0 = "Iosevka Nerd Font:style=Regular:size=10;3"
+modules-center = battery separator network separator dunst separator sep-line separator powermenu
+
+; ====================================================
+
+[bar]
+fill = 絛
+empty = 絛
+indicator = 雷
+; Nerd font :   ,  ⏽,  樂 籠 錄 , 雷 絛
+
+; ====================================================

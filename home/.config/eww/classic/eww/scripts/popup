@@ -1,3 +1,0 @@
-#!/bin/bash
-
-bspc rule -a kitty -o state=floating follow=on center=true rectangle=490x310+0+0 && kitty ~/.config/eww/scripts/update Up

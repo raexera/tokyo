@@ -1,6 +1,6 @@
 @namespace url("http://www.w3.org/1999/xhtml");
 :root { 
-    scrollbar-color: #ECEFF4 #ECEFF4;
+    scrollbar-color: #2E3440 #3B4252;
 }
 
 * {
@@ -10,7 +10,7 @@
 
 @-moz-document url("about:newtab"), url("about:home") {
     * {
-        font-family: "Iosevka Nerd Font" !important;
+        font-family: "Iosevka" !important;
     }
 
     body {
@@ -28,10 +28,10 @@
     .search-handoff-button {
         border-radius: 15px !important;
         border-width: 4px !important;
-        border-color: #4C566A !important;
+        border-color: #3B4252 !important;
 
         background-size: 0px !important;
-        background-color: #3B4252 !important;
+        background-color: #2E3440 !important;
 
         padding-inline-start: 10px !important;
         padding-inline-end: 10px !important;

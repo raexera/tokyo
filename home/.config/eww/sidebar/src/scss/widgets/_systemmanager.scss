@@ -1,0 +1,76 @@
+.system-manager {
+    background-color: $bgSecondary;
+    padding-top: 1rem;
+    padding-left: 0.46rem;
+    padding-right: 0.46rem;
+    .a {
+        .title {
+            color: $fg;
+            margin-right: -45px;
+        }
+    }
+
+    scale trough {
+        background-color: $bg;
+        border-radius: 50px;
+    
+        min-height: 160px;
+        min-width: 5px;
+    }
+
+    scale trough highlight {
+        border-radius: 50px;
+    }
+
+    .ram-bar, .disk-bar, .vol-bar, .bri-bar {
+        margin: 12px;
+    }
+
+    .ram-bar {
+        scale trough highlight {
+            background-color: $nord7;
+        }
+    }
+
+    .disk-bar {
+        scale trough highlight {
+            background-color: $nord8
+        }
+    }
+
+    .vol-bar {
+        scale trough highlight {
+            background-color: $nord9
+        }
+    }
+
+    .bri-bar {
+        scale trough highlight {
+            background-color: $nord10;
+        }
+    }
+}
+
+.radial-main-box {
+    background-color: $nord0;
+    padding: 10px;
+    padding-top: 48.3px;
+    padding-left: 15px;
+    padding-right: 15px;
+    border-radius: 5px;
+    margin-top: 10px;
+  }
+  .radial-label {
+    padding: 30px;
+    font-size: 30px;
+    background-color: $nord0;
+  }
+  .cpu-radial {
+    color: $nord8;
+    background-color: $bg;
+  }
+  .title-bat{
+      color: $fg;
+      margin-top: -53px;
+      margin-left: -48px;
+  }

@@ -1,0 +1,40 @@
+.cal-box {
+    background-color: $bg;
+    border: 16px $bg solid;
+
+    .cal-inner-box {
+        padding: 1rem 1rem .2rem;
+        border: 4px $bgSecondary solid;
+
+        .cal {
+            &.highlight {
+                padding: 10rem;
+            }
+
+            padding: .8rem .25rem 0rem;
+            margin-left: 10px;
+        }
+    }
+}
+
+calendar:selected {
+    color: $nord10;
+}
+
+calendar.header {
+	color: $nord7;
+	font-weight: bold;
+}
+
+calendar.button {
+	color: $nord8;
+}
+
+calendar.highlight {
+	color: $nord10;
+	font-weight: bold;
+}
+
+calendar:indeterminate {
+	color: rgba(205, 219, 249, 0.3);
+}

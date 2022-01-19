@@ -1,0 +1,36 @@
+#!/bin/bash
+# Opens eww dashboard
+
+LOCK_FILE="$HOME/.cache/eww.lock"
+EWW_BIN="$HOME/.local/bin/eww"
+
+run() {
+    # bspc config left_padding 300
+
+    ${EWW_BIN} open-many \
+        outer-window \
+        profile \
+        system-manager \
+	battery \
+        music-player \
+        weather \
+        date \
+        quote \
+        music-info
+}
+
+# Run eww daemon if not running
+if [[ ! `pidof eww` ]]; then
+    ${EWW_BIN} daemon
+    sleep 1
+fi
+
+# Open widgets
+if [[ ! -f "$LOCK_FILE" ]]; then
+    touch "$LOCK_FILE"
+    run
+else
+    # bspc config left_padding 0
+    ${EWW_BIN} close-all
+    rm "$LOCK_FILE"
+fi

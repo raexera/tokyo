@@ -1,0 +1,11 @@
+#!/bin/sh
+
+if [ "$1" = "os" ]; then
+awk '/^ID=/' /etc/*-release | awk -F'=' '{ print tolower($2) }'
+elif [ "$1" = "sh" ]; then
+basename $SHELL
+elif [ "$1" = "up" ]; then
+uptime -p | sed -e 's/up //;s/ hours,/h/;s/ hour,/h/;s/ minutes/m/;s/ minute/m/'
+elif [ "$1" = "wm" ]; then
+xprop -id $(xprop -root -notype | awk '$1=="_NET_SUPPORTING_WM_CHECK:"{print $5}') -notype -f _NET_WM_NAME 8t | grep "WM_NAME" | cut -f2 -d \"
+fi

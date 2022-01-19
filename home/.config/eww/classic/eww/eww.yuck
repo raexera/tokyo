@@ -1,3 +1,0 @@
-(include "./src/yuck/_definitions.yuck")
-(include "./src/yuck/_widgets.yuck")
-(include "./src/yuck/_variables.yuck")

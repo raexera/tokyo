@@ -1,0 +1,87 @@
+@import "colors/colors.rasi"
+
+configuration {
+    show-icons:                     false;
+    drun-display-format:            "{name}";
+    disable-history:                true;
+	hide-scrollbar: 				true;
+}
+
+window {    
+    transparency:                   "real";
+	width:							19%;
+    border:                         16px;
+    border-color:                   @background;
+    font:                           "Sarasa Mono CL Nerd Font 8.2";
+}
+
+entry {
+    enabled:                        false;
+    background-color:               #0E1112;
+    text-color:                     @foreground;
+    placeholder-color:              @foreground;
+    expand:                         true;
+    horizontal-align:               0;
+    placeholder:                    "Type to search...";
+    padding:                        4px;
+    margin:                         2px;
+    blink:                          true;
+    border:                         0 0 4px 0;
+    border-color:                   @border;
+    border-radius:                  10px;
+}
+
+inputbar {
+	children: 						[ ];
+    background-color:               @background;
+    text-color:                     @background;
+    expand:                         false;
+    margin:                         0px 0px 0px 0px;
+    padding:                        0%;
+}
+
+listview {
+    background-color:               @background;
+    padding:                        10px;
+    spacing:                        0%;
+    lines:                          3;
+    cycle:                          false;
+    dynamic:                        true;
+    layout:                         vertical;
+}
+
+mainbox {
+    background-color:               @background;
+	border:							4px;
+	border-color:					@border;
+    children:                       [ inputbar, listview ];
+    spacing:                       	0%;
+    padding:                        10px;
+}
+
+element {
+    background-color:               @background;
+    text-color:                     @foreground;
+    border-radius:                  0%;
+    padding:                        2px; 
+}
+
+element-text {
+    background-color:               inherit;
+    text-color:                     inherit;
+}
+
+element-text {
+    expand:                         true;
+    horizontal-align:               0;
+    vertical-align:                 0.5;
+    margin:                         8px;
+}
+
+element selected {
+    background-color:               @background-alt;
+    text-color:                     @foreground;
+    border:                         0 0 2px 0;
+    border-color:                   @border;
+    border-radius:                  10px;
+}
