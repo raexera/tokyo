@@ -34,27 +34,12 @@
 
 ![Screenshot_2022-01-12-02-37-09_1366x768](https://user-images.githubusercontent.com/93292023/149010210-9d5de4af-4300-473c-9344-0d7f23e8a5bc.png)
 
-![Screenshot_2022-01-14-03-55-23_1366x768](https://user-images.githubusercontent.com/93292023/149407938-ffa1c69f-2083-4185-870d-4b87eb85c062.png)
-> [**nord**](https://github.com/rxyhn/dotfiles/tree/main/home/.config/eww/sidebar) sidebar.
-
-![Screenshot_2022-01-17-07-59-38_1366x768](https://user-images.githubusercontent.com/93292023/149776670-cc914768-74b0-4c6a-8531-20b7f9498f17.png)
-> [**classic**](https://github.com/rxyhn/dotfiles/tree/main/home/.config/eww/classic) sidebar.
 
 - Elkowars Wacky Widgets, Dashboard & Sidebar.
-
-![Screenshot_2022-01-10-02-57-13_1366x768](https://user-images.githubusercontent.com/93292023/148734017-0ebb78c4-8eb8-46d7-b93b-586f124540dc.png)
-
-![Screenshot_2022-01-12-02-39-27_1366x768](https://user-images.githubusercontent.com/93292023/149010301-268888cb-a76f-491d-ad90-65103bda7f98.png)
-
-- Rofi Launcher, Notification Center.
 
 ![Screenshot_2022-01-10-02-57-36_1366x768](https://user-images.githubusercontent.com/93292023/148734138-3bd72e7f-d1cc-4b65-9c99-d6b02c86ba02.png)
 
 - Firefox.
-
-![Screenshot_2022-01-10-03-05-43_1366x768](https://user-images.githubusercontent.com/93292023/148734670-bef2349a-72ee-4f22-8ac7-153658250a9f.png)
-
-- Thunar, Kitty.
 
 ![Screenshot_2022-01-16-01-38-25_1366x768](https://user-images.githubusercontent.com/93292023/149633886-5ba141dd-1352-44ea-a61f-7727192f9f32.png)
 
@@ -64,9 +49,7 @@
 
    - **Thanks to**
       - [owl4ce](https://github.com/owl4ce) for managing some shell script's. 
-      - [niraj998](https://github.com/niraj998) was helping me for managing eww.
-      - [dustyn](https://github.com/CodeHeister) was helping me for migrated eww.xml to eww.yuck.
-      
+    
    - **Our local linux community [Linuxer Desktop Art](https://facebook.com/groups/linuxart) and [@dotfiles_id](https://t.me/dotfiles_id), also the great              [r/unixporn](https://www.reddit.com/r/unixporn).**
    - **© All artists who create icons, illustrations, and wallpapers.**
 
