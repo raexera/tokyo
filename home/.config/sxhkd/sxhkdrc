@@ -23,21 +23,29 @@ super + shift + Return
 
 ##---------- Rofi Launcher & Menus ----------##
 
-# Rofi App Launcher
+# Open application menu
 super + m
-	sh ~/.config/rofi/launcher/launcher.sh
+    sh $HOME/.local/bin/appmenu
 
-# Rofi power menu
-super + x
-	sh ~/.config/rofi/powermenu/powermenu.sh
-
-# Launch EWW Dashboard
+# Toggle eww dashboard
 super + d
-	dashboard
+    sh $HOME/.local/bin/dashboard
 
-# Launch EWW Sidebar
+# Toggle eww sidebar
 super + s
-	sidebar
+    sh $HOME/.local/bin/sidebar
+
+# Toggle powermenu
+super + x
+    sh $HOME/.local/bin/powermenu
+
+# Toggle network menu
+super + n
+    sh $HOME/.local/bin/networkmanager
+
+# Toggle notification center
+super + o
+    sh $HOME/.local/bin/notificationCenter
 
 ##---------- Applications ----------##
 
@@ -47,45 +55,46 @@ super + shift + {f,w,e}
 
 # Color Picker
 super + p
-	color-gpick
+	sh $HOME/.local/bin/color-gpick
 
 # Lockscreen
 ctrl + alt + l
-    sh ~/.config/eww/lockscreen/lockscreen
+    sh $HOME/.local/bin/lockscreen
 
 ##---------- System Keys ----------##
 
 # Take a screenshot
 Print
-	takeshot --now
+	sh $HOME/.local/bin/takeshot --now
 	
 # Take screenshot in 5 second
 alt + Print	
-	takeshot --in5
+	sh $HOME/.local/bin/takeshot --in5
 
 # Take screenshot in 10 second
 shift + Print	
-	takeshot --in10
+	sh $HOME/.local/bin/takeshot --in10
 
 # Take screenshot of active window
 ctrl + Print
-	takeshot --win
+	sh $HOME/.local/bin/takeshot --win
 
 # Take screenshot of area
 ctrl + alt + Print
-	takeshot --area
+	sh $HOME/.local/bin/takeshot --area
 
 # Manage brightness
 XF86MonBrightness{Up,Down}
-    change-brightness {up,down}
+    sh $HOME/.local/bin/change-brightness {up,down}
 
+# Manage Volume
 Manage volume
 XF86Audio{Raise,Lower}Volume
-    change-volume {up,down}
+    sh $HOME/.local/bin/change-volume {up,down}
 
 XF86AudioMute
-   change-volume mute
-	
+    sh $HOME/.local/bin/change-volume mute
+
 # Music control
 XF86Audio{Next,Prev,Play,Stop}
 	mpc {next,prev,toggle,stop}
