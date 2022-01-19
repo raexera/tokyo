@@ -46,7 +46,7 @@ lock() {
 
 run() {
     $HOME/.local/bin/tglbar
-    $HOME/.local/bin/eww open-many lock-screen
+    $HOME/.local/bin/eww -c $HOME/.config/eww/sidebar open-many lock-screen
     lock
 }
 
@@ -65,7 +65,7 @@ if [[ ! -f "$LOCK_FILE" ]]; then
 fi
 
 rm "$LOCK_FILE"
-$HOME/.local/bin/eww close-all
+$HOME/.local/bin/eww -c $HOME/.config/eww/sidebar close-all
 $HOME/.local/bin/tglbar
 
 status2=$(playerctl -p spotify status || true)
