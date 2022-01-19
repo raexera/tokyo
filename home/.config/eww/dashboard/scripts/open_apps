@@ -2,7 +2,7 @@
 
 ## Open Applications
 FILE="$HOME/.cache/eww_launch.xyz"
-EWW="/usr/bin/eww"
+EWW="$HOME/.local/bin/eww"
 
 if [[ "$1" == "--vd" ]]; then
 	${EWW} close-all && rm -rf "$FILE" && firefox &

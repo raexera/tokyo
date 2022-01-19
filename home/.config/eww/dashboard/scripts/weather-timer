@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+while true; do
+  /home/rxyhn/.config/eww/dashboard/scripts/getweather
+  sleep 1200
+done

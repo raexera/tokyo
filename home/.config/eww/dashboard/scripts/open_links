@@ -2,7 +2,7 @@
 
 ## Open links in firefox
 FILE="$HOME/.cache/eww_launch.xyz"
-EWW="/usr/bin/eww"
+EWW="$HOME/.local/bin/eww"
 cmd="vivaldi-stable --new-tab"
 
 if [[ "$1" == "--mail" ]]; then

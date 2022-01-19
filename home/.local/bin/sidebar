@@ -1,17 +1,22 @@
 #!/bin/bash
-# Opens eww dashboard
 
-LOCK_FILE="$HOME/.cache/eww.lock"
+## Files and cmd
+FILE="$HOME/.cache/ewwsidebar.xyz"
 EWW_BIN="$HOME/.local/bin/eww"
 
-run() {
-    # bspc config left_padding 300
+## Run eww daemon if not running already
+if [[ ! `pidof eww` ]]; then
+	${EWW_BIN} daemon
+	sleep 1
+fi
 
-    ${EWW_BIN} open-many \
-        outer-window \
+## Open widgets 
+run_eww() {
+	${EWW_BIN} -c $HOME/.config/eww/sidebar open-many \
+		outer-window \
         profile \
         system-manager \
-	battery \
+	    battery \
         music-player \
         weather \
         date \
@@ -19,18 +24,25 @@ run() {
         music-info
 }
 
-# Run eww daemon if not running
-if [[ ! `pidof eww` ]]; then
-    ${EWW_BIN} daemon
-    sleep 1
-fi
+close_eww() {
+	${EWW_BIN} -c $HOME/.config/eww/sidebar close \
+		outer-window \
+        profile \
+        system-manager \
+	    battery \
+        music-player \
+        weather \
+        date \
+        quote \
+        music-info
+}
 
-# Open widgets
-if [[ ! -f "$LOCK_FILE" ]]; then
-    touch "$LOCK_FILE"
-    run
+
+## Launch or close widgets accordingly
+if [[ ! -f "$FILE" ]]; then
+	touch "$FILE"
+	run_eww
 else
-    # bspc config left_padding 0
-    ${EWW_BIN} close-all
-    rm "$LOCK_FILE"
+	close_eww
+	rm "$FILE"
 fi
