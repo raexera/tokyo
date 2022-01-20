@@ -30,17 +30,17 @@
 
 ![Screenshot_2022-01-21-01-39-11_1366x768](https://user-images.githubusercontent.com/93292023/150401406-f336c400-1df4-45fd-bc63-b910e03655d6.png)
 
-![Screenshot_2022-01-19-05-36-04_1366x768](https://user-images.githubusercontent.com/93292023/150132152-ff86ce2a-c38f-4700-bda7-d87530058213.png)
+![Screenshot_2022-01-21-01-57-16_1366x768](https://user-images.githubusercontent.com/93292023/150404223-7020aa63-cd28-4a5e-bca6-b726afcd7ed5.png)
 
-- Elkowars Wacky Widgets, Dashboard & Sidebar.
+    - Elkowars Wacky Widgets, Dashboard & Sidebar.
 
 ![Screenshot_2022-01-21-01-47-30_1366x768](https://user-images.githubusercontent.com/93292023/150402679-b64630a9-2e21-477a-ab4d-ae19b8b57115.png)
 
-- Firefox.
+    - Firefox.
 
 ![Screenshot_2022-01-16-01-38-25_1366x768](https://user-images.githubusercontent.com/93292023/149633886-5ba141dd-1352-44ea-a61f-7727192f9f32.png)
 
-- Lockscreen.
+    - Lockscreen.
 
 ## ❖ Acknowledgements
 
