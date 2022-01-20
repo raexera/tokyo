@@ -37,7 +37,7 @@
 
 ><samp>**Firefox.**</samp>
 
-![Screenshot_2022-01-21-01-47-30_1366x768](https://user-images.githubusercontent.com/93292023/150402679-b64630a9-2e21-477a-ab4d-ae19b8b57115.png)
+![Screenshot_2022-01-21-02-19-41_1366x768](https://user-images.githubusercontent.com/93292023/150407580-30be71df-391a-4111-9bff-3bb6d246a924.png)
 
 ><samp>**Lockscreen.**</samp>
 
