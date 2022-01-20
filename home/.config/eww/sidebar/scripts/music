@@ -22,7 +22,7 @@ albumart="$(playerctl --player=spotify metadata mpris:artUrl | sed -e 's/open.sp
 
 if [ $(playerctl --player=spotify metadata mpris:artUrl) ]; then
 	curl -s "$albumart" --output $Cover;
-else cp ~/.config/eww/assets/music.png $Cover;
+else cp ~/.config/eww/sidebar/assets/music.png $Cover;
 fi
 echo "$Cover"
 }
@@ -76,7 +76,7 @@ mpccover() {
 	if [ "$STATUS" -eq 0 ];then
 		echo "$Cover"
 	else
-	cp ~/.config/eww/assets/music.png $Cover;
+	cp ~/.config/eww/sidebar/assets/music.png $Cover;
 	echo "$Cover"
 	fi
 }
