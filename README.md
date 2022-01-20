@@ -28,7 +28,7 @@
 
 ## Gallery: 
 
-![Screenshot_2022-01-19-07-35-31_1366x768](https://user-images.githubusercontent.com/93292023/150132040-31f87dc1-f7ff-417a-9392-489a014d8a24.png)
+![Screenshot_2022-01-20-05-23-57_1366x768](https://user-images.githubusercontent.com/93292023/150325364-c3289f7a-9dbf-413c-bdfd-9fa0f93707ef.png)
 
 ![Screenshot_2022-01-19-05-36-04_1366x768](https://user-images.githubusercontent.com/93292023/150132152-ff86ce2a-c38f-4700-bda7-d87530058213.png)
 
