@@ -1,0 +1,25 @@
+[global/wm]
+include-file = ~/.config/polybar/colors
+include-directory = ~/.config/polybar/modules
+
+[bar/main]
+monitor = ""
+background = ${nord.nord00}
+foreground = ${nord.nord6}
+font-0 = Iosevka Nerd Font:style=Medium Italic:size=10;3
+font-1 = feather:size=12;3
+font-2 = Iosevka Nerd Font:size=2;3
+font-3 = Iosevka Nerd Font:style=Medium Italic:size=13;4
+font-4 = Iosevka Nerd Font:size=13;3
+
+wm-restack = bspwm
+border-size = 5
+border-color = ${nord.nord00}
+height = 25
+modules-left = launcher s bspwm s mpd s polywins
+modules-right = memory s updates s uptime s volume s backlight s battery s network s date s dunst s powermenu
+
+enable-ipc = true
+
+
+
