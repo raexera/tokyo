@@ -36,3 +36,4 @@ font-3 = CaskaydiaCove Nerd Font:size=17;6
 font-4 = Iosevka Nerd Font:style=Regular:size=11;3
 font-5 = Iosevka Nerd Font:style=Bold:size=15;4
 
+enable-ipc = true
