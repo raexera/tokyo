@@ -29,7 +29,7 @@
 ## Gallery: 
 </br>
 
->**Elkowars Wacky Widgets, Dashboard,Sidebar & Notification Center.**
+><samp>**Elkowars Wacky Widgets, Dashboard,Sidebar & Notification Center.**</samp>
 
 ![Screenshot_2022-01-21-01-39-11_1366x768](https://user-images.githubusercontent.com/93292023/150401406-f336c400-1df4-45fd-bc63-b910e03655d6.png)
 
