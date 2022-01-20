@@ -76,7 +76,7 @@ get_cover() {
 	if [[ "$(pidof spotify || echo 1)" != "1" ]]; then
 		echo "$art"
 	else
-		echo "images/spotify.jpg"
+		echo "images/music.png"
 	fi
 }
 
