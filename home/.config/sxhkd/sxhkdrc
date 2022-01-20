@@ -45,13 +45,7 @@ super + n
 
 # Toggle notification center
 super + o
-    sh $HOME/.local/bin/notificationCenter
-
-##---------- Applications ----------##
-
-# Launch Apps
-super + shift + {f,w,e}
-	{thunar,firefox,code}
+    sh $HOME/.local/bin/notificationcenter
 
 # Color Picker
 super + p
@@ -60,6 +54,12 @@ super + p
 # Lockscreen
 ctrl + alt + l
     sh $HOME/.local/bin/lockscreen
+
+##---------- Applications ----------##
+
+# Launch Apps
+super + shift + {f,w,e}
+	{thunar,firefox,code}
 
 ##---------- System Keys ----------##
 
@@ -85,15 +85,15 @@ ctrl + alt + Print
 
 # Manage brightness
 XF86MonBrightness{Up,Down}
-    sh $HOME/.local/bin/change-brightness {up,down}
+    sh $HOME/.local/bin/brightness {up,down}
 
 # Manage Volume
 Manage volume
 XF86Audio{Raise,Lower}Volume
-    sh $HOME/.local/bin/change-volume {up,down}
+    sh $HOME/.local/bin/volume {up,down}
 
 XF86AudioMute
-    sh $HOME/.local/bin/change-volume mute
+    sh $HOME/.local/bin/volume mute
 
 # Music control
 XF86Audio{Next,Prev,Play,Stop}
