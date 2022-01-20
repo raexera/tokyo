@@ -27,7 +27,7 @@ entry {
     margin:                         0 1%;
     blink:                          true;
     border:                         0px 0px 3px 0px;
-    border-radius:                  6px;
+    border-radius:                  5px;
     border-color:                   @border;
 }
 
@@ -93,5 +93,5 @@ element selected {
     text-color:                     @foreground;
     border:                         0px 0px 2px 0px;
     border-color:                   @border;
-    border-radius:                  10px;
+    border-radius:                  5px;
 }

@@ -64,19 +64,19 @@ element alternate.urgent {
 element normal.active,
 element alternate.active {
     background-color:               @foreground;
-    text-color:                     @cyan;
+    text-color:                     @accent;
 }
 
 element selected {
-    background-color:               @accent;
-    text-color:                     @background;
+    background-color:               @background-alt;
+    text-color:                     @accent;
     border:                  		0px;
     border-radius:                  5px;
     border-color:                  	@background;
 }
 
 element selected.urgent {
-    background-color:               @accent;
+    background-color:               @background;
     text-color:                     @foreground;
 }
 

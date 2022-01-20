@@ -26,7 +26,7 @@ prompt {
     background-color:               @background;
     text-color:                     @foreground;
     padding:                        15px 20px 5px 5px;
-    font:                           "Sarasa Mono CL Nerd Font 14";
+    font:                           "Iosevka Nerd Font Medium Italic 14";
 }
 
 inputbar {
@@ -62,7 +62,7 @@ element {
     orientation:                    horizontal;
     background-color:               @background-alt;
     text-color:                     @foreground;
-    border-radius:                  10px;
+    border-radius:                  5px;
     padding:                        3px 0px 0px 3px;
     margin:                         6px 0px 6px 0px;
 }
@@ -90,8 +90,8 @@ element-text {
 
 element selected {
     background-color:               @background-alt;
-    text-color:                     @foreground;
-    border:                         0px 0px 2px 0px;
-    border-color:                   @javacafe-blue;
-    border-radius:                  10px;
+    text-color:                     @accent;
+    border:                         0px 0px 0px 3px;
+    border-color:                   @accent;
+    border-radius:                  5px;
 }

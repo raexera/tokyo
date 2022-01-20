@@ -12,7 +12,7 @@ window {
 	width:							19%;
     border:                         16px;
     border-color:                   @background;
-    font:                           "Sarasa Mono CL Nerd Font 8.2";
+    font:                           "Iosevka Nerd Font Medium Italic 9";
 }
 
 entry {
@@ -28,7 +28,7 @@ entry {
     blink:                          true;
     border:                         0 0 4px 0;
     border-color:                   @border;
-    border-radius:                  10px;
+    border-radius:                  5px;
 }
 
 inputbar {
@@ -83,5 +83,5 @@ element selected {
     text-color:                     @foreground;
     border:                         0 0 2px 0;
     border-color:                   @border;
-    border-radius:                  10px;
+    border-radius:                  5px;
 }

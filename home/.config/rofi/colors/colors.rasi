@@ -3,6 +3,7 @@
     background-alt:             #2E3440;
     border:                     #2E3440;
     foreground:                 #ECEFF4;
+    foreground-at:              #4C566A;
     accent:                     #8FBCBB;
 
     text-color:                 @fg;
