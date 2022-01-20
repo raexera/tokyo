@@ -3,7 +3,7 @@ include-file = ~/.config/polybar/colors
 include-directory = ~/.config/polybar/modules
 
 [bar/main]
-modules-right = l1 uptime r1 gap l1 volume space backlight space battery space network sepline date r1 gap l1 powermenu r1 sep2
+modules-right = l1 uptime r1 gap l1 volume space backlight space battery space network sepline date r1 gap l1 dunst space powermenu r1 sep2
 modules-center = 
 modules-left = sep2 l1 launcher r1 gap l1 bspwm r1 gap l1 mpd
 

@@ -20,10 +20,10 @@
     # dynamic width from 0 to 300
     # width = (0, 300)
     # constant width of 300
-    width = (300, 550)
+    width = (111, 444)
 
     # The maximum height of a single notification, excluding the frame.
-    height = 300
+    height = 222
     
     # Position the notification in the top right corner
     origin = top-right
@@ -45,10 +45,10 @@
 
     # Set the progress bar height. This includes the frame, so make sure
     # it's at least twice as big as the frame width.
-    progress_bar_height = 12
+    progress_bar_height = 5
 
     # Set the frame width of the progress bar
-    progress_bar_frame_width = 2
+    progress_bar_frame_width = 0
 
     # Set the minimum width for the progress bar
     progress_bar_min_width = 150
@@ -75,7 +75,7 @@
     # Draw a line of "separator_height" pixel height between two
     # notifications.
     # Set to 0 to disable.
-    separator_height = 2
+    separator_height = 10
 
     # Padding between text and separator.
     padding = 10
@@ -113,7 +113,7 @@
 
     ### Text ###
 
-    font = Iosevka Nerd Font Medium Italic 12
+    font = Iosevka Nerd Font Medium Italic 10
 
     # The spacing between lines.  If the height is smaller than the
     # font height, it will get raised to the font height.
@@ -196,10 +196,10 @@
     # Scale small icons up to this size, set to 0 to disable. Helpful
     # for e.g. small files or high-dpi screens. In case of conflict,
     # max_icon_size takes precedence over this.
-    min_icon_size = 64
+    icon_size = 48
 
     # Scale larger icons down to this size, set to 0 to disable
-    max_icon_size = 96  
+    max_icon_size = 80  
 
     # Paths to default icons.
     icon_path = /usr/share/icons/Papirus-Dark/32x32/status/:/usr/share/icons/Papirus-Dark/32x32/apps/:/usr/share/icons/Papirus-Dark/32x32/devices/:
@@ -310,6 +310,7 @@
 [urgency_critical]
     background = "#242933"
     foreground = "#BF616A"
+    frame_color = "#BF616A"
     timeout = 9
     # Icon for notifications with critical urgency, uncomment to enable
     #icon = /path/to/icon
