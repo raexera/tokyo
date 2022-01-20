@@ -34,7 +34,7 @@
 
 - Elkowars Wacky Widgets, Dashboard & Sidebar.
 
-![Screenshot_2022-01-10-02-57-36_1366x768](https://user-images.githubusercontent.com/93292023/148734138-3bd72e7f-d1cc-4b65-9c99-d6b02c86ba02.png)
+![Screenshot_2022-01-21-01-47-30_1366x768](https://user-images.githubusercontent.com/93292023/150402679-b64630a9-2e21-477a-ab4d-ae19b8b57115.png)
 
 - Firefox.
 
