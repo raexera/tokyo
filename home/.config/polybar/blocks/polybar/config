@@ -1,3 +1,6 @@
+; Blocks Polybar
+; Author: rxyhn
+
 [global/wm]
 include-file = ~/.config/polybar/colors
 include-directory = ~/.config/polybar/modules
