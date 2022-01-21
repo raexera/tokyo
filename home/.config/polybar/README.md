@@ -1,5 +1,8 @@
 # **❖ Polybar Themes!**
   > Its My Own Polybar Theme, hopefully you like it!
+  `I hope you are smart enough to use it`
+
+</br>
 
   ### Attached.
 ![attached](https://user-images.githubusercontent.com/93292023/150443615-eb6cfb90-caa0-4b8b-98e6-52aba0ebae99.png)
