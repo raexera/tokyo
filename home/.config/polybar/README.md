@@ -18,4 +18,4 @@
 
 </br>
 
-<p align="center">**© rxyhn@AestheticArch**</p>
+<p align="center"><b>© rxyhn@AestheticArch</b></p>
