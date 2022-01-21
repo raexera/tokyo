@@ -1,6 +1,7 @@
 # **❖ Polybar Themes!**
-  > Its My Own Polybar Theme, hopefully you like it!
-  `I hope you are smart enough to use it`
+  > **It's My Own Polybar Themes, hopefully you like it!**
+  
+  `I hope you are smart enough to use it.`
 
 </br>
 
@@ -10,7 +11,7 @@
   ### Blocks.
 ![block](https://user-images.githubusercontent.com/93292023/150442459-a488052b-c6ff-49bd-8516-ad50031bae86.png)
 
-  ### Float.
+  ### Floating.
 ![float](https://user-images.githubusercontent.com/93292023/150443003-6deb23d3-c04e-4051-95a9-c01814d3b067.png)
 
   ### Simple.
