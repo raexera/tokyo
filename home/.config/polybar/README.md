@@ -1,1 +1,1 @@
-##Polybar Themes!
+# **❖ Polybar Themes!**
