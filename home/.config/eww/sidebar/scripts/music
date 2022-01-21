@@ -1,217 +1,277 @@
-#!/bin/bash
+#!/bin/sh
 
-# Controls spotify if it's running, (kill spotify process to switch)
-# add different players here (also at the end)
-
-if [[ -n $(pgrep spotify) ]]; then
-Control="spotify"
-else 
-Control="MPD"
-fi
-
-# Covers will be saved here (for both the players)
+# saves covers here
 Cover=/tmp/cover.png
 # mpd music directory
 mpddir=~/Music
 
-############# Spotify ##############
+#                      _ 
+#  _ __ ___  _ __   __| |
+# | '_ ` _ \| '_ \ / _` |
+# | | | | | | |_) | (_| |
+# |_| |_| |_| .__/ \__,_|
+#           |_|          
 
-spotcover() {
-
-albumart="$(playerctl --player=spotify metadata mpris:artUrl | sed -e 's/open.spotify.com/i.scdn.co/g')"
-
-if [ $(playerctl --player=spotify metadata mpris:artUrl) ]; then
-	curl -s "$albumart" --output $Cover;
-else cp ~/.config/eww/sidebar/assets/music.png $Cover;
-fi
-echo "$Cover"
-}
-
-spotstatusicon() {
-if [[ $(playerctl --player=spotify status 2>&1) == "Playing" ]];then
-	echo ""
-elif [[ $(playerctl --player=spotify status 2>&1) == "Paused" ]];then
-	echo ""
-else
-	echo "ﭥ"
-fi
-}
-
-############ MPD #################
-
-###
-
+########################## Title ##########################
 mpctitle() {
-song=`mpc -f %title% current`
+	song=$(mpc -f %title% current)
 
-	if [[ -n "$song" ]]; then
+	if [ -n "$song" ]; then
 		echo "$song"
 	else
 		echo "Play Someting"
 	fi	
 }
 
+########################## Artist ##########################
 mpcartist() {
-artist=`mpc -f %artist% current`
-	if [[ -n "$artist" ]]; then
+	artist=$(mpc -f %artist% current)
+
+	if [ -n "$artist" ]; then
 		echo "$artist"
 	else
-		echo "Unknown"
+		echo "Artist"
 	fi	
 }
 
+########################## Album ##########################
 mpcalbum() {
-album=`mpc -f %album% current`
-	if [[ -n "$album" ]]; then
+	album=$(mpc -f %album% current)
+
+	if [ -n "$album" ]; then
 		echo "$album"
 	else
 		echo "Album"
 	fi	
 }
 
+########################## Cover ##########################
 mpccover() {
+
 	ffmpeg -i "$mpddir"/"$(mpc current -f %file%)" "${Cover}" -y &> /dev/null
 	STATUS=$?
 
 	if [ "$STATUS" -eq 0 ];then
 		echo "$Cover"
 	else
-	cp ~/.config/eww/sidebar/assets/music.png $Cover;
-	echo "$Cover"
+		cp ~/.config/eww/sidebar/assets/music.png $Cover;
+		echo "$Cover"
 	fi
 }
 
+########################## Time ##########################
 mpctime() {
-	time=`mpc status %currenttime%`
-	if [[ -n "$time" ]]; then
+	time=$(mpc status %currenttime%)
+
+	if [ -n "$time" ]; then
 		echo "$time"
 	else
 		echo "0:00"
 	fi	
 }
 
+########################## Length ##########################
 mpclength() {
-	length=`mpc status %totaltime%`
-	if [[ -n "$length" ]]; then
+	length=$(mpc status %totaltime%)
+
+	if [ -n "$length" ]; then
 		echo "$length"
 	else
 		echo "0:00"
 	fi	
 }
 
-
+########################## Icon ##########################
 mpcicon() {
-	if [[ $(mpc status) == *"[playing]"* ]]; then
+	status=$(mpc status | sed -n /"\["/p | cut -c2-7 )
+
+	if [ "$status" = "playin" ]; then
 		echo ""
-	else
+	elif [ "$status" = "paused" ]; then
 		echo ""
+	else 
+		echo ""
 	fi
 }
 
-
+########################## Status ##########################
 mpcstatus() {
-	if [[ $(mpc status) == *"[playing]"* ]]; then
+	status=$(mpc status | sed -n /"\["/p | cut -c2-7 )
+
+	if [ "$status" = "playin" ]; then
 		echo "Playing"
-	elif [[ $(mpc status) == *"[paused]"* ]]; then
+	elif [ "$status" = "paused" ]; then
 		echo "Paused"
-	else
+	else 
 		echo "Stopped"
 	fi
 }
 
+########################## Percent ##########################
 mpcperc() {
-	perc=`mpc status %percenttime%`
-	if [[ -n "$perc" ]]; then
+	perc=$(mpc status %percenttime%)
+
+	if [ -n "$perc" ]; then
 		echo "$perc"
 	else
 		echo "0"
 	fi	
 }
 
-
+########################## Playlist ##########################
 mpcsongpos() {
-	pos=`mpc status %songpos%`
-	length=`mpc status %length%`
-	if [[ -n "$pos" ]]; then
+	pos=$(mpc status %songpos%)
+	length=$(mpc status %length%)
+
+	if [ -n "$pos" ]; then
 		echo "$pos/$length"
 	else
 		echo "0/0"
 	fi
 }
 
+########################## Lyrics ##########################
+mpclyrics() {
+	Title=$(mpc -f %title% current)
+	Artist=$(mpc -f %artist% current)
+	URL="https://api.lyrics.ovh/v1/$Artist/$Title"
+	lyrics=$(curl -s "$( echo "$URL" | sed s/" "/%20/g | sed s/"&"/%26/g | sed s/,/%2C/g | sed s/-/%2D/g)" | jq '.lyrics' | cut -d "\"" -f 2 )
+
+	if [ "$lyrics" = "null" ]; then
+		lyrics=$( curl -s --get "https://makeitpersonal.co/lyrics" --data-urlencode "artist=$Artist" --data-urlencode "title=$Title")
+		printf "$lyrics" | less
+	else 
+		printf "$lyrics" | less
+	fi
+}
 
 
+#                  _   _  __       
+#  ___ _ __   ___ | |_(_)/ _|_   _ 
+# / __| '_ \ / _ \| __| | |_| | | |
+# \__ \ |_) | (_) | |_| |  _| |_| |
+# |___/ .__/ \___/ \__|_|_|  \__, |
+#     |_|                    |___/ 
+
+
+########################## Cover ##########################
+
+spotcover() {
+	albumart="$(playerctl --player=spotify metadata mpris:artUrl | sed -e 's/open.spotify.com/i.scdn.co/g')"
+
+	if [ $(playerctl --player=spotify metadata mpris:artUrl) ]; then
+		curl -s "$albumart" --output $Cover;
+	else 
+		cp ~/.config/eww/sidebar/assets/music.png $Cover;
+	fi
+		echo "$Cover"
+}
+
+########################## Statusicon ##########################
+spotstatusicon() {
+	if [ $(playerctl --player=spotify status) = "Playing" ];then
+		echo ""
+	elif [ $(playerctl --player=spotify status) = "Paused" ];then
+		echo ""
+	else
+		echo ""
+	fi
+}
+
+########################## Lyrics ##########################
+spotlyrics() {
+	Title=$(playerctl --player=spotify metadata --format {{title}})
+	Artist=$(playerctl --player=spotify metadata --format {{artist}})
+	URL="https://api.lyrics.ovh/v1/$Artist/$Title"
+	lyrics=$(curl -s "$( echo "$URL" | sed s/" "/%20/g | sed s/"&"/%26/g | sed s/,/%2C/g | sed s/-/%2D/g)" | jq '.lyrics' | cut -d "\"" -f 2 )
+	if [ "$lyrics" = "null" ]; then
+		URL="https://makeitpersonal.co/lyrics"
+		lyrics=$( curl -s --get "https://makeitpersonal.co/lyrics" --data-urlencode "artist=$Artist" --data-urlencode "title=$Title")
+		printf "$lyrics" | less
+	else 
+		printf "$lyrics" | less
+	fi
+}
+
+
+########################## END ##########################
+
+
+########################## HELP ##########################
+doc() {
+echo "Usage:
+  music [Options]
+
+Options:
+  previous	previous song
+  next		next song
+  toggle	play-pause song
+  title		title of current song
+  album		album of current song
+  artist	artist of current song
+  status	music status
+  statusicon	play-pause icon
+  coverloc	shows location to cover of music
+  showcover	opens cover using feh
+  time		shows current time of song
+  length	shows length of song
+  percent	shows percent song
+  playlist	shows playlist position of current song
+  lyrics	shows lyrics"
+}
+
+### Define player to control ###
+
+spotify="$(pgrep spotify)"
+
+if [ -n "$spotify" ]; then
+	Control="Spotify"
+else 
+	Control="MPD"
+fi
+
+### Control stuff ###
 case $Control in
-
-	spotify)
-
-	if [[ $1 == "next" ]];then
-	playerctl --player=spotify next
-	elif [[ $1 == "previous" ]];then
-	playerctl --player=spotify previous
-	elif [[ $1 == "toggle" ]];then
-	playerctl --player=spotify play-pause
-	elif [[ $1 == "title" ]];then
-	playerctl --player=spotify metadata --format {{title}}
-	elif [[ $1 == "artist" ]];then
-	playerctl --player=spotify metadata --format {{artist}}
-	elif [[ $1 == "album" ]];then
-	playerctl --player=spotify metadata --format {{album}}
-	elif [[ $1 == "status" ]];then
-	playerctl --player=spotify status
-	elif [[ $1 == "statusicon" ]];then
-	spotstatusicon
-	elif [[ $1 == "player" ]];then
-	echo " Spotify"
-	elif [[ $1 == "coverloc" ]];then
-	spotcover
-	elif [[ $1 == "showcover" ]];then
-	spotcover | xargs feh 
-	elif [[ $1 == "time" ]];then
-	echo "0:00"
-	elif [[ $1 == "length" ]];then
-	echo "0:00"
-	elif [[ $1 == "percent" ]];then
-	echo "0"
-	elif [[ $1 == "playlist" ]];then
-	playerctl metadata xesam:trackNumber
-	fi	
-
+	Spotify)
+	case $1 in 
+		next)		playerctl --player=spotify next							;;
+		previous)	playerctl --player=spotify previous						;;
+		toggle)		playerctl --player=spotify play-pause						;;
+		title)		playerctl --player=spotify metadata --format {{title}}				;;
+		artist)		playerctl --player=spotify metadata --format {{artist}}				;;
+		album)		playerctl --player=spotify metadata --format {{album}}				;;
+		status)		playerctl --player=spotify status						;;
+		statusicon)	spotstatusicon									;;
+		player)		echo " Spotify"								;;
+		coverloc)	spotcover									;;
+		showcover)	spotcover | xargs feh 								;;
+		time)		playerctl --player=spotify position --format "{{ duration(position) }}" 	;;
+		length)		playerctl --player=spotify metadata --format "{{ duration(mpris:length) }}" 	;;
+		percent)	echo "0"									;;
+		playlist)	playerctl metadata xesam:trackNumber						;;
+		lyrics)		spotlyrics									;;
+		*)		doc										;;
+	esac
 	;;
-
 	MPD)
-	if [[ $1 == "next" ]];then
-	mpc -q next
-	elif [[ $1 == "previous" ]];then
-	mpc -q prev
-	elif [[ $1 == "toggle" ]];then
-	mpc -q toggle
-	elif [[ $1 == "title" ]];then
-	mpctitle
-	elif [[ $1 == "artist" ]];then
-	mpcartist
-	elif [[ $1 == "album" ]];then
-	mpcalbum
-	elif [[ $1 == "status" ]];then
-	mpcstatus
-	elif [[ $1 == "statusicon" ]];then
-	mpcicon
-	elif [[ $1 == "player" ]];then
-	echo " MPD"
-	elif [[ $1 == "coverloc" ]];then
-	mpccover
-	elif [[ $1 == "showcover" ]];then
-	mpccover | xargs feh
-	elif [[ $1 == "time" ]];then
-	mpctime
-	elif [[ $1 == "length" ]];then
-	mpclength
-	elif [[ $1 == "percent" ]];then
-	mpcperc
-	elif [[ $1 == "playlist" ]];then
-	mpcsongpos
-	fi	
-
+	case $1 in 
+		next)		mpc -q next		;;
+		previous)	mpc -q prev		;;
+		toggle)		mpc -q toggle		;;
+		title)		mpctitle		;;
+		artist)		mpcartist		;;
+		album)		mpcalbum		;;
+		status)		mpcstatus		;;
+		statusicon)	mpcicon			;;
+		player)		echo " MPD"		;;
+		coverloc)	mpccover		;;
+		showcover)	mpccover | xargs feh	;;
+		time)		mpctime			;;
+		length)		mpclength		;;
+		percent)	mpcperc			;;
+		playlist)	mpcsongpos		;;
+		lyrics)		mpclyrics		;;
+		*)		doc			;;
+	esac
 esac 2>/dev/null
-
 
