@@ -1,6 +1,9 @@
 # **❖ Polybar Themes!**
   > Its My Own Polybar Theme, hopefully you like it!
 
+  ### Attached.
+![attached](https://user-images.githubusercontent.com/93292023/150443371-0fad381e-119f-4044-a865-d0bbb86be0fa.png)
+
   ### Blocks.
 ![block](https://user-images.githubusercontent.com/93292023/150442459-a488052b-c6ff-49bd-8516-ad50031bae86.png)
 
