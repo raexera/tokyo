@@ -1,19 +1,66 @@
-*{
-  background-color: #2e3440;
-}
 window.thunar grid *:selected,
 window.thunar grid *:active {
-  /*background: #3b4252;*/
-  border-radius: 5px; }
+  color: #81A1C1;
+  background-color: #434C5E;
+}
+
 window.thunar .sidebar {
   background-color: #3B4252;
-  /*box-shadow: inset 0px 0px 0px 0px rgba(0, 0, 0, 1);*/
-  padding: 1rem; }
+  border: none;
+  padding: 1rem; 
+}
+
 window.thunar treeview {
-  padding: 3px; }
+  padding: 2px 5px 2px 0px;
+  background-color: #2E3440; 
+}
+
 window.thunar .frame {
-  border: 0px; }
+  border: 0px; 
+}
+
+window.thunar .standard-view.frame {
+  border-style: none;
+}
+
 window.thunar toolbar box {
-  padding: 5px; }
+  padding: 5px; 
+}
+
 window.thunar toolbar {
-  padding: 5px 0; }
+  padding: 5px 0; 
+}
+
+window.thunar .sidebar .view:hover { 
+  background-color: #4c566a; 
+}
+
+window.thunar .sidebar .view:selected {
+  border-left: 5px solid #81A1C1;
+}
+
+window.thunar toolbar > toolitem entry {
+    background-color: #3B4252;
+}
+
+window.thunar #location-toolbar {
+  border-bottom: 1px solid rgba(0, 0, 0, 0);
+}
+
+/* Remove left border */
+paned > separator {
+  min-width: 1px;
+  min-height: 1px;
+  -gtk-icon-source: none;
+  border-style: none;
+  background-color: transparent;
+  background-image: image(rgba(0, 0, 0, 0));
+  background-size: 1px 1px;
+  background-clip: content-box;
+}
+
+window.thunar statusbar {
+  margin: 0 -10px;
+  padding: 0 4px;
+  border-top: 1px solid rgba(0, 0, 0, 0);
+}
