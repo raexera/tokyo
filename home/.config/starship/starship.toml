@@ -2,8 +2,8 @@ add_newline = true
 right_format = """$directory"""
 
 [character]
-success_symbol = "[❯❯❯](bold green)" 
-error_symbol   = "[❯❯❯](bold red)"
+success_symbol = "[](bold black)[](bold blue)[](bold white)" 
+error_symbol   = "[]](bold red)"
 
 [username]
 style_user = "white bold"
@@ -22,7 +22,7 @@ disabled = false
 disabled = true
 
 [directory]
-format = "[$path]($style) "
+format = "[ ](bold cyan)[$path]($style) "
 
 [time]
 disabled = true
