@@ -1,9 +1,12 @@
+*{
+  background-color: #2e3440;
+}
 window.thunar grid *:selected,
 window.thunar grid *:active {
   /*background: #3b4252;*/
-  border-radius: 3px; }
+  border-radius: 5px; }
 window.thunar .sidebar {
-  background-color: #2e3440;
+  background-color: #3B4252;
   /*box-shadow: inset 0px 0px 0px 0px rgba(0, 0, 0, 1);*/
   padding: 1rem; }
 window.thunar treeview {
