@@ -1,7 +1,6 @@
 env:
-  TERM: alacritty
-  WINIT_X11_SCALE_FACTOR: '1.0'
-
+  TERM: 'xterm-256color'
+  
 window:
   padding:
     x: 15
