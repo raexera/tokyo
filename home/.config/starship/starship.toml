@@ -22,7 +22,39 @@ disabled = false
 disabled = true
 
 [directory]
-format = "[ ](bold cyan)[$path]($style) "
+home_symbol = "~"
+format = "[  ](bold cyan)[$path]($style) "
 
 [time]
 disabled = true
+
+[git_branch]
+symbol = " "
+style = "bold blue"
+
+[git_commit]
+commit_hash_length = 4
+tag_symbol = "🔖 "
+
+[git_state]
+format = '[\($state( $progress_current of $progress_total)\)]($style) '
+cherry_pick = "[🍒 PICKING](bold red)"
+
+[git_metrics]
+added_style = "bold blue"
+format = '[+$added]($added_style)/[-$deleted]($deleted_style) '
+
+[git_status]
+format = '([\[$all_status$ahead_behind \]]($style) )'
+style = "bold cyan"
+conflicted = "🏳"
+ahead = "🏎💨 ${count}"
+behind = "😰 ${count}"
+diverged = "😵"
+up_to_date = ""
+untracked = "🤷‍"
+stashed = "📦"
+modified = "📝"
+staged = '[++\($count\)](green)'
+renamed = "👅"
+deleted = "🗑"
