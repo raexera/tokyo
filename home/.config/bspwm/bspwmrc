@@ -99,7 +99,8 @@ xsetroot -cursor_name left_ptr
 
 bspc monitor -d I II III IV V VI VII VIII IX 
 
-rule -a kitty                       follow=on focus=on
+rule -a Alacritty                   follow=on focus=on
+rule -a Code                        follow=on focus=on
 rule -a firefox                     follow=on focus=on
 rule mpv                            state=floating
 rule feh                            state=floating
