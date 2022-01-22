@@ -12,7 +12,7 @@
 
 @-moz-document url("about:sessionrestore") {
     * {
-		font-family: "DM Sans", sans-serif !important;
+		font-family: "Iosevka Nerd Font", sans-serif !important;
 	}
 
 	body {
@@ -37,7 +37,7 @@
 	xul|button[default],
 	button.primary {
 		border-color: #3B4252 !important;
-		background-color: #84a0c6 !important;
+		background-color: #81A1C1 !important;
 	}
 }
 
@@ -55,7 +55,6 @@
 	}
 
 	.search-handoff-button {
-		border-radius: 15px !important;
 		border-width: 4px !important;
 		border-color: #3B4252 !important;
 		background-size: 0px !important;

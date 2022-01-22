@@ -1,17 +1,17 @@
 * {
-	font-family: "Iosevka", sans-serif !important;
+	font-family: "Iosevka Nerd Font", sans-serif !important;
 	font-weight: 500 !important;
 	font-size: 12px !important;
 	--arrowpanel-background: #2E3440 !important;
 	--arrowpanel-border-color: #3B4252 !important;
-	--autocomplete-popup-highlight-background: #2E3440 !important;
+	--autocomplete-popup-highlight-background: #434C5E !important;
 
-	--button-hover-bgcolor: #2E3440 !important;
-	--button-primary-hover-bgcolor: #2E3440 !important;
+	--button-hover-bgcolor: #434C5E !important;
+	--button-primary-hover-bgcolor: #434C5E !important;
 
-	--in-content-border-hover: #2E3440 !important;
-	--in-content-button-background-hover: #2E3440 !important;
-	--in-content-item-hover: #2E3440 !important;
+	--in-content-border-hover: #434C5E !important;
+	--in-content-button-background-hover: #434C5E !important;
+	--in-content-item-hover: #434C5E !important;
 
 	--toolbarbutton-active-background: #2E3440 !important;
 }
@@ -51,7 +51,7 @@ window,
 }
 
 .tabbrowser-tab:hover .tab-background {
-	background-color: #2E3440 !important;
+	background-color: #434C5E !important;
 }
 
 .tabbrowser-tab[fadein] {
@@ -200,14 +200,14 @@ window,
 
 #urlbar ::-moz-selection,
 .searchbar-textbox ::-moz-selection {
-	background-color: #dddddd !important;
-	color: #000 !important;
+	background-color: #ECEFF4 !important;
+	color: #242933 !important;
 }
 
 #tabbrowser-tabpanels {
-	background-color: #ffffff !important;
+	background-color: #ECEFF4 !important;
 }
 
 urlbar > #urlbar-background {
-	background-color: "#131a21" !important;
+	background-color: "#2E3440" !important;
 }

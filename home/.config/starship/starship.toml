@@ -3,7 +3,7 @@ right_format = """$directory"""
 
 [character]
 success_symbol = "[](bold black)[](bold blue)[](bold white)" 
-error_symbol   = "[]](bold red)"
+error_symbol   = "[](bold red)"
 
 [username]
 style_user = "white bold"
