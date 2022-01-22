@@ -74,7 +74,7 @@ do
             echo "----------------------------"
             ;;
         "Install Depedency [ yay ]")
-            yay -S --noconfirm --needed bspwm-git nerd-fonts-fira-code noto-fonts-emoji ttf-fira-code ttf-ms-fonts lightdm lightdm-slick-greeter lightdm-settings brightnessctl cava i3lock-color papirus-icon-theme papirus-linux-universe picom-git polybar visual-studio-code-bin spotify xfce-polkit plymouth plymouth-theme-spinner-alt-git todo-bin
+            yay -S --noconfirm --needed bspwm-git ttc-iosevka nerd-fonts-fira-code noto-fonts-emoji ttf-fira-code ttf-ms-fonts lightdm lightdm-slick-greeter lightdm-settings brightnessctl cava i3lock-color papirus-icon-theme papirus-linux-universe picom-git polybar visual-studio-code-bin spotify xfce-polkit plymouth plymouth-theme-spinner-alt-git todo-bin
             echo "----------------------------"
             echo " install depedency finished "
             echo "----------------------------"
