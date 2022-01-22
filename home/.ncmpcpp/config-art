@@ -6,85 +6,78 @@ mpd_host 		  	= "localhost"
 mpd_port 		  	= "6600"
 mpd_crossfade_time 	= "2"
 
-### Script ###
-execute_on_song_change="~/.ncmpcpp/scripts/album-art"
+# VISUALIZER
+# ---
+visualizer_data_source = "/dev/null"
+visualizer_output_name = ""
+visualizer_in_stereo = "no"
+visualizer_fps = "60"
+visualizer_type = "wave"
+visualizer_look = "  "
+visualizer_color = "1"
+visualizer_spectrum_smooth_look = "no"
 
-### Behaviour ###
-message_delay_time 				 = 1
-autocenter_mode 				 = "yes"
-centered_cursor 				 = "yes"
-ignore_leading_the 				 = "yes"
-playlist_disable_highlight_delay = 2
-allow_for_physical_item_deletion = "no"
-
-### Visualizer ###
-visualizer_data_source = /tmp/mpd.fifo
-visualizer_output_name = "mpd_visualizer"
-visualizer_in_stereo   = "yes"
-visualizer_look 	   = "  "
-visualizer_type 	   = "ellipse"
-
-### Appearance ###
+# GENERAL
+# ---
+connected_message_on_startup = "yes"
+cyclic_scrolling = "yes"
+mouse_support = "yes"
+mouse_list_scroll_whole_page = "yes"
+lines_scrolled = "1"
+message_delay_time = "1"
+playlist_shorten_total_times = "yes"
 playlist_display_mode = "columns"
-colors_enabled 		  = "yes"
-#user_interface       = classic
-user_interface 		  = alternative
-volume_color 		  = "white"
+browser_display_mode = "columns"
+search_engine_display_mode = "columns"
+playlist_editor_display_mode = "columns"
+autocenter_mode = "yes"
+centered_cursor = "yes"
+user_interface = "classic"
+follow_now_playing_lyrics = "yes"
+locked_screen_width_part = "32"
+ask_for_locked_screen_width_part = "no"
+display_bitrate = "no"
+external_editor = "nano"
+main_window_color = "default"
+startup_screen = "visualizer"
+startup_slave_screen = "playlist"
+startup_slave_screen_focus = "yes"
 
-### Window ###
-song_window_title_format = "Music Player"
-#song_window_title_format = "{%a - }{%t}|{%f}"
-statusbar_visibility 	 = "no"
-header_visibility 		 = "no"
-titles_visibility 		 = "yes"
+# PROGRESS BAR
+# ---
+progressbar_look = "━━━"
+#progressbar_look = "▃▃▃"
+progressbar_elapsed_color = "5"
+progressbar_color = "black"
 
-### Progress bar ###
-progressbar_look 			= "▂▂▂"
-progressbar_color 			= "black"
-progressbar_elapsed_color   = "white"
+# UI VISIBILITY
+# ---
+header_visibility = "no"
+statusbar_visibility = "yes"
+titles_visibility = "no"
+enable_window_title = "yes"
 
-### Alternative UI ###
-alternative_ui_separator_color 		  = "white"
-alternative_header_first_line_format = "$0$aqqu$/a {$0%a - $9}{$0%t$9}|{$0%f$9} $0$atqq$/a$9"
-alternative_header_second_line_format = "{{$0%b$9}{ [$0%y$9]}}|{%D}"
-
-### Song list ###
-song_status_format		 = "$0%t"
-song_list_format = "$0{%a »$0 %t $/r$/u$R$b$0%l$/b  }|{%f$/r}"
-song_library_format 	 = {{%a - %t} (%b)}|{%f}
-song_columns_list_format = "(35)[white]{t} (30)[white]{a} (6)[white]{lr}"
-
-### Colors ###
-main_window_color 					= "white"
-state_line_color					= "black"
-current_item_prefix 				= "$(white)$r"
-current_item_suffix 				= "$/r$(end)"
-current_item_inactive_column_prefix = white
-current_item_inactive_column_suffix = white
-now_playing_prefix = "$b$0 »» "
-selected_item_prefix = "* "
-
+# COLORS
+# ---
+statusbar_color = "white"
 color1 = "white"
 color2 = "blue"
 
-### Layout ###
-startup_screen = visualizer
-startup_slave_screen = playlist  
-startup_slave_screen_focus = yes
-locked_screen_width_part = 41
+# UI APPEARANCE
+# ---
+now_playing_prefix = "$b$2$7 "
+now_playing_suffix = " $/b$8"
+current_item_prefix = "$b$7$/b$3 "
+current_item_suffix = " $8"
 
-### Misc ###
-default_place_to_search_in = "database"
+song_columns_list_format = "(52)[]{t|fr:Title} (0)[magenta]{a}"
 
-display_bitrate = "no"
-enable_window_title = "yes"
-follow_now_playing_lyrics = "yes"
-empty_tag_marker = ""
+song_list_format = " {%t $R   $8%a$8}|{%f $R   $8%l$8} $8"
 
-cyclic_scrolling = "yes"
-header_text_scrolling = "yes"
-jump_to_now_playing_song_at_start = "yes"
-lines_scrolled = "2"
+song_status_format = "$7{$8 %b }|{$8 %t }|{$8 %f }$7 $8"
 
-system_encoding = "utf-8"
-regular_expressions = "extended"
+song_window_title_format = "Now Playing .."
+
+# EXEC SCRIPT
+# ---
+execute_on_song_change="~/.ncmpcpp/scripts/album-art"

@@ -1,7 +1,8 @@
-sw_volume: 100
+sw_volume: 98
 audio_device_state:1:Pulseaudio
 audio_device_state:1:Visualizer
 state: stop
+current: 0
 random: 0
 repeat: 1
 single: 0
@@ -10,4 +11,7 @@ crossfade: 2
 mixrampdb: 0.000000
 mixrampdelay: -1.000000
 playlist_begin
+0:Heat Waves.mp3
+1:abcdefu.mp3
+2:Boys (Summertime Love).mp3
 playlist_end

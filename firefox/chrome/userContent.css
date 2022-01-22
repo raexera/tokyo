@@ -12,7 +12,7 @@
 
 @-moz-document url("about:sessionrestore") {
     * {
-		font-family: "Iosevka Nerd Font", sans-serif !important;
+		font-family: "Iosevka Medium Italic" !important;
 	}
 
 	body {
@@ -43,7 +43,7 @@
 
 @-moz-document url("about:newtab"), url("about:home") {
 	* {
-		font-family: "DM Sans", sans-serif !important;
+		font-family: "Iosevka Medium Italic" !important;
 	}
 
 	body {

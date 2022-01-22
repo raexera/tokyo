@@ -9,9 +9,17 @@
 
 ##---------- Keybindings for bspwm ----------##
 
-# Terminal (alacritty)
+# Terminal (kitty)
 super + Return
-	alacritty
+	kitty
+
+# Terminal (floating)
+super + shift + Return
+	bspc rule -a kitty -o state=floating follow=on center=true rectangle=490x310+0+0 && kitty
+
+# Open Music Player
+super + shift + m
+	bspc rule -a kitty -o state=floating follow=on center=true rectangle=590x250+0+0 && kitty -e ncmpcpp-art
 
 # Open application menu
 super + m
