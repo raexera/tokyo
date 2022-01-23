@@ -39,10 +39,6 @@
 
 ![Screenshot_2022-01-21-02-19-41_1366x768](https://user-images.githubusercontent.com/93292023/150407580-30be71df-391a-4111-9bff-3bb6d246a924.png)
 
-><samp>**NCMPCPP.**</samp>
-
-![Screenshot_2022-01-23-06-39-09_1366x768](https://user-images.githubusercontent.com/93292023/150658989-8884793d-8ab0-49b2-b9e3-86927e502445.png)
-
 ><samp>**Lockscreen.**</samp>
 
 ![Screenshot_2022-01-16-01-38-25_1366x768](https://user-images.githubusercontent.com/93292023/149633886-5ba141dd-1352-44ea-a61f-7727192f9f32.png)
