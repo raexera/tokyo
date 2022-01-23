@@ -24,7 +24,6 @@
 - OS: [Arch Linux](https://archlinux.org/)
 - WM: [Bspwm](https://github.com/baskerville/bspwm)
 - Colorscheme: You know what I [use.](https://github.com/arcticicestudio/nord)
-- Fonts? just look in my `fonts folder!`
 
 ## Gallery: 
 </br>
