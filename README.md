@@ -21,6 +21,8 @@
 
 ## General Info
 
+<img src="https://raw.githubusercontent.com/elkowar/eww/8336bd04d2c7fe301645bb883b140c6415e87556/.github/EwwLogo.svg" height="100" align="right"/>
+
 - OS: [Arch Linux](https://archlinux.org/)
 - WM: [Bspwm](https://github.com/baskerville/bspwm)
 - Colorscheme: You know what I [use.](https://github.com/arcticicestudio/nord)
