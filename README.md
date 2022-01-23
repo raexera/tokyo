@@ -26,6 +26,7 @@
 - OS: [Arch Linux](https://archlinux.org/)
 - WM: [Bspwm](https://github.com/baskerville/bspwm)
 - Colorscheme: You know what I [use.](https://github.com/arcticicestudio/nord)
+- Widget System: [Elkowars Wacky Widgets.](https://github.com/elkowar/eww)
 
 ## Gallery: 
 </br>
