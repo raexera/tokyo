@@ -3,18 +3,18 @@
 
 # SETTINGS {{{ ---
 
-active_text_color="#81A1C1"
+active_text_color="#434C5E"
 active_bg=""
 active_underline=""
 
-inactive_text_color="#434C5E"
+inactive_text_color="#81A1C1"
 inactive_bg=""
 inactive_underline=""
 
 separator="•"
 show="window_class" # options: window_title, window_class, window_classname
 forbidden_classes="Polybar Conky Gmrun"
-empty_desktop_message="%{F#81A1C1}rxyhn@AestheticArch"
+empty_desktop_message="%{F#434C5E}rxyhn@AestheticArch"
 
 char_limit=15
 max_windows=4

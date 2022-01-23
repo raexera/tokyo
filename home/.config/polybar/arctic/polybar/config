@@ -3,7 +3,7 @@ include-file = ~/.config/polybar/colors
 include-directory = ~/.config/polybar/modules
 
 [bar/main]
-modules-left = l1_blue launcher r1_blue bspwm r1 gap l1 polywins r1
+modules-left = l1 launcher r1 gap l1 bspwm r1 gap l1_white polywins r1_white
 modules-center = 
 modules-right = l1 uptime r1 gap l1 volume space backlight space battery space network sepline date r1 gap l1 dunst space powermenu r1 sep2
 
@@ -32,6 +32,7 @@ border-size = 9
 font-0 = Iosevka:style=Medium Italic:size=10;3
 font-1 = Feather:style=Bold:size=11;3
 font-2 = CaskaydiaCove Nerd Font:size=17;6
-font-3 = Iosevka Nerd Font:style=Bold:size=15;4
+font-3 = Iosevka Nerd Font:style=Bold:size=14;4
+font-4 = Iosevka Nerd Font:style=Bold:size=17;4
 
 enable-ipc = true
