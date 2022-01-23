@@ -22,45 +22,10 @@ echo -e ""
 
 # Main
 PS3='Please enter your choice: '
-options=( "Install [ Arch ]" "Install Depedency [ Pacman ]" "Install [ yay ]" "Install Depedency [ yay ]" "Install [ bspwm ]" "Install [ icon and theme ]" "Exit" )
+options=( "Install Depedency [ Pacman ]" "Install [ yay ]" "Install Depedency [ yay ]" "Install [ bspwm ]" "Install [ icon and theme ]" "Exit" )
 select opt in "${options[@]}"
 do
     case $opt in
-        "Install [ Arch ]")
-            ln -sf /usr/share/zoneinfo/Asia/Jakarta /etc/localtime
-            hwclock --systohc
-            sed -i '177s/.//' /etc/locale.gen
-            locale-gen
-            echo "LANG=en_US.UTF-8" >> /etc/locale.conf
-            echo "AestheticArch" >> /etc/hostname
-            echo "127.0.0.1 localhost" >> /etc/hosts
-            echo "::1       localhost" >> /etc/hosts
-            echo "127.0.1.1 AestheticArch.localdomain AestheticArch" >> /etc/hosts
-            echo root:" " | chpasswd
-
-            pacman -Sy --needed --noconfirm grub efibootmgr networkmanager network-manager-applet dialog wpa_supplicant mtools dosfstools reflector base-devel linux-headers xdg-user-dirs xdg-utils gvfs gvfs-smb nfs-utils inetutils dnsutils alsa-utils pipewire pipewire-alsa pipewire-pulse pipewire-jack bash-completion openssh rsync reflector acpi acpi_call acpid terminus-font xf86-video-amdgpu 
-
-            grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=GRUB
-            grub-mkconfig -o /boot/grub/grub.cfg
-
-            systemctl enable NetworkManager
-            systemctl enable sshd
-            systemctl enable reflector.timer
-            systemctl enable acpid
-
-            useradd -m rxyhn
-            echo rxyhn:" " | chpasswd
-            usermod -aG libvirt rxyhn
-
-            echo "rxyhn ALL=(ALL) ALL" >> /etc/sudoers.d/rxyhn
-
-
-            printf "\e[1;32mDone! Type exit, umount -R /mnt and reboot.\e[0m"
-
-            echo "-----------------------------------"
-            echo " install arch base system finished "
-            echo "-----------------------------------"
-            ;;
         "Install Depedency [ Pacman ]")
             sudo pacman -Sy --needed acpi kitty alsa-card-profiles alsa-firmware alsa-lib alsa-plugins alsa-tools alsa-topology-conf alsa-utils alsa-ucm-conf sxhkd bmon dialog dmenu dunst firefox feh fsarchiver gtk-engine-murrine gpick ffmpeg ffmpegthumbnailer imagemagick gvfs gvfs-afc gvfs-google gvfs-gphoto2 gvfs-mtp gvfs-smb highlight htop inetutils inotify-tools libfm libva-mesa-driver light lxappearance maim mesa mpc mpd mpv mtools ncmpcpp network-manager-applet networkmanager nfs-utils openssh pavucontrol pipewire pipewire-alsa pipewire-jack pipewire-pulse pulsemixer ranger reflector rofi rsync rxvt-unicode-terminfo thunar thunar-archive-plugin thunar-media-tags-plugin thunar-volman ttf-dejavu ueberzug unrar unzip vulkan-radeon wpa_supplicant wmctrl xarchiver xclip xdg-user-dirs xdg-user-dirs-gtk xdg-utils xf86-video-amdgpu xf86-video-ati xf86-video-vesa xfce4-power-manager xfce4-settings youtube-dl zathura zsh zsh-autosuggestions zsh-completions zsh-syntax-highlighting xorg xorg-server jq dosfstools polkit zip tmux neovim playerctl wireless_tools fzf
             echo "----------------------------"
