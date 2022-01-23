@@ -2,7 +2,7 @@ add_newline = true
 right_format = """$directory"""
 
 [character]
-success_symbol = "[](bold black)[](bold blue)[](bold white)" 
+success_symbol = "[](bold blue)[](bold cyan)[](bold white)" 
 error_symbol   = "[](bold red)"
 
 [username]
@@ -23,7 +23,7 @@ disabled = true
 
 [directory]
 home_symbol = "~"
-format = "[  ](bold cyan)[$path]($style) "
+format = "[$path]($style) "
 
 [time]
 disabled = true
@@ -45,16 +45,16 @@ added_style = "bold blue"
 format = '[+$added]($added_style)/[-$deleted]($deleted_style) '
 
 [git_status]
-format = '([\[$all_status$ahead_behind \]]($style) )'
+format = '([\[$all_status$ahead_behind\]]($style) )'
 style = "bold cyan"
-conflicted = "🏳 "
-ahead = "🏎 💨 ${count} "
-behind = "😰 ${count} "
-diverged = "😵 "
+conflicted = "= "
+ahead = "⇡ ${count} "
+behind = "⇣ ${count} "
+diverged = "⇕ "
 up_to_date = ""
-untracked = "🤷‍ "
-stashed = "📦 "
-modified = "📝 "
+untracked = "? "
+stashed = "$ "
+modified = "! "
 staged = '[++\($count\)](green)'
-renamed = "👅 "
-deleted = "🗑 "
+renamed = "» "
+deleted = " "
