@@ -3,13 +3,13 @@
 <div align="center">
     <p></p>
     <a href="https://github.com/rxyhn/dotfiles/stargazers">
-        <img src="https://img.shields.io/github/stars/rxyhn/dotfiles?color=%238FBCBB&labelColor=%233B4252&style=for-the-badge">
+        <img src="https://img.shields.io/github/stars/rxyhn/dotfiles?color=%23fae3b0&labelColor=%233B4252&style=for-the-badge">
     </a>
     <a href="https://github.com/rxyhn/dotfiles/network/members/">
-        <img src="https://img.shields.io/github/forks/rxyhn/dotfiles?color=%2388C0D0&labelColor=%233B4252&style=for-the-badge">
+        <img src="https://img.shields.io/github/forks/rxyhn/dotfiles?color=%23f28fad&labelColor=%233B4252&style=for-the-badge">
     </a>
-    <img src="https://img.shields.io/github/repo-size/rxyhn/dotfiles?color=%2381A1C1&labelColor=%233B4252&style=for-the-badge">
-   <img src="https://badges.pufler.dev/visits/rxyhn/dotfiles?style=for-the-badge&color=5E81AC&logoColor=white&labelColor=3B4252"/>
+    <img src="https://img.shields.io/github/repo-size/rxyhn/dotfiles?color=%23abe9b3&labelColor=%233B4252&style=for-the-badge">
+   <img src="https://badges.pufler.dev/visits/rxyhn/dotfiles?style=for-the-badge&color=89dceb&logoColor=white&labelColor=3B4252"/>
 </div>
 
 <p/>
@@ -52,4 +52,4 @@
 
 <p align="center"><img src="https://raw.githubusercontent.com/arcticicestudio/nord-docs/develop/assets/images/nord/repository-footer-separator.svg?sanitize=true" /></p>
 
-<p align="center"><a href="https://github.com/rxyhn/dotfiles/blob/main/LICENSE"><img src="https://img.shields.io/static/v1.svg?style=flat-square&label=License&message=GPL-3.0&logoColor=eceff4&logo=github&colorA=4c566a&colorB=88c0d0"/></a></p>
+<p align="center"><a href="https://github.com/rxyhn/dotfiles/blob/main/LICENSE"><img src="https://img.shields.io/static/v1.svg?style=flat-square&label=License&message=GPL-3.0&logoColor=eceff4&logo=github&colorA=4c566a&colorB=89dceb"/></a></p>
