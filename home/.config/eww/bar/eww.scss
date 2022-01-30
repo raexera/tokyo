@@ -14,7 +14,7 @@ $orange: #f39c12;
 $red: #e74c3c;
 $pink: #e74c3c;
 
-.bar{
+.bar {
 font-family: Material Design Icons Desktop;
 }
 
@@ -106,17 +106,17 @@ scale trough {
   all: unset;
   background-color: $black1;
   border-radius: 50px;
-  min-height: 100px;
+  min-height: 90px;
   min-width: 10px;
 }
 
-.sbbritnes trough highlight {
+.brightscale trough highlight {
   all: unset;
   background-color: $pink;
   border-radius: 10px;
 }
 
-.sbvol scale trough highlight {
+.volscale scale trough highlight {
   all: unset;
   background-color: $green;
   border-radius: 10px;
