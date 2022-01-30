@@ -18,6 +18,10 @@ $pink: #e74c3c;
 font-family: Material Design Icons Desktop;
 }
 
+window {
+background: $black;
+}
+
 button {
 border: 0px;
 background: none;
@@ -37,7 +41,7 @@ color: $cyan;
 
 /************* workspaces ***********/
 .workspaces {
-background-color: $black;
+background-color: $black1;
 margin-top: 10;
 border-radius: 10px 10px 10px 10px;
 }
@@ -45,12 +49,12 @@ border-radius: 10px 10px 10px 10px;
 /* unoccupied */
 .0 {
 font-size: 22;
-color: $black1;
+color: $grey;
 }
 /* occupied */
 .01, .02, .03, .04, .05, .06 {
 font-size: 22;
-color: $grey;
+color: $grey1;
 }
 /* focused */
 .011, .022, .033, .044, .055, .066 {
@@ -95,12 +99,12 @@ color: $green;
 }
 
 .vol  {
-background-color: $black;
+background-color: $black1;
 border-radius: 10px 10px 10px 10px;
 }
 scale trough {
   all: unset;
-  background-color: $black;
+  background-color: $black1;
   border-radius: 50px;
   min-height: 100px;
   min-width: 10px;
@@ -121,7 +125,7 @@ scale trough {
 /*********** time ************/
 
 .sbtime {
-background-color: $black;
+background-color: $black1;
 border-radius: 10px 10px 10px 10px;
 font-size: 20;
 padding: 5px 5px 5px 5px;
