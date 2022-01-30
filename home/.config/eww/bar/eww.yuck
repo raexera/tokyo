@@ -95,8 +95,8 @@
 
 (defwidget control []
 	(box :orientation "v" :space-evenly false  :class "control"
-  (bright)
   (wifi)
+  (bright)
   (volum)))
 
 (defwidget bottom []
