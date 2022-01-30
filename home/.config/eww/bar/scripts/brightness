@@ -1,0 +1,17 @@
+#!/bin/sh
+
+use=xbacklight
+# use=brightnessctl
+
+
+if [ "$1" = "" ]; then
+  case $use in
+    "xbacklight") xbacklight -get   ;;
+    "brightnessctl") brightnessctl i | grep '%' | awk -F'(' '{print $2}' | awk -F'%' '{print $1}' ;;
+  esac
+else
+ case $use in
+    "xbacklight") xbacklight -set "$1"   ;;
+    "brightnessctl") brightnessctl set "$1" ;;
+  esac
+fi

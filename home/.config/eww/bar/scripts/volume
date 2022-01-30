@@ -1,0 +1,23 @@
+#!/bin/sh
+
+# control=alsa
+control=pulse
+
+case "$control" in
+  "pulse")
+      if [ "$1" = "" ];then
+        pamixer --get-volume
+      else
+        pamixer --set-volume "$1"
+      fi
+    ;;
+    "alsa")
+    if [ "$1" = "" ];then
+      amixer -D pulse sget Master | grep 'Left:' | awk -F'[][]' '{ print $2 }' | tr -d '%'
+    else 
+      amixer -D pulse sset Master "$1"%
+    fi
+ 
+  ;;
+esac
+

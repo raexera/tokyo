@@ -1,0 +1,129 @@
+
+;; Created by https://github.com/niraj998
+
+;; put path to sidebar config files here ;;
+(defvar eww "eww -c ~/.config/eww/sidebar")
+
+;; launcher ;;
+(defwidget srch []
+	(button :onclick "./scripts/popup srch" :class "sbsearch" :space-evenly "false" "󱓞" ))
+
+;; separator ;;
+(defwidget separator []
+	(box :class "sbsep" "━"))
+
+;; Workspaces ;;
+(defwidget workspace []
+	(literal :content workspaces))
+
+(deflisten workspaces "./scripts/workspace")
+
+;;	wifi	;;
+(defwidget sbnet []
+	(box		:orientation "v"	:space-evenly "false"	:spacing 5 :tooltip wname
+	(button		:onclick "./scripts/popup wifi"	:class "sbnet" sbwifi)))
+
+(defpoll sbwifi :interval "1m" "./scripts/sbwifi icon")
+(defpoll wname :interval "10m" "./scripts/sbwifi name")
+
+;;  volume  ;;
+(defwidget sbvol []
+  (eventbox :onhover "${eww} update sbvol=true"     :onhoverlost "${eww} update sbvol=false"
+  (box    :orientation "v"  :space-evenly "false" :halign "center"
+  (revealer :transition "slideup" :reveal sbvol   :duration "400ms"
+  (scale :class "volscale" :value volume :orientation "v" :flipped true :max 100 :min 0 :onchange "./scripts/volume {}" ))
+  (button   :onclick "./scripts/popup audio" :class "sbvol" "󰕾"))))
+
+(defvar sbvol false)
+(defpoll volume :interval "1s" "./scripts/volume" )
+
+;;  brightness  ;;
+(defwidget sbbri []
+  (eventbox :onhover "${eww} update sbbri=true"     :onhoverlost "${eww} update sbbri=false"
+  (box    :orientation "v"  :space-evenly "false"  :halign "center"
+  (revealer :transition "slideup" :reveal sbbri   :duration "400ms"
+  (scale :value "./scripts/brightness" :onchange "./scripts/brightness {}" :orientation "v" :flipped true :max 100 :min 1))
+  (label   :class "sbbritnes" :text "󰃝"))))
+  
+(defvar sbbri false)
+
+(defwidget sca []
+  (box :class "vol" :orientation "v" :space-evenly "false" :spacing 5
+	(box		:orientation "v"	:space-evenly "false"	:spacing 5 :tooltip wname
+	(button		:onclick "./scripts/popup wifi"	:class "sbnet" sbwifi))
+  (eventbox :onhover "${eww} update sbbri=true"     :onhoverlost "${eww} update sbbri=false"
+  (box    :orientation "v"  :space-evenly "false" :spacing 5 :halign "center" :class "sbbritnes"
+  (revealer :transition "slideup" :reveal sbbri   :duration "400ms"
+  (scale :value "./scripts/brightness" :onchange "./scripts/brightness {}" :orientation "v" :flipped true :max 100 :min 1))
+  (label   :class "sbbritnes" :text "󰃝")))
+  (eventbox :onhover "${eww} update sbvol=true"     :onhoverlost "${eww} update sbvol=false"
+  (box    :orientation "v"  :space-evenly "false" :spacing 5 :halign "center" :class "sbvol"
+  (revealer :transition "slideup" :reveal sbvol   :duration "400ms"
+  (scale :class "volscale" :value volume :orientation "v" :flipped true :max 100 :min 0 :onchange "./scripts/volume {}" ))
+  (button   :onclick "./scripts/popup audio" :class "sbvol" "󰕾")))
+
+  ))
+
+
+
+
+;;	time	;;
+(defwidget sbtime []
+	(box	:orientation "v" :halign "center" :valign "end" :space-evenly "false" :spacing 5 :class "sbtime"
+	(label		:text hour)
+	(label		:text min)))
+
+(defpoll hour	:interval "45s"	"date '+%H'")
+(defpoll min	:interval "45s"	"date '+%M'")
+
+;;	Power	;;
+(defwidget sbpower []
+	(eventbox	:onhover "${eww} update sbpower=true"	:onhoverlost "${eww} update sbpower=false" 
+	(box		:orientation "v"	:class "sbpower" :space-evenly "false" 
+	(revealer	:transition "slideup"	:reveal sbpower		:duration "400ms"
+	(box		:orientation "v"	:space-evenly "false" 	
+  (button		:class "sbrestart"  :onclick "reboot"	"󰑐")
+	(button   :class "sbreload"      :onclick "bspc wm -r" "󰜉")
+	(button		:class "sblogoff"	  :onclick "killall bspwm" "󰍃")
+	(button		:class "sblock"		  :onclick "betterlockscreen -l"	"󰍁")))
+	(button		:class "sbshut"		  :onclick "shutdown now"	"󰐥"))))
+
+(defvar sbpower false)
+
+;; Bar ;;
+(defwindow bar
+	:geometry (geometry :x 0 :y 0 :height "100%" :width "35px" )
+	:monitor 0
+	:reserve (struts :distance "35px" :side "left")
+	:wm-ignore false
+	:hexpand "false"
+	:vexpand "false"
+  	(barwidgets))
+
+(defwidget barwidgets []
+	(box :orientation "v" :halign "center" :spacing 5; :class "bar"
+		(top)
+		(bottom)
+    ))
+
+;; Top ;;
+(defwidget top []
+	(box	:orientation "v" :space-evenly "false" :valign "start"
+    (srch)
+    (separator)
+    (workspace)))
+
+;; Bottom ;;
+(defwidget bottom []
+	(box	:orientation "v" :space-evenly false :valign "end" :class "asd" :spacing 10
+  (sca)
+;  (sbbri) 
+;  (sbvol)
+  (sbtime)
+	(sbpower)  ))
+
+(defwidget bottom2 []
+	(box	:orientation "v" :space-evenly false :valign "end" :class "asd2"
+  (sbtime)
+	(sbpower)))
+

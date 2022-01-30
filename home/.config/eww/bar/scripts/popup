@@ -1,0 +1,9 @@
+#!/bin/sh
+
+if [ "$1" = "srch" ]; then
+rofi -show drun
+elif [ "$1" = "wifi" ]; then
+kitty -e nmtui
+elif [ "$1" = "audio" ]; then
+pavucontrol
+fi

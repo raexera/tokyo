@@ -1,0 +1,157 @@
+/* Created by https://github.com/niraj998 */
+
+$black: #2c3e50;
+$black1: #34495e;
+$white: #ecf0f1;
+$grey: #95a5a6;
+$grey1: #7f8c8d;
+$blue: #3498db;
+$cyan: #1abc9c;
+$yellow: #f1c40f;
+$purple: #9b59b6;
+$green: #2ecc71;
+$orange: #f39c12;
+$red: #e74c3c;
+$pink: #e74c3c;
+
+.bar{
+font-family: Material Design Icons Desktop;
+}
+
+button {
+border: 0px;
+background: none;
+}
+
+/************* search ***********/
+.sbsearch {
+font-size: 22;
+color: $blue;
+}
+
+/************* separator ***********/
+.sbsep {
+font-size: 18;
+color: $cyan;
+}
+
+/************* workspaces ***********/
+.workspaces {
+background-color: $black;
+margin-top: 10;
+border-radius: 10px 10px 10px 10px;
+}
+
+/* unoccupied */
+.0 {
+font-size: 22;
+color: $black1;
+}
+/* occupied */
+.01, .02, .03, .04, .05, .06 {
+font-size: 22;
+color: $grey;
+}
+/* focused */
+.011, .022, .033, .044, .055, .066 {
+font-size: 22;
+}
+
+.011 {
+color: $orange;
+}
+.022 {
+color: $pink;
+}
+.033 {
+color: $yellow;
+}
+.044 {
+color: $green;
+}
+.055 {
+color: $blue;
+}
+.066 {
+color: $white;
+}
+
+/******** wifi ***********/
+.sbnet  {
+font-size: 22;
+color: $blue;
+}
+
+/******** volume and brightness ***********/
+
+.sbbritnes  {
+font-size: 22;
+color: $pink;
+}
+
+.sbvol  {
+font-size: 22;
+color: $green;
+}
+
+.vol  {
+background-color: $black;
+border-radius: 10px 10px 10px 10px;
+}
+scale trough {
+  all: unset;
+  background-color: $black;
+  border-radius: 50px;
+  min-height: 100px;
+  min-width: 10px;
+}
+
+.sbbritnes trough highlight {
+  all: unset;
+  background-color: $pink;
+  border-radius: 10px;
+}
+
+.sbvol scale trough highlight {
+  all: unset;
+  background-color: $green;
+  border-radius: 10px;
+}
+
+/*********** time ************/
+
+.sbtime {
+background-color: $black;
+border-radius: 10px 10px 10px 10px;
+font-size: 20;
+padding: 5px 5px 5px 5px;
+color: $yellow;
+}
+
+/*********** Power ********/
+
+.sbshut {
+font-size: 25;
+color: $red;
+}
+ 
+.sbrestart {
+font-size: 25;
+color: $orange;
+}
+ 
+.sblogoff {
+font-size: 25;
+color: $yellow;
+}
+ 
+.sblock {
+font-size: 25;
+color: $green;
+}
+ 
+.sbreload {
+font-size: 25;
+color: $purple;
+}
+
