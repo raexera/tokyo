@@ -14,10 +14,6 @@ $orange: #f39c12;
 $red: #e74c3c;
 $pink: #e74c3c;
 
-.bar {
-font-family: Material Design Icons Desktop;
-}
-
 window {
 background: $black;
 }
@@ -27,39 +23,22 @@ border: 0px;
 background: none;
 }
 
-/************* search ***********/
-.sbsearch {
-font-size: 22;
-color: $blue;
-}
-
-/************* separator ***********/
-.sbsep {
-font-size: 18;
-color: $cyan;
-}
-
 /************* workspaces ***********/
-.workspaces {
+.works {
 background-color: $black1;
-margin-top: 10;
-border-radius: 10px 10px 10px 10px;
+border-radius: 8px 8px 8px 8px;
 }
 
 /* unoccupied */
 .0 {
-font-size: 22;
 color: $grey;
 }
 /* occupied */
 .01, .02, .03, .04, .05, .06 {
-font-size: 22;
-color: $grey1;
+color: $white;
 }
+
 /* focused */
-.011, .022, .033, .044, .055, .066 {
-font-size: 22;
-}
 
 .011 {
 color: $orange;
@@ -80,82 +59,63 @@ color: $blue;
 color: $white;
 }
 
-/******** wifi ***********/
-.sbnet  {
-font-size: 22;
+
+.jetbrain {
+font-family: JetBrainsMono Nerd Font;
+font-size: 25;
+}
+
+.blue {
 color: $blue;
 }
 
-/******** volume and brightness ***********/
-
-.sbbritnes  {
-font-size: 22;
+.pink {
 color: $pink;
 }
 
-.sbvol  {
-font-size: 22;
+.green {
 color: $green;
 }
-
-.vol  {
-background-color: $black1;
-border-radius: 10px 10px 10px 10px;
-}
-scale trough {
-  all: unset;
-  background-color: $black1;
-  border-radius: 50px;
-  min-height: 90px;
-  min-width: 10px;
-}
-
-.brightscale trough highlight {
-  all: unset;
-  background-color: $pink;
-  border-radius: 10px;
-}
-
-.volscale scale trough highlight {
-  all: unset;
-  background-color: $green;
-  border-radius: 10px;
-}
-
-/*********** time ************/
-
-.sbtime {
-background-color: $black1;
-border-radius: 10px 10px 10px 10px;
-font-size: 20;
-padding: 5px 5px 5px 5px;
+.yellow {
 color: $yellow;
 }
-
-/*********** Power ********/
-
-.sbshut {
-font-size: 25;
-color: $red;
-}
- 
-.sbrestart {
-font-size: 25;
+.orange {
 color: $orange;
 }
- 
-.sblogoff {
-font-size: 25;
-color: $yellow;
+.red {
+color: $red;
 }
- 
-.sblock {
-font-size: 25;
-color: $green;
+
+.control {
+font-family: JetBrainsMono Nerd Font;
+font-size: 22;
+background-color: $black1;
+border-radius: 10px 10px 10px 10px;
 }
- 
-.sbreload {
-font-size: 25;
-color: $purple;
+
+.powermenu {
+font-family: JetBrainsMono Nerd Font;
+font-size: 23;
+}
+
+.stime {
+font-family: JetBrainsMono Nerd Font;
+font-size: 18;
+background-color: $black1;
+border-radius: 10px 10px 10px 10px;
+}
+
+scale trough {
+  all: unset;
+  background-color: $black;
+  border-radius: 10px;
+  min-height: 80px;
+  min-width: 8px;
+}
+
+.control scale trough highlight {
+  all: unset;
+  background-color: $blue;
+  border-radius: 10px;
 }
 

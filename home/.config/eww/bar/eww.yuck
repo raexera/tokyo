@@ -1,72 +1,53 @@
-
 ;; Created by https://github.com/niraj998
 
 ;; put path to sidebar config files here ;;
 (defvar eww "eww -c ~/.config/eww/bar")
 
 ;; launcher ;;
-(defwidget srch []
-	(button :onclick "./scripts/popup srch" :class "sbsearch" :space-evenly "false" "󱓞" ))
-
-;; separator ;;
-(defwidget separator []
-	(box :class "sbsep" "━"))
+(defwidget lunch []
+	(box :orientation "v" :space-evenly "false" :spacing -15
+  (button :class "blue" :onclick "./scripts/popup srch"  "異")
+	(label  :class "blue" :text "━")))
 
 ;; Workspaces ;;
-(defwidget workspace []
-	(literal :content workspaces))
+(defwidget workspaces []
+	(literal :content workspace))
+(deflisten workspace "./scripts/workspace")
 
-(deflisten workspaces "./scripts/workspace")
+;; brightness ;;
+(defwidget bright []
+  (eventbox :onhover "${eww} update bright=true"   :onhoverlost "${eww} update bright=false"
+  (box    :orientation "v"  :space-evenly "false" :spacing 2
+  (revealer :transition "slideup" :reveal bright   :duration "550ms"
+  (scale :class "bribar" :value "./scripts/brightness" :onchange "./scripts/brightness {}" :orientation "v" :flipped true :max 100 :min 1))
+  (label :class "pink" :text ""))))
 
-;;	wifi	;;
-(defwidget sbnet []
-	(box		:orientation "v"	:space-evenly "false"	:spacing 5 :tooltip wname
-	(button		:onclick "./scripts/popup wifi"	:class "sbnet" sbwifi)))
+(defvar bright false)
 
-(defpoll sbwifi :interval "1m" "./scripts/sbwifi icon")
-(defpoll wname :interval "10m" "./scripts/sbwifi name")
+;; Wifi ;;
+(defwidget wifi []
+ (box		:orientation "v"  :tooltip wifinm
+ (button		:onclick "./scripts/popup wifi" :class "blue" wicon)))
 
-;;  volume  ;;
-(defwidget sbvol []
-  (eventbox :onhover "${eww} update sbvol=true"     :onhoverlost "${eww} update sbvol=false"
-  (box    :orientation "v"  :space-evenly "false" :halign "center"
-  (revealer :transition "slideup" :reveal sbvol   :duration "400ms"
-  (scale :class "volscale" :value volume :orientation "v" :flipped true :max 100 :min 0 :onchange "./scripts/volume {}" ))
-  (button   :onclick "./scripts/popup audio" :class "sbvol" "󰕾"))))
+(defpoll wicon :interval "1m" "./scripts/sbwifi icon")
+(defpoll wifinm :interval "10m" "./scripts/sbwifi name")
 
-(defvar sbvol false)
-(defpoll volume :interval "1s" "./scripts/volume" )
+;; Volume ;;
+(defwidget volum []
+  (eventbox :onhover "${eww} update volum=true" :onhoverlost "${eww} update volum=false"
+  (box      :orientation "v" :space-evenly "false" :spacing "2"
+  (revealer :transition "slideup"           :reveal volum         :duration "550ms"
+  (scale    :class "volbar" :value vol                        :orientation "v"      :flipped true :max 100 :min 0 :onchange "./scripts/volume {}" ))
+  (button   :onclick "./scripts/popup audio"   :class "green"  ""))))
 
-;;  brightness  ;;
-(defwidget sbbri []
-  (eventbox :onhover "${eww} update sbbri=true"     :onhoverlost "${eww} update sbbri=false"
-  (box    :orientation "v"  :space-evenly "false"  :halign "center"
-  (revealer :transition "slideup" :reveal sbbri   :duration "400ms"
-  (scale :value "./scripts/brightness" :onchange "./scripts/brightness {}" :orientation "v" :flipped true :max 100 :min 1))
-  (label   :class "sbbritnes" :text "󰃝"))))
-  
-(defvar sbbri false)
-
-(defwidget sca []
-  (box :class "vol" :orientation "v" :space-evenly "false" :spacing 5 :vexpand "false"
-  (eventbox :onhover "${eww} update sbbri=true"     :onhoverlost "${eww} update sbbri=false"
-  (box    :orientation "v"  :space-evenly "false" :spacing 5 :halign "center"
-  (revealer :transition "slidedown" :reveal sbbri   :duration "800ms"
-  (scale :class "brigtscale" :value "./scripts/brightness" :onchange "./scripts/brightness {}" :orientation "v" :flipped true :max 100 :min 1))
-  (label   :class "sbbritnes" :text "󰃝")))
-	(box		:orientation "v"	:space-evenly "false"	:spacing 5 :tooltip wname
-	(button		:onclick "./scripts/popup wifi"	:class "sbnet" sbwifi))
-  (eventbox :onhover "${eww} update sbvol=true"     :onhoverlost "${eww} update sbvol=false"
-  (box    :orientation "v"  :space-evenly "false" :spacing 5 :halign "center"
-  (revealer :transition "slidedown" :reveal sbvol   :duration "800ms"
-  (scale :class "volscale" :value volume :orientation "v" :flipped true :max 100 :min 0 :onchange "./scripts/volume {}" ))
-  (button   :onclick "./scripts/popup audio" :class "sbvol" "󰕾")))))
+(defvar volum false)
+(defpoll vol :interval "1s" "./scripts/volume" )
 
 ;;	time	;;
-(defwidget sbtime []
-	(box	:orientation "v" :halign "center" :valign "end" :space-evenly "false" :spacing 5 :class "sbtime"
-	(label		:text hour)
-	(label		:text min)))
+(defwidget stime []
+	(box	:orientation "v" :class "stime" :valign "end"
+	(label		:class "yellow" :text hour)
+	(label		:class "yellow" :text min)))
 
 (defpoll hour	:interval "45s"	"date '+%H'")
 (defpoll min	:interval "45s"	"date '+%M'")
@@ -74,51 +55,53 @@
 ;;	Power	;;
 (defwidget sbpower []
 	(eventbox	:onhover "${eww} update sbpower=true"	:onhoverlost "${eww} update sbpower=false" 
-	(box		:orientation "v"	:class "sbpower" :space-evenly "false" :vexpand "false"
-	(revealer	:transition "slideup"	:reveal sbpower		:duration "750ms"
-	(box		:orientation "v"	:space-evenly "false" 
-  (button		:class "sbrestart"  :onclick "reboot"	"󰑐")
-	(button   :class "sbreload"      :onclick "bspc wm -r" "󰜉")
-	(button		:class "sblogoff"	  :onclick "killall bspwm" "󰍃")
-	(button		:class "sblock"		  :onclick "betterlockscreen -l"	"󰍁")))
-	(button		:class "sbshut"		  :onclick "shutdown now"	"󰐥"))))
+	(box		:orientation "v"	:space-evenly "false" :vexpand "false" :class "powermenu"
+	(revealer	:transition "slideup"	:reveal sbpower		:duration "550ms"
+	(box		:orientation "v"	:space-evenly "false"
+  (button		:class "yellow" :onclick "reboot"	"")
+	(button   :class "blue" :onclick "bspc wm -r" "ﰇ" )
+	(button		:class "orange" :onclick "killall bspwm" "﫻")
+	(button		:class "pink" :onclick "betterlockscreen -l"	"")))
+	(button		:class "red" :onclick "shutdown now"	"襤"))))
 
 (defvar sbpower false)
 
 ;; Bar ;;
 (defwindow bar
-	:geometry (geometry :x 0 :y 0 :height "768px" :width "35px" )
+	:geometry (geometry :x 0 :y 0 :height "100%" :width "35px" )
 	:monitor 0
 	:reserve (struts :distance "35px" :side "left")
 	:wm-ignore false
 	:hexpand "false"
 	:vexpand "false"
-  	(barwidgets))
+  	(bar))
 
-(defwidget barwidgets []
-	(box :orientation "v" :halign "center" :spacing 5; :class "bar" :vexpand "false"
+(defwidget bar []
+	(box :orientation "v" :vexpand "false" :hexpand "false"
 		(top)
-		(bottom)
-    ))
+		(end)))
 
 ;; Top ;;
 (defwidget top []
-	(box	:orientation "v" :space-evenly "false" :valign "start"
-    (srch)
-    (separator)
-    (workspace)))
+	(box	:orientation "v" :space-evenly "false" :valign "start" :class "jetbrain" 
+  (lunch)
+  (workspaces)))
 
 ;; Bottom ;;
-(defwidget bottom []
-	(box	:orientation "v" :space-evenly false :valign "end" :class "asd" :spacing 10
-  (sca)
-;  (sbbri) 
-;  (sbvol)
-  (sbtime)
-	(sbpower)  ))
+(defwidget end []
+	(box :orientation "v" :space-evenly "false" :valign "end" :spacing 5
+  (control)
+  (bottom)))
 
-(defwidget bottom2 []
-	(box	:orientation "v" :space-evenly false :valign "end" :class "asd2"
-  (sbtime)
-	(sbpower)))
+(defwidget control []
+	(box :orientation "v" :space-evenly false  :class "control"
+  (bright)
+  (wifi)
+  (volum)))
+
+(defwidget bottom []
+	(box	:orientation "v" :space-evenly false 
+  (stime)
+  (sbpower)))
+
 
