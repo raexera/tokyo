@@ -2,7 +2,7 @@
 ;; Created by https://github.com/niraj998
 
 ;; put path to sidebar config files here ;;
-(defvar eww "eww -c ~/.config/eww/sidebar")
+(defvar eww "eww -c ~/.config/eww/bar")
 
 ;; launcher ;;
 (defwidget srch []
