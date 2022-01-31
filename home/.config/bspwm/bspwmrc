@@ -63,6 +63,7 @@ pgrep -x sxhkd > /dev/null || sxhkd &
 
 # Run EWW.
 $HOME/.local/bin/eww daemon &
+$HOME/.local/bin/eww -c $HOME/.config/eww/bar open bar &
 sh $HOME/.config/eww/dashboard/scripts/weather_info --getdata &
 sh $HOME/.config/eww/sidebar/scripts/getWeather &
 
