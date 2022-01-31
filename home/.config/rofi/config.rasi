@@ -1,0 +1,123 @@
+configuration {
+  modi:			"window,drun,filebrowser";
+  sidebar-mode:		true;
+  show-icons:		false;
+  sort:			true;
+  sorting-method:	"normal";
+  disable-history:	false;
+  scroll-method:	0;
+  drun-display-format:	"{name}";
+  matching:		"fuzzy";
+  window-thumbnail:	true;
+
+  display-drun:		"Apps";
+  display-window:	"Windows";
+  display-filebrowser:	"Files";
+
+filebrowser {
+  directories-first:	true;
+  sorting-method:	"name";
+  }
+}
+
+
+@theme "/dev/null"
+
+
+* {
+  background:		#0C0F09;
+  foreground:		#05E289;
+  button:		#05E289;
+  background-color:	@background;
+  text-color:		@foreground;
+}
+
+
+mainbox { children: [ mode-switcher, inputbar, listview ]; }
+
+
+window {
+  transparency:		"real";
+  width:		650px;
+  border:		15px 15px 15px 15px;
+  border-radius:	15px;
+  height:		500px;
+}
+
+
+inputbar {
+  children:		[ entry ];
+  expand:		false;
+  padding:		10px 10px 10px 10px;
+}
+
+prompt { 
+  enabled: true; 
+  background-color:	#1B1E25;
+  padding:		15px;
+  border-radius:	15px;
+  font:			"AlegreyaSans Bold 20";
+}
+
+entry {
+  background-color:	#1B1E25;
+  placeholder:		"Search";
+  expand:		true;
+  padding:		15px;
+  border-radius:	15px;
+  font:			"AlegreyaSans Bold 18";
+}
+
+
+listview {
+  columns:		2;
+  cycle:		true;
+  dynamic:		true;
+  layout:		vertical;
+  scrollbar:		false;
+}
+
+element {
+  orientation:		vertical;
+  margin:		5px 10px 5px 10px;
+  border-radius:	10px;
+  background-color:	#1B1E25;
+}
+
+element-text {
+  expand:		true;
+  margin:		15px 15px 15px 15px;
+  font:			"AlegreyaSans Bold 16";
+  background-color:	inherit;
+  text-color:		inherit;
+}
+
+element selected {
+  background-color:	@button;
+  text-color:		#1B1E25;
+  border-radius:	10px;
+}
+
+
+mode-switcher {
+  spacing:		2px;
+  border-radius:	10px;
+  background-color:	inherit;
+  text-color:		inherit;
+  margin:		10px 50px 10px 50px;
+}
+
+button {
+  padding:		8px;
+  font:			"AlegreyaSans Bold 16";
+  background-color:	#1B1E25;
+  vertical-align:	0.5; 
+  horizontal-align:	0.5;
+}
+
+button selected {
+  padding:		8px;
+  background-color:	#05E289;
+  text-color:		#1B1E25;
+}
+
