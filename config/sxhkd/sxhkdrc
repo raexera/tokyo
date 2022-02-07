@@ -1,0 +1,160 @@
+#################################################
+#	███████╗██╗  ██╗██╗  ██╗██╗  ██╗██████╗		#
+#	██╔════╝╚██╗██╔╝██║  ██║██║ ██╔╝██╔══██╗	#
+#	███████╗ ╚███╔╝ ███████║█████╔╝ ██║  ██║	#
+#	╚════██║ ██╔██╗ ██╔══██║██╔═██╗ ██║  ██║	#
+#	███████║██╔╝ ██╗██║  ██║██║  ██╗██████╔╝	#
+#	╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝╚═════╝		#
+####################By: rxyhn####################
+
+##---------- Keybindings for bspwm ----------##
+
+# Terminal (kitty)
+super + Return
+	kitty
+
+# Terminal (floating)
+super + shift + Return
+	bspc rule -a kitty -o state=floating follow=on center=true rectangle=490x310+0+0 && kitty
+
+# Open application menu
+super + m
+    sh $HOME/.local/bin/launcher
+
+# Toggle eww dashboard
+super + d
+    sh $HOME/.local/bin/dashboard
+
+# Toggle notification center
+super + o
+    sh $HOME/.local/bin/notificationcenter
+
+# Color Picker
+super + p
+	sh $HOME/.local/bin/xcolor-pick
+
+# Lockscreen
+ctrl + alt + l
+    sh $HOME/.local/bin/lockscreen
+
+##---------- Applications ----------##
+
+# Launch Apps
+super + shift + {f,w,e}
+	{thunar,firefox,code}
+
+##---------- System Keys ----------##
+
+# Take a screenshot
+Print
+	sh $HOME/.local/bin/takeshot --now
+	
+# Take screenshot in 5 second
+alt + Print	
+	sh $HOME/.local/bin/takeshot --in5
+
+# Take screenshot in 10 second
+shift + Print	
+	sh $HOME/.local/bin/takeshot --in10
+
+# Take screenshot of active window
+ctrl + Print
+	sh $HOME/.local/bin/takeshot --win
+
+# Take screenshot of area
+ctrl + alt + Print
+	sh $HOME/.local/bin/takeshot --area
+
+# Manage brightness
+XF86MonBrightness{Up,Down}
+    sh $HOME/.local/bin/brightness {up,down}
+
+# Manage Volume
+Manage volume
+XF86Audio{Raise,Lower}Volume
+    sh $HOME/.local/bin/volume {up,down}
+
+XF86AudioMute
+    sh $HOME/.local/bin/volume mute
+
+# Music control
+XF86Audio{Next,Prev,Play,Stop}
+	mpc {next,prev,toggle,stop}
+
+##---------- Bspwm ----------##
+
+# Close App
+super + {_,shift + }c
+	bspc node -{c,k}
+
+# Reload Keybindings
+super + Escape
+	pkill -USR1 -x sxhkd
+
+# kill window
+ctrl + alt + Escape
+    xkill
+
+# Quit/Restart bspwm
+ctrl + shift + {q,r}
+	bspc {quit,wm -r}
+	
+# Split horizontal, vertical or cancel
+super + {h,v,q}
+	bspc node -p {east,south,cancel}
+
+# Preselect the ratio
+super + ctrl + {1-9}
+	bspc node -o 0.{1-9}
+
+# Fullscreen or Monocle
+super + f
+#	bspc desktop -l next
+    bspc node -t "~"fullscreen
+
+# Toggle beetwen floating & tiled
+super + space
+    bspc node -t "~"{floating,tiled}
+
+# Pseudo Tiled & tiled mode
+super + shift + space
+#super + {p,t}
+    bspc node -t "~"{pseudo_tiled,tiled}
+
+# Set the node flags
+super + ctrl + {m,x,y,z}
+	bspc node -g {marked,locked,sticky,private}
+
+# Send the window to another edge of the screen
+super + {_,shift + }{Left,Down,Up,Right}
+	bspc node -{f,s} {west,south,north,east}
+
+# Change focus to next window, including floating window
+alt + {_,shift + }Tab
+	bspc node -f {next.local,prev.local}
+
+# Switch workspace
+ctrl + alt + {Left,Right}
+	bspc desktop -f {prev.local,next.local}
+
+# Switch to last opened workspace
+super + {Tab,grave}
+	bspc {node,desktop} -f last
+
+# Send focused window to another workspace
+super + {_,shift + }{1-8}
+	bspc {desktop -f,node -d} '^{1-8}'
+
+# Expanding windows
+super + control + {Left,Right,Up,Down}
+	bspc node -z {left -20 0,right 20 0,top 0 -20,bottom 0 20}
+	
+## Shrinking windows
+super + alt + {Left,Right,Up,Down}
+	bspc node -z {left 20 0,right -20 0,top 0 20,bottom 0 -20}
+	
+## Move floating windows
+alt + shift + {Left,Down,Up,Right}
+	bspc node -v {-20 0,0 20,0 -20,20 0}	
+
+##---------- EOF ----------##

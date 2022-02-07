@@ -1,0 +1,117 @@
+#!/bin/sh
+
+#####################################################
+#   ██████╗ ███████╗██████╗ ██╗    ██╗███╗   ███╗   #
+#   ██╔══██╗██╔════╝██╔══██╗██║    ██║████╗ ████║   #
+#   ██████╔╝███████╗██████╔╝██║ █╗ ██║██╔████╔██║   #
+#   ██╔══██╗╚════██║██╔═══╝ ██║███╗██║██║╚██╔╝██║   #
+#   ██████╔╝███████║██║     ╚███╔███╔╝██║ ╚═╝ ██║   #
+#   ╚═════╝ ╚══════╝╚═╝      ╚══╝╚══╝ ╚═╝     ╚═╝   #                                    
+##################### By: Rxyhn  ####################
+
+# ##############################################################################
+# #                                  ENV VARS                                  # 
+# ##############################################################################
+
+## Environments
+export PATH="${PATH}:${HOME}/.config/bspwm/bin"
+
+# Parse colors from "~/.Xresources"
+xrdb -override "${HOME}/.Xresources"
+
+xrdb_query()
+{
+    [ -n "$XRDB_QUERY" ] || XRDB_QUERY="$(xrdb -query)"
+
+    echo "$XRDB_QUERY" | while IFS=';' read -r STRING; do
+        [ "${1}" = "${STRING%%\	*}" ] || continue
+        echo "${STRING##*\	}"
+        break
+    done
+}
+
+getcolors()
+{
+    #FOREGROUND="$(xrdb_query '*.foreground:')"
+    BACKGROUND="$(xrdb_query '*.background:')"
+    #BLACK="$(xrdb_query '*.color0:')"
+    #RED="$(xrdb_query '*.color1:')"
+    #GREEN="$(xrdb_query '*.color2:')"
+    #YELLOW="$(xrdb_query '*.color3:')"
+    #BLUE="$(xrdb_query '*.color4:')"
+    #MAGENTA="$(xrdb_query '*.color5:')"
+    #CYAN="$(xrdb_query '*.color6:')"
+    #WHITE="$(xrdb_query '*.color7:')"
+}
+
+getcolors
+
+# ##############################################################################
+# #                                  FUNCTIONS                                 # 
+# ##############################################################################
+
+# Credits to 6gk/polka
+rule() { bspc rule -a "$@" & }
+config() { bspc config "$@" & }
+
+# ##############################################################################
+# #                                AUTOSTART APPS                              #
+# ##############################################################################
+
+# Run keybindings daemon.
+pgrep -x sxhkd > /dev/null || sxhkd &
+
+# Run EWW.
+$HOME/.local/bin/eww -c $HOME/.config/eww/bar --restart open bar &
+
+# Run notification daemon.
+dunst --config $HOME/.config/dunst/dunstrc &
+
+# Run Picom.
+picom --config $HOME/.config/picom/picom.conf &
+
+# Run polkit daemon if doesn't started.
+[ -n "$(pidof xfce-polkit)" ] || /usr/lib/xfce-polkit/xfce-polkit &
+
+# Run power manager.
+xfce4-power-manager &
+
+# Run mpd if doesn't started.
+[ -n "$(pidof mpd)" ] || mpd &
+
+# Execute bspwm-specific scripts.
+bspfloat &
+
+# Start X wallpaper.
+feh --no-fehbg --bg-fill $HOME/Pictures/Wallpapers/bg.png
+
+# Fix cursor.
+xsetroot -cursor_name left_ptr 
+
+# ##############################################################################
+# #                                 WINDOW RULES                               #
+# ##############################################################################
+
+bspc monitor -d 1 2 3 4 5 6  
+
+rule -a kitty                       follow=on focus=on
+rule -a Code                        follow=on focus=on
+rule -a firefox                     follow=on focus=on
+rule mpv                            state=floating
+rule feh                            state=floating
+
+# ##############################################################################
+# #                            GENERAL CONFIGURATION                           #
+# ##############################################################################
+
+config left_padding 60
+config border_width 0
+config window_gap 10
+config split_ratio 0.50
+
+config borderless_monocle true
+config gapless_monocle true
+config focus_follows_pointer true
+
+config presel_feedback_color "$BACKGROUND"
+

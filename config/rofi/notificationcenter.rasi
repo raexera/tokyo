@@ -1,0 +1,92 @@
+@import "colors/colors.rasi"
+
+configuration {
+    show-icons:                     true;
+    drun-display-format:            "{name}";
+    disable-history:                false;
+	hide-scrollbar: 				true;
+	sidebar-mode: 					false;
+}
+
+window {    
+    location:	                    northeast;
+	anchor:		                    northeast;
+    x-offset:                       -10px;
+    y-offset:                       10px;
+    transparency:                   "real";
+    line-margin:                    1;
+    line-padding:                   1;
+	width:						    30%;
+    height:							70%;
+}
+
+prompt {
+    background-color:               @background;
+    text-color:                     @foreground;
+    padding:                        10px 20px 5px 5px;
+    font:                           "JetbrainsMono Nerd Font 15";
+}
+
+inputbar {
+	children: 						[ prompt ];
+    background-color:               @background;
+    text-color:                     @background;
+    expand:                         false;
+    margin:                         0px 0px 0px 0px;
+    padding:                        5px;
+}
+
+listview {
+    background-color:               @background;
+    padding:                        5px;
+    columns:                        1;
+    lines:                          8;
+    spacing:                        0%;
+    cycle:                          false;
+    dynamic:                        true;
+    layout:                         vertical;
+}
+
+mainbox {
+    background-color:               @background;
+    children:                       [ inputbar, listview ];
+    spacing:                       	0%;
+    padding:                        10px;
+}
+
+element {
+    orientation:                    horizontal;
+    background-color:               @background-alt;
+    text-color:                     @foreground;
+    border-radius:                  5px;
+    padding:                        3px 0px 0px 3px;
+    margin:                         6px 0px 6px 0px;
+}
+
+element-icon, element-text {
+    background-color:               inherit;
+    text-color:                     inherit;
+}
+
+element-icon {
+    horizontal-align:               0.5;
+    vertical-align:                 0.5;
+    size:                           48px;
+    margin:                         0px 0px 0px 12px;
+    border:                         12px;
+    border-color:                   transparent;
+}
+
+element-text {
+    font:                           "Cartograph CF Italic 10";
+    expand:                         true;
+    horizontal-align:               0.5;
+    vertical-align:                 0.5;
+    margin:                         12px 12px 12px 0px;
+}
+
+element selected {
+    background-color:               @background-alt2;
+    text-color:                     @accent;
+    border-radius:                  5px;
+}

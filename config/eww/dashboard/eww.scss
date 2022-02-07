@@ -1,0 +1,179 @@
+/*****************	Created By: https://github.com/rxyhn	************************/
+
+$background: #1A1B26;
+$background-alt: #16161E;
+$foreground: #a9b1d6;
+$blue: #7AA2F7;
+$magenta: #BB9AF7;
+$yellow: #E0AF68;
+$green: #73DACA;
+
+
+
+/** Global *******************************************/
+*{
+	all: unset;
+}
+
+
+/** Generic window ***********************************/
+.genwin {
+	background-color: $background;
+	color: $foreground;
+	border-radius: 12px;
+}
+
+/** Profile ******************************************/
+.face {
+	background-image: url('images/profile.png');
+	background-size: 110px;
+	background-position: 50% 35%;
+	min-height: 110px;
+	min-width: 110px;
+	margin: 20px 0px 0px 0px;
+	border-radius: 100%;
+}
+
+.fullname {
+	font-family: Cartograph CF;
+	font-style: italic;
+	color: $foreground;
+	font-size : 17px;
+	font-weight : bold;
+}
+
+/** System ********************************************/
+.iconcpu, .iconmem, .iconbri, .iconvol {
+	font-family: feather;
+	font-size : 20px;
+	font-weight : normal;
+}
+.iconcpu {
+	color: $blue;
+}
+.iconmem {
+	color: $magenta;
+}
+.iconbri {
+	color: $yellow;
+}
+.iconvol{
+	color: $green;
+}
+
+.cpu_bar, .mem_bar, .bri_bar, .vol_bar, scale trough {
+	all: unset;
+	background-color: $background-alt;
+	border-radius: 16px;
+	min-height: 15px;
+	min-width: 250px;
+}
+
+.cpu_bar, .mem_bar, .bri_bar, .vol_bar, scale trough highlight {
+	all: unset;
+	border-radius: 16px;
+}
+
+.cpu_bar scale trough highlight {
+	background-color: $blue;
+}
+.mem_bar scale trough highlight {
+	background-color: $magenta;
+}
+.bri_bar scale trough highlight {
+	background-color: $yellow;
+}
+.vol_bar scale trough highlight {
+	background-color: $green;
+}
+
+/** Clock ********************************************/
+
+.clock{
+	padding: 2rem 4.2rem 2rem 4.2rem;
+	background-color: $background;
+	color: $foreground;
+	border-radius: 12px;
+}
+.hour, .min, .separator-clock{
+	font-family: Iosevka Medium;
+	font-weight: bold;
+	font-size: 3em;
+	margin-left: .8rem;
+}
+.separator-clock{
+	margin-top: -5px;
+}
+.day{
+	font-family: Cartograph CF;
+	font-style: italic;
+	font-size: 1em;
+}
+
+/** Music ***************************************/
+.player{
+	background-color: $background;
+	padding: 1.5rem 1.5rem 0 1.5rem;
+	border-radius: 12px;
+}
+.album_art {
+	background-size: cover;	
+	background-position: center;
+	min-height: 100px;
+	border-radius: 12px;
+}
+
+.song {
+	font-family: Cartograph CF;
+	font-style: italic;
+	color: $foreground;
+	font-size : 14px;
+	font-weight : bold;
+	margin : 20px 0px 0px 0px;
+}
+
+.btn_prev, .btn_play, .btn_next {
+	font-family: Material Icons;
+	margin: -5px 0 1rem 0;
+}
+.btn_prev {
+	color: $foreground;
+	font-size : 20px;
+	font-weight : normal;
+}
+.btn_play {
+	color: $foreground;
+	font-size : 24px;
+	font-weight : bold;
+}
+.btn_next {
+	color: $foreground;
+	font-size : 20px;
+	font-weight : normal;
+}
+
+/** Quote ******************************************/
+.quote{
+	background-color: $background;
+	border-radius: 12px;
+	padding: 1.5rem;
+}
+.quote-text{
+	font-family: Cartograph CF;
+	font-style: italic;
+	font-size: 1rem;
+	color: $foreground;
+}
+
+/** Powermenu ***************************************/
+.power{
+	background-color: $background;
+	color: $foreground;
+	border-radius: 12px;
+	font-family: "feather";
+	font-weight: bold;
+	font-size: 2em;
+}
+.exit{
+	font-size: 2.5rem;
+}

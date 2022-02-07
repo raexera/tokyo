@@ -1,0 +1,33 @@
+.bg {
+	background-image: url("assets/bg.png");
+	background-size: cover;
+}
+
+.lock-screen {
+    background: #1A1B26;
+    border-radius: 10px;
+
+    .lock-pfp {
+        background-image: url("assets/profile.png");
+        background-size: cover;
+        background-position: center;
+        border-radius: 40px;
+
+        margin: 25px 35px 25px 45px;
+    }
+
+    .lock-text {
+        margin: 40px -20px 30px -70px;
+        font-family: "Cartograph CF";
+        font-style: italic;
+        
+        .lock-username {
+            font-size: 24px;
+            color: #A9B1D6;
+        }
+
+        .lock-hostname {
+            font-size: 16px;
+        }
+    }
+}

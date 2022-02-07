@@ -1,0 +1,223 @@
+;;;; Created & Designed by: https://github.com/rxyhn ;;;;
+
+        ;;  Profile vars 
+        (defvar IMAGE "images/profile.png")
+        (defvar NAME "@AestheticArch")
+
+        ;;  System vars 
+		(defpoll CPU_USAGE :interval "1s"  "~/.config/eww/dashboard/scripts/sys_info --cpu")
+		(defpoll MEM_USAGE :interval "1s"  "~/.config/eww/dashboard/scripts/sys_info --mem")
+		(defpoll current-brightness :interval "1s" "brightnessctl -m -d amdgpu_bl0 | awk -F, '{print substr($4, 0, length($4)-1)}' | tr -d '%'")
+		(defpoll current-volume :interval "1s" "amixer -D pulse sget Master | grep 'Left:' | awk -F'[][]' '{ print $2 }' | tr -d '%'")
+
+        ;;  Time vars 
+		(defpoll hour :interval "1s" `date +%I`)
+		(defpoll minute :interval "1s" `date +%M`)
+		(defpoll date :interval "1s" `date "+%A, %d %B"`)
+		
+
+        ;;  Music vars 
+		(defpoll SONG :interval "1s"  "~/.config/eww/dashboard/scripts/music_info --song")
+		(defpoll ARTIST :interval "1s"  "~/.config/eww/dashboard/scripts/music_info --artist")
+		(defpoll STATUS :interval "1s"  "~/.config/eww/dashboard/scripts/music_info --status")
+		(defpoll CURRENT :interval "1s"  "~/.config/eww/dashboard/scripts/music_info --time")
+		(defpoll COVER :interval "1s"  "~/.config/eww/dashboard/scripts/music_info --cover")
+		(defpoll CTIME :interval "1s"  "~/.config/eww/dashboard/scripts/music_info --ctime")
+		(defpoll TTIME :interval "1s"  "~/.config/eww/dashboard/scripts/music_info --ttime")
+
+		;; quotes
+		(defpoll quote_text :interval "10m"
+		"~/.config/eww/dashboard/scripts/quote quote")
+
+;;  ******************************************************************************** 
+
+    
+
+
+		;;  profile 
+		(defwidget user [] 
+			(box :class "genwin" :orientation "v" :spacing 20 :space-evenly "false" :vexpand "false" :hexpand "false" 
+				(box :class "face" :halign "center" :style "background-image: url('${IMAGE});")
+				(label :class "fullname" :halign "center" :wrap "true" :limit-width 25 :text NAME)))
+
+		;;  system 
+		(defwidget system [] 
+			(box :class "genwin" 
+				 :vexpand "false" 
+				 :hexpand "false" 
+				(box :orientation "v" 
+					 :spacing 25 
+					 :halign "center" 
+					 :valign "center" 
+					 :space-evenly "false" 
+					 :vexpand "false" 
+					 :hexpand "false"
+
+					(box :class "cpu_bar" 
+						 :orientation "h" 
+						 :spacing 20 
+						 :space-evenly "false" 
+						 :vexpand "false" 
+						 :hexpand "false" 
+						(label :class "iconcpu" :text "")
+						(scale 
+							:min 0 
+							:max 100 
+							:value CPU_USAGE 
+							:active "false"))
+
+					(box :class "mem_bar" 
+						 :orientation "h" 
+						 :spacing 20 
+						 :space-evenly "false" 
+						 :vexpand "false" 
+						 :hexpand "false" 
+						(label :class "iconmem" :text "")
+						(scale :min 0 
+							   :max 100 
+							   :value MEM_USAGE 
+							   :active "false"))
+					
+					(box :class "bri_bar" 
+						 :orientation "h" 
+						 :spacing 20 
+						 :space-evenly "false" 
+						 :vexpand "false" 
+						 :hexpand "false" 
+						(label :class "iconbri" :text "")
+						(scale :min 0 
+							   :max 101 
+							   :value current-brightness
+							   :onchange "brightnessctl set {}%"))
+					
+					(box :class "vol_bar" 
+						 :orientation "h" 
+						 :spacing 20 
+						 :space-evenly "false" 
+						 :vexpand "false" 
+						 :hexpand "false" 
+						(label :class "iconvol" :text "")
+						(scale :min 0 
+							   :max 101 
+							   :value current-volume
+							   :onchange "amixer -D pulse sset Master {}%")))))
+
+		;;  clock 
+		(defwidget clock [] 
+			(box	:class "time"
+					:orientation "v"
+					:space-evenly "false"
+					:valign "center"
+					:halign "center"
+					:spacing "10"
+
+					(box :orientation "h"
+							:class "date"
+							:space-evenly "false"
+							:spacing "10"
+							(label	:class "hour"
+									:text "${hour}")
+
+							(label	:class "separator-clock"
+									:text ":")
+							
+							(label	:class "min"
+									:text "${minute}")
+						)
+						(label	:class "day"
+									:text "${date}")
+				)	
+		)
+
+		;;  Music 
+		(defwidget music [] 
+			(box :class "player" :orientation "v" :space-evenly "false" :vexpand "false" :hexpand "false" 
+				(box :class "album_art" :vexpand "false" :hexpand "false" :style "background-image: url('${COVER}');")
+				(box :orientation "v" :spacing 20 :space-evenly "false" :vexpand "false" :hexpand "false" 
+					(label :halign "center" :class "song" :wrap "true" :limit-width 10 :text SONG)
+					(box :orientation "h" :spacing 10 :halign "center" :space-evenly "true" :vexpand "false" :hexpand "false" 
+						(button :class "btn_prev" :onclick "~/.config/eww/dashboard/scripts/music_info --prev" "")
+						(button :class "btn_play" :onclick "~/.config/eww/dashboard/scripts/music_info --toggle" STATUS)
+						(button :class "btn_next" :onclick "~/.config/eww/dashboard/scripts/music_info --next" "")))))
+
+
+		;; Powermenu
+		(defwidget powermenu []
+			(box        :class "power" 
+						:orientation "v"
+				(button :class "shutdown"
+						:onclick "systemctl poweroff" "")
+		
+				(button :class "reboot"
+						:onclick "systemctl reboot" "")
+		
+				(button :class "exit"
+						:onclick "$HOME/.local/bin/eww -c $HOME/.config/eww/dashboard close-all" "")
+			)
+		)
+
+		(defwidget quotes [] 
+			(box :class "quote" :orientation "v" :spacing 0 :space-evenly "false" :vexpand "false" :hexpand "false"
+				 (box :orientation "v" 
+					  :spacing 0 
+					  :space-evenly "false" 
+					  :vexpand "false" :hexpand "false" 
+					  (label :class "quote-text" 
+							 :halign "start" 
+							 :limit-width 28
+							 :text quote_text)
+					  )))
+		;;  profile 
+		(defwindow profile :stacking "fg" :focusable "false" :screen 1 
+			    :geometry (geometry :x "28%" 
+									:y 180 
+									:width 180 
+									:height 200)
+			     				(user))
+
+		;;  system 
+		(defwindow system :stacking "fg" :focusable "false" :screen 1 
+			    :geometry (geometry :x "28%" 
+									:y 397
+									:width 350 
+									:height 213)
+			     				(system))
+
+		;;  clock 
+		(defwindow clock 
+			    :geometry (geometry :x 580 
+									:y 183 
+									:width "255px"
+									:height "125px"
+									:anchor "top left")
+				:windowtype "dock"
+				:wm-ignore false
+			(clock))
+
+		;;  music 
+		(defwindow music :stacking "fg" :focusable "false" :screen 1 
+			    :geometry (geometry :x "55%" 
+									:y 398
+									:width 200 
+									:height 213)
+			     				(music))
+
+		;;  Powermenu
+		(defwindow power
+			:monitor 0
+			:geometry (geometry     :x "885px"
+									:y "183px"
+									:width "65px"
+									:height "197px"
+									:anchor "top left")
+			:windowtype "dock"
+			:wm-ignore true
+	(powermenu))
+
+		;;  quote
+		(defwindow quotes :stacking "fg" :focusable "false" :screen 1 
+			:geometry (geometry :x 580 
+								:y 325 
+								:width 287 
+								:height 50)
+			(quotes))
