@@ -108,7 +108,7 @@ separation=$(sed '0~3 s/$/\x0f/g' <(echo -en "$amend"))
 final_rofi=$(sed ':a;/\x0f$/{N;s/\n//;ba}'   <(echo -n "$separation"))
 
 ### Eventual Final command to be executed
-selection=$(echo -ne "$final_rofi" | rofi -markup-rows -theme ~/.config/rofi/notificationcenter.rasi -dmenu -eh 3 -a "$active_list" -u "$urgent_list" -sep '\x0f' -p "Notification Center          " -lines 8 s-no-fixed-num-lines -i -font "Iosevka Nerd Font 10")
+selection=$(echo -ne "$final_rofi" | rofi -markup-rows -theme ~/.config/rofi/notificationcenter.rasi -dmenu -eh 3 -a "$active_list" -u "$urgent_list" -sep '\x0f' -p "Notification Center          " -lines 8 s-no-fixed-num-lines -i -font "JetBrainsMono Nerd Font 10")
 # echo -ne "$final_rofi"
 
 ### If a notification was selected, delete it from the logs

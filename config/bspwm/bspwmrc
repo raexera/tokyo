@@ -70,12 +70,6 @@ dunst --config $HOME/.config/dunst/dunstrc &
 # Run Picom.
 picom --config $HOME/.config/picom/picom.conf &
 
-# Run polkit daemon if doesn't started.
-[ -n "$(pidof xfce-polkit)" ] || /usr/lib/xfce-polkit/xfce-polkit &
-
-# Run power manager.
-xfce4-power-manager &
-
 # Run mpd if doesn't started.
 [ -n "$(pidof mpd)" ] || mpd &
 

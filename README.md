@@ -1,5 +1,11 @@
-<h1 align="center"> ━━━━━━  ❖  ━━━━━━ </h1>
+<!-- HEADERS -->
+<p align="center">
+  <img width="25%" src="https://github.com/rxyhn.png" />
+</p>
 
+<p align="center">
+  <b> ~ Rxyhn's configuration files ~ </b>
+</p>
 
 <!-- BADGES -->
 <div align="center">
@@ -14,22 +20,109 @@
 </div>
 
 <!-- INFORMATION -->
-# ❖ Information 
+### Thanks for dropping by!
 
-## Required
+<img src="https://raw.githubusercontent.com/rxyhn/dotfiles/main/TokyoNight.png" alt="img" align="right" width="400px">
+
+This is my personal collection of configuration files.
+
+You are probably here for my **Aesthetic BSPWM** configuration.
+
+The [setup section](#setup) will guide you through the installation process.
+
+Here are some details about my setup:
+
+   - **WM:**                   [bspwm](https://github.com/baskerville/bspwm)
+   - **OS:**                   [Arch Linux](https://archlinux.org)
+   - **Terminal:**             [kitty](https://github.com/kovidgoyal/kitty)
+   - **Shell:**                [zsh](https://wiki.archlinux.org/index.php/Zsh)
+   - **Widgets:**              [eww](https://github.com/elkowar/eww)
+   - **Compositor:**           [picom](https://github.com/ibhagwan/picom)
+   - **Editor:**               [neovim](https://github.com/neovim/neovim)
+   - **Browser:**              [firefox](https://www.mozilla.org/en-US/firefox)
+   - **File Manager:**         [thunar](https://github.com/xfce-mirror/thunar)
+   - **Application Launcher:** [rofi](https://github.com/davatorium/rofi)
+
+---
+
+<!-- SETUP -->
+## Setup.
+
+   > This is step-by-step how to install these dotfiles. Just [R.T.F.M](https://en.wikipedia.org/wiki/RTFM).
+
+### Installation (Manual)
+
+   > After cloning the repository, install the necessary dependencies to replicate by setup.
+
+   <details open>
+   <summary><strong>Arch Linux (and Arch-based distributions)</strong></summary>
+
+   > Assuming your **AUR Helper** is [yay](https://github.com/Jguer/yay).
+
+   ```sh
+    $ yay -S bspwm sxhkd rofi kitty picom-ibhagwan-git lxappearance calcurse todotxt \
+    feh jq gpick xclip imagemagick dunst betterlockscreen mpd mpc ncmpcpp ueberzug \
+    otf-font-awesome nerd-fonts-jetbrains-mono ttf-material-icons-git ttc-iosevka
+     
+   ```
+
+   </details>
+
+   <br>
+
+   > Then after the dependencies are installed, copy the files to it's respective folders.
+
+   <details open>
+   <summary><strong>Config and Binaries</strong></summary>
+
+   ```sh
+    $ mkdir -p $HOME/.config/ && cp -r ./config/* $HOME/.config/
+    $ mkdir -p $HOME/.local/bin/ && cp -r ./bin/* $HOME/.local/bin/
+    $ cp -r ./misc/* $HOME/
+   ```
+
+   </details>
+
+   <br>
+
+   > You will need to install a few fonts.
+
+   - **Cartograph CF:** [here](https://coding-fonts.css-tricks.com/fonts/cartograph-cf/)
+   - **Comic Mono   :** [here](https://dtinth.github.io/comic-mono-font/)
 
 
-<img src="https://raw.githubusercontent.com/elkowar/eww/bf7f49848d63f4fdf8994668ec346d9d3ced77ed/.github/EwwLogo.svg" alt="eww" align="right" height="100">
+   <br>
 
-- [BSPWM](https://github.com/baskerville/bspwm)
-- [Ibhagwan Forked Picom](https://github.com/ibhagwan/picom)
-- [Cartograph CF](https://coding-fonts.css-tricks.com/fonts/cartograph-cf/)
-- [Iosevka](https://github.com/be5invis/Iosevka)
+   > Once finished copying the files, you might want to finalize the changes to your system.
 
-## Screenshot
-![screenshot1](./TokyoNight.png)
+   ```sh
+    # Rebuilds the font cache
+    $ fc-cache -fv
+   ```
 
-## Thanks To
-- [niraj](https://github.com/niraj998)
+   <br>
+
+   > Lastly, log out from your current desktop session and log in into bspwm.
+
+   <br>
+
+## Miscellaneous.
+
+   - **Elkowar's Wacky Widgets**   
+      > If you're **NOT** using a monitor with a 1366x768 resolution, you might want to change the `x` and `y` values of the widgets on the config.
+
+   - **GTK Theme**
+      > You can find TokyoNight GTK theme [here](https://github.com/koiosdev/Tokyo-Night-Linux/tree/master/usr/share/themes/TokyoNight).
+
+   - **Icon Theme <kbd>Suggested</kbd>**
+      > You can install [this](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme) icon theme that suits the GTK theme.
+
+
+## Acknowledgements.
+
+   - **Contributors**
+      - [niraj](https://github.com/niraj998/) for some widgets.
+
+   <br>
 
 <p align="center"><a href="https://github.com/rxyhn/dotfiles/blob/main/LICENSE"><img src="https://img.shields.io/static/v1.svg?style=flat-square&label=License&message=GPL-3.0&logoColor=eceff4&logo=github&colorA=1A1B26&colorB=F7768E"/></a></p>

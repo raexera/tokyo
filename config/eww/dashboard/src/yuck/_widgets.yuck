@@ -1,0 +1,351 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;								Widgets Section's								  ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+;;  Profile Widgets
+(defwidget profile [] 
+    (box :orientation "v" 
+		 :space-evenly "false" 
+		 :class "profile" 
+    (box :orientation "h" 
+		 :space-evenly "false" 
+    (box :class "pfp"))
+    (box :orientation "v" :space-evenly "false"  
+    (box :class "pfptxt" :valign "center" {NAME})
+    (box :class "subpfptxt" :halign "center" {UNAME})
+		)
+	)
+)
+
+;; Circular Systray Widgets
+(defwidget radialmeter [value text ?class ?labelclass]
+    (circular-progress :value value
+        :class "radial ${class}"
+        :start-angle 0
+        :thickness 12
+        (label :text text
+            :class "radial-label ${labelclass}"
+            :limit-width 2
+            :show_truncated false
+            :wrap false
+            :angle 0.0)))            
+(defwidget circular-brightness[]
+        (box	:spacing 0
+            	:orientation "h"
+            	:space-evenly false
+				:halign "center"
+        (box 	:spacing 0
+            	:orientation "h"
+            	:space-evenly false
+            	:class "radial-brightness-box"
+				:tooltip "Current Brightness: ${current-brightness}%"
+(radialmeter 	:value current-brightness
+            	:text ""
+            	:labelclass "brightness-radial-label"
+            	:class "brightness-radial")
+		)
+	)
+)
+(defwidget circular-volume[]
+        (box	:spacing 0
+            	:orientation "h"
+            	:space-evenly false
+				:halign "center"
+        (box 	:spacing 0
+            	:orientation "h"
+            	:space-evenly false
+            	:class "radial-volume-box"
+				:tooltip "Current Volume: ${current-volume}%"
+(radialmeter 	:value current-volume
+            	:text ""
+            	:labelclass "volume-radial-label"
+            	:class "volume-radial")
+		)
+	)
+)
+(defwidget circular-bat[]
+        (box	:spacing 0
+            	:orientation "h"
+            	:space-evenly false
+				:halign "center"
+        (box 	:spacing 0
+            	:orientation "h"
+            	:space-evenly false
+            	:class "radial-bat-box"
+				:tooltip "Battery Capacity: ${battery-capacity}%"
+(radialmeter 	:value battery-capacity
+            	:text ""
+            	:labelclass "bat-radial-label"
+            	:class "bat-radial")
+		)
+	)
+)
+(defwidget circular-ram[]
+        (box	:spacing 0
+            	:orientation "h"
+            	:space-evenly false
+				:halign "center"
+        (box 	:spacing 0
+            	:orientation "h"
+            	:space-evenly false
+            	:class "radial-ram-box"
+				:tooltip "Ram Usage: ${ram-usage}%"
+(radialmeter 	:value ram-usage
+            	:text ""
+            	:labelclass "ram-radial-label"
+            	:class "ram-radial")
+		)
+	)
+)
+(defwidget systray[]
+	(box :orientation 'v' 
+		 :class "systray-circular"
+	(box :orientation 'h' :space-evenly "false"
+	  (circular-ram)(circular-volume))
+	(box :orientation 'h' :space-evenly "false"
+	  (circular-bat)(circular-brightness))
+	)
+)
+
+
+;;  Clock Widgets
+(defwidget clock [] 
+	(box	:class "time"
+			:orientation "v"
+			:space-evenly "false"
+			:valign "center"
+			:halign "center"
+	(box 	:orientation "h"
+			:class "date"
+			:space-evenly "false"
+	(label	:class "hour"
+			:text "${hour}")
+	(label	:class "separator-clock"
+			:text ":")		
+	(label	:class "min"
+			:text "${minute}"))
+	(box	:orientation "h"
+			:space-evenly "false"
+			:halign "center"
+	(label	:class "day"
+			:text "${date}"))
+	)	
+)
+
+
+;;  Music Widgets
+(defwidget music [] 
+	(box 	:class "music-player"
+			:orientation "v" 
+		 	:space-evenly "false"  
+		 	:halign "center"
+	(box 	:class "album_art" 
+		 	:style "background-image: url('${art}');")
+	(box 	:orientation "v" 
+		 	:space-evenly "false"
+		 	:halign "center"
+		 	:spacing 10 
+	(label  :class "artist"
+		 	:limit-width 15
+		 	:text artist)
+ 	(label  :class "song"
+		 	:limit-width 20
+		 	:text title) 
+	(box 	:orientation "h"  
+		 	:space-evenly "false"
+			:halign "center"
+			:spacing 35
+			(button :class "btn_prev" :onclick "~/.config/eww/dashboard/scripts/music previous" "ﭣ")
+			(button :class "btn_play" :onclick "~/.config/eww/dashboard/scripts/music toggle" playpause)
+			(button :class "btn_next" :onclick "~/.config/eww/dashboard/scripts/music next" "ﭡ"))
+	(box    :orientation "h"
+			:class "metric-player"
+			:space-evenly "false"
+			(scale  :min 0
+					:max 101
+					:active "false"
+					:value {songtime != "" ? "${songtime}" : "0"}
+				)       
+			)	
+		)
+	)
+)
+
+
+;; Quotes Widgets
+(defwidget quotes [] 
+	(box 	:class "quote" 
+		 	:orientation "h" 
+			:halign "center"
+		 	:spacing 0 
+		 	:space-evenly "false"
+			:height 253
+	(box 	:orientation "v" 
+		 	:spacing 0 
+		 	:space-evenly "false" 
+	(label 	:class "quote-text" 
+			:halign "center" 
+			:wrap "true"
+			:text "\"${quote_text}\"")
+	(label 	:class "quote-author" 
+			:halign "center" 
+			:wrap "true"
+			:text quote_author)
+		)
+	)
+)
+
+;; Applications Widgets
+(defwidget app[]
+	(box	:orientation "v"
+			:class "applications"
+			:space-evenly "false"
+			:spacing 12
+	(button :class "app-firefox" 
+			:onclick "~/.config/eww/dashboard/scripts/open_apps --firefox" "")
+	(button :class "app-reddit" 
+			:onclick "~/.config/eww/dashboard/scripts/open_apps --reddit" "")
+	(button :class "app-telegram" 
+			:onclick "~/.config/eww/dashboard/scripts/open_apps --telegram" "")
+	(button :class "app-code" 
+			:onclick "~/.config/eww/dashboard/scripts/open_apps --code" "﬏")
+	(button :class "app-discord" 
+			:onclick "~/.config/eww/dashboard/scripts/open_apps --discord" "")
+	(button :class "app-github"
+			:onclick "~/.config/eww/dashboard/scripts/open_apps --github" "")
+	(button :class "app-spotify" 
+			:onclick "~/.config/eww/dashboard/scripts/open_apps --spotify" "阮")
+	)
+)
+
+;; Weather Widgets
+(defwidget weather [] 
+	(box 	:class "weather" 
+		 	:orientation "v" 
+		 	:space-evenly "false"
+		 	:halign "center" 
+	(box 	:orientation "v" 
+		 	:space-evenly "false"
+	(label 	:class "weather-day"
+			:text "${day}")
+	(box 	:class "weather-icon" 
+		 	:style "color: ${weather-hex}" {weather-icon}))
+	(box 	:orientation "v" 
+		 	:space-evenly "false" 
+	(box 	:orientation "h"
+			:class "weather-stat"
+	     	:halign "center" 
+	(label 	:wrap "true"
+			:limit-width 15
+			:text "${weather-stat}"))
+	(box 	:orientation "h" 
+			:halign "center"
+	(label 	:class "temp-region"
+			:text "${temperature} in ${weather-city}, ${weather-country}")) 
+		)
+	)
+)
+
+;; Task Widgets
+(defwidget task-list[]
+	(box 	:orientation "v"
+		 	:space-evenly "false"
+		 	:valign "center"
+	(box	:class "appointment"
+			:orientation "h"
+			:space-evenly "false"
+	(label  :class "appointment-label"
+			:text "Next: ")
+	(label  :class "appointment-text"
+			:text next_appointment)
+	(label  :class "appointment-label"
+			:text " in ")
+    (label  :class "appointment-text-time"
+			:text next_appointment_time))
+	(box 	:class "task-list-box"
+			:orientation "v"
+	(box 	:class "todo"
+		 	:orientation "h"
+		 	:space-evenly "false"
+			:spacing 20
+	(label 	:class "tasklabel-todo"
+			:text "")
+	(label  :class "todo-text"
+			:text "${todo-apri-num} high priority, ${todo-total} total"))
+	(box 	:class "uptime"
+		 	:orientation "h"
+		 	:space-evenly "false"
+			:spacing 20
+		(label 	:class "tasklabel-time"
+				:text "")
+		(label  :class "uptime-text"
+				:text "${uptime} uptime"))
+		(box	:class "mem-usage"
+				:orientation "h"
+				:space-evenly "false"
+				:spacing 20
+		(label 	:class "tasklabel-mem"
+				:text "﫭")
+		(label  :class "mem-usage"
+				:text "${mem-usage} used"))
+
+		(box	:class "disk-usage"
+			:orientation "h"
+			:space-evenly "false"
+			:spacing 20
+		(label 	:class "tasklabel"
+				:text "")
+		(label  :class "disk-usage"
+				:text "${disk-usage} free")))
+
+	(box	:orientation "h"
+			:space-evenly "false"
+			:class "powermenu"
+			:spacing 45
+			(button :class "poweroff" 
+			:onclick "systemctl poweroff" "")
+			(button :class "reboot" 
+			:onclick "systemctl reboot" "")
+			(button :class "lock" 
+			:onclick "betterlockscreen -l" "")
+			(button :class "exit" 
+			:onclick "bspc quit" "")
+			(button :class "close" 
+			:onclick "$HOME/.local/bin/eww -c $HOME/.config/eww/dashboard close-all" ""))
+	)
+)
+(defwidget task[]
+	(box :orientation "h"
+		 :space-evenly "false"
+		 :class "task"
+		 :width 580
+	(box :class "task-weather"
+		(weather))
+	(box :class "task-list"
+		(task-list))
+	)
+)
+
+;; Main WIdgets
+(defwidget dashboard[]
+	(box :orientation "h"	 
+		 :class "dashboard"
+		 :space-evenly "false"
+	(box :orientation "v"
+		 :space-evenly "false"
+			(profile)
+			(quotes))
+  	(box :orientation "v" :space-evenly "false"
+  	(box :orientation "h" :space-evenly "false"
+	(box :orientation "v"
+	     :space-evenly "false"
+			(systray)
+			(clock))
+    (music))
+	(task))
+	(box :orientation "v"
+	     :space-evenly "false"
+			(app))
+	)
+)

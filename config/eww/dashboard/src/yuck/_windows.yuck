@@ -1,0 +1,13 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;								Windows Section's								  ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+(defwindow dashboard
+    :monitor 0
+    :geometry (geometry :x "0"
+                        :y "0"
+                        :anchor "center")
+    :windowtype "dock"
+    :wm-ignore true
+(dashboard))

@@ -1,0 +1,82 @@
+.task{
+    background-color: $background;
+	color: $foreground;
+    border-radius: 12px;
+    padding: 1.9rem;
+    margin: .5rem;
+.task-list{
+  	margin: 0 0 0 2.5rem;
+	}
+}
+
+.appointment{
+	padding: 0 1rem 1rem 0;
+}
+.appointment-label{
+	font-family: Comic Mono;
+	font-size: 1.3em;
+}
+.appointment-text,
+.appointment-text-time{
+	font-family: Cartograph CF;
+	font-style: italic;
+	font-weight: bold;
+	font-size: 1.3em;
+}
+
+.task-list-box{
+	padding: 0 1rem 1rem 0;
+}
+.tasklabel{
+	font-family: "JetBrainsMono Nerd Font";
+	font-size: 1.5em;
+}
+.tasklabel-mem{
+	font-family: "JetBrainsMono Nerd Font";
+	font-size: 1.6em;
+}
+.tasklabel-todo,
+.tasklabel-time{
+	font-family: "JetBrainsMono Nerd Font";
+	font-size: 1.3em;
+	font-weight: bold;
+}
+.todo, .uptime{
+	font-family: Cartograph CF;
+	font-style: italic;
+	font-size: 1em;
+}
+.mem-usage,
+.disk-usage{
+	font-family: Cartograph CF;
+	font-style: italic;
+	font-size: 1em;
+}
+
+.powermenu{
+	margin-left: 1rem;
+	.poweroff,
+	.reboot,
+	.close{
+		font-family: "Font Awesome 5 Pro";
+		font-size: 1.6em;
+		font-weight: bold;
+	}
+	.reboot{
+		font-size: 1.5em;
+	}
+	.close{
+		font-weight: normal;
+		font-size: 2.1em;
+	}
+	.lock{
+		font-family: "feather";
+		font-size: 1.6em;
+		font-weight: bold;
+	}
+	.exit{
+		font-family: "Font Awesome 5 Pro";
+		font-size: 1.8em;
+		font-weight: bold;
+	}
+}

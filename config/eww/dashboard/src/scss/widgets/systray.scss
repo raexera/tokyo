@@ -1,0 +1,39 @@
+.systray-circular{
+	font-family: JetBrainsMono Nerd Font;
+	font-size: 2em;
+}
+.radial-ram-box,
+.radial-bat-box,
+.radial-volume-box,
+.radial-brightness-box{
+	font-family: "Font Awesome 5 Pro";
+	background-color: $background;
+	padding: 1.5rem 2.3rem 1.5rem 2.3rem;
+	margin: .5rem;
+	border-radius: 2rem 0;
+}
+.brightness-radial,
+.volume-radial,
+.bat-radial,
+.ram-radial{
+	background-color: $background-alt2;
+}
+.brightness-radial-label,
+.volume-radial-label,
+.bat-radial-label,
+.ram-radial-label{
+	padding: 2.5rem;
+}
+.brightness-radial{
+	color: $yellow;
+}
+.volume-radial{
+	color: $magenta;
+}
+.bat-radial{
+	color: $green;
+}
+.ram-radial{
+	color: $blue;
+}
+

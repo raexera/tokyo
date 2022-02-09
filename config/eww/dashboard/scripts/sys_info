@@ -44,26 +44,20 @@ get_mem() {
 	printf "%.0f\n" $(free -m | grep Mem | awk '{print ($3/$2)*100}')
 }
 
-## Get Brightness
-get_blight() {
-	CARD=`ls /sys/class/backlight | head -n 1`
-
-	if [[ "$CARD" == *"amdgpu_"* ]]; then
-		BNESS=`brightnessctl i | grep '%' | awk -F'(' '{print $2}' | awk -F'%' '{print $1}'`
-		LIGHT=${BNESS%.*}
-	else
-		BNESS=`blight -d $CARD get brightness`
-		PERC="$(($BNESS*100/255))"
-		LIGHT=${PERC%.*}
-	fi
-
-	echo "$LIGHT"
-}
-
-## Get Battery 
-get_battery() {
+## Get Battery Capacity
+get_bat(){
 	BAT=`ls /sys/class/power_supply | grep BAT | head -n 1`
 	cat /sys/class/power_supply/${BAT}/capacity
+}
+
+## Get Current Brightness
+get_bright(){
+	brightnessctl -m -d amdgpu_bl0 | awk -F, '{print substr($4, 0, length($4)-1)}' | tr -d '%'
+}
+
+## Get Current Volume
+get_vol(){
+	amixer -D pulse sget Master | grep 'Left:' | awk -F'[][]' '{ print $2 }' | tr -d '%'
 }
 
 ## Execute accordingly
@@ -71,8 +65,10 @@ if [[ "$1" == "--cpu" ]]; then
 	get_cpu
 elif [[ "$1" == "--mem" ]]; then
 	get_mem
-elif [[ "$1" == "--blight" ]]; then
-	get_blight
 elif [[ "$1" == "--bat" ]]; then
-	get_battery
+	get_bat
+elif [[ "$1" == "--bri" ]]; then
+	get_bright
+elif [[ "$1" == "--vol" ]]; then
+	get_vol
 fi

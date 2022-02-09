@@ -1,0 +1,57 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;								Variables Section's								  ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+;; Profile Variables
+(defpoll NAME  :interval "5m"  "hostname")
+(defpoll UNAME :interval "5m"  "whoami")
+
+;; Systray Variables
+(defpoll ram-usage 			:interval "1s"  "~/.config/eww/dashboard/scripts/sys_info --mem")
+(defpoll battery-capacity 	:interval "1s"  "~/.config/eww/dashboard/scripts/sys_info --bat")
+(defpoll current-brightness :interval "1s"  "~/.config/eww/dashboard/scripts/sys_info --bri")
+(defpoll current-volume 	:interval "1s"  "~/.config/eww/dashboard/scripts/sys_info --vol")
+
+;; Time Variables
+(defpoll hour 	:interval "1s" `date +%H`)
+(defpoll minute :interval "1s" `date +%M`)
+(defpoll day 	:interval "1s" `date "+%A"`)
+(defpoll date 	:interval "1s" `date "+%D"`)
+	
+;; Music Variables
+(defpoll art		:interval "5s"  "~/.config/eww/dashboard/scripts/music coverloc")
+(defpoll title		:interval "5s"  "~/.config/eww/dashboard/scripts/music title")
+(defpoll artist		:interval "5s"  "~/.config/eww/dashboard/scripts/music artist")
+(defpoll playpause	:interval "5s"  "~/.config/eww/dashboard/scripts/music statusicon")
+(defpoll songtime 	:interval "1s"  "~/.config/eww/dashboard/scripts/getSongDuration")
+
+;; Quotes Variables
+(defpoll quote_text     :interval "10m" "~/.config/eww/dashboard/scripts/quotes quote")
+(defpoll quote_author   :interval "10m" "~/.config/eww/dashboard/scripts/quotes author")
+
+;; Weather Variables
+(defpoll weather-icon 		:interval "10m"  "~/.config/eww/dashboard/scripts/getweather --icon")
+(defpoll weather-city 		:interval "10m"  "~/.config/eww/dashboard/scripts/getweather --city")
+(defpoll weather-country 	:interval "10m"  "~/.config/eww/dashboard/scripts/getweather --country")
+(defpoll weather-hex 		:interval "10m"  "~/.config/eww/dashboard/scripts/getweather --hex")
+(defpoll temperature 		:interval "10m"  "~/.config/eww/dashboard/scripts/getweather --temp")
+(defpoll weather-stat 		:interval "10m"  "~/.config/eww/dashboard/scripts/getweather --stat")
+
+;; Todo Variables
+(defpoll todo 			        :interval "10s" "~/.config/eww/dashboard/scripts/check-todo adaptive")
+(defpoll todo-num 		        :interval "10s" "~/.config/eww/dashboard/scripts/check-todo adaptivenum")
+(defpoll todo-total 	        :interval "10s" "~/.config/eww/dashboard/scripts/check-todo totnum")
+(defpoll todo-apri 		        :interval "10s" "~/.config/eww/dashboard/scripts/check-todo apri")
+(defpoll todo-apri-num 	        :interval "10s" "~/.config/eww/dashboard/scripts/check-todo aprinum")
+(defpoll otherpri 		        :interval "10s" "~/.config/eww/dashboard/scripts/check-todo otherpri")
+(defpoll otherprinum 	        :interval "10s" "~/.config/eww/dashboard/scripts/check-todo otherprinum")
+(defpoll next_appointment       :interval "1m"  "~/.config/eww/dashboard/scripts/check-todo appoint")
+(defpoll next_appointment_time  :interval "1m"  "~/.config/eww/dashboard/scripts/check-todo appoint-time")
+
+;; Task Variables
+(defpoll uptime			        :interval "60s"  "~/.config/eww/dashboard/scripts/task up")
+(defpoll cpuavg			        :interval "60s"  "~/.config/eww/dashboard/scripts/task cpuavg")
+(defpoll disk-usage		        :interval "1h"  "~/.config/eww/dashboard/scripts/task disk")
+(defpoll mem-usage		        :interval "30s" "~/.config/eww/dashboard/scripts/task mem")
+

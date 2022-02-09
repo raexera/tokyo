@@ -2,42 +2,27 @@
 
 ## Files and cmd
 FILE="$HOME/.cache/ewwdashboard.xyz"
-EWW_BIN="$HOME/.local/bin/eww"
+EWW="$HOME/.local/bin/eww"
+DASHBOARD="$HOME/.config/eww/dashboard"
 
 ## Run eww daemon if not running already
 if [[ ! `pidof eww` ]]; then
-	${EWW_BIN} daemon
+	${EWW} daemon
 	sleep 1
 fi
 
 ## Open widgets 
 run_eww() {
-	${EWW_BIN} -c $HOME/.config/eww/dashboard open-many \
-		   profile \
-		   system \
-		   clock \
-		   music \
-		   quotes \
-		   power  
-		   
+	${EWW} -c ${DASHBOARD} open dashboard
 }
-
-close_eww() {
-	${EWW_BIN} -c $HOME/.config/eww/dashboard close \
-		   profile \
-		   system \
-		   clock \
-		   music \
-		   quotes \
-		   power  
-}
-
 
 ## Launch or close widgets accordingly
 if [[ ! -f "$FILE" ]]; then
 	touch "$FILE"
+	sh ${DASHBOARD}/scripts/quotes update
+	sh ${DASHBOARD}/scripts/getweather --getdata
 	run_eww
 else
-	close_eww
+	${EWW} -c ${DASHBOARD} close-all 
 	rm "$FILE"
 fi

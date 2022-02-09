@@ -1,0 +1,21 @@
+.time{
+	background-color: $background;
+	color: $foreground;
+	margin: .5rem;
+	padding: 0 8.6rem 0 8.6rem;
+	border-radius: 12px;
+}
+.hour, .min, .separator-clock{
+	padding: 1rem 0 0 0;
+	font-family: Comic Mono;
+	font-weight: bold;
+	font-size: 2.5em;
+}
+.separator-clock{
+	margin-top: -5px;
+}
+.day{
+	padding: .5rem;
+	font-family: Comic Mono;
+	font-size: 1.2em;
+}
