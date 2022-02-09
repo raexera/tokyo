@@ -62,7 +62,7 @@ Here are some details about my setup:
    ```sh
     $ yay -S bspwm sxhkd rofi kitty picom-ibhagwan-git lxappearance calcurse todotxt \
     feh jq gpick xclip imagemagick dunst betterlockscreen mpd mpc ncmpcpp ueberzug \
-    otf-font-awesome nerd-fonts-jetbrains-mono ttf-material-icons-git ttc-iosevka
+    otf-font-awesome nerd-fonts-jetbrains-mono ttf-material-icons-git 
      
    ```
 
