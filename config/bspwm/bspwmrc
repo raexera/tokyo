@@ -83,6 +83,19 @@ feh --no-fehbg --bg-fill $HOME/Pictures/Wallpapers/bg.png
 xsetroot -cursor_name left_ptr 
 
 # ##############################################################################
+# #                            FULLSCREEN FIX                                  #
+# ##############################################################################
+
+bspc subscribe node_state | while read -r _ _ _ _ state flag; do
+  if [[ "$state" != fullscreen ]]; then continue; fi
+  if [[ "$flag" == on ]]; then
+    $HOME/.local/bin/eww -c $HOME/.config/eww/bar close-all
+  else
+    $HOME/.local/bin/eww -c $HOME/.config/eww/bar open bar
+  fi
+done &
+
+# ##############################################################################
 # #                                 WINDOW RULES                               #
 # ##############################################################################
 
