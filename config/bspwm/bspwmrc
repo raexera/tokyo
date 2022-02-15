@@ -89,9 +89,9 @@ xsetroot -cursor_name left_ptr
 bspc subscribe node_state | while read -r _ _ _ _ state flag; do
   if [[ "$state" != fullscreen ]]; then continue; fi
   if [[ "$flag" == on ]]; then
-    $HOME/.local/bin/eww -c $HOME/.config/eww/bar close-all
+    $HOME/.local/bin/eww -c $HOME/.config/eww/bar --restart close-all
   else
-    $HOME/.local/bin/eww -c $HOME/.config/eww/bar open bar
+    $HOME/.local/bin/eww -c $HOME/.config/eww/bar --restart open bar
   fi
 done &
 
