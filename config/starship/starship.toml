@@ -1,32 +1,34 @@
 add_newline = true
-right_format = """$directory"""
 
-[character]
-success_symbol = "[>](bold magenta)[>](bold cyan)[>](bold green)" 
-error_symbol   = "[](bold red)"
+format = """
+($username)[@](bold white)($hostname)
+($directory)
+"""
+
+right_format = """$all"""
+
 
 [username]
-style_user = "white bold"
-style_root = "white bold"
-format = "[$user]($style)"
 disabled = false
 show_always = true
+style_user = "bold white"
+format = "[$user]($style)"
 
 [hostname]
-ssh_only = false
-format =  "[@](bold blue)[$hostname](bold cyan) "
-trim_at = ""
 disabled = false
-
-[cmd_duration]
-disabled = true
+ssh_only = false
+style = "bold white"
+format =  "[$hostname]($style)"
 
 [directory]
+disabled = false
+truncation_length = 1
 home_symbol = "~"
-format = "[$path]($style) "
+format = "[$path](bold cyan)[/](bold green) "
 
-[time]
-disabled = true
+[character]
+success_symbol = ""
+error_symbol = "[](bold red)"
 
 [git_branch]
 symbol = " "
@@ -58,3 +60,6 @@ modified = "! "
 staged = '[++\($count\)](green)'
 renamed = "» "
 deleted = " "
+
+[cmd_duration]
+disabled = true

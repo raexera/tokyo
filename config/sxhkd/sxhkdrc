@@ -43,6 +43,44 @@ ctrl + alt + l
 super + shift + {f,w,e}
 	{thunar,firefox,code}
 
+##---------- System Keys ----------##
+
+# Take a screenshot
+Print
+	sh $HOME/.local/bin/takeshot --now
+	
+# Take screenshot in 5 second
+alt + Print	
+	sh $HOME/.local/bin/takeshot --in5
+
+# Take screenshot in 10 second
+shift + Print	
+	sh $HOME/.local/bin/takeshot --in10
+
+# Take screenshot of active window
+ctrl + Print
+	sh $HOME/.local/bin/takeshot --win
+
+# Take screenshot of area
+ctrl + alt + Print
+	sh $HOME/.local/bin/takeshot --area
+
+# Manage brightness
+XF86MonBrightness{Up,Down}
+    sh $HOME/.local/bin/brightness {up,down}
+
+# Manage Volume
+Manage volume
+XF86Audio{Raise,Lower}Volume
+    sh $HOME/.local/bin/volume {up,down}
+
+XF86AudioMute
+    sh $HOME/.local/bin/volume mute
+
+# Music control
+XF86Audio{Next,Prev,Play,Stop}
+	mpc {next,prev,toggle,stop}
+
 ##---------- Bspwm ----------##
 
 # Close App

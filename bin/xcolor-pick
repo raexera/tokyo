@@ -8,7 +8,7 @@
 #   ╚═╝  ╚═╝ ╚═════╝ ╚═════╝ ╚══════╝ ╚═════╝ ╚═╝  ╚═╝
 # color picker for X.
 # Simple Script To Pick Color Quickly Using Gpick.
-# Created By: https://github.com/rxyhn. 
+# Created By: https://github.com/rxyhn 
 
 TEMP_DIR=/tmp/xcolor
 MSG=${XDG_CACHE_HOME:-$HOME/.cache}/xcolor.msg

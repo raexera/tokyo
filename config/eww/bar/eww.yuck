@@ -1,4 +1,4 @@
-;; Created   by https://github.com/niraj998
+;; Created   by https://github.com/rxyhn
 ;; Designed  by https://github.com/rxyhn
 ;; Maintaned by https://github.com/rxyhn
 
@@ -14,7 +14,7 @@
 		 :space-evenly "false" 
 		 :spacing -15
   	(button :class "launcher_icon" 
-		   	:onclick "scripts/popup launcher"  "")))
+		   	:onclick "scripts/popup launcher"  "")))
 
 ;; Workspaces Widgets ;;
 (defwidget workspaces []
@@ -197,10 +197,10 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Bar Windows ;;
 (defwindow bar
-	:geometry (geometry :x "1%" 
-						:y "2%" 
-						:height "96%" 
-						:width "40px")
+	:geometry (geometry :x "0" 
+						:y "0" 
+						:height "100%" 
+						:width "47px")
 	:monitor 0
 	:reserve (struts :distance "35px" 
 					 :side "left")

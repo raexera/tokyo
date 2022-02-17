@@ -35,7 +35,7 @@ f6=$(bspc query -D -d focused --names | grep "$ws6" )
 # u4=$(bspc query -D -d .urgent --names | grep 4)
 # u5=$(bspc query -D -d .urgent --names | grep 5)
 
-echo 	"(box	:class \"works\" :orientation \"v\"	:halign \"center\"	:valign \"start\"	 :space-evenly \"false\" :spacing \"-5\" (button :onclick \"bspc desktop -f $ws1\"	:class	\"$un$o1$f1\"	\"\") (button :onclick \"bspc desktop -f $ws2\"	:class \"$un$o2$f2\"	 \"\") (button :onclick \"bspc desktop -f $ws3\"	:class \"$un$o3$f3\" \"\") (button :onclick \"bspc desktop -f $ws4\"	:class \"$un$o4$f4\"	\"\") (button :onclick \"bspc desktop -f $ws5\"	:class \"$un$o5$f5\" \"\" )  (button :onclick \"bspc desktop -f $ws6\"	:class \"$un$o6$f6\" \"\"))"
+echo 	"(box	:class \"works\" :orientation \"v\"	:halign \"center\"	:valign \"start\"	 :space-evenly \"false\" :spacing \"-5\" (button :onclick \"bspc desktop -f $ws1\"	:class	\"$un$o1$f1\"	\"\") (button :onclick \"bspc desktop -f $ws2\"	:class \"$un$o2$f2\"	 \"\") (button :onclick \"bspc desktop -f $ws3\"	:class \"$un$o3$f3\" \"\") (button :onclick \"bspc desktop -f $ws4\"	:class \"$un$o4$f4\"	\"\") (button :onclick \"bspc desktop -f $ws5\"	:class \"$un$o5$f5\" \"\" )  (button :onclick \"bspc desktop -f $ws6\"	:class \"$un$o6$f6\" \"\"))"
 
 }
 

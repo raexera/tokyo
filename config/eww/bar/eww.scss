@@ -1,4 +1,4 @@
-/* Created   by https://github.com/rxyhn
+/* Created   by https://github.com/rxyhn 
    Designed  by https://github.com/rxyhn
    Maintaned by https://github.com/rxyhn
 */
@@ -9,11 +9,11 @@
 }
 
 // Variable Color's
-$background: #16161E;
+$background: #1A1B26;
 $foreground: #A9B1D6;
 
-$black: #1A1B26;
-$gray: #24283B;
+$black: #24283B;
+$gray: #565F89;
 $red: #F7768E;
 $green: #73DACA;
 $yellow: #E0AF68;
@@ -25,29 +25,28 @@ $white: $foreground;
 // EWW BAR
 .eww_bar{
   background-color: $background;
+  padding: .3rem;
 }
 
 // Launcher
 .launcher_icon{
     color: $cyan;
-    font-family: "Font Awesome 5 Free";
+    font-family: "Font Awesome 6 Pro";
     font-size: 1.7em;
-    padding: .6rem 0 .6rem 0;
+    padding: 1rem 0 1rem 0;
 }
 
 // Workspaces
 .works {
-font-size: 1.4em;
-font-family: "Font Awesome 5 Free";
-padding: .2rem .5rem .2rem .5rem;
-margin: .1rem;
+font-family: "Font Awesome 6 Pro";
+padding: .2rem .7rem .2rem .7rem;
 background-color: $black;
-border-radius: 8px;
+border-radius: 5px;
 }
 
 .0 , .01, .02, .03, .04, .05, .06,
 .011, .022, .033, .044, .055, .066{
-  margin: .5rem 0 .5rem 0;
+  margin: .55rem 0 .55rem 0;
 }
 
 /* Unoccupied */
@@ -57,7 +56,7 @@ color: $gray;
 
 /* Occupied */
 .01, .02, .03, .04, .05, .06 {
-  color: $foreground;
+  color: $gray;
 }
 
 /* Focused */
@@ -70,19 +69,53 @@ color: $gray;
   color: $foreground;
 }
 
+.0:nth-child(1),
+.0:nth-child(3){
+  font-size: 1.5em;
+}
+.0:nth-child(2){
+  font-size: 1.4em;
+}
+.0:nth-child(4),
+.0:nth-child(5){
+  font-size: 1.6em;
+}
+.0:nth-child(6){
+  font-size: 1.7em;
+}
+.01,
+.011,
+.03,
+.033{
+  font-size: 1.5em;
+}
+.02,
+.022{
+  font-size: 1.4em;
+}
+.04,
+.05,
+.044,
+.055{
+  font-size: 1.6em;
+}
+.06,
+.066{
+  font-size: 1.7em;
+}
+
 // Control Panel
 .control {
-margin: .2rem .2rem .1rem .2rem;
 padding: .5rem;
 font-family: Material Icons;
 font-size: 1.6em;
 background-color: $black;
-border-radius: 8px;
+border-radius: 5px;
 }
 .bat{
   font-family: JetBrainsMono Nerd Font;
   font-size: 1.2em;
-  padding-right: .4rem;
+  padding-right: .5rem;
   color: $blue;
 }
 .wifi-icon{
@@ -100,30 +133,30 @@ border-radius: 8px;
 scale trough {
   all: unset;
   background-color: $background;
-  border-radius: 10px;
+  border-radius: 5px;
   min-height: 80px;
   min-width: 10px;
   margin: .3rem 0 .3rem 0;
 }
 .bribar trough highlight {
   background-color: $yellow;
-  border-radius: 10px;
+  border-radius: 5px;
 }
 .volbar trough highlight {
   background-color: $green;
-  border-radius: 10px;
+  border-radius: 5px;
 }
 
 // Clock
 .time {
   font-family: Comic Mono;
   font-weight: bold;
-  font-size: 1.3em;
+  font-size: 1.2em;
   background-color: $black;
   color: $white;
-  border-radius: 8px;
-  margin: .1rem .2rem .3rem .2rem;
-  padding: .5rem .4rem .4rem .4rem;
+  border-radius: 5px;
+  padding: .7rem 0 .5rem 0;
+  margin: .5rem 0 .5rem 0;
 }
 
 // Calendar

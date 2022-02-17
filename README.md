@@ -60,9 +60,9 @@ Here are some details about my setup:
    > Assuming your **AUR Helper** is [yay](https://github.com/Jguer/yay).
 
    ```sh
-    $ yay -S bspwm sxhkd rofi kitty picom-ibhagwan-git lxappearance calcurse todotxt \
-    feh jq gpick xclip imagemagick dunst betterlockscreen mpd mpc ncmpcpp ueberzug \
-    otf-font-awesome nerd-fonts-jetbrains-mono ttf-material-icons-git 
+    $ yay -S bspwm sxhkd rofi kitty picom-ibhagwan-git calcurse todotxt \
+    feh jq dunst betterlockscreen brightnessctl playerctl maim \
+    xclip imagemagick
      
    ```
 
@@ -88,6 +88,8 @@ Here are some details about my setup:
    > You will need to install a few fonts.
 
    - **Cartograph CF:** [here](https://coding-fonts.css-tricks.com/fonts/cartograph-cf/)
+   - **JetBrainsMono NF:** [here](https://github.com/ryanoasis/nerd-fonts)
+   - **Font Awesome:** [here](https://fontawesome.com/download)
    - **Comic Mono   :** [here](https://dtinth.github.io/comic-mono-font/)
 
 
