@@ -10,11 +10,11 @@
 <!-- BADGES -->
 <div align="center">
     <p></p>
-    <a href="https://github.com/rxyhn/dotfiles/stargazers">
-        <img src="https://img.shields.io/github/stars/rxyhn/dotfiles?color=%23BB9AF7&labelColor=%231A1B26&style=for-the-badge">
+    <a href="https://github.com/rxyhn/bspdots/stargazers">
+        <img src="https://img.shields.io/github/stars/rxyhn/bspdots?color=%23BB9AF7&labelColor=%231A1B26&style=for-the-badge">
     </a>
-    <a href="https://github.com/rxyhn/dotfiles/network/members/">
-        <img src="https://img.shields.io/github/forks/rxyhn/dotfiles?color=%237AA2F7&labelColor=%231A1B26&style=for-the-badge">
+    <a href="https://github.com/rxyhn/bspdots/network/members/">
+        <img src="https://img.shields.io/github/forks/rxyhn/bspdots?color=%237AA2F7&labelColor=%231A1B26&style=for-the-badge">
     </a>
    <img src="https://badges.pufler.dev/visits/rxyhn/dotfiles?style=for-the-badge&color=73daca&logoColor=white&labelColor=1A1B26"/>
 </div>
@@ -22,7 +22,7 @@
 <!-- INFORMATION -->
 ### Thanks for dropping by!
 
-<img src="https://raw.githubusercontent.com/rxyhn/dotfiles/main/TokyoNight.png" alt="img" align="right" width="400px">
+<img src="https://raw.githubusercontent.com/rxyhn/bspdots/main/TokyoNight.png" alt="img" align="right" width="400px">
 
 This is my personal collection of configuration files.
 
@@ -48,7 +48,7 @@ Here are some details about my setup:
 <!-- SETUP -->
 ## Setup.
 
-   > This is step-by-step how to install these dotfiles. Just [R.T.F.M](https://en.wikipedia.org/wiki/RTFM).
+   > This is step-by-step how to install these bspwm dotfiles. Just [R.T.F.M](https://en.wikipedia.org/wiki/RTFM).
 
 ### Installation (Manual)
 
@@ -122,9 +122,9 @@ Here are some details about my setup:
 
 ## Acknowledgements.
 
-   - **Contributors**
+   - **Thanks to**
       - [niraj](https://github.com/niraj998/) for some widgets.
 
    <br>
 
-<p align="center"><a href="https://github.com/rxyhn/dotfiles/blob/main/LICENSE"><img src="https://img.shields.io/static/v1.svg?style=flat-square&label=License&message=GPL-3.0&logoColor=eceff4&logo=github&colorA=1A1B26&colorB=F7768E"/></a></p>
+<p align="center"><a href="https://github.com/rxyhn/bspdots/blob/main/LICENSE"><img src="https://img.shields.io/static/v1.svg?style=flat-square&label=License&message=GPL-3.0&logoColor=eceff4&logo=github&colorA=1A1B26&colorB=F7768E"/></a></p>
